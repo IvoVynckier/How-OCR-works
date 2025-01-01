@@ -1,0 +1,487 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+
+<title>A Pen Scanner, Anyone? | How OCR Works</title>
+
+<meta name="description" content="The unique characteristics 
+of pen scanners, a handy, instantaneous OCR application with 
+a twist." />
+
+<meta name="keywords" content="pen scanners, text snippets, 
+keyboard emulation, Optical Character Recognition, OCR" />
+
+<meta name="twitter:widgets:csp" content="on">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://how-ocr-works.com/pen-scanners/pen-scanners.html" />
+<meta name="twitter:title" content="A Pen Scanner, Anyone? | How OCR Works" />
+<meta name="twitter:description" content="Learn all about pen scanners, a handy, instantaneous OCR application with a twist." />
+<meta name="twitter:image" content="https://how-ocr-works.com/pen-scanners/pen-scanners/pen-scanner-on-paper1.jpg" />
+
+<meta property="og:site_name" content="How OCR Works | A Close Look at Optical Character Recognition" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="A Pen Scanner, Anyone? | How OCR Works" />
+<meta property="og:description" content="Learn all about pen scanners, a handy, instantaneous OCR application with a twist." />
+<meta property="og:url" content="https://how-ocr-works.com/pen-scanners/pen-scanners.html" />
+<meta property="og:image" content="https://how-ocr-works.com/pen-scanners/pen-scanners/pen-scanner-on-paper1.jpg" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="335" />
+<meta property="og:image:height" content="229" />
+
+<meta name="subject" content="Optical Character Recognition (OCR)" />
+
+<meta name="googlebot" content="all" />
+<meta name="bingbot" content="all" />
+<meta name="robots" content="all" />
+
+<link rev="made" href="mailto:ivo.vynckier@telenet.be" title="Ivo Vynckier" />
+<link rev="made" href="mailto:webmaster@how-ocr-works.com" title="Ivo Vynckier" />
+
+<meta name="reply-to" content="ivo.vynckier@telenet.be" />
+<meta name="reply-to" content="webmaster@how-ocr-works.com" />
+
+<meta name="author" content="Ivo Vynckier" />
+
+<meta name="generator" content="Notepad++" />
+
+<meta name="copyright" content="&copy; Ivo Vynckier. All rights reserved" />
+
+<meta name="rating" content="general" />
+<meta name="rating" content="safe for kids" />
+
+<link href="../website.css" rel="stylesheet" media="all" />
+<link href="//fonts.googleapis.com/css?family=Special Elite" rel="stylesheet" type="text/css" />
+
+<link href="../favicon.ico" rel="icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDERQSN9SP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TDERQSN9SP');
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<meta itemprop="isFamilyFriendly" content="True" />
+<meta itemprop="inLanguage" content="en" />
+
+<bgsound src="../index/typewriter2.wma" volume="0" loop="1" />
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div itemprop="breadcrumb">
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="../index.html">Home page</a></td>
+<td><a href="../intro/intro.html">Intro</a></td>
+<td><a href="../scanners/scanners.html">Scanners</a></td>
+<td><a href="../images/images.html">Images</a></td>
+<td><a href="../history/history.html">History</a></td>
+<td><a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a></td>
+<td><a href="../languages/languages.html">Languages</a></td>
+</tr>
+<tr>
+<td><a href="../accuracy/accuracy.html">Accuracy</a></td>
+<td><a href="../output/output.html">Output</a></td>
+<td><a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a></td>
+<td><selected-page><a href="pen-scanners.html">Pen scanners</a></selected-page></td>
+<td><a href="../sitemap.html">Sitemap</a></td>
+<td><a href="../search.html">Search</a></td>
+<td><a href="../contact.html">Contact &ndash; Feedback</a></td>
+</tr>
+</table>
+</div>
+
+</div>
+
+<h1>A Pen Scanner, Anyone?</h1>
+
+<p>
+So far, we know how to recognize full pages with a 
+<a href="../scanners/scanners.html" target="_blank">scanner</a> 
+and an 
+<a href="../OCR/OCR.html" target="_blank"><abbr title="Optical Character Recognition">OCR</abbr> package</a>, 
+and we know how to 
+<a href="../BCR/BCR.html" target="_blank">convert business cards</a> 
+into address records. The 
+<span itemprop="keywords">pen scanners</span> we 
+mentioned a few times are a completely different 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+application.
+</p>
+
+<p>
+Pen scanners are designed to directly enter printed (or 
+typed) text from magazines, newspapers, catalogues, 
+brochures, letters, memos <abbr title="etcetera">etc.</abbr> 
+into any Windows or macOS application.
+</p>
+
+<p>
+The user loads the pen scanner software in the background 
+where it stays resident. When he wants to enter some text, 
+he simply slides the pen-sized scanner over the text line. 
+The scanned image is transmitted to the computer: the 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software recognizes the characters and inserts the 
+recognized text in the active Windows or macOS application 
+at the cursor position.
+</p>
+
+<p align="center">
+<img itemprop="primaryImageOfPage" src="pen-scanners/pen-scanner-on-paper1.jpg" alt="Pen scanner on a paper document" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="pen-scanners/pen-scanner-on-paper2.jpg" alt="Pen scanner on a paper document" border="0" />
+</p>
+
+<p>
+All this is done instantaneously, with unprecedented 
+<strong>speed</strong>: on any recent computer, it takes 
+no more than a fraction of a second for the text to appear 
+on your screen!
+</p>
+
+<p>
+In other words, pen scanners are not appropriate to capture 
+entire documents or complete pages of text, but they capture 
+<strong>text snippets</strong> very efficiently. 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+packages are designed to read large volumes of text, pen 
+scanners are optimized tools that read small bits of text 
+&mdash; instantaneously and in any application.
+</p>
+
+<p>
+You may be under the impression that there&rsquo;s no huge 
+need for such a tool. Or you feel that pen scanners are 
+nothing more than a small but portable 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+solution, a cheap but inefficient version of the traditional 
+pair scanner plus 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software. Well, you&rsquo;re wrong. I&rsquo;ll discuss some 
+typical applications that benefit so obviously from the use 
+of a pen scanner, and I&rsquo;ll show how the unbeaten 
+<strong>versatility</strong> of a pen scanner can make all 
+the difference in the world!
+</p>
+
+<p>
+Pen scanners are good at very specific and advanced 
+applications that standard 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software won&rsquo;t handle. They can for instance be used 
+by bank tellers to encode the 
+<a href="../history/history.html#Checks" target="_blank">codelines on checks</a> 
+automatically. (Remember what we said about the 
+banking fonts 
+<a href="https://en.wikipedia.org/wiki/OCR-A" target="_blank" title="Wikipedia page on the font OCR-A"><abbr title="Optical Character Recognition">OCR</abbr>-A</a>, 
+<a href="https://en.wikipedia.org/wiki/OCR-B" target="_blank" title="Wikipedia page on the font OCR-B"><abbr title="Optical Character Recognition">OCR</abbr>-B</a>, 
+<a href="https://en.wikipedia.org/wiki/Magnetic_ink_character_recognition" target="_blank" title="Wikipedia page on magnetic ink character recognition (&ldquo;MICR&rdquo;)">E13B</a> 
+and 
+<a href="https://en.wikipedia.org/wiki/Magnetic_ink_character_recognition" target="_blank" title="Wikipedia page on magnetic ink character recognition (&ldquo;MICR&rdquo;)">CMC-7</a>?)
+</p>
+
+<p>
+The obvious applications are: entering data (addresses 
+<abbr title="etcetera">etc.</abbr>) in a database, entering 
+figures in spreadsheets, entering small text portions in 
+word processors (think of students in a library), entering 
+text and figures in data administration software, reading 
+numbers on forms and <abbr title="identification">ID</abbr> 
+cards, journalists highlighting relevant excerpts from press 
+releases <abbr title="etcetera">etc.</abbr>
+</p>
+
+<p>
+The list of supported applications is really endless! 
+That&rsquo;s because pen scanners really work with 
+<i>any</i> Windows and macOS application. Wherever your 
+text cursor blinks in a Windows or macOS 
+<strong>application</strong>, the pen scanner can insert 
+characters. Basically, the pen scanner establishes a 
+&ldquo;copy and paste&rdquo; operation: it copies the text 
+from your paper document to your Windows and macOS 
+application.
+</p>
+
+<p>
+Imagine you have to write a report. Your pen scanner 
+copies excerpts from books, magazines, newspapers and 
+typed or printed matter, and enters them directly in your 
+<strong itemprop="keywords">word processor</strong> 
+at the cursor position.
+</p>
+
+<p>
+And where&rsquo;s the benefit compared to an 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+package? If you have to enter small portions of text into 
+a word processor, a pen scanner is your ideal partner. 
+Even a traditional 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+solution is no competition when it comes to scanning 
+excerpts and abstracts. To read a few lines of text, 
+you&rsquo;d have to scan an entire page with your 
+<a href="../scanners/peripherals.html" target="_blank">flatbed scanner</a>, 
+draw a frame around the text snippet to be recognized, 
+wait until the recognition is executed, then transfer 
+the text result to your word processor&hellip;
+</p>
+
+<p>
+Pen scanners on the other hand offers <strong>real-time 
+recognition</strong>. Slide your pen over your text and 
+in less than a second, it appears on your screen. Now 
+that&rsquo;s text recognition at your fingertips!
+</p>
+
+<p>
+Mind you, this does not only mean that you can 
+automatically enter text in your word processor, say, in 
+a Microsoft Word document. You can also enter text or 
+figures in for instance your address book, in text 
+editors such as WordPad (Windows) and TextEdit (macOS), 
+in database fields (think Microsoft Access, FileMaker, 
+Sage Act! <abbr title="etcetera">etc.</abbr>), in 
+book-keeping software and of course in popular 
+applications such as the spreadsheet Microsoft Excel.
+</p>
+ 
+ <p>
+Let&rsquo;s have a closer look at the way one uses pen 
+scanners with spreadsheets. What&rsquo;s the unique angle 
+here? Pen scanners are capable of entering numbers faster 
+and more accurately than any human being can. Think of 
+scanning serial numbers on labels, on forms 
+<abbr title="etcetera">etc.</abbr> Entering serial numbers 
+of up to 30 characters takes about 2 seconds. It&rsquo;s a 
+text book example of &ldquo;machine beats man&rdquo;!
+</p>
+
+<p>
+With a flatbed scanner, you&rsquo;d never consider using 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+because it isn&rsquo;t worth the bother to recapture some 
+30 characters. And entering the number manually would take 
+you, say, between 30 and 45 seconds. Or even more: in 
+high-accuracy contexts, such numbers get entered twice, 
+once from left to right and a second time from right to 
+left. (This method is called &ldquo;double data 
+entry&rdquo;.) Here&rsquo;s an example where a pen scanner 
+is your only chance of avoiding laborious and error-prone 
+manual entry.
+</p>
+
+<p>
+And oh &mdash; now that we mention serial numbers: the 
+agility of a pen scanner is such that you can scan text 
+from the corners of books, from bottles 
+<abbr title="etcetera">etc.</abbr>, very much like you 
+use a bar code reader. Again, this kind of flexibility 
+cannot be obtained with a flatbed scanner, not to speak 
+of 
+<a href="../scanners/peripherals.html#Sheetfed" target="_blank">sheetfed scanners</a> 
+that only cope with separate pages. As soon as you have 
+to scan text from <strong>physical</strong>, non-flat 
+<strong>objects</strong>, pen scanners offer a unique 
+solution. Pen scanners are a 
+&ldquo;<abbr title="three-dimensional">3D</abbr>&rdquo; 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+product, you might say&hellip;
+</p>
+
+<p>
+Here&rsquo;s another tip: pen scanners can filter and 
+complete the recognized text for you, which no 
+&ldquo;traditional&rdquo; 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+package will ever do. For instance, you encode price 
+lists where you eliminiate the currency from the figures 
+you recognize. You&rsquo;ll ignore the &ldquo;&#36;&rdquo; 
+symbol, because you want to enter some numeric data in a 
+spreadsheet. The figures are relevant, the currency 
+isn&rsquo;t. Scan &ldquo;&#36;2.99&rdquo; and 
+&ldquo;2.99&rdquo; gets entered in the worksheet. To do 
+the same thing with a text generated by an 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+package, you&rsquo;d have to develop a macro and run it 
+on the recognized text. There&rsquo;s an extra step 
+required in any case…
+</p>
+
+<p>
+So, how about 
+<strong itemprop="keywords">databases</strong>? With a 
+pen scanner, the cursor repositions itself in the next 
+field, ready for the next scan. Imagine you want to 
+add addresses to your contact manager. You scan the 
+company name, the pen scanner puts the company in the 
+corresponding field and relocates the cursor in the name 
+field. You can go on with the person&rsquo;s name, his 
+title, the address, telephone and fax number 
+<abbr title="etcetera">etc.</abbr> without having to 
+reposition the cursor each time using the keyboard or 
+mouse.
+</p>
+
+<p align="center">
+<img src="pen-scanners/database.png" alt="Use of pen scanner inside a database" border="0" />
+</p>
+
+<p>
+Here again, a &ldquo;standard&rdquo; 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+package falls short of this task as it does not allow you 
+to insert data <i>directly</i> in a database field. 
+You&rsquo;d have to generate a structured text file which 
+you import into your database later on. And who&rsquo;s 
+going to bother with that when you&rsquo;ve only got a 
+few addresses to enter?
+</p>
+
+<p>
+Encode last minute data from the stock exchange into your 
+notebook before you have that brainstorm with your director. 
+And why not enter your appointments in your office software 
+automatically? Rule the pen scanner over your visitor&rsquo;s 
+business card to put him in your personal organizer. Or fix 
+that meeting right away in your electronic agenda.
+</p>
+
+<p>
+Entering checks, invoices, bank statements 
+<abbr title="etcetera">etc.</abbr> is a cinch: the pen 
+scanner copies your numeric data directly into your database, 
+spreadsheet and book-keeping software.
+</p>
+
+<p>
+The key to the &ldquo;universality&rdquo; of pen scanners is 
+their <strong>keyboard emulation</strong>. A pen scanner 
+effectively replaces your keyboard by imitating keyboard 
+strokes as soon as the application runs in the background, 
+so you can use this tool to insert text wherever you have a 
+text cursor on your Windows 
+<abbr title="Personal Computer">PC</abbr> or Macintosh 
+computer.
+</p>
+
+<p>
+Some pen scanners even read <strong>bar codes</strong> and 
+<a href="../OCR/word-character-segmentation.html#Handwritten" target="_blank">handprinted data</a>. 
+Why would you bother install a bar code reader on your 
+computer when you&rsquo;ve already got a pen scanner 
+connected? Reading <strong>handprinting</strong> is useful 
+to enter handwritten serial numbers, dates 
+<abbr title="etcetera">etc.</abbr>
+</p>
+
+<p><span class="small"><a href="pen-scanners.html">Back to top</a></span></p>
+
+<p><a href="../contact.html#Form" target="_blank">Submit feedback</a></p>
+
+<p>
+<a href="https://www.pinterest.com/pin/create/button/" class="pin-it-button" data-pin-do="buttonPin" data-pin-config="beside"><img src="https://assets.pinterest.com/images/pidgets/pin_it_button.png" alt="Pin it" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="Pen scanners: a handy, instantaneous OCR application with a twist!" data-related="ivovynckier" data-lang="en">Tweet</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<script src="http://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-counter="right"></script>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<fb:like layout="standard" action="like" show_faces="false" share="true"></fb:like>
+</p>
+
+<script type="text/javascript">
+(function (w, d, load) {
+  var script, 
+  first = d.getElementsByTagName('SCRIPT')[0],  
+  n = load.length, 
+  i = 0,
+  go = function () {
+    for (i = 0; i < n; i = i + 1) {
+      script = d.createElement('SCRIPT');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = load[i];
+      first.parentNode.insertBefore(script, first);
+    }
+  }
+  if (w.attachEvent) {
+    w.attachEvent('onload', go);
+  } else {
+    w.addEventListener('load', go, false);
+  }
+}(window, document, 
+  ['//assets.pinterest.com/js/pinit.js']
+));    
+</script>
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+if(!d.getElementById(id)){js=d.createElement(s);
+js.id=id;
+js.src="https://platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+
+<div itemprop="breadcrumb">
+<div class="small">
+
+<p align="center">
+<a href="../BCR/BCR.html">Previous section</a> 
+</p>
+
+<p align="center">
+<a href="../index.html">Home page</a> &mdash;
+<a href="../intro/intro.html">Intro</a> &mdash;
+<a href="../scanners/scanners.html">Scanners</a> &mdash;
+<a href="../images/images.html">Images</a> &mdash;
+<a href="../history/history.html">History</a> &mdash;
+<a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a> &mdash;
+<a href="../languages/languages.html">Languages</a> &mdash;
+<a href="../accuracy/accuracy.html">Accuracy</a> &mdash;
+<a href="../output/output.html">Output</a> &mdash;
+<a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a> &mdash;
+<a href="pen-scanners.html">Pen scanners</a> &mdash;
+<a href="../sitemap.html">Sitemap</a> &mdash;
+<a href="../search.html">Search</a> &mdash;
+<a href="../contact.html">Feedback &ndash; Contact</a>
+</p>
+
+</div>
+</div>
+
+</body>
+
+</html>

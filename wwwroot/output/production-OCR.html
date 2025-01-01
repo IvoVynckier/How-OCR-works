@@ -1,0 +1,424 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+
+<title>Converting Document Collections | How OCR Works</title>
+
+<link rel="prev" href="table-recognition.html" />
+
+<meta name="description" content="Production OCR uses batch OCR 
+and watched folders to convert document collections swiftly into 
+editable, searchable documents." />
+
+<meta name="keywords" content="production OCR, batch OCR, watched folders, 
+document feeders, ADFs, production scanners, Optical Character Recognition, OCR" />
+
+<meta name="twitter:widgets:csp" content="on">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://how-ocr-works.com/output/production-OCR.html" />
+<meta name="twitter:title" content="Converting Document Collections | How OCR Works" />
+<meta name="twitter:description" content="Discover how production OCR converts large document collections efficiently into editable, searchable documents." />
+<meta name="twitter:image" content="https://how-ocr-works.com/output/production-OCR/watched-folder.png" />
+
+<meta property="og:site_name" content="How OCR Works | A Close Look at Optical Character Recognition" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="Converting Document Collections | How OCR Works" />
+<meta property="og:description" content="Discover how production OCR converts large document collections efficiently into editable, searchable documents." />
+<meta property="og:url" content="https://how-ocr-works.com/output/production-OCR.html" />
+<meta property="og:image" content="https://how-ocr-works.com/output/production-OCR/watched-folder.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="649" />
+<meta property="og:image:height" content="337" />
+
+<meta name="subject" content="Optical Character Recognition (OCR)" />
+
+<meta name="googlebot" content="all" />
+<meta name="bingbot" content="all" />
+<meta name="robots" content="all" />
+
+<link rev="made" href="mailto:ivo.vynckier@telenet.be" title="Ivo Vynckier" />
+<link rev="made" href="mailto:webmaster@how-ocr-works.com" title="Ivo Vynckier" />
+
+<meta name="reply-to" content="ivo.vynckier@telenet.be" />
+<meta name="reply-to" content="webmaster@how-ocr-works.com" />
+
+<meta name="author" content="Ivo Vynckier" />
+
+<meta name="generator" content="Notepad++" />
+
+<meta name="copyright" content="&copy; Ivo Vynckier. All rights reserved" />
+
+<meta name="rating" content="general" />
+<meta name="rating" content="safe for kids" />
+
+<link href="../website.css" rel="stylesheet" media="all" />
+<link href="//fonts.googleapis.com/css?family=Special Elite" rel="stylesheet" type="text/css" />
+
+<link href="../favicon.ico" rel="icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDERQSN9SP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TDERQSN9SP');
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<meta itemprop="isFamilyFriendly" content="True" />
+<meta itemprop="inLanguage" content="en" />
+
+<bgsound src="../index/typewriter2.wma" volume="0" loop="1" />
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div itemprop="breadcrumb">
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="../index.html">Home page</a></td>
+<td><a href="../intro/intro.html">Intro</a></td>
+<td><a href="../scanners/scanners.html">Scanners</a></td>
+<td><a href="../images/images.html">Images</a></td>
+<td><a href="../history/history.html">History</a></td>
+<td><a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a></td>
+<td><a href="../languages/languages.html">Languages</a></td>
+</tr>
+<tr>
+<td><a href="../accuracy/accuracy.html">Accuracy</a></td>
+<td><selected-page><a href="output.html">Output</a></selected-page></td>
+<td><a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a></td>
+<td><a href="../pen-scanners/pen-scanners.html">Pen scanners</a></td>
+<td><a href="../sitemap.html">Sitemap</a></td>
+<td><a href="../search.html">Search</a></td>
+<td><a href="../contact.html">Contact &ndash; Feedback</a></td>
+</tr>
+</table>
+</div>
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="output.html">Output</a></td>
+<td><a href="PDF-output.html"><abbr title="Portable Document Format">PDF</abbr> output</a></td>
+<td><a href="formatting.html">Formatting</a></td>
+<td><a href="table-recognition.html">Tables</a></td>
+<td><selected-page><a href="production-OCR.html">Production <abbr title="Optical Character Recognition">OCR</abbr></a></selected-page></td>
+</tr>
+</table>
+</div>
+
+</div>
+
+<h1>Converting Document Collections</h1>
+
+<p>
+We&rsquo;re now familiar with the power of 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+technology and we&rsquo;re aware of the flexibility we 
+have on the 
+<a href="output.html" target="_blank">output side</a>. 
+But doesn&rsquo;t it take a little extra when you have 
+to convert large volumes of documents? Yes, it does, and 
+&ldquo;<strong itemprop="keywords">production 
+<abbr title="Optical Character Recognition">OCR</abbr></strong>&rdquo; 
+provides the answer!
+</p>
+
+<p>
+High-end 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software, usually called &ldquo;Pro&rdquo; or 
+&ldquo;Corporate&rdquo;,  combines the features 
+of &ldquo;basic&rdquo; software with extra 
+functionality: think of user lexicons that 
+&ldquo;boost&rdquo; the recognition accuracy further, 
+the support of duplex scanners and high-end flatbed 
+scanners (Canon, Fujitsu 
+<abbr title="etcetera">etc.</abbr>).
+</p>
+
+<p>
+But more important are advanced options for the saving of 
+graphics and improved control over the 
+<a href="PDF-output.html" target="_blank">Adobe Acrobat <abbr title="Portable Document Format">PDF</abbr> output</a>. 
+When entire document collections get recaptured, the 
+<strong>file size</strong> of your output becomes an issue. 
+Can you select the 
+<a href="../OCR/color-modes.html" target="_blank">color mode</a> 
+(color or black-and-white) of your graphics? 
+Can you choose the 
+<a href="https://en.wikipedia.org/wiki/Image_resolution" target="_blank" title="Wikipedia page on image resolution">resolution</a> 
+or determine the 
+<a href="../images/compression.html#JPEG" target="_blank"><abbr title="Joint Photographic Experts Group">JPEG</abbr> quality</a> 
+of the graphics? Can you save the images stored inside 
+<abbr title="Portable Document Format">PDF</abbr> files as 
+<strong itemprop="keywords"><abbr title="Joint Photographic Experts Group">JPEG</abbr> 2000 images</strong> 
+(generally speaking twice as compact as &ldquo;normal&rdquo; 
+<abbr title="Joint Photographic Experts Group">JPEG</abbr> 
+files)?
+</p>
+
+<p align="center">
+<img src="production-OCR/image-compression.png" alt="Image compression options of production OCR software" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="production-OCR/JPEG2000-compression.png" alt="JPEG2000 compression options of production OCR software" border="0" />
+</p>
+
+<p>
+When the recognized documents get posted on a web site 
+as <abbr title="HyperText Markup Language">HTML</abbr> 
+files, you may want to reduce the graphics to screen 
+resolution (72 <abbr title="dots per inch">dpi</abbr>), 
+for instance. Let&rsquo;s give another example: you 
+generate &ldquo;image-text&rdquo; 
+<abbr title="Portable Document Format">PDF</abbr> files 
+with bilevel graphics: you store the images in 
+<a href="../images/compression.html#TIFF" target="_blank">Group 4 compressed <abbr title="Tagged Image File Format">TIFF</abbr> files</a>. 
+But save the same scans as color images and you 
+store 
+<abbr title="Joint Photographic Experts Group">JPEG</abbr> 
+files by default with a high (0.8) quality. Or as 
+<a href="https://en.wikipedia.org/wiki/JPEG_2000" target="_blank" title="Wikipedia page on JPEG 2000"><abbr title="Joint Photographic Experts Group">JPEG</abbr> 2000</a> 
+images for an optimal use of the available disk 
+space&hellip;
+</p>
+
+<p>
+Other than that, the 
+&ldquo;<strong itemprop="keywords">workflow</strong>&rdquo; 
+of production 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+is different: you&rsquo;ll find such features as 
+&ldquo;batch 
+<abbr title="Optical Character Recognition">OCR</abbr>&rdquo; 
+and the use of a &ldquo;watched folder&rdquo;.
+</p>
+
+<p>
+<strong itemprop="keywords">Batch <abbr title="Optical Character Recognition">OCR</abbr></strong> 
+executes recognition in automatic mode on large document 
+collections saved in a specific folder. You can scan by 
+day and read by night&hellip; Acquire all documents to be 
+recognized; when you&rsquo;re done, run the batch 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+and leave your 
+<abbr title="Personal Computer">PC</abbr> to it. When you 
+return the next day, all the documents have been 
+recognized!
+</p>
+
+<p align="center">
+<img src="production-OCR/batch-OCR.png" alt="Control panel to set up batch OCR" border="0" />
+</p>
+
+<p>
+When you set up a 
+<strong itemprop="keywords">watched folder</strong>, 
+a specific folder is being &ldquo;supervised&rdquo;, 
+monitored. Any image that gets placed or dropped in it 
+gets recognized promptly.
+</p>
+
+<p>
+With batch 
+<abbr title="Optical Character Recognition">OCR</abbr>, 
+the 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software executes one run on the images in a folder; when 
+the images are processed, it&rsquo;s over and out&hellip; 
+With a watched folder, the software systematically executes 
+the recognition on all image files that get dropped in any 
+of the monitored folders. You can call it text recognition 
+in &ldquo;Pacman style&rdquo;. Whatever you throw at the 
+software gets eaten immediately. If the system stops for a 
+while, throw some new wood on the fire and the sparks start 
+flying again &rsquo;coz the beast is always hungry&hellip;
+</p>
+
+<p>
+You can leave the 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+&ldquo;server&rdquo; running day after day&hellip; Acquire 
+new documents each day and they will be converted in to 
+editable text files.
+</p>
+
+<p>
+Set up as many watched folders as you need: one folder may 
+produce, say, compact 
+<abbr title="Portable Document Format">PDF</abbr> documents 
+in English that get posted on your Extranet in the cloud, 
+another creates German Microsoft Word files to be edited 
+further. These are saved on a network drive. Or exported 
+to Google Drive.
+</p>
+
+<p align="center">
+<img itemprop="primaryImageOfPage" src="production-OCR/watched-folder.png" alt="Control panel to set up a watched folder" border="0" />
+</p>
+ 
+<p>
+As you can see, such software usually comes with slick 
+features that detect where one document ends and the next 
+begins. A timeout is just one method to detect the end of 
+a document: if the contents of a watched folder don&rsquo;t 
+change for, say, 30 seconds, that means you&rsquo;ve 
+completed the scanning of a document. Whatever the file 
+names of your images may be, that collection of images gets 
+seen as one document.
+</p>
+
+<p>
+Obviously, it takes a scanner with a 
+<strong itemprop="keywords">document feeder</strong> 
+(&ldquo;<abbr title="Automdatic Document Feeder">ADF</abbr>&rdquo;) 
+or a high-speed document scanners (or &ldquo;production 
+scanners&rdquo;) to process real volumes efficiently. When 
+you dispose of a document feeder, the operator doesn&rsquo;t 
+have to place the pages individually on the glass plate. 
+(Some scanners can optionally be equipped with an 
+&ldquo;add-on&rdquo; document feeder for say, up to 50 pages, 
+the faster models come with an in-built feeder that can hold 
+up to, say, 100 pages.)
+</p>
+
+<p align="center">
+<img src="../scanners/scanners/image-scanner2.jpg" alt="Image scanner with ADF (Automatic Document Feeder)" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="production-OCR/document-scanner.jpg" alt="High-speed document scanner" border="0" />
+</p>
+
+<p>
+The 
+&ldquo;<strong itemprop="keywords">production scanners</strong>&rdquo;, 
+equipped with document feeders of up to 500 pages, can 
+be pretty sophisticated: some dispose of mechanisms to 
+prevent the scanner from taking in two pages at a time! 
+One control mechanism weighs paper sheets, another checks 
+the thickness of the paper and a third measures the light 
+that penetrates the paper. Obviously, these methods only 
+work when homogeneous documents get scanned: if different 
+kinds of paper are used, the detection won&rsquo;t work. 
+That&rsquo;s why some scanner use ultrasonic sensors: 
+these can verify that the signal was reflected by only 
+one surface &mdash; whatever the paper&rsquo;s color and 
+thickness may be.
+</p>
+
+<p><span class="small"><a href="production-OCR.html">Back to top</a></span></p>
+
+<p><a href="../contact.html#Form" target="_blank">Submit feedback</a></p>
+
+<p>
+<a href="https://www.pinterest.com/pin/create/button/" class="pin-it-button" data-pin-do="buttonPin" data-pin-config="beside"><img src="https://assets.pinterest.com/images/pidgets/pin_it_button.png" alt="Pin it" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="Production OCR uses batch OCR and watched folders to convert document collections into editable, searchable documents" data-related="ivovynckier" data-lang="en">Tweet</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<script src="http://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-counter="right"></script>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<fb:like layout="standard" action="like" show_faces="false" share="true"></fb:like>
+</p>
+
+<script type="text/javascript">
+(function (w, d, load) {
+  var script, 
+  first = d.getElementsByTagName('SCRIPT')[0],  
+  n = load.length, 
+  i = 0,
+  go = function () {
+    for (i = 0; i < n; i = i + 1) {
+      script = d.createElement('SCRIPT');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = load[i];
+      first.parentNode.insertBefore(script, first);
+    }
+  }
+  if (w.attachEvent) {
+    w.attachEvent('onload', go);
+  } else {
+    w.addEventListener('load', go, false);
+  }
+}(window, document, 
+  ['//assets.pinterest.com/js/pinit.js']
+));    
+</script>
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+if(!d.getElementById(id)){js=d.createElement(s);
+js.id=id;
+js.src="https://platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+
+<div itemprop="breadcrumb">
+<div class="small">
+
+<p align="center">
+<a href="table-recognition.html">Previous page</a> 
+&mdash;
+<a href="../BCR/BCR.html">Next section</a>
+</p>
+
+<p align="center">
+<a href="output.html">Going places with the recognized text</a> &mdash;
+<a href="PDF-output.html">More about Adobe Acrobat <abbr title="Portable Document Format">PDF</abbr> output</a> &mdash;
+<a href="formatting.html">Does <abbr title="Optical Character Recognition">OCR</abbr> software format the text?</a> &mdash;
+<a href="table-recognition.html">Does <abbr title="Optical Character Recognition">OCR</abbr> software recognize tables?</a> &mdash;
+<a href="production-OCR.html">Converting document collections</a>
+</p>
+
+<p align="center">
+<a href="../index.html">Home page</a> &mdash;
+<a href="../intro/intro.html">Intro</a> &mdash;
+<a href="../scanners/scanners.html">Scanners</a> &mdash;
+<a href="../images/images.html">Images</a> &mdash;
+<a href="../history/history.html">History</a> &mdash;
+<a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a> &mdash;
+<a href="../languages/languages.html">Languages</a> &mdash;
+<a href="../accuracy/accuracy.html">Accuracy</a> &mdash;
+<a href="output.html">Output</a> &mdash;
+<a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a> &mdash;
+<a href="../pen-scanners/pen-scanners.html">Pen scanners</a> &mdash;
+<a href="../sitemap.html">Sitemap</a> &mdash;
+<a href="../search.html">Search</a> &mdash;
+<a href="../contact.html">Feedback &ndash; Contact</a>
+</p>
+
+</div>
+</div>
+
+</body>
+
+</html>

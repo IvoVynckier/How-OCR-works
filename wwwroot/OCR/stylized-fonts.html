@@ -1,0 +1,517 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+
+<title>Stylized Fonts | How OCR Works</title>
+
+<link rel="prev" href="word-character-segmentation.html" />
+<link rel="next" href="omnifont-OCR.html" />
+
+<meta name="description" content="Discover what makes stylized fonts 
+and Gothic letters illegible for OCR software." />
+
+<meta name="keywords" content="stylized fonts, character segmentation, 
+Gothic fonts, blackletters, Fraktur, gebrochene Schriften, minims, 
+ambigrams, John Langdon, Dan Brown, Robert Langdon, 
+Optical Character Recognition, OCR" />
+
+<meta name="twitter:widgets:csp" content="on">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://how-ocr-works.com/OCR/stylized-fonts.html" />
+<meta name="twitter:title" content="Stylized Fonts | How OCR Works" />
+<meta name="twitter:description" content="Discover what makes stylized fonts and Gothic letters illegible for OCR software." />
+<meta name="twitter:image" content="https://how-ocr-works.com/OCR/stylized-fonts/ambigram2.png" />
+
+<meta property="og:site_name" content="How OCR Works | A Close Look at Optical Character Recognition" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="Stylized Fonts | How OCR Works" />
+<meta property="og:description" content="Discover what makes stylized fonts and Gothic letters illegible for OCR software." />
+<meta property="og:url" content="https://how-ocr-works.com/OCR/stylized-fonts.html" />
+<meta property="og:image" content="https://how-ocr-works.com/OCR/stylized-fonts/ambigram2.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="562" />
+<meta property="og:image:height" content="194" />
+
+<meta name="subject" content="Optical Character Recognition (OCR)" />
+
+<meta name="googlebot" content="all" />
+<meta name="bingbot" content="all" />
+<meta name="robots" content="all" />
+
+<link rev="made" href="mailto:ivo.vynckier@telenet.be" title="Ivo Vynckier" />
+<link rev="made" href="mailto:webmaster@how-ocr-works.com" title="Ivo Vynckier" />
+
+<meta name="reply-to" content="ivo.vynckier@telenet.be" />
+<meta name="reply-to" content="webmaster@how-ocr-works.com" />
+
+<meta name="author" content="Ivo Vynckier" />
+
+<meta name="generator" content="Notepad++" />
+
+<meta name="copyright" content="&copy; Ivo Vynckier. All rights reserved" />
+
+<meta name="rating" content="general" />
+<meta name="rating" content="safe for kids" />
+
+<link href="../website.css" rel="stylesheet" media="all" />
+<link href="//fonts.googleapis.com/css?family=Special Elite" rel="stylesheet" type="text/css" />
+<link href="//fonts.googleapis.com/css?family=Dynalight" rel="stylesheet" type="text/css" />
+<link href="//fonts.googleapis.com/css?family=Plaster" rel="stylesheet" type="text/css" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet"> 
+
+<link href="../favicon.ico" rel="icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDERQSN9SP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TDERQSN9SP');
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<meta itemprop="isFamilyFriendly" content="True" />
+<meta itemprop="inLanguage" content="en" />
+
+<bgsound src="../index/typewriter2.wma" volume="0" loop="1" />
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div itemprop="breadcrumb">
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="../index.html">Home page</a></td>
+<td><a href="../intro/intro.html">Intro</a></td>
+<td><a href="../scanners/scanners.html">Scanners</a></td>
+<td><a href="../images/images.html">Images</a></td>
+<td><a href="../history/history.html">History</a></td>
+<td><selected-page><a href="OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a></selected-page></td>
+<td><a href="../languages/languages.html">Languages</a></td>
+</tr>
+<tr>
+<td><a href="../accuracy/accuracy.html">Accuracy</a></td>
+<td><a href="../output/output.html">Output</a></td>
+<td><a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a></td>
+<td><a href="../pen-scanners/pen-scanners.html">Pen scanners</a></td>
+<td><a href="../sitemap.html">Sitemap</a></td>
+<td><a href="../search.html">Search</a></td>
+<td><a href="../contact.html">Contact &ndash; Feedback</a></td>
+</tr>
+</table>
+</div>
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="OCR.html">Recognition steps</a></td>
+<td><a href="color-modes.html">Color modes</a></td>
+<td><a href="binarization.html">Binarization</a></td>
+</tr>
+<tr>
+<td><a href="page-analysis.html">Page analysis</a></td>
+<td><a href="line-segmentation.html">Line segmentation</a></td>
+<td><a href="word-character-segmentation.html">Word-character segmentation</a></td>
+</tr>
+<tr>
+<td><selected-page><a href="stylized-fonts.html">Stylized fonts</a></selected-page></td>
+<td><a href="omnifont-OCR.html">Omnifont <abbr title="Optical Character Recognition">OCR</abbr></a></td>
+<td><a href="linguistics.html">The role of linguistics</a></td>
+</tr>
+</table>
+</div>
+
+</div>
+
+<h1><span itemprop="keywords">Stylized Fonts</span></h1>
+
+<div class="small">
+<a href="#GothicFonts">Gothic fonts</a>
+</div>
+
+<p>
+Recognition of virtually any font is possible if the 
+system manages to isolate a sufficient number of 
+characters. 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software does <i>not</i> read extremely 
+<strong>stylized</strong>, &ldquo;script&rdquo;-like 
+<strong>fonts</strong>, where 
+<a href="word-character-segmentation.html" target="_blank">character segmentation</a> 
+is impossible.
+</p>
+
+<p align="center">
+<font face="Dynalight" size="14">
+<span style="line-height:110%">
+Is this a wedding invitation&hellip;
+</span>
+</font>
+</p>
+
+<p align="center">
+<img src="stylized-fonts/warnes.png" alt="Sentence in the Warnes font" border="0" />
+</p>
+
+(Calligraphic typefaces that look hanwritten tend 
+to imitate the natural joins 
+(&ldquo;<a href="word-character-segmentation.html#Ligatures" target="_blank">ligatures</a>&rdquo;) 
+of handwritten text.)
+
+<p align="center">
+<img src="stylized-fonts/stylized-font-ligatures.png" alt="Ligatures in a stylized, handwritten font" border="0" />
+</p>
+
+<p>
+Nor does it read  broken, &ldquo;army-style&rdquo; 
+fonts.
+</p>
+
+<p align="center">
+<img src="stylized-fonts/army-font.png" alt="Script font" border="0" />
+</p>
+
+<p align="center">
+<font face="Plaster" size="14">
+<span style="line-height:100%">
+Army-style
+</span>
+</font>
+<font face="Black Ops One" size="14">
+<span style="line-height:100%">
+stencil font
+</span>
+</font>
+</p>
+
+<p><span class="small"><a href="stylized-fonts.html">Back to top</a></span></p>
+
+<hr align="center" color="grey" noshade="noshade" size="0.25" />
+
+<a name="GothicFonts"></a>
+
+<h2>Gothic Fonts</h2>
+
+<p>
+<strong itemprop="keywords">Gothic fonts</strong> 
+&mdash; often called 
+&ldquo;<a itemprop="keywords" href="https://en.wikipedia.org/wiki/Fraktur" target="_blank" title="Wikipedia page on Fraktur">Fraktur</a>&rdquo; 
+or 
+&ldquo;<a itemprop="keywords" href="https://en.wikipedia.org/wiki/Blackletter" target="_blank" title="Wikipedia page on blackletters">blackletter</a>&rdquo; 
+and to a minor extent called &ldquo;gebrochene 
+Schriften&rdquo; (which is German for 
+&ldquo;broken scripts&rdquo;) &mdash; require special 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software. The challenge here is that every single 
+character is actually a highly stylized shape! 
+Blackletters get called &ldquo;broken scripts&rdquo; 
+because of the ornamental curls that &ldquo;break 
+up&rdquo; a character. Furthermore, thick vertical 
+strokes totally dominate the letter shapes with only 
+minimal horizontal strokes to link them 
+together&hellip;
+</p>
+
+<p align="center">
+<img src="stylized-fonts/gothic-font-word1.png" alt="Word in a Gothic font" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="stylized-fonts/gothic-font-word2.png" alt="Word in a Gothic font" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="stylized-fonts/gothic-font-letter.png" alt="Letter B in a Gothic font" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="stylized-fonts/gothic-font-letters.png" alt="Letters FR in a Gothic font" border="0" />
+</p>
+ 
+<p>
+To recognize blackletters, the diamond shapes you find 
+in the letters are often a dead giveaway.
+</p>
+
+<p align="center">
+<img src="stylized-fonts/gothic-font-diamond-serif.png" alt="Script font" border="0" />
+</p>
+
+<p>
+In the movies, those fonts are always associated with 
+nazi Germany. Think Indiana Jones, for instance! Not 
+that this is the historic truth: the printed 
+blackletters you see here are an imitation of the 
+Gothic fonts as they were handwritten in manuscripts. 
+The first blackletters appeared in French manuscripts 
+in the <abbr title="eleventh">11th</abbr> century and 
+were actually slow to spread in German-speaking areas. 
+Blackletters were widely used throughout Western Europe 
+in manuscripts from 1150 to 1500. The cultural 
+revolution called 
+<a href="https://en.wikipedia.org/wiki/Renaissance" target="_blank" title="Wikipedia page on the Renaissance">Renaissance</a> 
+put an end to their dominant role. The 
+<a href="https://en.wikipedia.org/wiki/Renaissance_Humanist" target="_blank" title="Wikipedia page on the Renaissance Humanists">Humanists</a> 
+called these fonts &ldquo;gothic&rdquo;, which means 
+&ldquo;barbaric&rdquo;: they believed it was a barbaric 
+script!
+</p>
+
+<p align="center">
+<img src="stylized-fonts/gothic-font-latin-manuscript1.jpg" alt="Gothic font in Latin manuscript" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="stylized-fonts/gothic-font-latin-manuscript2.jpg" alt="Gothic font in Latin manuscript" border="0" />
+</p>
+
+<p>
+We associate Gothic typefaces with Germany because the 
+Germans went on using those fonts when they had been 
+abandoned for centuries by the other languages! The 
+estimate is that Gothic fonts were used in 80&#37; of 
+the printed German documents from 1800 to 1941. In 1942, 
+the Nazi government in fact <i>abandoned</i> the then 
+dominant Fraktur font it is now unavoidably associated 
+with…
+</p>
+
+<p>
+Recognition of these fonts is all the more difficult 
+because there are many variations &mdash; and each 
+Gothic font really does look different. Blackletters 
+evolved differently in various regions; these are the 
+most common Gothic typefaces.
+</p>
+
+<p align="center">
+<img src="stylized-fonts/gothic-font-fraktur.png" alt="Gothic typeface Fraktur" border="0" />
+</p>
+
+<p align="center">
+<img src="stylized-fonts/gothic-font-kanzlei.png" alt="Gothic typeface Kanzlei" border="0" />
+</p>
+
+<p align="center">
+<img src="stylized-fonts/gothic-font-rotunda.png" alt="Gothic typeface Rotunda" border="0" />
+</p>
+
+<p align="center">
+<img src="stylized-fonts/gothic-font-textura.png" alt="Gothic typeface Textura" border="0" />
+</p>
+
+<p align="center">
+<img src="stylized-fonts/gothic-font-schwabacher.png" alt="Gothic typeface Schwabacher" border="0" />
+</p>
+
+<p>
+Actually, these fonts were adapted to the modern needs. 
+The Gothic fonts as you&rsquo;ll find them in medieval 
+manuscripts did not have any dots on the &ldquo;i&rdquo; 
+and &ldquo;j&rdquo; characters. And the vertical strokes 
+(&ldquo;<a href="https://en.wikipedia.org/wiki/Minim_(palaeography)" target="_blank" title="Wikipedia page on minims">minims</a>&rdquo;) 
+of the characters were even less connected to each other 
+than nowadays, wich made it very difficult to 
+distinguish the letters &ldquo;i&rdquo;, &ldquo;m&rdquo;, 
+&ldquo;n&rdquo; and &ldquo;u&rdquo;. Scholars have 
+detected the following passage in a Latin manuscript 
+from the <abbr title="fourteenth">14th</abbr> century.
+</p>
+
+<p align="center">
+<img src="stylized-fonts/gothic-line-illegible-fraktur-karolinus.png" alt="Illegible text with the Gothic typeface Fraktur Karolinus" border="0" />
+</p>
+
+<p>
+Difficult to read &mdash; even for human beings, 
+isn&rsquo;t it? Here&rsquo;s the text in a legible font: 
+&ldquo;Mimi numinum niuium minimi munium uini muniminum 
+imminui uiui minimum uolent&rdquo;. (And the translation 
+of this proverb is: &ldquo;The smallest mimes of the 
+gods of snow do not wish at all in their life that the 
+great duty of the defences of the wine be 
+diminished.&rdquo;) I&rsquo;m not kidding you!
+</p>
+
+<a name="Ambigrams"></a>
+
+<p>
+Given the high similarity of the various Gothic symbols, 
+it can be no surprise that they&rsquo;re used extensively 
+in 
+<a itemprop="keywords" href="https://en.wikipedia.org/wiki/Ambigram" target="_blank" title="Wikipedia page on ambigrams">ambigrams</a>. 
+Those are words that you can read the same way when 
+rotated by 180&deg;! The American typographer
+<a href="https://en.wikipedia.org/wiki/John_Langdon_(typographer)" target="_blank" title="Wikipedia page on typographer John Langdon">John Langdon</a> 
+basically invented them.
+</p>
+
+<p align="center">
+<img src="stylized-fonts/ambigram.gif" alt="Animated ambigram" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="stylized-fonts/ambigram1.png" alt="Ambigram (Earth)" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img itemprop="primaryImageOfPage" src="stylized-fonts/ambigram2.png" alt="Ambigram (Illuminati)" border="0" />
+</p>
+
+<div itemscope itemtype="http://schema.org/Movie">
+ 
+<meta itemprop="dateCreated" content="2006-05-17">
+ 
+<p>
+John Langdon is the reason why the symbology professor 
+of the 
+<a href="https://en.wikipedia.org/wiki/Dan_Brown" target="_blank" title="Wikipedia page on writer Dan Brown">Dan Brown</a> 
+detective novels is called 
+<a href="https://en.wikipedia.org/wiki/Robert_Langdon" target="_blank" title="Wikipedia page on Robert Langdon (symbology professor)">Robert Langdon</a>!
+</p>
+
+<p align="center">
+<img itemprop="image" src="stylized-fonts/the-da-vinci-code.jpg" alt="DVD cover of the Ron Howard movie &lsquo;The Da Vinci Code&rsquo;" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="stylized-fonts/angels-and-demons.jpg" alt="DVD cover of the Ron Howard movie &lsquo;Angels and Demons&rsquo;" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="stylized-fonts/inferno.jpg" alt="DVD cover of the Ron Howard movie &lsquo;Inferno&rsquo;" border="0" />
+</p>
+
+<meta itemprop="name" content="The Da Vinci Code" />
+<meta itemprop="director" content="Ron Howard" />
+<meta itemprop="keywords" content="Gothic fonts" />
+<meta itemprop="keywords" content="ambigrams" />
+
+</div>
+
+<p>
+Should you need to recognize documents with blackletters, 
+check if the font you want to read is supported before 
+you buy that 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software! The rare 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software that <i>does</i> read Gothic fonts is usually 
+limited to the Fraktur and Schwabacher fonts. (Although 
+the words &ldquo;Gothic&rdquo;, &ldquo;blackletter&rdquo; 
+and &ldquo;Fraktur&rdquo; commonly get used as synonyms, 
+strictly speaking, they are not the same concepts. 
+&ldquo;Fraktur&rdquo; is but a specific German Gothic 
+font among many others&hellip; Not to mention that this 
+font was actually created in the 
+<abbr title="sixteenth">16th</abbr> century on demand of 
+<a href="https://en.wikipedia.org/wiki/Maximilian_I,_Holy_Roman_Emperor" target="_blank" title="Wikipedia page on Emperor Maximilian I">Emperor Maximilian</a> 
+&mdash; the Gothic fonts had already been abandoned in 
+the non-German regions by then!)
+</p>
+ 
+<p><span class="small"><a href="stylized-fonts.html">Back to top</a></span></p>
+
+<p><a href="../contact.html#Form" target="_blank">Submit feedback</a></p>
+
+<p>
+<a href="https://www.pinterest.com/pin/create/button/" class="pin-it-button" data-pin-do="buttonPin" data-pin-config="beside"><img src="https://assets.pinterest.com/images/pidgets/pin_it_button.png" alt="Pin it" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="What makes stylized fonts illegible for OCR software? What are Gothic letters and ambigrams?" data-related="ivovynckier" data-lang="en">Tweet</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<script src="http://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-counter="right"></script>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<fb:like layout="standard" action="like" show_faces="false" share="true"></fb:like>
+</p>
+
+<script type="text/javascript">
+(function (w, d, load) {
+  var script, 
+  first = d.getElementsByTagName('SCRIPT')[0],  
+  n = load.length, 
+  i = 0,
+  go = function () {
+    for (i = 0; i < n; i = i + 1) {
+      script = d.createElement('SCRIPT');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = load[i];
+      first.parentNode.insertBefore(script, first);
+    }
+  }
+  if (w.attachEvent) {
+    w.attachEvent('onload', go);
+  } else {
+    w.addEventListener('load', go, false);
+  }
+}(window, document, 
+  ['//assets.pinterest.com/js/pinit.js']
+));    
+</script>
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+if(!d.getElementById(id)){js=d.createElement(s);
+js.id=id;
+js.src="https://platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+
+<div itemprop="breadcrumb">
+<div class="small">
+
+<p align="center">
+<a href="word-character-segmentation.html">Previous page</a> 
+&mdash;
+<a href="omnifont-OCR.html">Next page</a>
+</p>
+
+<p align="center">
+<a href="OCR.html">Let&rsquo;s take things step by step, shall we?</a> &mdash;
+<a href="color-modes.html">Take us where the rainbow ends!</a> &mdash;
+<a href="binarization.html">B is for binarize</a> &mdash;
+<a href="page-analysis.html">What gets read and what doesn&rsquo;t</a> &mdash;
+<a href="line-segmentation.html">Lines, lineskew and drop letters</a> &mdash;
+<a href="word-character-segmentation.html">Segmenting words and characters</a> &mdash;
+<a href="stylized-fonts.html">Stylized fonts</a> &mdash;
+<a href="omnifont-OCR.html">Why is <abbr title="Optical Character Recognition">OCR</abbr> software called omnifont?</a> &mdash;
+<a href="linguistics.html">What&rsquo;s the role of linguistics in the <abbr title="Optical Character Recognition">OCR</abbr> process?</a>
+</p>
+
+<p align="center">
+<a href="../index.html">Home page</a> &mdash;
+<a href="../intro/intro.html">Intro</a> &mdash;
+<a href="../scanners/scanners.html">Scanners</a> &mdash;
+<a href="../images/images.html">Images</a> &mdash;
+<a href="../history/history.html">History</a> &mdash;
+<a href="OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a> &mdash;
+<a href="../languages/languages.html">Languages</a> &mdash;
+<a href="../accuracy/accuracy.html">Accuracy</a> &mdash;
+<a href="../output/output.html">Output</a> &mdash;
+<a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a> &mdash;
+<a href="../pen-scanners/pen-scanners.html">Pen scanners</a> &mdash;
+<a href="../sitemap.html">Sitemap</a> &mdash;
+<a href="../search.html">Search</a> &mdash;
+<a href="../contact.html">Feedback &ndash; Contact</a>
+</p>
+
+</div>
+</div>
+
+</body>
+
+</html>

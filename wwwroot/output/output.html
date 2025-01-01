@@ -1,0 +1,507 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+
+<title>Going Places with the Recognized Text | How OCR Works</title>
+
+<link rel="next" href="PDF-output.html" />
+
+<meta name="description" content="How OCR software saves 
+the recognition results, sends them to a &ldquo;target 
+application&rdquo; or saves them in the cloud." />
+
+<meta name="keywords" content="clipboard, wordprocessors, 
+text formats, office suites, Unicode, web browsers, HTML 
+editors, XML, Adobe Acrobat PDF, Microsoft XPS, 
+text-to-speech, HTML5, TTS, podcast, Microsoft Excel, 
+FTP, Intranets, Microsoft SharePoint, document properties, 
+Optical Character Recognition, OCR" />
+
+<meta name="twitter:widgets:csp" content="on">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://how-ocr-works.com/output/output.html" />
+<meta name="twitter:title" content="Going Places with the Recognized Text | How OCR Works" />
+<meta name="twitter:description" content="How OCR software saves the recognition results, sends them to a target application or saves them in the cloud." />
+<meta name="twitter:image" content="https://how-ocr-works.com/output/output/text-formats.png" />
+
+<meta property="og:site_name" content="How OCR Works | A Close Look at Optical Character Recognition" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="Going Places with the Recognized Text | How OCR Works" />
+<meta property="og:description" content="How OCR software saves the recognition results, sends them to a target application or saves them in the cloud." />
+<meta property="og:url" content="https://how-ocr-works.com/output/output.html" />
+<meta property="og:image" content="https://how-ocr-works.com/output/output/text-formats.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="482" />
+<meta property="og:image:height" content="357" />
+
+<meta name="subject" content="Optical Character Recognition (OCR)" />
+
+<meta name="googlebot" content="all" />
+<meta name="bingbot" content="all" />
+<meta name="robots" content="all" />
+
+<link rev="made" href="mailto:ivo.vynckier@telenet.be" title="Ivo Vynckier" />
+<link rev="made" href="mailto:webmaster@how-ocr-works.com" title="Ivo Vynckier" />
+
+<meta name="reply-to" content="ivo.vynckier@telenet.be" />
+<meta name="reply-to" content="webmaster@how-ocr-works.com" />
+
+<meta name="author" content="Ivo Vynckier" />
+
+<meta name="generator" content="Notepad++" />
+
+<meta name="copyright" content="&copy; Ivo Vynckier. All rights reserved" />
+
+<meta name="rating" content="general" />
+<meta name="rating" content="safe for kids" />
+
+<link href="../website.css" rel="stylesheet" media="all" />
+<link href="//fonts.googleapis.com/css?family=Special Elite" rel="stylesheet" type="text/css" />
+
+<link href="../favicon.ico" rel="icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDERQSN9SP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TDERQSN9SP');
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<meta itemprop="isFamilyFriendly" content="True" />
+<meta itemprop="inLanguage" content="en" />
+
+<bgsound src="../index/typewriter2.wma" volume="0" loop="1" />
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div itemprop="breadcrumb">
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="../index.html">Home page</a></td>
+<td><a href="../intro/intro.html">Intro</a></td>
+<td><a href="../scanners/scanners.html">Scanners</a></td>
+<td><a href="../images/images.html">Images</a></td>
+<td><a href="../history/history.html">History</a></td>
+<td><a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a></td>
+<td><a href="../languages/languages.html">Languages</a></td>
+</tr>
+<tr>
+<td><a href="../accuracy/accuracy.html">Accuracy</a></td>
+<td><selected-page><a href="output.html">Output</a></selected-page></td>
+<td><a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a></td>
+<td><a href="../pen-scanners/pen-scanners.html">Pen scanners</a></td>
+<td><a href="../sitemap.html">Sitemap</a></td>
+<td><a href="../search.html">Search</a></td>
+<td><a href="../contact.html">Contact &ndash; Feedback</a></td>
+</tr>
+</table>
+</div>
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><selected-page><a href="output.html">Output</a></selected-page></td>
+<td><a href="PDF-output.html"><abbr title="Portable Document Format">PDF</abbr> output</a></td>
+<td><a href="formatting.html">Formatting</a></td>
+<td><a href="table-recognition.html">Tables</a></td>
+<td><a href="production-OCR.html">Production <abbr title="Optical Character Recognition">OCR</abbr></a></td>
+</tr>
+</table>
+</div>
+
+</div>
+
+<h1>Going Places with the Recognized Text</h1>
+
+<p>
+Now that we&rsquo;ve done everything right and the 
+<a href="../OCR/OCR.html" target="_blank">recognition</a> 
+was successful, to which applications can we export the 
+text results?
+</p>
+
+<p>
+Each 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+package has its own list of supported applications, so 
+we&rsquo;ll only discuss the common output methods of 
+the major 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+packages.
+</p>
+
+<p>
+You can output documents to the <strong>clipboard</strong>, 
+<strong>save</strong> the documents to an <strong>external 
+file</strong>, <strong>send</strong> the recognized document 
+<strong>by mail</strong> &mdash; as long as your e-mail 
+client is 
+<abbr title="Messaging Application Programming Interface">MAPI</abbr> 
+compliant, it&rsquo;ll work &mdash;, send the recognized 
+documents to a &ldquo;<strong>target 
+application</strong>&rdquo; or <strong>save</strong> them 
+<strong>in &ldquo;the cloud&rdquo;</strong>.
+</p>
+
+<p>
+Target applications may require some explanation: after the 
+recognition, the recognized document gets sent directly to 
+your text application, for instance Microsoft Word. If that 
+application doesn&rsquo;t run yet, the 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software starts up the word processor for you and the text 
+gets inserted. The result shows up in your application, 
+ready to be edited. Has there ever been a more seamless 
+integration with your text applications?
+</p>
+
+<p align="center">
+<img itemprop="primaryImageOfPage" src="output/text-formats.png" alt="Control panel for text formats" border="0" />
+</p>
+
+<p>
+Saving in &ldquo;the cloud&rdquo; is a new trend of the 
+last years: you add the recognized documents to your 
+<a href="https://en.wikipedia.org/wiki/Box_(company)" target="_blank" title="Wikipedia page on Box">Box</a>, 
+<a href="https://en.wikipedia.org/wiki/Dropbox_(service)" target="_blank" title="Wikipedia page on Dropbox">Dropbox</a>, 
+<a href="https://en.wikipedia.org/wiki/Evernote" target="_blank" title="Wikipedia page on Dropbox">Evernote</a>, 
+<a href="https://en.wikipedia.org/wiki/Google_Drive" target="_blank" title="Wikipedia page on Google Drive">Google Drive</a>, 
+<a href="https://en.wikipedia.org/wiki/OneDrive" target="_blank" title="Wikipedia page on Microsoft Onedrive">Microsoft OneDrive</a> 
+<abbr title="etcetera">etc.</abbr> 
+account. And saving them to an 
+<abbr title="File Transfer Protocol">FTP</abbr> 
+server or sharing them in an Intranet such as Microsoft 
+SharePoint are the private versions of the same idea.
+</p>
+
+<p align="center">
+<a href="https://www.box.com" target="_blank" title="Box web site">
+<img src="output/box-logo.png" alt="Box logo" border="0" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://www.dropbox.com" target="_blank" title="Dropbox web site">
+<img src="output/dropbox-logo.png" alt="Dropbox logo" border="0" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://evernote.com/" target="_blank" title="Evernote web site">
+<img src="output/evernote-logo.png" alt="Evernote logo" border="0" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://www.google.com/drive/" target="_blank" title="Google Drive web site">
+<img src="output/google-drive-logo.jpg" alt="Google Drive logo" border="0" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://onedrive.live.com/" target="_blank" title="One Drive web site">
+<img src="output/microsoft-one-drive-logo.png" alt="Microsoft One Drive logo" border="0" /></a>
+</p>
+
+<p>
+Or save the recognition result to disk. All popular 
+<strong itemprop="keywords">word processors</strong> 
+and <strong itemprop="keywords">text formats</strong> 
+are supported: Microsoft Word (*.docx and *.doc), 
+<abbr title="Rich Text Format">RTF</abbr> (&ldquo;Rich Text 
+Format&rdquo;) (*.rtf) and WordML (*.xml), Corel WordPerfect 
+<abbr title="etcetera">etc.</abbr> Some 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software even supports the &ldquo;open source&rdquo; 
+<strong itemprop="keywords">office suites</strong> 
+AbiSource, Ability, Software602, Oracle StarOffice and its 
+&ldquo;spin-off&rdquo; version OpenOffice.org. And 
+don&rsquo;t forget the &ldquo;poor&rdquo; text formats that 
+generate &ldquo;plain text&rdquo; 
+(<abbr title="American Standard Code for Information Interchange">ASCII</abbr> 
+and 
+<abbr title="American National Standards Institute">ANSI</abbr>)&hellip;
+</p>
+
+<p>
+<strong itemprop="keywords">Unicode</strong> is also 
+often supported. It is a truly &ldquo;universal&rdquo; 
+format that&rsquo;s specifically interesting to store 
+documents in &ldquo;exotic&rdquo; languages: it allows 
+you to encode any language. You just need the proper 
+word processor to view and edit the result. (You get 
+full Unicode support from Microsoft Office 2000 (for 
+Windows) and Microsoft Office 2004 (for macOS) onwards, 
+so, you&rsquo;re OK with any recent version!)
+</p>
+
+<p align="center">
+<img src="output/unicode.png" alt="Control panel for plain text formats" border="0" />
+</p>
+
+<p>
+The major 
+<strong itemprop="keywords">web browsers</strong> such 
+as Microsoft Edge, Firefox, Chrome and Safari, the popular 
+<strong itemprop="keywords"><abbr title="HyperText Markup Language">HTML</abbr> editors</strong> 
+and the <strong>Adobe Reader-Adobe Acrobat</strong> 
+software are supported too.
+</p>
+
+<p align="center">
+<img src="output/PDF-formats.png" alt="Control panel for PDF text formats" border="0" />
+</p>
+
+<p>
+Support of the 
+<strong><abbr title="HyperText Markup Language">HTML</abbr></strong> 
+format is most useful for those users who want to take 
+their documents directly to the Internet &mdash; or post 
+them on their Intranet server. (State-of-the-art 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software supports the standard 
+<abbr title="HyperText Markup Language">HTML</abbr> 4.0, 
+also known as &ldquo;WYSIWYG&rdquo; 
+<abbr title="HyperText Markup Language">HTML</abbr>, 
+and the latest version 
+<a href="https://en.wikipedia.org/wiki/HTML5" target="_blank" title="Wikipedia page on HTML5"><abbr title="HyperText Markup Language">HTML</abbr>5</a>.)
+</p>
+
+<p align="center">
+<img src="output/webbrowsers.png" alt="Control panel for web text formats" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="output/HTML5-logo.png" alt="Logo of the web markup language HTML5" border="0" />
+</p>
+
+<p>
+The formats 
+<strong><abbr title="Extended Markup Language">XML</abbr></strong> 
+and Word 
+<abbr title="Markup Language">ML</abbr>, an intermediary 
+format that never caught on and was limited to Office 
+2003, as you find in Microsoft Office are also supported 
+in advanced 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+solutions.
+</p>
+
+<p>
+The 
+<strong itemprop="keywords">Adobe Acrobat <abbr title="Portable Document Format">PDF</abbr></strong> 
+format often has special relevance for people that 
+archive documents or make them available for downloading 
+on the web. 
+<abbr title="Portable Document Format">PDF</abbr> files 
+are called &ldquo;portable&rdquo; because they can be 
+viewed and printed on any computer &mdash; a Windows or 
+Linux <abbr title="Personal Computer">PC</abbr>, a 
+macOS computer or a Unix machine. Hence the popularity 
+of this document format on the Internet.
+</p>
+
+<a name="XPS"></a>
+
+<p>
+The second solution for non-editable documents &mdash; 
+Microsoft&rsquo;s competitive product for Adobe&rsquo;s 
+<abbr title="Portable Document Format">PDF</abbr> 
+format if you will &mdash;, the 
+<strong itemprop="keywords"><abbr title="XML Paper Specification">XPS</abbr> format</strong>, 
+is also supported these days. The advantage is that, 
+depending on the configuration of your 
+<abbr title="Personal Computer">PC</abbr>, these 
+documents open in the 
+<abbr title="XML Paper Specification">XPS</abbr> viewer, 
+a standard component of Windows, or in your web browser 
+Edge!
+</p>
+
+<p align="center">
+<img src="output/xps-viewer.png" alt="XPS Viewer" border="0" />
+</p>
+
+<p>
+This is a totally different approach: the recognized text 
+is read aloud with 
+<strong itemprop="keywords">text-to-speech</strong> 
+(&ldquo;<abbr title="text-to-speech">TTS</abbr>&rdquo;) 
+technology! (Choose a voice under Microsoft Windows or 
+Apple macOS.) It may even become an audio file such as 
+<a href="https://en.wikipedia.org/wiki/MP3" target="_blank" title="Wikipedia page on the MPEG-3 audio format">MP3</a>, 
+which allows you to distribute, say, a 
+<abbr title="Compact Disc">CD</abbr> or 
+<a href="https://en.wikipedia.org/wiki/Podcast" target="_blank" title="Wikipedia page on podcasts">podcast</a> 
+with the content of the scanned document!
+</p>
+
+<p align="center">
+<img src="output/windows-voices.png" alt="Voices of Microsoft Windows" border="0" />
+</p>
+
+<p>
+Advanced 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software recognizes <strong>tables</strong> &mdash; price 
+lists, addresses <abbr title="etcetera">etc.</abbr> 
+&mdash; as easily as text. The &ldquo;old&rdquo; Microsoft 
+Excel format (*.xls) is supported, and so is the newer 
+<abbr title="Extended Markup Language">XML</abbr>-based 
+<strong itemprop="keywords">Excel format</strong> 
+(*.xlsx). (Here again, the intermediary format 
+SpreadsheetML of Excel 2003 may be supported too.) 
+You&rsquo;ll come across some other table formats that 
+always include the &ldquo;generic&rdquo; 
+<abbr title="Comma-Separated Values">CSV</abbr> format 
+(comma-delimited data) and often tab-delimited Text files.
+</p>
+
+<p>
+But you can also output tabular data to word processors 
+and web browsers: tables gets reconstructed cell by cell 
+and inserted as table objects in word processor files!
+</p>
+
+<p align="center">
+<img src="output/excel-table.png" alt="OCRed table in the Excel spreadsheet" border="0" />
+</p>
+
+<p align="center">
+<img src="output/word-table.png" alt="OCRed table in the Word wordprocessor" border="0" />
+</p>
+
+<p>
+Up-to-date 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software also handles the 
+<strong itemprop="keywords">document properties</strong>. 
+Document properties contain the title of a document or 
+worksheet, the name and company of its author, its 
+subject, some keywords and comments 
+<abbr title="etcetera">etc.</abbr> Document properties 
+are obviously used to sort and search files; they in 
+fact offer a primary level of document indexing.
+</p>
+
+<p align="center">
+<img src="output/excel-properties.png" alt="Properties of an Excel worksheet" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="output/pdf-properties.png" alt="Properties of an Adobe PDF document" border="0" />
+</p>
+
+<p>
+<strong>Graphics</strong> can be saved in the major 
+graphic formats &mdash; say, 
+<abbr title="Joint Photographic Experts Group">JPEG</abbr>, 
+<abbr title="Tagged Image File Format">TIFF</abbr>, 
+Paintbrush (*.pcx) and Windows bitmaps (*.bmp). As is 
+the case with tables, you can recognize a document and 
+include the graphics inside the resulting text document.
+</p>
+
+<p><span class="small"><a href="output.html">Back to top</a></span></p>
+
+<p><a href="../contact.html#Form" target="_blank">Submit feedback</a></p>
+
+<p>
+<a href="https://www.pinterest.com/pin/create/button/" class="pin-it-button" data-pin-do="buttonPin" data-pin-config="beside"><img src="https://assets.pinterest.com/images/pidgets/pin_it_button.png" alt="Pin it" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="Versatile OCR software saves the recognition results to file, in the cloud and sends them to a &ldquo;target application&rdquo;" data-related="ivovynckier" data-lang="en">Tweet</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<script src="http://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-counter="right"></script>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<fb:like layout="standard" action="like" show_faces="false" share="true"></fb:like>
+</p>
+
+<script type="text/javascript">
+(function (w, d, load) {
+  var script, 
+  first = d.getElementsByTagName('SCRIPT')[0],  
+  n = load.length, 
+  i = 0,
+  go = function () {
+    for (i = 0; i < n; i = i + 1) {
+      script = d.createElement('SCRIPT');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = load[i];
+      first.parentNode.insertBefore(script, first);
+    }
+  }
+  if (w.attachEvent) {
+    w.attachEvent('onload', go);
+  } else {
+    w.addEventListener('load', go, false);
+  }
+}(window, document, 
+  ['//assets.pinterest.com/js/pinit.js']
+));    
+</script>
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+if(!d.getElementById(id)){js=d.createElement(s);
+js.id=id;
+js.src="https://platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+
+<div itemprop="breadcrumb">
+<div class="small">
+
+<p align="center">
+<a href="../accuracy/PDF-files.html">Previous section</a> 
+&mdash;
+<a href="PDF-output.html">Next page</a>
+</p>
+
+<p align="center">
+<a href="output.html">Going places with the recognized text</a> &mdash;
+<a href="PDF-output.html">More about Adobe Acrobat <abbr title="Portable Document Format">PDF</abbr> output</a> &mdash;
+<a href="formatting.html">Does <abbr title="Optical Character Recognition">OCR</abbr> software format the text?</a> &mdash;
+<a href="table-recognition.html">Does <abbr title="Optical Character Recognition">OCR</abbr> software recognize tables?</a> &mdash;
+<a href="production-OCR.html">Converting document collections</a>
+</p>
+
+<p align="center">
+<a href="../index.html">Home page</a> &mdash;
+<a href="../intro/intro.html">Intro</a> &mdash;
+<a href="../scanners/scanners.html">Scanners</a> &mdash;
+<a href="../images/images.html">Images</a> &mdash;
+<a href="../history/history.html">History</a> &mdash;
+<a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a> &mdash;
+<a href="../languages/languages.html">Languages</a> &mdash;
+<a href="../accuracy/accuracy.html">Accuracy</a> &mdash;
+<a href="output.html">Output</a> &mdash;
+<a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a> &mdash;
+<a href="../pen-scanners/pen-scanners.html">Pen scanners</a> &mdash;
+<a href="../sitemap.html">Sitemap</a> &mdash;
+<a href="../search.html">Search</a> &mdash;
+<a href="../contact.html">Feedback &ndash; Contact</a>
+</p>
+
+</div>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,509 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+
+<title>Reading Business Cards | How OCR Works</title>
+
+<meta name="description" content="Discover how business card scanners 
+and BCR software convert business cards into contact databases." />
+
+<meta name="keywords" content="BCR software, business card reading, 
+business cards, business card organizers, electronic Rolodexes, 
+business card scanners, image segmentation, field analysis, 
+knowledge database, contact databases, contact managers, 
+groupware suites, Optical Character Recognition, OCR" />
+
+<meta name="twitter:widgets:csp" content="on">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://how-ocr-works.com/BCR/BCR.html" />
+<meta name="twitter:title" content="Reading Business Cards | How OCR Works" />
+<meta name="twitter:description" content="Discover how business card scanners and BCR software convert business cards into contact databases." />
+<meta name="twitter:image" content="https://how-ocr-works.com/BCR/BCR/business-card-organizer.png" />
+
+<meta property="og:site_name" content="How OCR Works | A Close Look at Optical Character Recognition" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="Reading Business Cards | How OCR Works" />
+<meta property="og:description" content="Discover how business card scanners and BCR software convert business cards into contact databases." />
+<meta property="og:url" content="https://how-ocr-works.com/BCR/BCR.html" />
+<meta property="og:image" content="https://how-ocr-works.com/BCR/BCR/business-card-organizer.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="800" />
+<meta property="og:image:height" content="600" />
+
+<meta name="subject" content="Optical Character Recognition (OCR)" />
+
+<meta name="googlebot" content="all" />
+<meta name="bingbot" content="all" />
+<meta name="robots" content="all" />
+
+<link rev="made" href="mailto:ivo.vynckier@telenet.be" title="Ivo Vynckier" />
+<link rev="made" href="mailto:webmaster@how-ocr-works.com" title="Ivo Vynckier" />
+
+<meta name="reply-to" content="ivo.vynckier@telenet.be" />
+<meta name="reply-to" content="webmaster@how-ocr-works.com" />
+
+<meta name="author" content="Ivo Vynckier" />
+
+<meta name="generator" content="Notepad++" />
+
+<meta name="copyright" content="&copy; Ivo Vynckier. All rights reserved" />
+
+<meta name="rating" content="general" />
+<meta name="rating" content="safe for kids" />
+
+<link href="../website.css" rel="stylesheet" media="all" />
+<link href="https://fonts.googleapis.com/css?family=Special Elite" rel="stylesheet" type="text/css" />
+
+<link href="../favicon.ico" rel="icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDERQSN9SP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TDERQSN9SP');
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<meta itemprop="isFamilyFriendly" content="True" />
+<meta itemprop="inLanguage" content="en" />
+
+<bgsound src="../index/typewriter2.wma" volume="0" loop="1" />
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div itemprop="breadcrumb">
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="../index.html">Home page</a></td>
+<td><a href="../intro/intro.html">Intro</a></td>
+<td><a href="../scanners/scanners.html">Scanners</a></td>
+<td><a href="../images/images.html">Images</a></td>
+<td><a href="../history/history.html">History</a></td>
+<td><a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a></td>
+<td><a href="../languages/languages.html">Languages</a></td>
+</tr>
+<tr>
+<td><a href="../accuracy/accuracy.html">Accuracy</a></td>
+<td><a href="../output/output.html">Output</a></td>
+<td><selected-page><a href="BCR.html"><abbr title="Business Card Reading">BCR</abbr></a></selected-page></td>
+<td><a href="../pen-scanners/pen-scanners.html">Pen scanners</a></td>
+<td><a href="../sitemap.html">Sitemap</a></td>
+<td><a href="../search.html">Search</a></td>
+<td><a href="../contact.html">Contact &ndash; Feedback</a></td>
+</tr>
+</table>
+</div>
+
+</div>
+
+<h1>Reading Business Cards</h1	>
+
+<p>
+So much for recognizing full page documents in small or 
+<a href="../output/production-OCR.html" target="_blank">large volumes</a>. 
+But there&rsquo;s another type of document you can convert 
+into electronic files with 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software: business cards. Given the proper software, you 
+could be scanning your brochures… and any business card 
+stapled to them!
+</p>
+
+<p>
+<abbr title="Optical Character Recognition">OCR</abbr>
+software that dematerializes business cards is actually 
+called 
+&ldquo;<span itemprop="keywords"><abbr title="Business Card Reading">BCR</abbr></span>&rdquo; 
+software &mdash; 
+&ldquo;<abbr title="Business Card Reading">BCR</abbr>&rdquo; 
+stands for 
+&ldquo;<strong itemprop="keywords">business card reading</strong>&rdquo;. 
+You scan your business cards, recognize them and convert 
+them into an address database. That&rsquo;s what 
+&ldquo;<abbr title="Business Card Reading">BCR</abbr>&rdquo; 
+solutions in the strict sense do. The 
+&ldquo;<abbr title="Business Card Reading">BCR</abbr>&rdquo; 
+functionality may even be built into your regular 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software!
+</p>
+
+<p>
+Some solutions offer extra functionality and are better 
+called 
+&ldquo;<strong itemprop="keywords">business card organizers</strong>&rdquo;. 
+Why? Contrary to traditional 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+applications, the card organizers don&rsquo;t discard the 
+scans when the character recognition is completed. On the 
+contrary, it makes good sense to archive the scanned business 
+cards in the database. Enter any office and you&rsquo;ll find 
+the desk and drawers of the employees crowded with business 
+cards of all types and places. Business cards suffer more 
+than other documents from the known disadvantages of the 
+paper world: they get lost easily, aren&rsquo;t available to 
+your colleagues, can&rsquo;t be searched or sorted 
+<abbr title="etcetera">etc.</abbr>
+</p>
+
+<p align="center">
+<img src="BCR/business-card.jpg" alt="Business card" border="0" />
+</p>
+
+<p>
+Business card organizers, &ldquo;<strong>electronic 
+Rolodexes</strong>&rdquo;, improve the everyday operation 
+of your office by getting rid of all business cards. You 
+begin by scanning the business cards, thus putting images in 
+a database. All business cards can be thrown away or returned 
+to the owner as soon as they have been archived. This means 
+that you never lose any information contained on a card, not 
+even the company&rsquo;s colorful logo or slogan, the 
+contact&rsquo;s photograph or still a second e-mail address 
+which you don&rsquo;t usually encode in your 
+&ldquo;traditional&rdquo; contact manager or database. And 
+when you are dealing with &ldquo;exotic&rdquo; business cards 
+&mdash; in, say, Arabic or Vietnamese &mdash; which you 
+simply cannot enter in a database, the color image is always 
+there to be consulted!
+</p>
+
+<p>
+When business card reading is a major application &mdash; 
+you&rsquo;re, say, scanning a great many business cards on a 
+booth at a fair &mdash;, you can use a 
+<strong itemprop="keywords">business card scanner</strong>. 
+These scanners were specifically designed to scan business 
+cards and have many advantages over other scanner types: 
+their footprint is so small they hardly take up any space 
+on your desk, they swiftly cope with business cards of 
+varying paper and printing qualities and you never have to 
+wonder about selecting the correct card format.
+</p>
+
+<p align="center">
+<img src="BCR/business-card-scanner.jpg" alt="Business card scanner" border="0" />
+</p>
+
+<p>
+But not to worry: you can put your familiar 
+<strong itemprop="keywords">flatbed scanner</strong> to good 
+use as well. Some advanced 
+<abbr title="Business Card Reading">BCR</abbr> software will 
+<strong>segment</strong> a larger image into the smaller 
+business cards for you! The image below gets split into six 
+separate business cards, the black border gets discarded 
+and the business cards are straightened and deskewed.
+</p>
+
+<p align="center">
+<img src="BCR/business-card-segmentation1.jpg" alt="Segmentation of several business card images on a black background" border="0" />
+</p>
+
+<p>
+Image segmentation against a white background is less 
+flexible: the cards must be placed regularly on the 
+flatbed with sufficient distance between two cards.
+</p>
+
+<p align="center">
+<img src="BCR/business-card-segmentation2.jpg" alt="Segmentation of several business card images on a white background" border="0" />
+</p>
+
+<p>
+(Not that adding a black or white background to your 
+business card images is very difficult. Scan the cards 
+with the lid of your 
+<a href="../scanners/peripherals.html" target="_blank">flatbed scanner</a> 
+open, that creates a black background for you. Or scan 
+the cards with the lid of your flatbed scanner closed, 
+that creates a white background for you!)
+</p>
+
+<p>
+Whatever the color of the background, the end result looks 
+like this: the business cards are separated and the (black 
+or white) border gets discarded. The individual cards are 
+straightened and deskewed, their orientation may be 
+corrected.
+</p>
+
+<p align="center">
+<img src="BCR/business-card-segmentation3.png" alt="Segmentation of several business card images on a black background" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="BCR/business-card-segmentation4.png" alt="Segmentation of several business card images on a white background" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="BCR/business-card-segmentation5.png" alt="Segmentation of a business card image on a black background" border="0" />
+</p>
+
+<p align="center">
+<img src="BCR/segmented-business-cards1.png" alt="Segmented business card images" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="BCR/segmented-business-cards2.png" alt="Segmented business card images" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+
+<p>
+The next phase is the 
+<strong><abbr title="Optical Character Recognition">OCR</abbr></strong>. 
+In this context, text recognition allows to encode business 
+cards without the time-consuming task of retyping them. 
+Think of your last exhibition when you came back with an 
+entire stack of business cards and it took your secretary 
+two days to encode them!
+</p>
+
+<p>
+The card&rsquo;s data is extracted automatically from the 
+image &mdash; we now know how that works &mdash; and the 
+recognized data is assigned to specific database fields. 
+This task is called 
+<strong itemprop="keywords">field analysis</strong>; it 
+is unique for 
+<abbr title="Business Card Reading">BCR</abbr> software 
+and business card organizers.
+</p>
+
+<p align="center">
+<img itemprop="primaryImageOfPage" src="BCR/business-card-organizer.png" alt="Business Card Reading (BCR) software" border="0" />
+</p>
+
+<p>
+<abbr title="Business Card Reading">BCR</abbr> software 
+extensively uses a 
+<strong itemprop="keywords">knowledge database</strong>, 
+thus acquiring the necessary intelligence to discriminate 
+the first and last name, a city and its state, a telephone 
+and a fax number <abbr title="etcetera">etc.</abbr> When 
+your <abbr title="Business Card Reading">BCR</abbr> software 
+or business card organizer recognizes the character string 
+&ldquo;John Williams&rdquo;, it &ldquo;knows&rdquo; that 
+John is a first name and Williams a last name. In the same 
+way so does the system recognize titles, such as 
+&ldquo;vice president&rdquo;, &ldquo;engineer&rdquo;, 
+cities such as Boise and Chicago, states such as Oregon 
+and Maryland <abbr title="etcetera">etc.</abbr>
+</p>
+
+<a name="FieldAnalysis"></a>
+
+<p>
+Each country has a different &ldquo;style&rdquo; of composing 
+business cards; Italians compose an address differently than 
+the French do, American 
+<abbr title="Zone Improvement Plan">ZIP</abbr> codes and 
+telephone numbers have a different syntax than their British 
+counterparts <abbr title="etcetera">etc.</abbr> The number of 
+countries supported by the field analysis varies dramatically 
+per <abbr title="Business Card Reading">BCR</abbr> software, 
+but international software that supports a wide range of 
+countries is available.
+</p>
+
+<p align="center">
+<img src="BCR/2-business-cards.jpg" alt="Two business cards" border="0" />
+</p>
+
+<p>
+Once your business cards are converted into text placed in 
+data fields, you have a real 
+<strong itemprop="keywords">contact database</strong>, 
+similar to a cardfile system: the data is directly searchable 
+by any field &mdash; name, company name, city 
+<abbr title="etcetera">etc.</abbr> Sort and select functions 
+are available. Looking up a company, client or prospect is a 
+cinch. Even with very little to go on, say, no more than the 
+first characters of a company name, you are sure to find your 
+contact again instantly.
+</p>
+
+<p>
+Or export the contacts to your company&rsquo;s 
+<abbr title="Structured Query Language">SQL</abbr> 
+database&hellip; Which <strong>export</strong> formats are 
+supported depends on your 
+<abbr title="Business Card Reading">BCR</abbr> software, 
+but we can give a general idea. You could for instance save 
+the contacts in a structured text file &mdash; say as 
+comma-delimited data 
+(<abbr title="comma-separated values">CSV</abbr>) or in the 
+vCard format. (vCard files are swiftly imported into any 
+vCard compliant application: double-click a vCard file and 
+the contacts are added to your Windows or macOS contacts!)
+</p>
+
+<p align="center">
+<img src="BCR/v-card-windows.png" alt="Icon of vCard (Windows platform)" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="BCR/v-card-mac-os.png" alt="Icon of vCard (macOS platform)" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="BCR/contacts-windows.png" alt="Icon of Contacts (Windows platform)" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="BCR/address-book-mac-os.png" alt="Icon of Address Book (macOS platform)" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="BCR/people-app-windows-8.png" alt="People app (Windows 8)" border="0" />
+</p>
+
+<p>
+Many <abbr title="Business Card Reading">BCR</abbr> packages 
+and business card organizers send the contacts directly to 
+the major 
+<strong itemprop="keywords">contact managers</strong> 
+&mdash; Act!, FrontRange Goldmine &mdash;, the 
+<strong itemprop="keywords">groupware suites</strong> 
+<abbr title="International Busines Machines">I.B.M.</abbr> 
+Lotus Notes and Novell Groupwise, an Apple iPhone or 
+other smartphone etc.</abbr> Business card reading smoothly 
+complements such applications as contact managers, databases 
+or even word processors whose mail merge function allows to 
+print letters, envelopes and labels.
+</p>
+
+<p align="center">
+<img src="BCR/act.png" alt="Icon of Act (contact management software)" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="BCR/outlook.png" alt="Icon of Microsoft Outlook (e-mail software)" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="BCR/entourage.png" alt="Icon of Microsoft Entourage software (macOS platform)" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="BCR/export-filters.png" alt="Export filter of business card reading (BCR) software" border="0" />
+</p>
+
+<p>
+And some other clearcut advantages of card organizers over the 
+paper world are all too obvious: as you are dealing with a 
+database, the information is centralized and available to all 
+your colleagues. Also, databases are easily transportable on 
+<abbr title="Compact Disc &ndash; Random-Only Memory">CD-ROM</abbr> 
+<abbr title="etcetera">etc.</abbr>
+</p>
+
+<p>
+Summing up, &ldquo;minimal&rdquo; 
+<abbr title="Business Card Reading">BCR</abbr> software uses 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+technology (complemented by 
+<a href="#FieldAnalysis">field analysis</a>) to convert 
+business cards into address records, but true business card 
+organizers go the full circle from archiving scanned business 
+cards to contact management. You archive, index and 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+business cards from around the world!
+</p>
+
+<p><span class="small"><a href="BCR.html">Back to top</a></span></p>
+
+<p><a href="../contact.html#Form" target="_blank">Submit feedback</a></p>
+
+<p>
+<a href="https://www.pinterest.com/pin/create/button/" class="pin-it-button" data-pin-do="buttonPin" data-pin-config="beside"><img src="https://assets.pinterest.com/images/pidgets/pin_it_button.png" alt="Pin it" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="What does &ldquo;BCR&rdquo; mean and how does business card reading work?" data-related="ivovynckier" data-lang="en">Tweet</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<script src="http://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-counter="right"></script>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<fb:like layout="standard" action="like" show_faces="false" share="true"></fb:like>
+</p>
+
+<script type="text/javascript">
+(function (w, d, load) {
+  var script, 
+  first = d.getElementsByTagName('SCRIPT')[0],  
+  n = load.length, 
+  i = 0,
+  go = function () {
+    for (i = 0; i < n; i = i + 1) {
+      script = d.createElement('SCRIPT');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = load[i];
+      first.parentNode.insertBefore(script, first);
+    }
+  }
+  if (w.attachEvent) {
+    w.attachEvent('onload', go);
+  } else {
+    w.addEventListener('load', go, false);
+  }
+}(window, document, 
+  ['//assets.pinterest.com/js/pinit.js']
+));    
+</script>
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+if(!d.getElementById(id)){js=d.createElement(s);
+js.id=id;
+js.src="https://platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+
+<div itemprop="breadcrumb">
+<div class="small">
+
+<p align="center">
+<a href="../output/production-OCR.html">Previous section</a> 
+&mdash;
+<a href="../pen-scanners/pen-scanners.html">Next section</a>
+</p>
+
+<p align="center">
+<a href="../index.html">Home page</a> &mdash;
+<a href="../intro/intro.html">Intro</a> &mdash;
+<a href="../scanners/scanners.html">Scanners</a> &mdash;
+<a href="../images/images.html">Images</a> &mdash;
+<a href="../history/history.html">History</a> &mdash;
+<a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a> &mdash;
+<a href="../languages/languages.html">Languages</a> &mdash;
+<a href="../accuracy/accuracy.html">Accuracy</a> &mdash;
+<a href="../output/output.html">Output</a> &mdash;
+<a href="BCR.html"><abbr title="Business Card Reading">BCR</abbr></a> &mdash;
+<a href="../pen-scanners/pen-scanners.html">Pen scanners</a> &mdash;
+<a href="../sitemap.html">Sitemap</a> &mdash;
+<a href="../search.html">Search</a> &mdash;
+<a href="../contact.html">Contact &ndash; Feedback</a>
+</p>
+
+</div>
+</div>
+
+</body>
+
+</html>

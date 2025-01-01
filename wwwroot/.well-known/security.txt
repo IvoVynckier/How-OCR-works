@@ -1,0 +1,4 @@
+Contact: mailto:ivo.vynckier@telenet.be
+Contact: https://how-ocr-works.com/contact.html
+Expires: 2030-12-30T23:00:00.000Z
+Preferred-Languages: en, fr, nl

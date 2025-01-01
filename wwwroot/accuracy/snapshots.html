@@ -1,0 +1,383 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+
+<title>Recognizing Snapshots | How OCR Works</title>
+
+<link rel="prev" href="preprocessing.html" />
+<link rel="next" href="images.html" />
+
+<meta name="description" content="Learn how to recognize snapshots 
+taken with a photo camera or smartphone with OCR software." />
+
+<meta name="keywords" content="photo cameras, smartphones, 
+image resolution, macro mode, flash, optical zoom, interpolation, 
+Optical Character Recognition, OCR" />
+
+<meta name="twitter:widgets:csp" content="on">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://how-ocr-works.com/accuracy/snapshots.html" />
+<meta name="twitter:title" content="Recognizing Snapshots | How OCR Works" />
+<meta name="twitter:description" content="Learn how to recognize snapshots taken with a photo camera or smartphone with OCR software." />
+<meta name="twitter:image" content="https://how-ocr-works.com/accuracy/snapshots/digital-camera-image.jpg" />
+
+<meta property="og:site_name" content="How OCR Works | A Close Look at Optical Character Recognition" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="Recognizing Snapshots | How OCR Works" />
+<meta property="og:description" content="Learn how to recognize snapshots taken with a photo camera or smartphone with OCR software." />
+<meta property="og:url" content="https://how-ocr-works.com/accuracy/snapshots.html" />
+<meta property="og:image" content="https://how-ocr-works.com/accuracy/snapshots/digital-camera-image.jpg" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1025" />
+<meta property="og:image:height" content="719" />
+
+<meta name="subject" content="Optical Character Recognition (OCR)" />
+
+<meta name="googlebot" content="all" />
+<meta name="bingbot" content="all" />
+<meta name="robots" content="all" />
+
+<link rev="made" href="mailto:ivo.vynckier@telenet.be" title="Ivo Vynckier" />
+<link rev="made" href="mailto:webmaster@how-ocr-works.com" title="Ivo Vynckier" />
+
+<meta name="reply-to" content="ivo.vynckier@telenet.be" />
+<meta name="reply-to" content="webmaster@how-ocr-works.com" />
+
+<meta name="author" content="Ivo Vynckier" />
+
+<meta name="generator" content="Notepad++" />
+
+<meta name="copyright" content="&copy; Ivo Vynckier. All rights reserved" />
+
+<meta name="rating" content="general" />
+<meta name="rating" content="safe for kids" />
+
+<link href="../website.css" rel="stylesheet" media="all" />
+<link href="//fonts.googleapis.com/css?family=Special Elite" rel="stylesheet" type="text/css" />
+
+<link href="../favicon.ico" rel="icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDERQSN9SP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TDERQSN9SP');
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<meta itemprop="isFamilyFriendly" content="True" />
+<meta itemprop="inLanguage" content="en" />
+
+<bgsound src="../index/typewriter2.wma" volume="0" loop="1" />
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div itemprop="breadcrumb">
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="../index.html">Home page</a></td>
+<td><a href="../intro/intro.html">Intro</a></td>
+<td><a href="../scanners/scanners.html">Scanners</a></td>
+<td><a href="../images/images.html">Images</a></td>
+<td><a href="../history/history.html">History</a></td>
+<td><a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a></td>
+<td><a href="../languages/languages.html">Languages</a></td>
+</tr>
+<tr>
+<td><selected-page><a href="accuracy.html">Accuracy</a></selected-page></td>
+<td><a href="../output/output.html">Output</a></td>
+<td><a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a></td>
+<td><a href="../pen-scanners/pen-scanners.html">Pen scanners</a></td>
+<td><a href="../sitemap.html">Sitemap</a></td>
+<td><a href="../search.html">Search</a></td>
+<td><a href="../contact.html">Contact &ndash; Feedback</a></td>
+</tr>
+</table>
+</div>
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="accuracy.html">Accuracy</a></td>
+<td><a href="benchmarks.html">Benchmarks</a></td>
+<td><a href="scanning-skills.html">Scanning skills</a></td>
+<td><a href="preprocessing.html">Preprocessing</a></td>
+<td><selected-page><a href="snapshots.html">Snapshots</a></selected-page></td>
+<td><a href="images.html">Images</a></td>
+<td><a href="PDF-files.html"><abbr title="Portable Document Format">PDF</abbr> files</a></td>
+</tr>
+</table>
+</div>
+
+</div>
+
+<h1>Recognizing Snapshots</h1>
+
+<p>
+We already mentioned that you can convert 
+<span itemprop="keywords">snapshots</span> taken with a 
+(digital) <strong itemprop="keywords">photo camera</strong> 
+or 
+<strong itemprop="keywords">smartphone</strong> into 
+editable text. Yes, you can act like James Bond at the 
+local library and recognize the pictures later on at 
+home&hellip;
+</p>
+
+<p align="center">
+<img src="../scanners/peripherals/digital-camera.jpg" alt="Digital photo camera" border="0" />
+</p>
+
+<p>
+The snapshots generated with a (digital) camera are usually 
+<strong><abbr title="Joint Photographic Experts Group">JPEG</abbr></strong> 
+or 
+<strong><abbr title="Tagged Image File Format">TIFF</abbr> 
+images</strong>, and your 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software should have no trouble to open them. Limit yourself 
+to no or small 
+<abbr title="Joint Photographic Experts Group">JPEG</abbr> 
+<strong itemprop="keywords">compression</strong> &mdash; 
+important 
+<a href="../images/compression.html#JPEG" target="_blank">compression</a> 
+reduces the sharpness of the captured text!
+</p>
+
+<p>
+That doesn&rsquo;t mean it always works. There are a number 
+of specific issues that relate to 
+<a href="../scanners/peripherals.html#DigitalCameras" target="_blank">digital cameras</a>.
+</p>
+
+<p>
+The <strong>resolution</strong> of digital cameras and of 
+the cameras built into smartphones has increased many times 
+over the years. The oldest cameras (with a 2 
+<abbr title="megapixel">MP</abbr> resolution) produce images 
+of, say, 1,100 x 850 
+<abbr title="picture elements">pixels</abbr>; recent digital 
+cameras (with a 12 <abbr title="megapixel">MP</abbr> 
+resolution) generate images of for instance 4,000 x 3,000 
+<abbr title="picture elements">pixels</abbr>. (With digital 
+cameras, a fixed grid of photosensitive cells generates the 
+image. You get the smaller images when the data from some 
+sensors on the 
+<abbr title="Charge-Coupled Device">CCD</abbr> array are 
+discarded.) 
+</p>
+
+<p>
+We also know that good recognition requires an 
+<a itemprop="keywords" href="../images/intelligence.html#Resolution" target="_blank">image resolution</a> 
+of 300 <abbr title="dots per inch">dpi</abbr> &mdash; and 
+&ldquo;<abbr title="dots per inch">dpi</abbr>&rdquo; means 
+dot <i>per inch</i>! In other words, the older digital 
+cameras typically produce images with a significantly lower 
+resolution &mdash; even when you hold the camera close to 
+the document! In any case, select the highest available 
+image resolution. Create for instance 2,600 x 2,000 size 
+images with a 5 
+<abbr title="Megapixel">MP</abbr> camera that also supports 
+2,100 x 1,550 and 1,600 x 1,200 size images. (All recent 
+digital cameras offer a resolution of 10 to 12 
+<abbr title="Megapixel">MP</abbr>, the resolution 
+shouldn&rsquo;t be a problem…)
+</p>
+
+<p align="center">
+<img itemprop="primaryImageOfPage" src="snapshots/digital-camera-image.jpg" alt="Document shot with a digital photo camera" border="0" />
+</p>
+
+<p>
+There are a number of &ldquo;<strong>scanning 
+tips</strong>&rdquo; you can take into account to produce 
+good results with your digital snapshots.
+</p>
+
+<p>
+Enable the <strong>&ldquo;macro&rdquo; mode</strong> of 
+your camera to take closeups &mdash; which is always the 
+case when you photograph documents. (This mode was 
+designed to capture flowers, insects 
+<abbr title="etcetera">etc.</abbr>) Otherwise, the 
+images are unsharp and illegible.
+</p>
+
+<p align="center">
+<img src="snapshots/digital-camera-image-sharp.jpg" alt="Sharp image of a digital photo camera" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="snapshots/digital-camera-image-unsharp.jpg" alt="Unsharp image of a digital photo camera" border="0" />
+</p>
+
+<p>
+Hold the camera directly above the document to avoid 
+capturing the document at an <strong>angle</strong>. 
+However, avoid <strong>shadows</strong> cast on the 
+document by the camera or your hand! Produce 
+<strong>stable images</strong>. Consider mounting your 
+camera on a tripod when necessary. Zoom manually to 
+crop your document. (Some cameras are bundled with 
+<a href="https://en.wikipedia.org/wiki/Image_stitching" target="_blank" title="Wikipedia page on image stitching">photo stitching</a> 
+software, but don&rsquo;t bother using it for document 
+capture.)
+</p>
+
+<p>
+Disable the <strong>flash</strong> when you&rsquo;re 
+filming glossy paper, otherwise the image may be too light. 
+Adapt the brightness and contrast to the 
+<strong>environment</strong> &mdash; day light, lamp light, 
+neon light 
+<abbr title="etcetera">etc.</abbr> Calibrate the camera by 
+filming a white document.
+</p>
+
+<p align="center">
+<img src="snapshots/digital-camera-light-image.jpg" alt="Light image shot with a digital photo camera" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="snapshots/digital-camera-image-flash.jpg" alt="Image shot with a digital photo camera with the flash" border="0" />
+</p>
+
+<p>
+Use the 
+<strong itemprop="keywords">optical zoom</strong> 
+but don&rsquo;t zoom digitally. Digital zooms are to 
+digital cameras what 
+<a href="../images/resolution.html#Interpolation" target="_blank">interpolated resolutions</a> 
+are to scanners! When the optical zoom is used, the lens 
+magnifies the image. As a result, the image quality is 
+improved. Digital zooming reduces the resolution and 
+quality of an image: interpolation techniques are 
+applied to artificially add &ldquo;fake&rdquo; 
+<abbr title="picture elements">pixels</abbr> to the 
+actual snapshot!
+</p>
+
+<p>
+Limit yourself to no or small 
+<a href="../images/compression.html#JPEG" target="_blank">compression</a> 
+&mdash; important compression reduces the sharpness of the 
+captured text.
+</p>
+
+<p><span class="small"><a href="snapshots.html">Back to top</a></span></p>
+
+<p><a href="../contact.html#Form" target="_blank">Submit feedback</a></p>
+
+<p>
+<a href="https://www.pinterest.com/pin/create/button/" class="pin-it-button" data-pin-do="buttonPin" data-pin-config="beside"><img src="https://assets.pinterest.com/images/pidgets/pin_it_button.png" alt="Pin it" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="Tips to recognize documents captured with a photo camera or cell phone with OCR software" data-related="ivovynckier" data-lang="en">Tweet</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<script src="http://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-counter="right"></script>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<fb:like layout="standard" action="like" show_faces="false" share="true"></fb:like>
+</p>
+
+<script type="text/javascript">
+(function (w, d, load) {
+  var script, 
+  first = d.getElementsByTagName('SCRIPT')[0],  
+  n = load.length, 
+  i = 0,
+  go = function () {
+    for (i = 0; i < n; i = i + 1) {
+      script = d.createElement('SCRIPT');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = load[i];
+      first.parentNode.insertBefore(script, first);
+    }
+  }
+  if (w.attachEvent) {
+    w.attachEvent('onload', go);
+  } else {
+    w.addEventListener('load', go, false);
+  }
+}(window, document, 
+  ['//assets.pinterest.com/js/pinit.js']
+));    
+</script>
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+if(!d.getElementById(id)){js=d.createElement(s);
+js.id=id;
+js.src="https://platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+
+<div itemprop="breadcrumb">
+<div class="small">
+
+<p align="center">
+<a href="preprocessing.html">Previous page</a> 
+&mdash;
+<a href="images.html">Next page</a>
+</p>
+
+<p align="center">
+<a href="accuracy.html">Training the system further</a> &mdash;
+<a href="benchmarks.html">The accuracy of <abbr title="Optical Character Recognition">OCR</abbr> software</a> &mdash;
+<a href="scanning-skills.html">How good are your scanning skills?</a> &mdash;
+<a href="preprocessing.html">With a little help from the friends</a> &mdash;
+<a href="snapshots.html">Recognizing snapshots</a> &mdash;
+<a href="images.html">Recognizing prescanned images and faxes</a> &mdash;
+<a href="PDF-files.html">Repurposing <abbr title="Portable Document Format">PDF</abbr> files</a>
+</p>
+
+<p align="center">
+<a href="../index.html">Home page</a> &mdash;
+<a href="../intro/intro.html">Intro</a> &mdash;
+<a href="../scanners/scanners.html">Scanners</a> &mdash;
+<a href="../images/images.html">Images</a> &mdash;
+<a href="../history/history.html">History</a> &mdash;
+<a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a> &mdash;
+<a href="../languages/languages.html">Languages</a> &mdash;
+<a href="accuracy.html">Accuracy</a> &mdash;
+<a href="../output/output.html">Output</a> &mdash;
+<a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a> &mdash;
+<a href="../pen-scanners/pen-scanners.html">Pen scanners</a> &mdash;
+<a href="../sitemap.html">Sitemap</a> &mdash;
+<a href="../search.html">Search</a> &mdash;
+<a href="../contact.html">Contact &ndash; Feedback</a>
+</p>
+
+</div>
+</div>
+
+</body>
+
+</html>

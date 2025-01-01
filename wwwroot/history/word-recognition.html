@@ -1,0 +1,316 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+
+<title>&hellip; Or Do Word Recognition! | How OCR Works</title>
+
+<link rel="prev" href="neural-networks.html" />
+<link rel="next" href="expert-systems.html" />
+
+<meta name="description" content="How word recognition surpasses 
+the OCR accuracy of artificial neural networks." />
+
+<meta name="keywords" content="word recognition, 
+Word Image Decoding, word images, degraded images, 
+Optical Character Recognition, OCR" />
+
+<meta name="twitter:widgets:csp" content="on">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://how-ocr-works.com/history/word-recognition.html" />
+<meta name="twitter:title" content="&hellip; Or Do Word Recognition! | How OCR Works" />
+<meta name="twitter:description" content="How word recognition surpasses the OCR accuracy of artificial neural networks." />
+<meta name="twitter:image" content="https://how-ocr-works.com/history/word-recognition/word-recognition4.png" />
+
+<meta property="og:site_name" content="How OCR Works | A Close Look at Optical Character Recognition" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="&hellip; Or Do Word Recognition! | How OCR Works" />
+<meta property="og:description" content="How word recognition surpasses the OCR accuracy of artificial neural networks." />
+<meta property="og:url" content="https://how-ocr-works.com/history/word-recognition.html" />
+<meta property="og:image" content="https://how-ocr-works.com/history/word-recognition/word-recognition4.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1030" />
+<meta property="og:image:height" content="46" />
+
+<meta name="subject" content="Optical Character Recognition (OCR)" />
+
+<meta name="googlebot" content="all" />
+<meta name="bingbot" content="all" />
+<meta name="robots" content="all" />
+
+<link rev="made" href="mailto:ivo.vynckier@telenet.be" title="Ivo Vynckier" />
+<link rev="made" href="mailto:webmaster@how-ocr-works.com" title="Ivo Vynckier" />
+
+<meta name="reply-to" content="ivo.vynckier@telenet.be" />
+<meta name="reply-to" content="webmaster@how-ocr-works.com" />
+
+<meta name="author" content="Ivo Vynckier" />
+
+<meta name="generator" content="Notepad++" />
+
+<meta name="copyright" content="&copy; Ivo Vynckier. All rights reserved" />
+
+<meta name="rating" content="general" />
+<meta name="rating" content="safe for kids" />
+
+<link href="../website.css" rel="stylesheet" media="all" />
+<link href="//fonts.googleapis.com/css?family=Special Elite" rel="stylesheet" type="text/css" />
+
+<link href="../favicon.ico" rel="icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDERQSN9SP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TDERQSN9SP');
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<meta itemprop="isFamilyFriendly" content="True" />
+<meta itemprop="inLanguage" content="en" />
+
+<bgsound src="../index/typewriter2.wma" volume="0" loop="1" />
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div itemprop="breadcrumb">
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="../index.html">Home page</a></td>
+<td><a href="../intro/intro.html">Intro</a></td>
+<td><a href="../scanners/scanners.html">Scanners</a></td>
+<td><a href="../images/images.html">Images</a></td>
+<td><selected-page><a href="history.html">History</a></selected-page></td>
+<td><a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a></td>
+<td><a href="../languages/languages.html">Languages</a></td>
+</tr>
+<tr>
+<td><a href="../accuracy/accuracy.html">Accuracy</a></td>
+<td><a href="../output/output.html">Output</a></td>
+<td><a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a></td>
+<td><a href="../pen-scanners/pen-scanners.html">Pen scanners</a></td>
+<td><a href="../sitemap.html">Sitemap</a></td>
+<td><a href="../search.html">Search</a></td>
+<td><a href="../contact.html">Contact &ndash; Feedback</a></td>
+</tr>
+</table>
+</div>
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="history.html">The early years</a></td>
+<td><a href="neural-networks.html">Neural networks</a></td>
+<td><selected-page><a href="word-recognition.html">Word recognition</a></selected-page></td>
+<td><a href="expert-systems.html">Expert systems</a></td>
+</tr>
+<tr>
+<td><a href="autolearning.html">Autolearning</a></td>
+<td><a href="voting-systems.html">Voting systems</a></td>
+<td colspan="2"><a href="document-revolution.html">Document revolution</a></td>
+</tr>
+</table>
+</div>
+
+</div>
+
+<h1>&hellip; Or Do <span itemprop="keywords">Word Recognition</span>!</h1>
+
+<p>
+As powerful as the 
+<a href="neural-networks.html" target="_blank">neural revolution</a> 
+was in the <abbr title="nineties">90s</abbr>, new advances 
+in 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+research have moved beyond it. The latest 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software is now capable of recognizing total words, not 
+individual characters! Such algorithms try to match the 
+image of a whole word to a word: the contour and shape 
+of <abbr title="picture element">pixel</abbr> cloud X 
+looks like the Dutch word &ldquo;Familieleden&rdquo;, 
+the <abbr title="picture elements">pixel</abbr> cloud Y 
+looks like the word &ldquo;alleged&rdquo; 
+<abbr title="etcetera">etc.</abbr>
+</p>
+
+<p align="center">
+<img src="word-recognition/word-recognition1.png" alt="Word recognition of scanned line" border="0" />
+</p>
+
+<p align="center">
+<img src="word-recognition/word-recognition2.png" alt="Word recognition of scanned line" border="0" />
+</p>
+
+<p align="center">
+<img src="word-recognition/word-recognition3.png" alt="Word recognition of scanned line" border="0" />
+</p>
+
+<p align="center">
+<img itemprop="primaryImageOfPage" src="word-recognition/word-recognition4.png" alt="Word recognition of scanned line" border="0" />
+</p>
+
+<p>
+This technology is called &ldquo;<strong>Word Image 
+Decoding</strong>&rdquo;, it has some basic similarity 
+with the algorithms used for speech recognition. It 
+&ldquo;decodes&rdquo; the <strong>word images</strong> 
+without a prior <a href="../OCR/word-character-segmentation.html" target="_blank">segmentation</a> 
+of the words into characters.
+</p>
+
+<p>
+The specific strength of word image decoding lies in 
+the recognition of 
+<strong itemprop="keywords">degraded images</strong> 
+where characters for instance touch 
+(&ldquo;ligatures&rdquo;) or are broken. That&rsquo;s 
+because degraded word images are less defaced than 
+degraded character shapes. An individual character can 
+be so damaged that it&rsquo;s barely recognizable 
+&mdash; even to the human eye. A degraded word offers 
+more clues: it&rsquo;s unlikely that each character will 
+be degraded to the same extent! As codes get broken bit 
+by bit, difficult words get recognized by starting with 
+the easier characters inside them.
+</p>
+
+<p align="center">
+<img src="word-recognition/broken-characters.png" alt="Scanned image with broken characters" border="0" />
+</p>
+
+<p align="center">
+<img src="word-recognition/ligatures.png" alt="Scanned image with ligatures - touching characters" border="0" />
+</p>
+
+<p>
+Because there &rsquo;s more context, it&rsquo;s easier for 
+the system to guess what the shapes mean. Given the example 
+below, isn&rsquo;t easier to recognize complete words than 
+individual, 
+<a href="../OCR/word-character-segmentation.html" target="_blank">segmented character shapes</a>&hellip;?
+</p>
+
+<p align="center">
+<img src="word-recognition/word-recognition-broken-characters.png" alt="Word recognition of broken, army-style characters" border="0" />
+</p>
+
+<p><span class="small"><a href="word-recognition.html">Back to top</a></span></p>
+
+<p><a href="../contact.html#Form" target="_blank">Submit feedback</a></p>
+
+<p>
+<a href="https://www.pinterest.com/pin/create/button/" class="pin-it-button" data-pin-do="buttonPin" data-pin-config="beside"><img src="https://assets.pinterest.com/images/pidgets/pin_it_button.png" alt="Pin it" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="How word recognition surpasses the OCR accuracy of neural networks" data-related="ivovynckier" data-lang="en">Tweet</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<script src="http://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-counter="right"></script>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<fb:like layout="standard" action="like" show_faces="false" share="true"></fb:like>
+</p>
+
+<script type="text/javascript">
+(function (w, d, load) {
+  var script, 
+  first = d.getElementsByTagName('SCRIPT')[0],  
+  n = load.length, 
+  i = 0,
+  go = function () {
+    for (i = 0; i < n; i = i + 1) {
+      script = d.createElement('SCRIPT');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = load[i];
+      first.parentNode.insertBefore(script, first);
+    }
+  }
+  if (w.attachEvent) {
+    w.attachEvent('onload', go);
+  } else {
+    w.addEventListener('load', go, false);
+  }
+}(window, document, 
+  ['//assets.pinterest.com/js/pinit.js']
+));    
+</script>
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+if(!d.getElementById(id)){js=d.createElement(s);
+js.id=id;
+js.src="https://platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+
+<div itemprop="breadcrumb">
+<div class="small">
+
+<p align="center">
+<a href="neural-networks.html">Previous page</a> 
+&mdash;
+<a href="expert-systems.html">Next page</a>
+</p>
+
+<p align="center">
+<a href="history.html">Where does this technology come from?</a> &mdash;
+<a href="neural-networks.html">Reaping the benefits of the neural revolution</a> &mdash;
+<a href="word-recognition.html">&hellip; Or do word recognition</a> &mdash;
+<a href="expert-systems.html">Each expert casts his vote</a> &mdash;
+<a href="autolearning.html">Autolearning font shapes</a> &mdash;
+<a href="voting-systems.html">Putting more feet on the street</a> &mdash;
+<a href="document-revolution.html">&hellip; With a document revolution thrown in</a>
+</p>
+
+<p align="center">
+<a href="../index.html">Home page</a> &mdash;
+<a href="../intro/intro.html">Intro</a> &mdash;
+<a href="../scanners/scanners.html">Scanners</a> &mdash;
+<a href="../images/images.html">Images</a> &mdash;
+<a href="history.html">History</a> &mdash;
+<a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a> &mdash;
+<a href="../languages/languages.html">Languages</a> &mdash;
+<a href="../accuracy/accuracy.html">Accuracy</a> &mdash;
+<a href="../output/output.html">Output</a> &mdash;
+<a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a> &mdash;
+<a href="../pen-scanners/pen-scanners.html">Pen scanners</a> &mdash;
+<a href="../sitemap.html">Sitemap</a> &mdash;
+<a href="../search.html">Search</a> &mdash;
+<a href="../contact.html">Contact &ndash; Feedback</a>
+</p>
+
+</div>
+</div>
+
+</body>
+
+</html>

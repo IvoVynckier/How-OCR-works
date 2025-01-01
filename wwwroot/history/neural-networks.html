@@ -1,0 +1,927 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+
+<title>Reaping the Benefits of the Neural Revolution | How OCR Works</title>
+
+<link rel="prev" href="history.html" />
+<link rel="next" href="word-recognition.html" />
+
+<meta name="description" content="How the revolution of neural networks 
+led to accurate and powerful omnifont OCR software." />
+
+<meta name="keywords" content="artificial neural networks, 
+what is a neural network, rule-based systems, feature extraction, 
+omnifont recognition, neurons, nerve cells, synapses, dendrites, 
+Ray Kurzweil, supercomputers, Von Neumann machines, 
+John Von Neumann, connectionist technology, distributed processing, 
+pattern recognition, glyphs, best fit, confidence level, 
+Optical Character Recognition, OCR" />
+
+<meta name="twitter:widgets:csp" content="on">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://how-ocr-works.com/history/neural-networks.html" />
+<meta name="twitter:title" content="Reaping the Benefits of the Neural Revolution | How OCR Works" />
+<meta name="twitter:description" content="How the revolution of  neural networks led to accurate and powerful omnifont OCR software." />
+<meta name="twitter:image" content="https://how-ocr-works.com/history/neural-networks/neural-network-ocr3.png" />
+
+<meta property="og:site_name" content="How OCR Works | A Close Look at Optical Character Recognition" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="Reaping the Benefits of the Neural Revolution | How OCR Works" />
+<meta property="og:description" content="How the revolution of  neural networks led to accurate and powerful omnifont OCR software." />
+<meta property="og:url" content="https://how-ocr-works.com/history/neural-networks.html" />
+<meta property="og:image" content="https://how-ocr-works.com/history/neural-networks/neural-network-ocr3.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="625" />
+<meta property="og:image:height" content="351" />
+
+<meta name="subject" content="Optical Character Recognition (OCR)" />
+
+<meta name="googlebot" content="all" />
+<meta name="bingbot" content="all" />
+<meta name="robots" content="all" />
+
+<link rev="made" href="mailto:ivo.vynckier@telenet.be" title="Ivo Vynckier" />
+<link rev="made" href="mailto:webmaster@how-ocr-works.com" title="Ivo Vynckier" />
+
+<meta name="reply-to" content="ivo.vynckier@telenet.be" />
+<meta name="reply-to" content="webmaster@how-ocr-works.com" />
+
+<meta name="author" content="Ivo Vynckier" />
+
+<meta name="generator" content="Notepad++" />
+
+<meta name="copyright" content="&copy; Ivo Vynckier. All rights reserved" />
+
+<meta name="rating" content="general" />
+<meta name="rating" content="safe for kids" />
+
+<link href="../website.css" rel="stylesheet" media="all" />
+<link href="//fonts.googleapis.com/css?family=Special Elite" rel="stylesheet" type="text/css" />
+
+<link href="../favicon.ico" rel="icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDERQSN9SP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TDERQSN9SP');
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<meta itemprop="isFamilyFriendly" content="True" />
+<meta itemprop="inLanguage" content="en" />
+
+<bgsound src="../index/typewriter2.wma" volume="0" loop="1" />
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div itemprop="breadcrumb">
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="../index.html">Home page</a></td>
+<td><a href="../intro/intro.html">Intro</a></td>
+<td><a href="../scanners/scanners.html">Scanners</a></td>
+<td><a href="../images/images.html">Images</a></td>
+<td><selected-page><a href="history.html">History</a></selected-page></td>
+<td><a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a></td>
+<td><a href="../languages/languages.html">Languages</a></td>
+</tr>
+<tr>
+<td><a href="../accuracy/accuracy.html">Accuracy</a></td>
+<td><a href="../output/output.html">Output</a></td>
+<td><a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a></td>
+<td><a href="../pen-scanners/pen-scanners.html">Pen scanners</a></td>
+<td><a href="../sitemap.html">Sitemap</a></td>
+<td><a href="../search.html">Search</a></td>
+<td><a href="../contact.html">Contact &ndash; Feedback</a></td>
+</tr>
+</table>
+</div>
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="history.html">The early years</a></td>
+<td><selected-page><a href="neural-networks.html">Neural networks</a></selected-page></td>
+<td><a href="word-recognition.html">Word recognition</a></td>
+<td><a href="expert-systems.html">Expert systems</a></td>
+</tr>
+<tr>
+<td><a href="autolearning.html">Autolearning</a></td>
+<td><a href="voting-systems.html">Voting systems</a></td>
+<td colspan="2"><a href="document-revolution.html">Document revolution</a></td>
+</tr>
+</table>
+</div>
+
+</div>
+
+<h1>Reaping the Benefits of the Neural Revolution</h1>
+
+<p>
+In the field of 
+<abbr title="Optical Character Recognition">OCR</abbr>, 
+as in other fields of computer science, huge 
+<strong>progress</strong> was made since the 
+old days of 
+<a href="history.html#Abagnale" target="_blank">E13B</a>, 
+the magnetic typeface developed for 
+<abbr title="Magnetic Ink Character Recognition">MICR</abbr>, 
+and 
+<a href="history.html#Checks" target="_blank"><abbr title="Optical Character Recognition">OCR</abbr>-A</a> 
+and 
+<a href="history.html#Checks" target="_blank"><abbr title="Optical Character Recognition">OCR</abbr>-B</a>, 
+the two first <i>optically</i> readable fonts. The first 
+commercial products on the 
+<abbr title="Personal Computer">PC</abbr> platform came 
+out towards the end of the 
+<abbr title="eighties">80s</abbr>. These were the first 
+<strong>&ldquo;omnifont&rdquo; systems</strong> that could 
+read (virtually) any typeface &mdash; without user 
+training. (It&rsquo;s estimated there about 60,000 
+different fonts nowadays!)
+</p>
+
+<p>
+<abbr title="Optical Character Recognition">OCR</abbr> 
+in the <abbr title="eighties">80s</abbr> was dominated by 
+<strong>rule-based systems</strong> that executed 
+topological analyis. With 
+<strong>feature extraction</strong>, the 
+<a href="../images/bitmaps.html" target="_blank">bitmap</a> 
+of each symbol was broken up into a set of characteristics 
+&mdash; lines, curves, loops 
+<abbr title="etcetera">etc.</abbr> Rules were then applied 
+to determine which character was the closest match, given 
+the set of extracted features. One simple rule could be: if 
+a character is entirely round but has a hole on the right 
+side, it must be a &ldquo;c&rdquo;.
+</p>
+
+<p align="center">
+<img src="neural-networks/feature-extraction.png" alt="Shape and features of the letter A" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="neural-networks/features-letter-C.png" alt="Shape and features of the letter C" border="0" />
+</p>
+
+<p>
+This method was largely independent of the character size 
+&mdash; which earlier systems were <i>not</i> &mdash; and 
+worked well on clean, crisp images. However, the 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+<a href="../accuracy/benchmarks.html" target="_blank">accuracy</a> 
+could be disastrous when 
+<a href="../accuracy/preprocessing.html" target="_blank">&ldquo;noisy&rdquo; scans</a> 
+and 
+<a href="../accuracy/scanning-skills.html" target="_blank">degraded characters</a> 
+were submitted to the recognition.
+</p>
+
+<p>
+The really intelligent solutions that followed were based on 
+an 
+<strong itemprop="keywords">artificial neural network</strong>, 
+a key concept 
+in <a href="https://en.wikipedia.org/wiki/Artificial_intelligence" target="_blank" title="Wikipedia page on Artificial Intelligence">Artificial Intelligence</a> 
+(&ldquo;<abbr title="Artificial Intelligence">A.I.</abbr>&rdquo;).
+</p>
+
+<p>
+Should you be wondering where the term &ldquo;neural 
+network&rdquo; came from: the knowledge of a neural network 
+is stored in connecting neurons. We&rsquo;ll try and clarify 
+that for you presently. The word &ldquo;artificial&rdquo; 
+indicates that we&rsquo;re not dealing with a biological 
+neural network such as your brain. (Mind you, the human brain 
+is infinitely more complex than any artificial neural network 
+ever gets: a human brain contains 100 billion nerve cells or 
+&ldquo;neurons&rdquo; and each neuron &mdash; wired up in 
+three dimensions &mdash; is connected to on average 
+about 1,000 other nerve cells...)
+</p>
+
+<p>
+A computer chip &mdash; hardware &mdash; made of silicium 
+functions in a totally different way than the human brain 
+&mdash; &ldquo;wetware&rdquo;. Compared to computer chips, 
+neurons are very slow but billions of them are at work 
+simultaneously! Ignoring the issue of 
+<a href="https://en.wikipedia.org/wiki/Multi-core_processor" target="_blank" title="Wikipedia page on multicore processors">multi-core processors</a>, 
+a single chip does all the work (and indeed very fast) in 
+most computers. Information in the human brain is not stored 
+in neat cells that store one bit (1 or 0) but are spread 
+across the network of connected brain cells. The strength of 
+the 
+<a href="https://en.wikipedia.org/wiki/Synapse" target="_blank" title="Wikipedia page on synapses">synapses</a> 
+can vary, and it is the pattern of strong and weak 
+connections that stores the information. A single memory 
+can be stored by many synapses, and each synapse contributes 
+to many memories&hellip;
+</p>
+
+<div itemscope itemtype="http://schema.org/Person">
+
+<p>
+Computers can easily imitate what a single 
+<a href="https://en.wikipedia.org/wiki/Neuron" target="_blank" title="Wikipedia page on neurons">neuron</a> 
+and a single synapse does. According to 
+<span itemprop="jobTitle"><abbr title="Artificial Intelligence">A.I.</abbr> specialist</span> 
+<a itemprop="URL" href="https://en.wikipedia.org/wiki/Ray_Kurzweil" target="_blank" title="Wikipedia page on Ray Kurzweil">
+<span itemprop="name"><span itemprop="givenName">Ray</span> <span itemprop="familyName">Kurzweil</span></span></a>, 
+a chip only has to execute about 200 calculations to imitate 
+a nerve cell, and a synapse corresponds to 10 bits. Multiply 
+these figures by the number of neurons and the (much larger) 
+number of synapses: it takes about 20 quadrillion 
+(20,000,000,000,000,000) calculations per second and a memory 
+capacity of 100 <abbr title="Terabyte">TB</abbr>. (A 
+<a href="https://en.wikipedia.org/wiki/Terabyte" target="_blank" title="Wikipedia page on Terabyte">terabyte</a> 
+is 1,000 <abbr title="Gigabyte">GB</abbr>.)
+</p>
+
+<p align="center">
+<img itemprop="image" src="neural-networks/ray-kurzweil.jpg" alt="Artificial Intelligence (A.I.) specialist Ray Kurzweil" border="0" />
+</p>
+
+<p>
+Such calculations are in all probability exaggerated because 
+they assume that each neuron constantly works at full speed. 
+Robot expert Hans Moravec of the Carnegie Mellon University 
+has compared a piece of the brain that we understand 
+relatively well &mdash; the furthest layers of the retina, 
+which start processing the images that our eyes register 
+&mdash; with computers that perform the same task. It turns 
+out that 0.2 grams of nerve tissue performs the same task as 
+a computer that executes one billion calculations per second. 
+Extrapolate those figures and you end up with 0.1 quadrillion 
+(100,000,000,000,000) calculations per second.
+</p>
+
+<p>
+Kurzweil estimates that the &ldquo;knowledge&rdquo; of a 
+human expert takes about 10 <abbr title="Gigabyte">GB</abbr>. 
+If that professional experience represents 1&#37; of the 
+overall memory of a human expert, a human memory stores 1 
+<abbr title="Terabyte">TB</abbr>.
+</p>
+
+</div>
+
+<p>
+Any conclusions? As far as memory is concerned, computers do 
+reasonably well. Buy a good external hard disk and 
+you&rsquo;ve holding up to 5 <abbr title="Terabyte">TB</abbr> 
+of disk space in your hands these days! Computers do less well 
+when it comes to calculation power: most computers execute 
+1 or several billion calucations per second. Only the fastest 
+&ldquo;<a itemprop="keywords" href="https://en.wikipedia.org/wiki/Supercomputer" target="_blank" title="Wikipedia page on supercomputers">supercomputers</a>&rdquo; 
+can start competing with human beings &mdash; based on the 
+lowest estimations of the human brain, that is&hellip;
+</p>
+
+<p align="center">
+<img src="neural-networks/external-hard-disk.jpg" alt="External hard disk" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="neural-networks/super-computer.jpg" alt="I.B.M. supercomputer Blue Gene" border="0" />
+</p>
+
+<p>
+Remembering 
+<a href="https://en.wikipedia.org/wiki/Moore%27s_law" target="_blank" title="Wikipedia page on Moore&rsquo;s law">Moore&rsquo;s law</a>, 
+you may be inclined to think that computers will surpass 
+human beings as their power increases in the coming years. 
+Not really, all that is just the &ldquo;raw&rdquo; 
+processing power. 
+<abbr title="Central Processing Unit">CPU</abbr> power does 
+<i>not</i> mean that computers can think or operate as the 
+human brain does. The fact remains that nobody knows how you 
+program a computer to think like the human brain&hellip;
+</p>
+
+<p align="center">
+<img src="neural-networks/neurons.jpg" alt="Neurons" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="neural-networks/dendrites.jpg" alt="Dendrites" border="0" />
+</p>
+
+<p>
+We&rsquo;ll limit ourselves to a general idea of how 
+<strong>neural networks</strong> operate. Convential algorithms 
+compute <abbr title="ones">1s</abbr> and 
+<abbr title="zeros">0s</abbr>, for instance when you do 
+numbercrunching with a spreadsheet. Computers execute a set of 
+instructions very fast &mdash; much faster than human beings 
+and without getting bored by the repetition &mdash; but they do 
+blindly and exclusively what the programmer programmed them to 
+do. The machine must be told in advance, and in great detail, 
+the exact series of steps required to compute a specific 
+problem. And it fails miserably when an unexpected situation 
+presents itself. (Incidentally, that&rsquo;s one of the 
+reasons software crashes from time to time.) The results are 
+always totally predictable; if anything goes wrong, a software 
+or hardware fault is involved. The input must be just as 
+precise: &ldquo;noisy&rdquo; data confuses the machine. You 
+can&rsquo;t get a spreadsheet to calculate the sum of a number 
+and a word. Nor can you enter a text in a database field that 
+only accepts serial numbers with a specific syntax.
+</p>
+
+<p>
+Unfortunately, many problems can&rsquo;t be 
+<strong>formalized</strong> completely, they can only be 
+solved through generalization and parallelism: how can we 
+for instance read somebody&rsquo;s handwriting when 
+we&rsquo;ve never seen it before? How to recognize 
+somebody&rsquo;s voice when we&rsquo;ve only heard that 
+voice once over a cell phone as we drove through a noisy 
+tunnel in an open car &mdash; not to mention the fact that 
+this person may have a Southern drawl or Bronx 
+accent&hellip;
+</p>
+
+<a name="VonNeumann"></a>
+
+<div itemscope itemtype="http://schema.org/Person">
+
+<p>
+The conventional algorithms &mdash; called 
+&ldquo;<strong><span itemprop="familyName">Von Neumann</span> machines</strong>&rdquo; 
+by <abbr title="Artificial Intelligence">A.I.</abbr> 
+researchers &mdash; are limited to solving problems that 
+we already understand and know how to solve. They deal with 
+straightforward logic. But they are no good when no hard, 
+fixed rules apply: 
+<a itemprop="URL" href="https://en.wikipedia.org/wiki/Von_Neumann_architecture" target="_blank" title="Wikipedia page on Von Neumann architectures">Von Neumann architectures</a> 
+can&rsquo;t interact with noisy data, can&rsquo;t adapt to 
+the circumstances and will not detect parallelism between 
+similar cases. Computers may keep ledgers, track inventories, 
+process data and perform complex math admirably, but they 
+have trouble recognizing even basic patterns. Simple animal 
+brains on the other hand <i>are</i> capable of such 
+low-level functions as are currently impossible for 
+computers!
+</p>
+
+<p align="center">
+<img itemprop="image" src="neural-networks/john-von-neumann.jpg" alt="John Von Neumann" border="0" />
+</p>
+
+<meta itemprop="name" content="John Von Neumann" />
+<meta itemprop="givenName" content="John" />
+
+</div>
+
+<p>
+Artificial neural networks &mdash; you can call them 
+&ldquo;<strong>connectionist machines</strong>&rdquo; &mdash; 
+offer a less technical way to develop machine solutions. They 
+are particularly effective when a large database of prior 
+examples is available. Although the exact nature of the 
+relationship between input and output may be unclear, they 
+will nevertheless produce very close approximations 
+(&ldquo;best fits&rdquo;) of the correct answer &mdash; 
+for instance by establishing accurate predictions based 
+on historic examples where human beings have not been 
+capable to discover the underlying laws or factors. 
+Without a neural network, how could a computer analyze 
+material governed by an unformulated &mdash; intuitive? 
+&mdash; set of rules? (The contrary holds too: no point 
+in using a neural network to solve traditional computing 
+problems!)
+</p>
+
+<p>
+Neural networks excel at recognizing patterns, learning 
+from experience, organizing and clustering data and 
+sorting relevant from irrelevant information. They will even 
+find patterns in data no one knows are there! Small wonder 
+they&rsquo;re for example used in &ldquo;data mining&rdquo; 
+&mdash; the extraction of knowledge, understanding from 
+data, raw material. 
+(<abbr title="Optical Character Recognition">OCR</abbr> 
+is a &ldquo;classification problem&rdquo; too, of course: 
+you have to determine which shapes belong to the group of 
+&ldquo;a&rdquo; symbols, which belong to the group of 
+&ldquo;b&rdquo; symbols <abbr title="etcetera">etc.</abbr>)
+</p>
+
+<p>
+These characteristics explain why they&rsquo;re used 
+prominently in 
+<strong itemprop="keywords">pattern recognition</strong> 
+&mdash; not just 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+but also medical imaging, voice recognition, expert systems 
+<abbr title="etcetera">etc.</abbr> (Ironically, neural 
+networks are being used to model brain disorders to 
+recommend the best therapy: this is the artificial neural 
+network helping out the biological neural network!) The 
+success of artificial neural networks in character 
+recognition is easily explained: until recently, they 
+systematically outperformed other recognition approaches. 
+After all, neural networks acquire knowledge through 
+learning!
+</p>
+
+<p>
+Neural networks overcome the computer&rsquo;s (in)famous 
+lack of flexibility by loosely imitating the general 
+&ldquo;<strong>architecture</strong>&rdquo; of the human 
+brain: they solve problems by creating connections 
+between processing elements &mdash; in an animal or 
+human brain, those would be the &ldquo;neurons&rdquo;.
+</p>
+
+<p align="center">
+<img src="neural-networks/neuron.jpg" alt="Neuron" border="0" />
+</p>
+
+<p>
+Mimicking its biological counterpart, each processing 
+element &mdash; the technical term is 
+&ldquo;<strong>node</strong>&rdquo; &mdash; has one or more 
+inputs and produces an output. Neurons combine signals 
+to produce new ones. Each input entering the neuron has 
+a &ldquo;weight&rdquo; attached to it that modifies the 
+value entering the neuron. The weight determines the 
+strength of a specific connection: it tells you how 
+strong the impact of a specific input is. The connections 
+determine which element influences which other units. The 
+output from one node becomes the input for another node 
+until the final output is reached.
+</p>
+
+<p align="center">
+<img src="neural-networks/neural-network.png" alt="Neural network" border="0" />
+</p>
+ 
+<p>
+That&rsquo;s indeed how the brain works: neurons collect 
+signals from other neurons through the 
+&ldquo;<a href="https://en.wikipedia.org/wiki/Dendrite" target="_blank" title="Wikipedia page on dendrites">dendrites</a>&rdquo; 
+and in their turn &ldquo;fire&rdquo; other neurons, 
+relaying information by transmitting chemical-electrical 
+impulses through the 
+&ldquo;<a href="https://en.wikipedia.org/wiki/Axon" target="_blank" title="Wikipedia page on axons">axons</a>&rdquo;.
+</p>
+
+<p align="center">
+<img src="neural-networks/neuron-anatomy.png" alt="Anatomical components of nerve cells" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="neural-networks/dendrites-axon.png" alt="Dendrite and axon of neuron" border="0" />
+</p>
+
+<p>
+The <strong>processing</strong> is 
+<strong>distributed</strong> and parallel: a cell depends 
+only on its input, not on any other, unconnected cells. 
+The various cells process their input independently and 
+simultaneously. <a href="#VonNeumann">Von Neumann 
+machines</a> on the other hand are sequential processors 
+that execute the next step when the previous step was 
+completed.
+</p>
+
+<p>
+The artificial neutral network learns through 
+<strong>generalization</strong> when examples with known 
+results are submitted to it, just like children learn to 
+recognize dogs by seeing actual examples of dogs. The 
+weights of each factor are adjusted &mdash; automatically 
+or through human intervention &mdash; to bring the final 
+output closer to the known 
+result. Similarly, when brain cell A repeatedly or 
+consistently fires brain cell B, a metabolic change 
+takes place in the cells so that cell A becomes more 
+efficient in stimulating cell B: the signals from some 
+neurons are chemically inhibited while the signals 
+from other neurons excite the cell with 
+<a href="https://en.wikipedia.org/wiki/Neurotransmitter" target="_blank" title="Wikipedia page on neurotransmitters">neurotransmittors</a>.
+</p>
+
+<p>
+Learning in animal and human creatures by necessity 
+involves <strong>adjustments</strong> in the connections 
+between the neurons: babies dispose of their 100 billion 
+neurons at birth, but the connections between them grow 
+as they learn and grow up. An individual nerve cell can 
+collect information from other cells via up to 100,000 
+dendrites! (And you now begin to understand why each 
+biological neural network is unique &mdash; why we all 
+have a unique personality!) Mind you, we&rsquo;re not 
+suggesting that the brain of a full-grown adult 
+doesn&rsquo;t evolve anymore. Any skill a human person 
+develops &mdash; somebody learns how to play the piano, 
+a tennis player&rsquo;s backhand improves, a factory 
+worker learns how to handle a machine or tool, a person 
+follows a course to develop or improve his memory, a 
+disabled person learns how to walk again after a major 
+accident and even people that seek psychological help 
+to control their anger or fight their addiction to 
+nicotine or alcohol &mdash; will develop millions of 
+new connections between brain cells.
+</p>
+
+<p>
+(Maybe a warning should be given here: however tempting 
+the analogies with the neurological world, artificial 
+neural networks are <i>not</i> an attempt to understand 
+how the animal and human brain works. Nor are they a 
+scientific endeavor to reproduce the behavior of a 
+biological neural network. Even the most sophisticated 
+designs use crude, impoverished models of how neurons 
+actually function; a lot more detail is required to 
+explore the brain&rsquo;s operation scientifically! 
+Artificial neural networks do not concern themselves 
+with biological realism, they are simply a set of 
+problem-solving computing tools with unique advantages.)
+</p>
+
+<p>
+Let&rsquo;s apply these general concepts to the 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+field. To show you how desparately generalization is 
+needed in text recognition, we&rsquo;ll design a 
+hypothetical 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+system that handles 256 by 256 greyscale images.
+</p>
+
+<p align="center">
+<img src="neural-networks/neural-network-ocr1.png" alt="Neural network for character recognition" border="0" />
+</p>
+
+<p>  
+Given an image matrix of 256 x 256 
+<abbr title="picture elements">pixels</abbr> and a 
+<a href="https://en.wikipedia.org/wiki/Color_depth" target="_blank" title="Wikipedia page on bit (color) depth">bit depth</a> 
+of 8 bits (256 grey levels), some simple mathematics 
+lead to this conclusion: our hypothetical system 
+could (theoretically) be confronted with 16.7 million 
+different images&hellip; And that&rsquo;s a lot of 
+zeros for a single figure! Obviously, many possible 
+bitmaps will never occur because they wouldn&rsquo;t 
+represent a character anyway &mdash; or will they? 
+Don&rsquo;t forget that 
+<a href="../accuracy/preprocessing.html" target="_blank">spurious 
+<abbr title="picture elements">pixels</abbr></a> 
+&mdash; a developer of artificial neural networks 
+would speak of &ldquo;random noise&rdquo; &mdash; 
+can blur a crisp character shape at all times!
+</p>
+
+<p align="center">
+<img src="neural-networks/noise-sample.png" alt="Scanned image with heavy random noise" border="0" />
+</p>
+
+<p align="center">
+<img src="neural-networks/noise-line.png" alt="Scanned image with heavy random noise" border="0" width="696" height="75" />
+</p>
+ 
+<p>
+Many different <strong>samples</strong> of a certain 
+symbol &mdash; for instance an uppercase &ldquo;A&rdquo; 
+&mdash; and their correct output get fed into the neural 
+network that progressively develops a general idea of 
+what a certain character basically looks like. The 
+&ldquo;structure &rdquo; is derived from existing data. 
+(We&rsquo;ve sorted the varying &ldquo;A&rdquo; 
+characters by size, but their size is not the issue: the 
+fact that each &ldquo;A&rdquo; shape looks different is!)
+</p>
+
+<p align="center">
+<img src="neural-networks/letter-A-various-fonts.png" alt="Uppercase letter A in various typefaces" border="0" />
+
+</p>
+
+<p>   
+(We just spoke of varying characters, but actually we 
+should speak of 
+&ldquo;<strong itemprop="keywords">glyphs</strong>&rdquo;, 
+not characters. 
+&ldquo;<a href="https://en.wikipedia.org/wiki/Glyph" target="_blank" title="Wikipedia page on glyphs">Glyph</a>&rdquo; 
+is the technical term that describes the shape and style 
+of a single character. For example, a letter 
+&ldquo;a&rdquo; and its italic and bold version are 
+different glyphs of the same character. Glyphs refer to 
+the actual shape, the &ldquo;bit pattern&rdquo; of a 
+character (called &ldquo;outline&rdquo; in technical 
+language). In other words, any two images which differ 
+in shape constitute different glyphs. 
+&ldquo;Glyph&rdquo; is a synonym for &ldquo;character 
+image&rdquo;. 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+is the technology that can correctly identify glyphs 
+that show infinite variations in shape.)
+</p>
+
+<p align="center">
+<img src="neural-networks/glyphs.png" alt="Glyphs of the letter A" border="0" />
+</p>
+
+<p>
+Mind you, this &ldquo;<strong>training</strong>&rdquo; 
+of the neural network gets done by the engineers that 
+develop it, <i>not</i> by the user of the 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software. Don&rsquo;t confuse the &ldquo;off-line 
+training&rdquo; used by the developers to create a 
+powerful neural network with the 
+&ldquo;<a href="../accuracy/accuracy.html" target="_blank">interactive learning</a>&rdquo; 
+or &ldquo;font training&rdquo; you perform as a user 
+on specific documents! (More about that later.) The 
+neural network at the heart of your 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software is pretrained when you receive it on a 
+<abbr title="Compact Disc &ndash; Random-Only Memory">CD-ROM</abbr> 
+or <abbr title="Digital Versatile Disc">DVD</abbr> or 
+ when you download it; that&rsquo;s why it&rsquo;s 
+ capable of reading your documents in the first 
+ place&hellip;
+</p>
+
+<p>
+Let&rsquo;s give a very basic example. We want to 
+develop a primitive neural 
+<abbr title="Optical Character Recognition">OCR</abbr>
+system that recognizes the handwritten lowercase 
+letters &ldquo;a&rdquo; and &ldquo;d&rdquo;. Those are 
+similar characters, but the vertical stroke 
+distinguishes them: a long vertical stroke gives you a 
+&ldquo;d&rdquo;, a short vertical stroke characterizes 
+the &ldquo;a&rdquo; symbol.
+</p>
+
+<p align="center">
+<img src="neural-networks/neural-network-ocr2.png" alt="Neural network for character recognition" border="0" />
+</p>
+
+<p>
+We submit an adequate sample of input-output pairs 
+&mdash; samples of handwritten &ldquo;a&rsquo;s&rdquo; 
+and &ldquo;d&rsquo;s&rdquo; with the correct recognition 
+result &mdash; into the neural network. Thanks to its 
+capacity for self-organization will the neural network 
+&ldquo;detect&rdquo; spontaneously that, for instance, 
+the height-width ratio of the characters allows to 
+distinguish them: the &ldquo;d&rdquo; symbol is 
+significantly higher than the &ldquo;a&rdquo; symbol! 
+The statistical regularity of the heigh-width ratio 
+&mdash; low for &ldquo;a&rdquo; symbols, high or 
+&ldquo;d&rdquo; symbols &mdash; allows the neural 
+network to extract this distinctive, salient feature 
+from the stimulation samples; detecting this feature 
+allows the network to behave in a seemingly 
+&ldquo;intelligent&rdquo; way. It is through such 
+internal representations that a connectionist machine 
+&ldquo;encodes&rdquo; the outside world.
+</p>
+
+<p>
+Thanks to that training, the software develops an 
+&ldquo;abstract&rdquo; definition of a character: the 
+letter &ldquo;O&rdquo; has a circular shape, the 
+letter &ldquo;C&rdquo; is a semi-circle with an 
+opening on the right side <abbr title="etcetera">etc.</abbr> 
+These general characteristics or features apply to any 
+font printed at any size.
+</p>
+
+<p>
+In a way, advanced 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software analyzes the segmented characters as human 
+beings unconsiously do: a number of 
+<strong>features</strong> &mdash; strokes, loops, 
+holes, nodes, angles 
+<abbr title="etcetera">etc.</abbr> &mdash; are 
+extracted and checked against a predefined source of 
+knowledge. (More about the 
+<a href="../OCR/omnifont-OCR.html#Anatomy" target="_blank">anatomy of letters</a> 
+later...)
+</p>
+
+<p align="center">
+<img src="neural-networks/font-anatomy.png" alt="Anatomy of some characters of the Latin alphabet" border="0" />
+</p>
+
+
+<p>
+Learning a single feature from the training samples 
+suffices to discriminate two characters; real 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+systems are of course infinitely more complex than that: 
+the number of nodes quickly runs into the thousands&hellip; 
+Which actually shows another advantage of connectionist 
+machines: neural networks cope well with this degree of 
+complexity! <a href="#VonNeumann">Von Neumann machines</a> 
+quickly suffer from the &ldquo;curse of 
+dimensionality&rdquo;: when too many variables are 
+involved, it becomes too difficult to model the complex 
+functions accurately. The number of computational steps 
+in a neural network is much less than what would be 
+required if you were to solve the problem by programming 
+&ldquo;if&rdquo; statements &mdash; if it could be done 
+at all with traditional computing.
+</p>
+
+<p>
+We emphasize that the neural network does not use a 
+formal &ldquo;idea&rdquo; &mdash; check the height of 
+the character! &mdash; to recognize the symbols; it just 
+detects a <strong>statistical correlation</strong> between 
+the height of an input pattern and its allocation to the 
+class of &ldquo;a&rdquo; or &ldquo;d&rdquo; symbols. There 
+is no simple correspondence between the neurons and a 
+&ldquo;concept&rdquo;. The information contained in the 
+neural network is distributed across a set of weights, 
+it can&rsquo;t be pinpointed in a fixed set of 
+instructions. Any intelligence used by the neural network 
+is spread across the network as a whole, and any given 
+node can partake in one or more semantic representations.
+</p>
+
+<p>
+Summing up, neural networks are sophisticated, flexible 
+and self-organizing algorithms that learn as they get 
+trained on examples &mdash; an aspect that makes them 
+very appealing to engineers that design 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+systems.
+</p>
+
+<p>
+The simple fact is that 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software has to cope with all kinds of fonts &mdash; 
+including typefaces that were not used during the 
+pretraining &mdash; and <strong>real-life documents</strong> 
+&mdash; and that includes 
+<a href="../accuracy/images.html" target="_blank">degraded faxes</a>, 
+<a href="../accuracy/scanning-skills.html" target="_blank">bad scans</a>, 
+messy photocopies, not to mention purely 
+<a href="../accuracy/preprocessing.html" target="_blank">accidental noise</a> 
+such as coffee stains, staple holes, handwritten notations, 
+torn edges, ring binder holes and indiscriminate speckles. 
+Any <abbr title="Optical Character Recognition">OCR</abbr> 
+system handles new, unseen stimulation patterns on a daily 
+basis.
+</p>
+
+<p>
+Indeed, the representational power of a neural network 
+really comes to life to when input patterns are submitted 
+to it that don&rsquo;t have a known output yet. (Again, 
+a <a href="#VonNeumann">Von Neumann machine</a> can&rsquo;t 
+cope with data it doesn&rsquo;t expect: the software will 
+produce incoherent results or crash altogether...) The 
+neural network analyzes any similarities (by matching the 
+unknown pattern with known ones) and generates the output 
+you&rsquo;d get for the &ldquo;<strong>best 
+fit</strong>&rdquo;, the closest similar input pattern. 
+&ldquo;<strong>Noise</strong>&rdquo;, small changes in the 
+input signal, does not drastically affect a neuron&rsquo;s 
+output.
+</p>
+
+<p align="center">
+<img src="neural-networks/neural-network-matching.png" alt="Matching patterns with a neural network" border="0" />
+</p>
+
+<p>
+The neural network recognizes the individual symbols. It 
+outputs one result or presents various 
+<strong>alternatives</strong> for a specific font shape. 
+A <strong>confidence level</strong> is assigned to each 
+solution, it indicates how sure the neural network is 
+about those results. (<a href="#VonNeumann">Von Neumann 
+machines</a> always produce unique results with no 
+ssalternatives.)
+</p>
+
+<p align="center">
+<img itemprop="primaryImageOfPage" src="neural-networks/neural-network-ocr3.png" alt="Neural network for character recognition" border="0" />
+</p>
+
+<p><span class="small"><a href="neural-networks.html">Back to top</a></span></p>
+
+<p><a href="../contact.html#Form" target="_blank">Submit feedback</a></p>
+
+<p>
+<a href="https://www.pinterest.com/pin/create/button/" class="pin-it-button" data-pin-do="buttonPin" data-pin-config="beside"><img src="https://assets.pinterest.com/images/pidgets/pin_it_button.png" alt="Pin it" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="How the revolution of neural networks led to accurate and powerful omnifont OCR software" data-related="ivovynckier" data-lang="en">Tweet</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<script src="http://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-counter="right"></script>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<fb:like layout="standard" action="like" show_faces="false" share="true"></fb:like>
+</p>
+
+<script type="text/javascript">
+(function (w, d, load) {
+  var script, 
+  first = d.getElementsByTagName('SCRIPT')[0],  
+  n = load.length, 
+  i = 0,
+  go = function () {
+    for (i = 0; i < n; i = i + 1) {
+      script = d.createElement('SCRIPT');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = load[i];
+      first.parentNode.insertBefore(script, first);
+    }
+  }
+  if (w.attachEvent) {
+    w.attachEvent('onload', go);
+  } else {
+    w.addEventListener('load', go, false);
+  }
+}(window, document, 
+  ['//assets.pinterest.com/js/pinit.js']
+));    
+</script>
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+if(!d.getElementById(id)){js=d.createElement(s);
+js.id=id;
+js.src="https://platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+
+<div itemprop="breadcrumb">
+<div class="small">
+
+<p align="center">
+<a href="history.html">Previous page</a> 
+&mdash;
+<a href="word-recognition.html">Next page</a>
+</p>
+
+<p align="center">
+<a href="history.html">Where does this technology come from?</a> &mdash;
+<a href="neural-networks.html">Reaping the benefits of the neural revolution</a> &mdash;
+<a href="word-recognition.html">&hellip; Or do word recognition</a> &mdash;
+<a href="expert-systems.html">Each expert casts his vote</a> &mdash;
+<a href="autolearning.html">Autolearning font shapes</a> &mdash;
+<a href="voting-systems.html">Putting more feet on the street</a> &mdash;
+<a href="document-revolution.html">&hellip; With a document revolution thrown in</a>
+</p>
+
+<p align="center">
+<a href="../index.html">Home page</a> &mdash;
+<a href="../intro/intro.html">Intro</a> &mdash;
+<a href="../scanners/scanners.html">Scanners</a> &mdash;
+<a href="../images/images.html">Images</a> &mdash;
+<a href="history.html">History</a> &mdash;
+<a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a> &mdash;
+<a href="../languages/languages.html">Languages</a> &mdash;
+<a href="../accuracy/accuracy.html">Accuracy</a> &mdash;
+<a href="../output/output.html">Output</a> &mdash;
+<a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a> &mdash;
+<a href="../pen-scanners/pen-scanners.html">Pen scanners</a> &mdash;
+<a href="../sitemap.html">Sitemap</a> &mdash;
+<a href="../search.html">Search</a> &mdash;
+<a href="../contact.html">Contact &ndash; Feedback</a>
+</p>
+
+</div>
+</div>
+
+</body>
+
+</html>

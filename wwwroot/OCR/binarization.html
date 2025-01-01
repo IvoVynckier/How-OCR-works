@@ -1,0 +1,593 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+
+<title>B Is for Binarize | How OCR Works</title>
+
+<link rel="prev" href="color-modes.html" />
+<link rel="next" href="page-analysis.html" />
+
+<meta name="description" content="Learn about binarization, 
+a necessary step in OCR that separates text from background." />
+
+<meta name="keywords" content="adaptive binarization, 
+color images, greyscale images, noise, bilevel threshold, 
+contrast, image smoothening, image processing, 
+Optical Character Recognition, OCR" />
+
+<meta name="twitter:widgets:csp" content="on">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://how-ocr-works.com/OCR/binarization.html" />
+<meta name="twitter:title" content="B Is for Binarize | How OCR Works" />
+<meta name="twitter:description" content="Learn about binarization, a necessary step in OCR that separates text from background." />
+<meta name="twitter:image" content="https://how-ocr-works.com/OCR/binarization/color-scan-bad-binarization.png" />
+
+<meta property="og:site_name" content="How OCR Works | A Close Look at Optical Character Recognition" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="B Is for Binarize | How OCR Works" />
+<meta property="og:description" content="Learn about binarization, a necessary step in OCR that separates text from background." />
+<meta property="og:url" content="https://how-ocr-works.com/OCR/binarization.html" />
+<meta property="og:image" content="https://how-ocr-works.com/OCR/binarization/color-scan-bad-binarization.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="500" />
+<meta property="og:image:height" content="531" />
+
+<meta name="subject" content="Optical Character Recognition (OCR)" />
+
+<meta name="googlebot" content="all" />
+<meta name="bingbot" content="all" />
+<meta name="robots" content="all" />
+
+<link rev="made" href="mailto:ivo.vynckier@telenet.be" title="Ivo Vynckier" />
+<link rev="made" href="mailto:webmaster@how-ocr-works.com" title="Ivo Vynckier" />
+
+<meta name="reply-to" content="ivo.vynckier@telenet.be" />
+<meta name="reply-to" content="webmaster@how-ocr-works.com" />
+
+<meta name="author" content="Ivo Vynckier" />
+
+<meta name="generator" content="Notepad++" />
+
+<meta name="copyright" content="&copy; Ivo Vynckier. All rights reserved" />
+
+<meta name="rating" content="general" />
+<meta name="rating" content="safe for kids" />
+
+<link href="../website.css" rel="stylesheet" media="all" />
+<link href="//fonts.googleapis.com/css?family=Special Elite" rel="stylesheet" type="text/css" />
+
+<link href="../favicon.ico" rel="icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDERQSN9SP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TDERQSN9SP');
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<meta itemprop="isFamilyFriendly" content="True" />
+<meta itemprop="inLanguage" content="en" />
+
+<bgsound src="../index/typewriter2.wma" volume="0" loop="1" />
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div itemprop="breadcrumb">
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="../index.html">Home page</a></td>
+<td><a href="../intro/intro.html">Intro</a></td>
+<td><a href="../scanners/scanners.html">Scanners</a></td>
+<td><a href="../images/images.html">Images</a></td>
+<td><a href="../history/history.html">History</a></td>
+<td><selected-page><a href="OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a></selected-page></td>
+<td><a href="../languages/languages.html">Languages</a></td>
+</tr>
+<tr>
+<td><a href="../accuracy/accuracy.html">Accuracy</a></td>
+<td><a href="../output/output.html">Output</a></td>
+<td><a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a></td>
+<td><a href="../pen-scanners/pen-scanners.html">Pen scanners</a></td>
+<td><a href="../sitemap.html">Sitemap</a></td>
+<td><a href="../search.html">Search</a></td>
+<td><a href="../contact.html">Contact &ndash; Feedback</a></td>
+</tr>
+</table>
+</div>
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="OCR.html">Recognition steps</a></td>
+<td><a href="color-modes.html">Color modes</a></td>
+<td><selected-page><a href="binarization.html">Binarization</a></selected-page></td>
+</tr>
+<tr>
+<td><a href="page-analysis.html">Page analysis</a></td>
+<td><a href="line-segmentation.html">Line segmentation</a></td>
+<td><a href="word-character-segmentation.html">Word-character segmentation</a></td>
+</tr>
+<tr>
+<td><a href="stylized-fonts.html">Stylized fonts</a></td>
+<td><a href="omnifont-OCR.html">Omnifont <abbr title="Optical Character Recognition">OCR</abbr></a></td>
+<td><a href="linguistics.html">The role of linguistics</a></td>
+</tr>
+</table>
+</div>
+
+</div>
+
+<h1>B Is for Binarize</h1>
+
+<p>
+Scanning in 
+<a href="color-modes.html" target="_blank">greyscale</a> 
+and <a href="color-modes.html" target="_blank">color</a> 
+isn&rsquo;t just useful to save the graphics with sufficient 
+quality. In some instances, it&rsquo;s also useful or 
+necessary to obtain good 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+results! Some documents are difficult or downright 
+impossible to recognize when scanned in black-and-white. 
+In the &ldquo;bilevel&rdquo; mode, every 
+<abbr title="picture elements">pixel</abbr> in the image 
+is either white or black. When the text is printed on a 
+colored background, the 
+<a href="../scanners/scanners.html" target="_blank">scanner</a> 
+doesn&rsquo;t always see 
+the difference.
+</p>
+
+<p>
+None of this is a problem when the foreground and 
+background are sufficiently different: black text on a 
+light blue, light green or light whatever background 
+obviously poses no problem. The background falls through, 
+the foreground is picked up. We get a sharp text.
+</p>
+
+<p>
+But what happens when the foreground and background are 
+closer together in intensity? In most cases, you can 
+adjust the brightness to solve this problem: you modify 
+the brightness to the point where the background gets 
+ignored while the text gets detected.
+</p>
+
+<p align="center">
+<img src="binarization/scanning-brightness.png" alt="Control panel to set the scanning brightness" border="0" />
+</p>
+
+<p>
+Still, there are documents where that trick doesn&rsquo;t 
+work. Think for instance of black text printed on a dark 
+background: when scanning such a document in 
+black-and-white, you may not be able to &ldquo;drop&rdquo; 
+the background color without losing the text information 
+as well, as much as you may try to adjust the 
+scanner&rsquo;s brightness. You can&rsquo;t filter out the 
+background without simultaneously erasing or making too 
+light the text. And when you do pick up the text, the 
+background introduces 
+&ldquo;<a href="../accuracy/preprocessing.html" target="_blank">noise</a>&rdquo; 
+that bothers the recognition or simply renders it 
+impossible.
+</p>
+
+<p align="center">
+<img src="binarization/color-scan.jpg" alt="Scanned image of document with colored background" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img itemprop="primaryImageOfPage" src="binarization/color-scan-bad-binarization.png" alt="Bad binarization introduces noise in black-and-white image" border="0" />
+</p>
+
+<p>
+Scanning in color (or greyscale) may create the tone 
+differences that are lacking in bitonal images: when 
+an image has color (or grey scales), there&rsquo;s 
+mostly some difference in intensity that can be 
+detected. And you don&rsquo;t have to adjust the 
+brightness, so there&rsquo;s no risk that the text 
+becomes too light (resulting in broken characters 
+<abbr title="etcetera">etc.</abbr>).
+</p>
+
+<p>
+That&rsquo;s why it takes highly intelligent binarization 
+routines to convert some color and greyscale images into 
+black-and-white images successfully: even the tough cases 
+get solved! Given the &ldquo;difficult&rdquo; color image 
+above, here&rsquo;s the (binarized) image that gets 
+submitted to the 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+engine. The background was efficiently filtered out &mdash; 
+even if its intensity varied &mdash; and the text is crisp 
+and clear.
+</p>
+
+<p align="center">
+<img src="binarization/color-scan-good-binarization.png" alt="Good binarization removes colored background from the black-and-white image" border="0" />
+</p>
+
+<p>
+If you&rsquo;re under the impression that this challenge 
+is limited to a small number of cases, think again! 
+Intelligent 
+<span itemprop="keywords">binarization</span> is needed 
+to cope with (very) light text on a white background, 
+with dark text printed on a equally dark background, 
+with colored text printed on a background of the same 
+color, with varying and degrading backgrounds, with 
+&ldquo;bleedthrough&rdquo; in newspapers and directories 
+(where the other side of the page shows through), with 
+computer printouts of wide-carriage high-speed matrix 
+printers where you&rsquo;ve got white and green strokes 
+on the paper <abbr title="etcetera">etc.</abbr> (OK, 
+you can place a black page on top of your scanned 
+document as back-drop to avoid bleedthrough.)
+</p>
+
+<p>
+The examples below show that the binarization routines 
+even handle changes &mdash; gradual and other &mdash; in 
+the background! To cope with varying colors and varying 
+color intensity in images, the 
+<strong>binarization</strong> of state-of-the-art 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software is &ldquo;<strong>adaptive</strong>&rdquo;. 
+The software chooses the optimal black-and-white 
+threshold <i>locally</i>: a different threshold can apply 
+to each small region of the image.
+</p>
+
+<p align="center">
+<img src="binarization/light-colored-text.jpg" alt="Scanned image of light colored text" border="0" />
+</p>
+
+<p align="center">
+<img src="binarization/light-colored-text-binarization.png" alt="Binarized image of light colored text" border="0" />
+</p>
+
+<p align="center">
+<img src="binarization/dark-text-on-dark-background.jpg" alt="Scanned image of dark text on a dark background" border="0" />
+</p>
+
+<p align="center">
+<img src="binarization/dark-text-on-dark-background-binarization.png" alt="Binarized image of dark text on a dark background" border="0" />
+</p>
+
+<p align="center">
+<img src="binarization/text-background-same-color.jpg" alt="Scanned image of blue text on a blue background" border="0" />
+</p>
+
+<p align="center">
+<img src="binarization/text-background-same-color-binarization.png" alt="Binarized image of blue text on a blue background" border="0" />
+</p>
+
+<p align="center">
+<img src="binarization/text-varying-colors.jpg" alt="Scanned image of text in varying colors" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="binarization/text-varying-colors-binarization.png" alt="Binarized image of text in varying colors" border="0" />
+</p>
+
+<p align="center">
+<img src="binarization/text-degrading-background.jpg" alt="Scanned image of text on a degrading background" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="binarization/text-degrading-background-binarization.png" alt="Binarized image of text on a degrading background" border="0" />
+</p>
+
+<p align="center">
+<img src="binarization/text-with-bleedthrough.jpg" alt="Scanned image of a document with bleedthrough" border="0" />
+</p>
+
+<p align="center">
+<img src="binarization/text-with-bleedthrough-binarization.png" alt="Binarized image of a document with bleedthrough" border="0" />
+</p>
+
+<p align="center">
+<img src="binarization/text-with-varying-background.jpg" alt="Scanned image of a document with a varying background" border="0" />
+</p>
+
+<p align="center">
+<img src="binarization/text-with-varying-background-binarization.png" alt="Binarized image of a document with bleedthrough" border="0" />
+</p>
+
+<p>
+Local, adaptive binarization even works on the small 
+strokes generated by 
+<a href="../pen-scanners/pen-scanners.html" target="_blank">pen scanners</a>!
+</p>
+
+<p align="center">
+<img src="binarization/pen-scanner-image.png" alt="Scan by pen scanner" border="0" />
+</p>
+
+<p align="center">
+<img src="binarization/pen-scanner-binarization.png" alt="Binarized image generated by pen scanner" border="0" />
+</p>
+
+<p>
+Binarizing images intelligently when this is useful 
+ensures that the 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+of color images works well. And that&rsquo;s not always 
+the case with 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+packages: some 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+solutions on the market yield disappointing results on 
+<strong itemprop="keywords">color scans</strong>. 
+Their recognition accuracy is much lower on color 
+images than it is on black-and-white images. But the 
+leading 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+packages are very sophisticated when it comes to 
+binarization. With such 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software, you can even influence the binarization 
+manually. By default, the <strong>bilevel 
+threshold</strong> is fixed automatically (and locally), 
+as we just described. 
+</p>
+
+<p>
+When scanning (in color), you should set the 
+<strong>brightness</strong> correctly. But even when the 
+brightness is <i>not</i> perfect, the user can intervene, 
+given the appropriate software. The user can manually 
+change the brightness of the black-and-white 
+image&hellip; without rescanning!
+</p>
+
+<p>
+How? He can apply a different threshold when necessary 
+by darkening or lightening the black-and-white image: 
+when he darkens the image, more 
+<abbr title="picture elements">pixels</abbr> become 
+black in the black-and-white version, when he lightens 
+the image, less 
+<abbr title="picture elements">pixels</abbr> become 
+black in the black-and-white version.
+</p>
+
+<p align="center">
+<img src="binarization/image-adjustment.png" alt="Control panel to adjust the image&rsquo;s binarization" border="0" />
+</p>
+
+<p>
+Let&rsquo;s assume that a yellow text (on a white 
+background) gets dropped from the black-and-white image 
+but you want to recognize it anyway. Darken the image 
+by dragging a simple, straightforward brightness slider 
+bar. In doing so, you actually change the 
+black-and-white threshold until the yellow text shows 
+up in the binarized image.
+</p>
+
+<p align="center">
+<img src="binarization/light-text.jpg" alt="Scanned color image of light text" border="0" />
+</p>
+
+<p align="center">
+<img src="binarization/light-text-bad-binarization.png" alt="Bad binarization of light text" border="0" />
+</p>
+
+<p align="center">
+<img src="binarization/light-text-good-binarization.png" alt="Good binarization of light text" border="0" />
+</p>
+
+<p>
+The reverse also holds: lighten an image where every 
+zone is dark. This time, the default binarization gives 
+you one big black image but as you eliminate the page 
+background, the text becomes legible.
+</p>
+
+<p align="center">
+<img src="binarization/dark-text.jpg" alt="Scanned color image of dark text" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="binarization/dark-text-bad-binarization.png" alt="Bad binarization of dark text" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="binarization/dark-text-good-binarization.png" alt="Good binarization of dark text" border="0" />
+</p>
+
+<p>
+The brightness determines the overall brightness of the 
+image. Any darkening or lightening of the image applies 
+to <i>all</i> <abbr title="picture elements">pixels</abbr>. 
+That&rsquo;s not the case for the <strong>contrast</strong>.
+The contrast determines the local contrast between the 
+darker and lighter zones of the image. (The text is usually 
+darker than the background &mdash; the reverse is true 
+when you&rsquo;re dealing with inverted text.)
+</p>
+
+<p>
+This time, the objective is to make the character shapes 
+stand out nicely against their colored background.
+</p>
+
+<p align="center">
+<img src="binarization/color-image.jpg" alt="Scanned image of color document" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="binarization/color-image-bad-contrast.png" alt="Binarization of color image with bad contrast" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="binarization/color-image-good-contrast.png" alt="Binarization of color image with bad contrast" border="0" />
+</p>
+
+<p>
+In any case, 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+engines operate on black-and-white images. That means 
+that any scanned image gets <strong>binarized</strong> 
+if necessary: the 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software creates a black-and-white version for every 
+greyscale and color image.
+</p>
+
+<p>
+To make things even more difficult: binarization 
+doesn&rsquo;t always suffice! 
+<strong itemprop="keywords">Image smoothening</strong> 
+can be mandatory for some images as well. Smoothening 
+color images renders greyscale and color images more 
+homogeneous by &ldquo;flattening&rdquo;, smoothing out 
+relative differences in intensity. The color of a 
+<abbr title="picture element">pixel</abbr> is replaced 
+by the average of the surrounding 
+<abbr title="picture elements">pixels</abbr>. As a 
+result, you get a better legibility of the foreground 
+&mdash; the text &mdash; against the background&mdash; 
+a 
+<a href="https://en.wikipedia.org/wiki/Spot_color" target="_blank" title="Wikipedia page on spot colors">spot color</a>, 
+artwork <abbr title="etcetera">etc.</abbr>
+</p>
+
+<p align="center">
+<img src="binarization/color-image-without-smoothening.png" alt="Binarization of color image without smoothening" border="0" />
+</p>
+
+<p align="center">
+<img src="binarization/color-image-with-smoothening.png" alt="Binarization of color image with smoothening" border="0" />
+</p>
+
+<p>
+This 
+<strong itemprop="keywords">image processing</strong> 
+feature may seem highly technical and difficult to 
+understand, but it certainly has its role to play: with 
+some scanner models, this reduction of the sharpness is 
+needed to recognize color and greyscale images. 
+Smoothening is sometimes the only way to separate text 
+from the colored background! Our sample image is simply 
+illegible without image smoothing because the binarization 
+fails&hellip;
+</p>
+
+<p align="center">
+<img src="binarization/color-image-smoothening.jpg" alt="Color scan of document with colored background" border="0" />
+</p>
+
+<p><span class="small"><a href="binarization.html">Back to top</a></span></p>
+
+<p><a href="../contact.html#Form" target="_blank">Submit feedback</a></p>
+
+<p>
+<a href="https://www.pinterest.com/pin/create/button/" class="pin-it-button" data-pin-do="buttonPin" data-pin-config="beside"><img src="https://assets.pinterest.com/images/pidgets/pin_it_button.png" alt="Pin it" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="Binarization, a necessary step in Optical Character Recognition (OCR), separates the text from the background" data-related="ivovynckier" data-lang="en">Tweet</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<script src="http://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-counter="right"></script>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<fb:like layout="standard" action="like" show_faces="false" share="true"></fb:like>
+</p>
+
+<script type="text/javascript">
+(function (w, d, load) {
+  var script, 
+  first = d.getElementsByTagName('SCRIPT')[0],  
+  n = load.length, 
+  i = 0,
+  go = function () {
+    for (i = 0; i < n; i = i + 1) {
+      script = d.createElement('SCRIPT');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = load[i];
+      first.parentNode.insertBefore(script, first);
+    }
+  }
+  if (w.attachEvent) {
+    w.attachEvent('onload', go);
+  } else {
+    w.addEventListener('load', go, false);
+  }
+}(window, document, 
+  ['//assets.pinterest.com/js/pinit.js']
+));    
+</script>
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+if(!d.getElementById(id)){js=d.createElement(s);
+js.id=id;
+js.src="https://platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+
+<div itemprop="breadcrumb">
+<div class="small">
+
+<p align="center">
+<a href="color-modes.html">Previous page</a> 
+&mdash;
+<a href="page-analysis.html">Next page</a>
+</p>
+
+<p align="center">
+<a href="OCR.html">Let&rsquo;s take things step by step, shall we?</a> &mdash;
+<a href="color-modes.html">Take us where the rainbow ends!</a> &mdash;
+<a href="binarization.html">B is for binarize</a> &mdash;
+<a href="page-analysis.html">What gets read and what doesn&rsquo;t</a> &mdash;
+<a href="line-segmentation.html">Lines, lineskew and drop letters</a> &mdash;
+<a href="word-character-segmentation.html">Segmenting words and characters</a> &mdash;
+<a href="stylized-fonts.html">Stylized fonts</a> &mdash;
+<a href="omnifont-OCR.html">Why is <abbr title="Optical Character Recognition">OCR</abbr> software called omnifont?</a> &mdash;
+<a href="linguistics.html">What&rsquo;s the role of linguistics in the <abbr title="Optical Character Recognition">OCR</abbr> process?</a>
+</p>
+
+<p align="center">
+<a href="../index.html">Home page</a> &mdash;
+<a href="../intro/intro.html">Intro</a> &mdash;
+<a href="../scanners/scanners.html">Scanners</a> &mdash;
+<a href="../images/images.html">Images</a> &mdash;
+<a href="../history/history.html">History</a> &mdash;
+<a href="OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a> &mdash;
+<a href="../languages/languages.html">Languages</a> &mdash;
+<a href="../accuracy/accuracy.html">Accuracy</a> &mdash;
+<a href="../output/output.html">Output</a> &mdash;
+<a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a> &mdash;
+<a href="../pen-scanners/pen-scanners.html">Pen scanners</a> &mdash;
+<a href="../sitemap.html">Sitemap</a> &mdash;
+<a href="../search.html">Search</a> &mdash;
+<a href="../contact.html">Feedback &ndash; Contact</a>
+</p>
+
+</div>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+Sitemap: https://how-ocr-works.com/sitemap-index.xml
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Zoominfobot
+Disallow: /
+
+User-agent: *
+Disallow: /search.html
+Disallow: /errors/
+Disallow: /logs/
+Disallow: /php/
+Disallow: /private/

@@ -1,0 +1,541 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+
+<title>OCR Is the Ultimate Data Cruncher | How OCR Works</title>
+
+<link rel="prev" href="resolution.html" />
+<link rel="next" href="text.html" />
+
+<meta name="description" content="How text recognition offers 
+the most efficient way of compressing paper documents into 
+manageable computer files." />
+
+<meta name="keywords" content="file size, data compression, 
+image compression, black-and-white images, greyscale images, 
+color images, TIFF Group 4, Tagged Image File Format, 
+JPEG, Joint Photographic Experts Group, lossy compression, 
+lossless compression, JPEG compression, 
+Optical Character Recognition, OCR" />
+
+<meta name="twitter:widgets:csp" content="on">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://how-ocr-works.com/images/compression.html" />
+<meta name="twitter:title" content="OCR Is the Ultimate Data Cruncher | How OCR Works" />
+<meta name="twitter:description" content="How text recognition offers the most efficient way of compressing paper documents into manageable computer files." />
+<meta name="twitter:image" content="https://how-ocr-works.com/images/compression/JPEG-text3.jpg" />
+
+<meta property="og:site_name" content="How OCR Works | A Close Look at Optical Character Recognition" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="OCR Is the Ultimate Data Cruncher | How OCR Works" />
+<meta property="og:description" content="How text recognition offers the most efficient way of compressing paper documents into manageable computer files." />
+<meta property="og:url" content="https://how-ocr-works.com/images/compression.html" />
+<meta property="og:image" content="https://how-ocr-works.com/images/compression/JPEG-text3.jpg" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="667" />
+<meta property="og:image:height" content="175" />
+
+<meta name="subject" content="Optical Character Recognition (OCR)" />
+
+<meta name="googlebot" content="all" />
+<meta name="bingbot" content="all" />
+<meta name="robots" content="all" />
+
+<link rev="made" href="mailto:ivo.vynckier@telenet.be" title="Ivo Vynckier" />
+<link rev="made" href="mailto:webmaster@how-ocr-works.com" title="Ivo Vynckier" />
+
+<meta name="reply-to" content="ivo.vynckier@telenet.be" />
+<meta name="reply-to" content="webmaster@how-ocr-works.com" />
+
+<meta name="author" content="Ivo Vynckier" />
+
+<meta name="generator" content="Notepad++" />
+
+<meta name="copyright" content="&copy; Ivo Vynckier. All rights reserved" />
+
+<meta name="rating" content="general" />
+<meta name="rating" content="safe for kids" />
+
+<link href="../website.css" rel="stylesheet" media="all" />
+<link href="//fonts.googleapis.com/css?family=Special Elite" rel="stylesheet" type="text/css" />
+
+<link href="../favicon.ico" rel="icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDERQSN9SP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TDERQSN9SP');
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<meta itemprop="isFamilyFriendly" content="True" />
+<meta itemprop="inLanguage" content="en" />
+
+<bgsound src="../index/typewriter2.wma" volume="0" loop="1" />
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div itemprop="breadcrumb">
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="../index.html">Home page</a></td>
+<td><a href="../intro/intro.html">Intro</a></td>
+<td><a href="../scanners/scanners.html">Scanners</a></td>
+<td><selected-page><a href="images.html">Images</a></selected-page></td>
+<td><a href="../history/history.html">History</a></td>
+<td><a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a></td>
+<td><a href="../languages/languages.html">Languages</a></td>
+</tr>
+<tr>
+<td><a href="../accuracy/accuracy.html">Accuracy</a></td>
+<td><a href="../output/output.html">Output</a></td>
+<td><a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a></td>
+<td><a href="../pen-scanners/pen-scanners.html">Pen scanners</a></td>
+<td><a href="../sitemap.html">Sitemap</a></td>
+<td><a href="../search.html">Search</a></td>
+<td><a href="../contact.html">Contact &ndash; Feedback</a></td>
+</tr>
+</table>
+</div>
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="images.html"><abbr title="picture elements">Pixels</abbr></a></td>
+<td><a href="intelligence.html">Bitmap <abbr title="versus">vs.</abbr> vector</a></td>
+<td><a href="bitmaps.html">Image editing</a></td>
+<td><a href="resolution.html">Resolution</a></td>
+<td><selected-page><a href="compression.html">Compression</a></selected-page></td>
+<td><a href="text.html">Searchable text</a></td>
+</tr>
+</table>
+</div>
+
+</div>
+
+<h1><abbr title="Optical Character Recognition">OCR</abbr> Is the Ultimate Data Cruncher</h1>
+
+<p>
+Let&rsquo;s pursue another aspect now: 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software reduces huge matrices of dots to a few thousand 
+characters per page. We just showed how you get 90,000 
+<a href="resolution.html" target="_blank"><abbr title="picture elements">pixels</abbr></a> 
+on a square inch. But how about a normal page &mdash; a 
+<abbr title="United States">US</abbr> Letter (8.5 x 
+11&rdquo; or 21.58 x 27.93 
+<abbr title="centimeter">cm.</abbr>) or A4 (8.27 x 
+11.69&rdquo; or 21 x 29.69 
+<abbr title="centimeter">cm.</abbr>) page? How many times 
+can you fit the small square inch block in such a page? 
+The unavoidable conclusion is: it takes millions of dots 
+to compose a <strong>black-and-white image</strong> of an 
+average page!
+</p>
+
+<p>
+But that&rsquo;s not the end of it: had we scanned the 
+page in <strong>greyscale</strong> instead of 
+black-and-white, it would have taken 8 bits, not 1 bit, 
+to store a <abbr title="picture element">pixel</abbr>. 
+And had we scanned in <strong>true color</strong>, it 
+would have taken 24 bits to store a 
+<abbr title="picture element">pixel</abbr>.
+</p>
+
+<table border="1" cellspacing="0" cellpadding="8" align="center"
+summary="Storage needs for scanned images">
+<tr>
+<td colspan="3" bgcolor="PowderBlue">
+<strong><abbr title="United States">US</abbr> Letter</strong>
+</td>
+</tr>
+<tr>
+<td>
+page format
+</td>
+<td colspan="2">
+8.5 x 11 inch
+<br />
+21.58 x 27.93 <abbr title="centimeter">cm.</abbr>
+</td>
+</tr>
+<tr>
+<td>
+number of <abbr title="picture elements">pixels</abbr>
+<br />
+(resolution: 300 <abbr title="dots per inch">dpi</abbr>)
+</td>
+<td>
+(8.5&rdquo; x 300 <abbr title="dots per inch">dpi</abbr>) 
+x 
+(11&rdquo; x 300 <abbr title="dots per inch">dpi</abbr>) 
+= 
+2,550 <abbr title="picture elements">pixels</abbr> 
+x 
+3,300 <abbr title="picture elements">pixels</abbr>
+</td>
+<td bgcolor="#FFE9FF">
+8,415,000 <abbr title="picture elements">pixels</abbr>
+</td>
+</tr>
+<tr>
+<td colspan="3" bgcolor="PowderBlue">
+<strong>Storage needs for scanned image</strong>
+</td>
+</tr>
+<tr>
+<td>
+black-and-white scan
+<br />
+(1 bit per <abbr title="picture element">pixel</abbr>)
+</td>
+<td>
+8,415,000 <abbr title="picture elements">pixels</abbr> 
+x 1/8 byte
+</td>
+<td bgcolor="#F9B7FF">
+1,051,875
+<br />
+(about 1 <abbr title="Megabyte">MB</abbr>)
+</td>
+</tr>
+<tr>
+<td>
+greyscale scan
+<br />
+(8 bits per <abbr title="picture element">pixel</abbr>)
+</td>
+<td>
+8,415,000 <abbr title="picture elements">pixels</abbr> 
+x 1 byte
+</td>
+<td bgcolor="#F9B7FF">
+8,415,000 bytes
+<br />
+(about 8.5 <abbr title="Megabyte">MB</abbr>)
+</td>
+</tr>
+<tr>
+<td>
+true color scan
+<br />
+(24 bits per <abbr title="picture element">pixel</abbr>)
+</td>
+<td>
+8,415,000 <abbr title="picture elements">pixels</abbr> 
+x 3 bytes
+</td>
+<td bgcolor="#F9B7FF">
+25,245,000 bytes
+<br />
+(about 25 <abbr title="Megabyte">MB</abbr>)
+</td>
+</tr>
+</table>
+
+<p>
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software sifts through millions of 
+<abbr title="picture elements">pixels</abbr> and converts 
+the <abbr title="picture elements">pixels</abbr> into 
+characters. (Remember 
+<a href="https://en.wikipedia.org/wiki/Moore%27s_law" target="_blank" title="Wikipedia page on Moore&rsquo;s law">Moore&rsquo;s law</a> 
+that says microprocessor chips double in power every 18 
+months? Make no mistake: the increased power of 
+<a href="https://en.wikipedia.org/wiki/Microprocessor" target="_blank" title="Wikipedia page on microprocessors">microprocessors</a> 
+and the abundance of 
+<a href="https://en.wikipedia.org/wiki/RAM_memory" target="_blank" title="Wikipedia page on random-access memory"><abbr title="Random-Access Memory">RAM</abbr> memory</a> 
+in modern computers was very beneficial to the 
+<strong>speed</strong> of 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software!)
+</p>
+
+<p>
+You should never select a resolution above 400 
+<abbr title="dots per inch">dpi</abbr>. (When you double 
+the scan resolution, the memory cost goes up 4 
+times...) You&rsquo;re just slowing down the 
+recognition without winning extra recognition accuracy.
+</p>
+
+<p>
+Storing images requires 1 to 24 bits per 
+<abbr title="picture element">pixel</abbr> with millions 
+of <abbr title="picture elements">pixels</abbr> per page; 
+storing a character requires 8 bits per character and 
+you&rsquo;ve only got a few thousand characters per page. 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+can rightly be called the big crunch, the ultimate 
+<strong>data compressor</strong>!
+</p>
+
+<p>
+Evidently, many 
+<strong itemprop="keywords">compression techniques</strong> 
+were developed over the years to make images more 
+&ldquo;manageable&rdquo;. Compression exploits the 
+repetition and irrelevancy of data. If a complete line of 
+<abbr title="picture elements">pixels</abbr> is white, why 
+bother storing every single 
+<abbr title="picture element">pixel</abbr> with the same 
+color value? In the picture of a sunset, a single 
+<abbr title="picture element">pixel</abbr> slightly lighter 
+than the other <abbr title="picture elements">pixels</abbr> 
+never gets noticed anyway. That dot is 
+&ldquo;irrelevant&rdquo;, so why store it?
+</p>
+
+<p align="center">
+<img src="compression/color-image-compression.png" alt="Repeated patterns in color image" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="images/flatscreen-image.jpg" alt="Sky displayed on flatscreen TV" border="0" />
+</p>
+
+<a name="TIFF"></a>
+
+<p>
+The standard efficient compression technique for 
+black-and-white images is 
+<strong itemprop="keywords">Group 4 <abbr title="Tagged Image File Format">TIFF</abbr></strong>: 
+it reduces 1 <abbr title="Megabyte">MB</abbr> files to 
+about 50 <abbr title="Kilobyte">KB</abbr> &mdash; 
+that&rsquo;s a 20:1 compression ratio.
+</p>
+
+<a name="JPEG"></a>
+
+<p>
+A standard compression technique for greyscale and color 
+images is 
+<strong><abbr title="Joint Photographic Experts Group">JPEG</abbr></strong>. 
+<a href="https://en.wikipedia.org/wiki/JPEG" target="_blank" title="Wikipedia page on JPEG"><abbr title="Joint Photographic Experts Group">JPEG</abbr> images</a> 
+&mdash; 
+&ldquo;<abbr title="Joint Photographic Experts Group">JPEG</abbr>&rdquo; 
+stands for &ldquo;Joint Photographic Experts Group&rdquo; 
+&mdash; reduce the file size by discarding extra data not 
+essential for the display of the image. The bigger the 
+compression, the smaller the image becomes.
+</p>
+
+<p>
+Because it discards data, the 
+<abbr title="Joint Photographic Experts Group">JPEG</abbr> 
+algorithm is referred to as 
+&ldquo;<strong>lossy</strong>&rdquo;. 
+(<abbr title="Tagged Image File Format">TIFF</abbr> Group 
+4 compression is &ldquo;lossless&rdquo;: no single 
+<abbr title="picture element">pixel</abbr> is lost going 
+through the compression and decompression process.) Once 
+a <abbr title="Joint Photographic Experts Group">JPEG</abbr> 
+image has been compressed, it is no longer identical to 
+the original image! 
+<abbr title="Joint Photographic Experts Group">JPEG</abbr> 
+images are automatically decompressed when they&rsquo;re 
+opened.
+</p>
+
+<p>
+In most cases, nobody can notice the difference between the 
+original image and an image with minimal compression unless 
+you zoom in on the details. However, <strong>image 
+quality</strong> can degrade substantially as the 
+compression ratio increases.
+</p>
+
+<p align="center">
+<img src="./compression/JPEG1.jpg" alt="JPEG image with high quality" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="./compression/JPEG2.jpg" alt="JPEG image with medium quality" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="./compression/JPEG3.jpg" alt="JPEG image with low quality" border="0" />
+</p>
+
+<p>
+To recognize such images, for instance 
+<span itemprop="keywords"><abbr title="Joint Photographic Experts Group">JPEG</abbr></span> 
+files received by e-mail, you have to choose an appropriate 
+trade-off between the 
+<span itemprop="keywords">image quality</span> and the 
+amount of compression. Excessive 
+<strong><abbr title="Joint Photographic Experts Group">JPEG</abbr> compression</strong> 
+is rough on all sharp contrasting edges: see how vague dark 
+smudges start to surround the characters as the compression 
+increases &mdash; and think of the nasty effect that this 
+can have on the recognition! (Resave a 
+<abbr title="Joint Photographic Experts Group">JPEG</abbr> 
+file and things get worse: 
+<abbr title="picture element">pixel</abbr> data get lost 
+each time you compress a 
+<abbr title="Joint Photographic Experts Group">JPEG</abbr> 
+image...)
+</p>
+
+<p align="center">
+<img src="./compression/JPEG-text1.jpg" alt="JPEG image with high quality" border="0" />
+</p> 
+
+<p align="center">
+<img src="./compression/JPEG-text2.jpg" alt="JPEG image with medium quality" border="0" />
+</p> 
+
+<p align="center">
+<img itemprop="primaryImageOfPage" src="./compression/JPEG-text3.jpg" alt="JPEG image with low quality" border="0" />
+</p> 
+ 
+<p>
+In short, significant 
+<abbr title="Joint Photographic Experts Group">JPEG</abbr> 
+compression is counterproductive to the sharpness and detail 
+of all text. Here&rsquo;s a rule of thumb: the 0.8 image 
+quality on a scale from 0 (low quality) to 1 (best quality) 
+does not degrade the 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+accuracy significantly.
+</p>
+
+<p align="center">
+<img src="./compression/JPEG-compression1.png" alt="Control panel for JPEG compression" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="./compression/JPEG-compression2.png" alt="Control panel for JPEG compression" border="0" />
+</p>
+
+<p>
+Compression is even more efficient for 
+<strong itemprop="keywords"><abbr title="Portable Document Format">PDF</abbr> documents</strong>. 
+You&rsquo;ll even find specialized, sophisticated software 
+whose main feature is to compress your 
+<a href="../output/production-OCR.html" target="_blank"><abbr title="Portable Document Format">PDF</abbr> scans</a> 
+with a factor 20 without dramatic loss of quality&hellip; 
+I mention this because you can 
+<a href="../accuracy/PDF-files.html" target="_blank">convert image files</a> 
+in <abbr title="Portable Document Format">PDF</abbr> 
+format into editable documents too!
+</p>
+
+<p align="center">
+<img src="./compression/PDF-compression.png" alt="Control panel for PDF compression" border="0" />
+</p>
+
+<p><span class="small"><a href="compression.html">Back to top</a></span></p>
+
+<p><a href="../contact.html#Form" target="_blank">Submit feedback</a></p>
+
+<p>
+<a href="https://www.pinterest.com/pin/create/button/" class="pin-it-button" data-pin-do="buttonPin" data-pin-config="beside"><img src="https://assets.pinterest.com/images/pidgets/pin_it_button.png" alt="Pin it" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="OCR as ultimate data cruncher: compress paper documents into manageable computer files!" data-related="ivovynckier" data-lang="en">Tweet</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<script src="http://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-counter="right"></script>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<fb:like layout="standard" action="like" show_faces="false" share="true"></fb:like>
+</p>
+
+<script type="text/javascript">
+(function (w, d, load) {
+  var script, 
+  first = d.getElementsByTagName('SCRIPT')[0],  
+  n = load.length, 
+  i = 0,
+  go = function () {
+    for (i = 0; i < n; i = i + 1) {
+      script = d.createElement('SCRIPT');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = load[i];
+      first.parentNode.insertBefore(script, first);
+    }
+  }
+  if (w.attachEvent) {
+    w.attachEvent('onload', go);
+  } else {
+    w.addEventListener('load', go, false);
+  }
+}(window, document, 
+  ['//assets.pinterest.com/js/pinit.js']
+));    
+</script>
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+if(!d.getElementById(id)){js=d.createElement(s);
+js.id=id;
+js.src="https://platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+
+<div itemprop="breadcrumb">
+<div class="small">
+
+<p align="center">
+<a href="resolution.html">Previous page</a> 
+&mdash;
+<a href="text.html">Next page</a>
+</p>
+
+<p align="center">
+<a href="images.html">The text is in the eye of the beholder</a> &mdash;
+<a href="intelligence.html">The intelligence of OCR</a> &mdash;
+<a href="bitmaps.html">Bitmaps only take you so far</a> &mdash;
+<a href="resolution.html">90,000 kids on the block</a> &mdash;
+<a href="compression.html">OCR is the ultimate data cruncher!</a> &mdash;
+<a href="text.html">OCR deserves recognition</a>
+</p>
+
+<p align="center">
+<a href="../index.html">Home page</a> &mdash;
+<a href="../intro/intro.html">Intro</a> &mdash;
+<a href="../scanners/scanners.html">Scanners</a> &mdash;
+<a href="images.html">Images</a> &mdash;
+<a href="../history/history.html">History</a> &mdash;
+<a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a> &mdash;
+<a href="../languages/languages.html">Languages</a> &mdash;
+<a href="../accuracy/accuracy.html">Accuracy</a> &mdash;
+<a href="../output/output.html">Output</a> &mdash;
+<a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a> &mdash;
+<a href="../pen-scanners/pen-scanners.html">Pen scanners</a> &mdash;
+<a href="../sitemap.html">Sitemap</a> &mdash;
+<a href="../search.html">Search</a> &mdash;
+<a href="../contact.html">Contact &ndash; Feedback</a>
+</p>
+
+</div>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,303 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+
+<title>Repurposing Adobe Acrobat PDF Files | How OCR Works</title>
+
+<link rel="prev" href="images.html" />
+
+<meta name="description" content="How OCR software unlocks Adobe PDF 
+content, converting PDF files into editable documents." />
+
+<meta name="keywords" content="Adobe PDF files, unlocking PDF content, 
+repurposing PDF files, read-only documents, Optical Character Recognition, 
+OCR" />
+
+<meta name="twitter:widgets:csp" content="on">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://how-ocr-works.com/accuracy/PDF-files.html" />
+<meta name="twitter:title" content="Repurposing Adobe Acrobat PDF Files | How OCR Works" />
+<meta name="twitter:description" content="How OCR software unlocks Adobe PDF content, converting PDF files into editable documents." />
+
+<meta property="og:site_name" content="How OCR Works | A Close Look at Optical Character Recognition" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="Repurposing Adobe Acrobat PDF Files | How OCR Works" />
+<meta property="og:description" content="How OCR software unlocks Adobe PDF content, converting PDF files into editable documents." />
+<meta property="og:url" content="https://how-ocr-works.com/accuracy/PDF-files.html" />
+
+<meta name="subject" content="Optical Character Recognition (OCR)" />
+
+<meta name="googlebot" content="all" />
+<meta name="bingbot" content="all" />
+<meta name="robots" content="all" />
+
+<link rev="made" href="mailto:ivo.vynckier@telenet.be" title="Ivo Vynckier" />
+<link rev="made" href="mailto:webmaster@how-ocr-works.com" title="Ivo Vynckier" />
+
+<meta name="reply-to" content="ivo.vynckier@telenet.be" />
+<meta name="reply-to" content="webmaster@how-ocr-works.com" />
+
+<meta name="author" content="Ivo Vynckier" />
+
+<meta name="generator" content="Notepad++" />
+
+<meta name="copyright" content="&copy; Ivo Vynckier. All rights reserved" />
+
+<meta name="rating" content="general" />
+<meta name="rating" content="safe for kids" />
+
+<link href="../website.css" rel="stylesheet" media="all" />
+<link href="//fonts.googleapis.com/css?family=Special Elite" rel="stylesheet" type="text/css" />
+
+<link href="../favicon.ico" rel="icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDERQSN9SP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TDERQSN9SP');
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<meta itemprop="isFamilyFriendly" content="True" />
+<meta itemprop="inLanguage" content="en" />
+
+<bgsound src="../index/typewriter2.wma" volume="0" loop="1" />
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div itemprop="breadcrumb">
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="../index.html">Home page</a></td>
+<td><a href="../intro/intro.html">Intro</a></td>
+<td><a href="../scanners/scanners.html">Scanners</a></td>
+<td><a href="../images/images.html">Images</a></td>
+<td><a href="../history/history.html">History</a></td>
+<td><a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a></td>
+<td><a href="../languages/languages.html">Languages</a></td>
+</tr>
+<tr>
+<td><selected-page><a href="accuracy.html">Accuracy</a></selected-page></td>
+<td><a href="../output/output.html">Output</a></td>
+<td><a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a></td>
+<td><a href="../pen-scanners/pen-scanners.html">Pen scanners</a></td>
+<td><a href="../sitemap.html">Sitemap</a></td>
+<td><a href="../search.html">Search</a></td>
+<td><a href="../contact.html">Contact &ndash; Feedback</a></td>
+</tr>
+</table>
+</div>
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="accuracy.html">Accuracy</a></td>
+<td><a href="benchmarks.html">Benchmarks</a></td>
+<td><a href="scanning-skills.html">Scanning skills</a></td>
+<td><a href="preprocessing.html">Preprocessing</a></td>
+<td><a href="snapshots.html">Snapshots</a></td>
+<td><a href="images.html">Images</a></td>
+<td><selected-page><a href="PDF-files.html"><abbr title="Portable Document Format">PDF</abbr> files</a></selected-page></td>
+</tr>
+</table>
+</div>
+
+</div>
+
+<h1>Repurposing Adobe Acrobat <abbr title="Portable Document Format">PDF</abbr> Files</h1>
+
+<p>
+There are several reasons why Adobe&rsquo;s 
+<strong><abbr title="Portable Document Format">PDF</abbr> format</strong> 
+&mdash; 
+&ldquo;<abbr title="Portable Document Format">PDF</abbr>&rdquo; 
+stands for &ldquo;Portable Document Format&rdquo; &mdash; 
+gained the popularity it did. One reason is certainly the 
+&ldquo;portability&rdquo;: 
+<span itemprop="keywords"><abbr title="Portable Document Format">PDF</abbr> documents</span> 
+are viewed and printed in exactly the same way on any 
+computer platform. But the fact that 
+<abbr title="Portable Document Format">PDF</abbr> documents 
+aren&rsquo;t editable and well protected is unarguably 
+another key factor in the success of this document format. 
+Send a <abbr title="Portable Document Format">PDF</abbr> 
+file to your printing company and they&rsquo;ll reproduce 
+your brochure; there&rsquo;s no need for you to hand out 
+your source files. Post a 
+<abbr title="Portable Document Format">PDF</abbr> document 
+on an Internet server: everybody can download the document, 
+nobody can change it.
+</p>
+
+<p>
+Or can they? State-of-the-art 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software doesn&rsquo;t just create 
+<a href="../output/PDF-output.html" target="_blank"><abbr title="Portable Document Format">PDF</abbr> files</a> 
+of the recognized documents, the software also 
+<i>reads</i>, &ldquo;repurposes&rdquo; them! 
+<abbr title="Portable Document Format">PDF</abbr> files 
+can be recognized just as <a href="images.html" target="_blank">prescanned images and faxes</a> 
+can be&hellip;
+</p>
+
+<p>
+<abbr title="Portable Document Format">PDF</abbr> files 
+can contain images and text. Let&rsquo;s start with 
+image-based 
+<abbr title="Portable Document Format">PDF</abbr> documents. 
+Open a <abbr title="Portable Document Format">PDF</abbr> 
+image file with your 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software, execute the recognition and 
+<a href="../output/output.html" target="_blank">save the recognition result</a> 
+to a text document (in any supported text format). You 
+could even save the 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+result&hellip; in a text-based 
+<abbr title="Portable Document Format">PDF</abbr> 
+document, in which case you convert image 
+<abbr title="Portable Document Format">PDF</abbr> files 
+to text <abbr title="Portable Document Format">PDF</abbr> 
+files!
+</p>
+
+<p>
+But <abbr title="Portable Document Format">PDF</abbr> 
+files can also contain text, and when that is the case, 
+the files are usually protected. With unprotected 
+<abbr title="Portable Document Format">PDF</abbr> files, 
+the content can be retrieved (copied and saved to an 
+<abbr title="Rich Text Format">RTF</abbr> file), with 
+&ldquo;read-only&rdquo; files, the content cannot be 
+extracted. These documents can only be viewed and 
+printed. But: your 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software 
+<strong>&ldquo;unlocks&rdquo; <span itemprop="keywords"><abbr title="Portable Document Format">PDF</abbr> content</span></strong> 
+for you, prolongs its life cycle! You convert 
+&ldquo;read-only&rdquo;, static 
+<abbr title="Portable Document Format">PDF</abbr> 
+documents, where the text is normally inaccessible. 
+After the file conversion, the text can be accessed 
+freely.
+</p>
+
+<p>
+An important nuance: no 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software package opens password-protected 
+<abbr title="Portable Document Format">PDF</abbr> 
+documents, even if all other security barriers are broken 
+down by them. (To be specific: &ldquo;master 
+passwords&rdquo; that set the permissions of 
+<abbr title="Portable Document Format">PDF</abbr> 
+documents don&rsquo;t bother 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software, &ldquo;user passwords&rdquo; required to open 
+a <abbr title="Portable Document Format">PDF</abbr> 
+document do.) All other 
+<abbr title="Portable Document Format">PDF</abbr> 
+security barriers are surmounted by 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software!
+</p>
+
+<p align="center">
+<img src="PDF-files/PDF-passwords.png" alt="Password protection of Adobe Acrobat PDF files" border="0" />
+</p>
+
+<p><span class="small"><a href="PDF-files.html">Back to top</a></span></p>
+
+<p><a href="../contact.html#Form" target="_blank">Submit feedback</a></p>
+
+<p>
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="OCR software also &ldquo;repurposes&rdquo; PDF content: your PDF documents become editable!" data-related="ivovynckier" data-lang="en">Tweet</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<script src="http://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-counter="right"></script>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<fb:like layout="standard" action="like" show_faces="false" share="true"></fb:like>
+</p>
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+if(!d.getElementById(id)){js=d.createElement(s);
+js.id=id;
+js.src="https://platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+
+<div itemprop="breadcrumb">
+<div class="small">
+
+<p align="center">
+<a href="images.html">Previous page</a> 
+&mdash;
+<a href="../output/output.html">Next section</a>
+</p>
+
+<p align="center">
+<a href="accuracy.html">Training the system further</a> &mdash;
+<a href="benchmarks.html">The accuracy of <abbr title="Optical Character Recognition">OCR</abbr> software</a> &mdash;
+<a href="scanning-skills.html">How good are your scanning skills?</a> &mdash;
+<a href="preprocessing.html">With a little help from the friends</a> &mdash;
+<a href="snapshots.html">Recognizing snapshots</a> &mdash;
+<a href="images.html">Recognizing prescanned images and faxes</a> &mdash;
+<a href="PDF-files.html">Repurposing <abbr title="Portable Document Format">PDF</abbr> files</a>
+</p>
+
+<p align="center">
+<a href="../index.html">Home page</a> &mdash;
+<a href="../intro/intro.html">Intro</a> &mdash;
+<a href="../scanners/scanners.html">Scanners</a> &mdash;
+<a href="../images/images.html">Images</a> &mdash;
+<a href="../history/history.html">History</a> &mdash;
+<a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a> &mdash;
+<a href="../languages/languages.html">Languages</a> &mdash;
+<a href="accuracy.html">Accuracy</a> &mdash;
+<a href="../output/output.html">Output</a> &mdash;
+<a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a> &mdash;
+<a href="../pen-scanners/pen-scanners.html">Pen scanners</a> &mdash;
+<a href="../sitemap.html">Sitemap</a> &mdash;
+<a href="../search.html">Search</a> &mdash;
+<a href="../contact.html">Contact &ndash; Feedback</a>
+</p>
+
+</div>
+</div>
+
+</body>
+
+</html>

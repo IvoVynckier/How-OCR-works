@@ -1,0 +1,407 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+
+<title>The Intelligence of OCR | How OCR Works</title>
+
+<link rel="prev" href="images.html" />
+<link rel="next" href="bitmaps.html" />
+
+<meta name="description" content="Discover the differences 
+between bitmaps (raster images) and vector images." />
+
+<meta name="keywords" content="bitmaps, what are bitmaps, 
+raster images, pixels, picture elements, impressionism, 
+pointillism, dpi, dots per inch, vector graphics, 
+vector images, mathematical expressions, image resolution, 
+difference between bitmaps and vector graphics, 
+Optical Character Recognition, OCR" />
+
+<meta name="twitter:widgets:csp" content="on">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://how-ocr-works.com/images/intelligence.html" />
+<meta name="twitter:title" content="The Intelligence of OCR | How OCR Works" />
+<meta name="twitter:description" content="Discover the differences between bitmaps (raster images) and vector images." />
+<meta name="twitter:image" content="https://how-ocr-works.com/images/intelligence/bitmap.png" />
+
+<meta property="og:site_name" content="How OCR Works | A Close Look at Optical Character Recognition" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="The Intelligence of OCR | How OCR Works" />
+<meta property="og:description" content="Discover the differences between bitmaps (raster images) and vector images." />
+<meta property="og:url" content="https://how-ocr-works.com/images/intelligence.html" />
+<meta property="og:image" content="https://how-ocr-works.com/images/intelligence/bitmap.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="514" />
+<meta property="og:image:height" content="228" />
+
+<meta name="subject" content="Optical Character Recognition (OCR)" />
+
+<meta name="googlebot" content="all" />
+<meta name="bingbot" content="all" />
+<meta name="robots" content="all" />
+
+<link rev="made" href="mailto:ivo.vynckier@telenet.be" title="Ivo Vynckier" />
+<link rev="made" href="mailto:webmaster@how-ocr-works.com" title="Ivo Vynckier" />
+
+<meta name="reply-to" content="ivo.vynckier@telenet.be" />
+<meta name="reply-to" content="webmaster@how-ocr-works.com" />
+
+<meta name="author" content="Ivo Vynckier" />
+
+<meta name="generator" content="Notepad++" />
+
+<meta name="copyright" content="&copy; Ivo Vynckier. All rights reserved" />
+
+<meta name="rating" content="general" />
+<meta name="rating" content="safe for kids" />
+
+<link href="../website.css" rel="stylesheet" media="all" />
+<link href="//fonts.googleapis.com/css?family=Special Elite" rel="stylesheet" type="text/css" />
+
+<link href="../favicon.ico" rel="icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDERQSN9SP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TDERQSN9SP');
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<meta itemprop="isFamilyFriendly" content="True" />
+<meta itemprop="inLanguage" content="en" />
+
+<bgsound src="../index/typewriter2.wma" volume="0" loop="1" />
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div itemprop="breadcrumb">
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="../index.html">Home page</a></td>
+<td><a href="../intro/intro.html">Intro</a></td>
+<td><a href="../scanners/scanners.html">Scanners</a></td>
+<td><selected-page><a href="images.html">Images</a></selected-page></td>
+<td><a href="../history/history.html">History</a></td>
+<td><a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a></td>
+<td><a href="../languages/languages.html">Languages</a></td>
+</tr>
+<tr>
+<td><a href="../accuracy/accuracy.html">Accuracy</a></td>
+<td><a href="../output/output.html">Output</a></td>
+<td><a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a></td>
+<td><a href="../pen-scanners/pen-scanners.html">Pen scanners</a></td>
+<td><a href="../sitemap.html">Sitemap</a></td>
+<td><a href="../search.html">Search</a></td>
+<td><a href="../contact.html">Contact &ndash; Feedback</a></td>
+</tr>
+</table>
+</div>
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="images.html"><abbr title="picture elements">Pixels</abbr></a></td>
+<td><selected-page><a href="intelligence.html">Bitmap <abbr title="versus">vs.</abbr> vector</a></selected-page></td>
+<td><a href="bitmaps.html">Image editing</a></td>
+<td><a href="resolution.html">Resolution</a></td>
+<td><a href="compression.html">Compression</a></td>
+<td><a href="text.html">Searchable text</a></td>
+</tr>
+</table>
+</div>
+
+</div>
+
+<h1>The Intelligence of <abbr title="Optical Character Recognition">OCR</abbr></h1>
+
+<p>
+Of course, 
+<a href="images.html" target="_blank">watching the <abbr title="television">TV</abbr></a> 
+is so common and transparent for us humans that we 
+instantly move beyond the (very complex) physical and 
+neurological phenomena involved. (That some people with 
+brain disorders are no longer capable of recognizing faces, 
+objects <abbr title="etcetera">etc.</abbr> is proof of that 
+complexity!) Computers on the other hand require very 
+detailed instructions &mdash; software 
+&mdash; to get anything done.
+</p>
+
+<p>
+The <abbr title="Optical Character Recognition">OCR</abbr> 
+software converts the 
+<a href="images.html" target="_blank">image</a> &mdash; an 
+electronic world of colored dots &mdash; into the 
+&ldquo;abstract&rdquo; world of real intelligence &mdash; 
+<strong>characters</strong>, symbols that have meaning. 
+As and Bs, <abbr title="ones">1s</abbr> and 
+<abbr title="sevens">7s</abbr>, semicolons and question 
+marks.
+</p>
+
+<p align="center">
+<img itemprop="primaryImageOfPage" src="../intro/scanning/bitmap.png" alt="Scanned image" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="../intro/scanning/text.png" alt="Recognized text" border="0" />
+</p>
+
+<p>
+Actually, we don&rsquo;t speak of &ldquo;dots&rdquo; but of 
+&ldquo;<span itemprop="keywords"><abbr title="picture elements">pixels</abbr></span>&rdquo; 
+in the computer world. The word 
+&ldquo;<abbr title="picture element">pixel</abbr>&rdquo; is 
+short for &ldquo;picture element&rdquo;; the term indicates 
+the smallest distinguishable square dot to compose a 
+<a itemprop="keywords" href="https://en.wikipedia.org/wiki/Bitmap" target="_blank" title="Wikipedia page on bitmaps">raster image</a>. 
+(<abbr title="picture elements">Pixels</abbr> apply to 
+<a href="../scanners/peripherals.html" target="_blank">scanners</a>, 
+<a href="images.html" target="_blank">monitors</a> and 
+printers.)
+</p>
+
+<p align="center">
+<img src="./intelligence/bitmap.jpg" alt="Scanned image" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="./intelligence/bitmap-zoom.jpg" alt="Detail of scanned image" border="0" />
+</p>
+
+<p>
+The 
+<a itemprop="keywords" href="https://en.wikipedia.org/wiki/Impressionism" target="_blank" title="Wikipedia page on impessionism">impressionists</a>, 
+and even more so the 
+<a href="https://en.wikipedia.org/wiki/Pointillism" target="_blank" title="Wikipedia page on pointillism">pointillists</a> 
+among them, used a similar technique on the canvas. Move in 
+too close to an impressionist painting and you just see 
+patches of paint. The bigger picture got lost; you could be 
+fooled into thinking you&rsquo;re looking at an abstract 
+painting. But move back to the correct distance and 
+you&rsquo;re watching, say, a sunday picnic by the river, 
+a flower arrangement <abbr title="etcetera">etc.</abbr> 
+Move in on a pointillist painting and you&rsquo;re 
+watching not patches of paint but actual dots!
+</p>
+
+<p align="center">
+<img src="intelligence/impressionist-painting.jpg" alt="Impressionist painting (selfportrait by Vincent Van Gogh)" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="intelligence/pointillist-painting.jpg" alt="Pointillist painting" border="0" />
+</p>
+
+<a name="Resolution"></a>
+
+<p>
+The higher the 
+<a itemprop="keywords" href="https://en.wikipedia.org/wiki/Image_resolution" target="_blank" title="Wikipedia page on image resolution">resolution</a>, 
+the more <abbr title="picture elements">pixels</abbr> you 
+get on a given square surface. In other words, the higher 
+the resolution, the <i>smaller</i> the 
+<abbr title="picture elements">pixels</abbr> become! The 
+&ldquo;resolution&rdquo; is a measure of the fineness of 
+detail that the scanner produces. And the more detail you 
+have, the more you can blow up a picture before it 
+becomes &ldquo;grainy&rdquo;. 
+</p>
+
+<p align="center">
+<img src="intelligence/magnifying-glass-on-image.png" alt="Magnifying glass on image" border="0" />
+</p>
+
+<p>
+The resolution of an image file is expressed in dots per 
+(linear) inch or 
+&ldquo;<abbr title="dots per inch">dpi</abbr>&rdquo;. When 
+your scan has a 300 <abbr title="dots per inch">dpi</abbr> 
+resolution, it takes 300 dots to form a colored line 
+1 inch (2.54 <abbr title="centimeter">cm.</abbr>) long.
+</p>
+  	 
+<p align="center">
+<img src="./intelligence/image-resolution.png" alt="Increasing image resolution adds detail to the text" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="./intelligence/dpi.png" alt="300 linear dots per inch (dpi)" border="0" />
+</p>
+
+<p>
+Don&rsquo;t confuse bitmaps with 
+<a itemprop="keywords" href="https://en.wikipedia.org/wiki/Vector_graphics" target="_blank" title="Wikipedia page on vector graphics">vector graphics</a> 
+used in drawings created with Adobe Illustrator, CorelDraw 
+<abbr title="etcetera">etc.</abbr> Or think of the 
+<abbr title="Computer-Aided Design &ndash; Computer-Aided Manufacturing">CAD-CAM</abbr> 
+drawings created by engineers and architects. More popular 
+examples of vector images are the clipart illustrations 
+you&rsquo;re using in your presentations or the logo that 
+your company got designed by a graphic artist. 
+</p>
+
+<p align="center">
+<img src="intelligence/vector-graphic.png" alt="Vectorial graphic" border="0" />
+</p>
+
+<p>
+Vector graphics 
+use mathematical expressions to represent geometric shapes 
+&mdash; lines, polygons, curves, circles 
+<abbr title="etctera">etc.</abbr> &mdash;, bitmaps are 
+composed of colored 
+<abbr title="picture elements">pixels</abbr>.
+</p>
+
+<p align="center">
+<img src="intelligence/vector-drawing.jpg" alt="Software for vector drawing" border="0" />
+</p>
+
+<p>
+Bitmaps depend on the image resolution. With vector graphics, 
+the image quality doesn&rsquo;t degrade as you enlarge the 
+size of the illustration: the lines are drawn with great 
+precision &mdash; whatever the dimensions may be. The lines 
+stay crisp as you zoom in, you don&rsquo;t hit a wall where 
+you&rsquo;re looking at the individual 
+<abbr title="picture elements">pixels</abbr>!
+</p>
+
+<p>
+(Or rather: when you do, it&rsquo;s the monitor&rsquo;s or 
+the printer&rsquo;s fault. You&rsquo;re watching these logos 
+on your screen, which means they&rsquo;re converted into 
+bitmaps anyway, but you get the meaning. Trust me, I 
+downloaded the vector graphic file of the Facebook logo and 
+produced three bitmap images from that single file, doubling 
+the size each time. I got a crisp result in all cases, and 
+that&rsquo;s the point I&rsquo;m making here.)
+</p>
+
+<p align="center">
+<img src="intelligence/facebook-logo1.jpg" alt="Facebook logo (small)" border="0" />
+</p>
+
+<p align="center">
+<img src="intelligence/facebook-logo2.jpg" alt="Facebook logo (medium)" border="0" />
+</p>
+
+<p align="center">
+<img src="intelligence/facebook-logo3.jpg" alt="Facebook logo (large)" border="0" />
+</p>
+
+<p><span class="small"><a href="intelligence.html">Back to top</a></span></p>
+
+<p><a href="../contact.html#Form" target="_blank">Submit feedback</a></p>
+
+<p>
+<a href="https://www.pinterest.com/pin/create/button/" class="pin-it-button" data-pin-do="buttonPin" data-pin-config="beside"><img src="https://assets.pinterest.com/images/pidgets/pin_it_button.png" alt="Pin it" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="Raster vs. vector images: are you into bitmaps or mathematical expressions?" data-related="ivovynckier" data-lang="en">Tweet</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<script src="http://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-counter="right"></script>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<fb:like layout="standard" action="like" show_faces="false" share="true"></fb:like>
+</p>
+
+<script type="text/javascript">
+(function (w, d, load) {
+  var script, 
+  first = d.getElementsByTagName('SCRIPT')[0],  
+  n = load.length, 
+  i = 0,
+  go = function () {
+    for (i = 0; i < n; i = i + 1) {
+      script = d.createElement('SCRIPT');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = load[i];
+      first.parentNode.insertBefore(script, first);
+    }
+  }
+  if (w.attachEvent) {
+    w.attachEvent('onload', go);
+  } else {
+    w.addEventListener('load', go, false);
+  }
+}(window, document, 
+  ['//assets.pinterest.com/js/pinit.js']
+));    
+</script>
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+if(!d.getElementById(id)){js=d.createElement(s);
+js.id=id;
+js.src="https://platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+
+<div itemprop="breadcrumb">
+<div class="small">
+
+<p align="center">
+<a href="images.html">Previous page</a> 
+&mdash;
+<a href="bitmaps.html">Next page</a>
+</p>
+
+<p align="center">
+<a href="images.html">The text is in the eye of the beholder</a> &mdash;
+<a href="intelligence.html">The intelligence of OCR</a> &mdash;
+<a href="bitmaps.html">Bitmaps only take you so far</a> &mdash;
+<a href="resolution.html">90,000 kids on the block</a> &mdash;
+<a href="compression.html">OCR is the ultimate data cruncher!</a> &mdash;
+<a href="text.html">OCR deserves recognition</a>
+</p>
+
+<p align="center">
+<a href="../index.html">Home page</a> &mdash;
+<a href="../intro/intro.html">Intro</a> &mdash;
+<a href="../scanners/scanners.html">Scanners</a> &mdash;
+<a href="images.html">Images</a> &mdash;
+<a href="../history/history.html">History</a> &mdash;
+<a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a> &mdash;
+<a href="../languages/languages.html">Languages</a> &mdash;
+<a href="../accuracy/accuracy.html">Accuracy</a> &mdash;
+<a href="../output/output.html">Output</a> &mdash;
+<a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a> &mdash;
+<a href="../pen-scanners/pen-scanners.html">Pen scanners</a> &mdash;
+<a href="../sitemap.html">Sitemap</a> &mdash;
+<a href="../search.html">Search</a> &mdash;
+<a href="../contact.html">Contact &ndash; Feedback</a>
+</p>
+
+</div>
+</div>
+
+</body>
+
+</html>

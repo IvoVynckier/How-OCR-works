@@ -1,0 +1,522 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+
+<title>Does OCR Software Format the Text? | How OCR Works</title>
+
+<link rel="prev" href="PDF-output.html" />
+<link rel="next" href="table-recognition.html" />
+
+<meta name="description" content="How OCR software recreates the layout 
+of scanned documents with typefaces, graphics, flowing columns etc." />
+
+<meta name="keywords" content="autoformatting, body text, 
+word formatting, paragraph formatting, justification, frames, 
+flowing columns, Optical Character Recognition, OCR" />
+
+<meta name="twitter:widgets:csp" content="on">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://how-ocr-works.com/output/formatting.html" />
+<meta name="twitter:title" content="Does OCR Software Format the Text? | How OCR Works" />
+<meta name="twitter:description" content="How OCR software recreates the layout of scanned documents with typefaces, graphics, flowing columns etc." />
+<meta name="twitter:image" content="https://how-ocr-works.com/output/formatting/recreate-source-document.png" />
+
+<meta property="og:site_name" content="How OCR Works | A Close Look at Optical Character Recognition" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="Does OCR Software Format the Text? | How OCR Works" />
+<meta property="og:description" content="How OCR software recreates the layout of scanned documents with typefaces, graphics, flowing columns etc." />
+<meta property="og:url" content="https://how-ocr-works.com/output/formatting.html" />
+<meta property="og:image" content="https://how-ocr-works.com/output/formatting/recreate-source-document.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="725" />
+<meta property="og:image:height" content="482" />
+
+<meta name="subject" content="Optical Character Recognition (OCR)" />
+
+<meta name="googlebot" content="all" />
+<meta name="bingbot" content="all" />
+<meta name="robots" content="all" />
+
+<link rev="made" href="mailto:ivo.vynckier@telenet.be" title="Ivo Vynckier" />
+<link rev="made" href="mailto:webmaster@how-ocr-works.com" title="Ivo Vynckier" />
+
+<meta name="reply-to" content="ivo.vynckier@telenet.be" />
+<meta name="reply-to" content="webmaster@how-ocr-works.com" />
+
+<meta name="author" content="Ivo Vynckier" />
+
+<meta name="generator" content="Notepad++" />
+
+<meta name="copyright" content="&copy; Ivo Vynckier. All rights reserved" />
+
+<meta name="rating" content="general" />
+<meta name="rating" content="safe for kids" />
+
+<link href="../website.css" rel="stylesheet" media="all" />
+<link href="//fonts.googleapis.com/css?family=Special Elite" rel="stylesheet" type="text/css" />
+
+<link href="../favicon.ico" rel="icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDERQSN9SP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TDERQSN9SP');
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<meta itemprop="isFamilyFriendly" content="True" />
+<meta itemprop="inLanguage" content="en" />
+
+<bgsound src="../index/typewriter2.wma" volume="0" loop="1" />
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div itemprop="breadcrumb">
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="../index.html">Home page</a></td>
+<td><a href="../intro/intro.html">Intro</a></td>
+<td><a href="../scanners/scanners.html">Scanners</a></td>
+<td><a href="../images/images.html">Images</a></td>
+<td><a href="../history/history.html">History</a></td>
+<td><a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a></td>
+<td><a href="../languages/languages.html">Languages</a></td>
+</tr>
+<tr>
+<td><a href="../accuracy/accuracy.html">Accuracy</a></td>
+<td><selected-page><a href="output.html">Output</a></selected-page></td>
+<td><a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a></td>
+<td><a href="../pen-scanners/pen-scanners.html">Pen scanners</a></td>
+<td><a href="../sitemap.html">Sitemap</a></td>
+<td><a href="../search.html">Search</a></td>
+<td><a href="../contact.html">Contact &ndash; Feedback</a></td>
+</tr>
+</table>
+</div>
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="output.html">Output</a></td>
+<td><a href="PDF-output.html"><abbr title="Portable Document Format">PDF</abbr> output</a></td>
+<td><selected-page><a href="formatting.html">Formatting</a></selected-page></td>
+<td><a href="table-recognition.html">Tables</a></td>
+<td><a href="production-OCR.html">Production <abbr title="Optical Character Recognition">OCR</abbr></a></td>
+</tr>
+</table>
+</div>
+
+</div>
+
+<h1>Does <abbr title="Optical Character Recognition">OCR</abbr> Software Format the Text?</h1>
+
+<p>
+Whether your 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software reformats the recognized text or not is up to 
+the user. You can perform 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+because you just need the text, in which case you will 
+edit and format it yourself, and you can recreate the 
+source document, including its 
+<span itemprop="keywords">formatting</span>.
+</p>
+
+<p align="center">
+<img src="formatting/source-document.jpg" alt="Image of the source document" border="0" />
+</p>
+
+<p>
+The various levels of formatting can depend somewhat on 
+your 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software, but you roughly get the following options: 
+creating body text, retaining word and paragraph 
+formatting and creating a facsimile copy. (You can 
+certainly guess that each 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+company names these formatting levels differently...)
+</p>
+
+<p align="center">
+<img src="formatting/formatting-options.png" alt="Control panel to select the formatting options" border="0" />
+</p>
+
+<p>
+Creating <strong>body text</strong> means no formatting 
+is applied: you get a continuous, &ldquo;running&rdquo; 
+text. All formatting, if any, is done afterwards by the 
+user.
+</p>
+
+<p align="center">
+<img src="formatting/create-body-text.png" alt="Creating body text" border="0" />
+</p>
+
+<p>
+If you retain <strong>word</strong> and 
+<strong>paragraph formatting</strong>, the font type 
+(<a href="../OCR/word-character-segmentation.html#FixedProp" target="_blank">fixed-proportional</a>, 
+<a href="../OCR/omnifont-OCR.html#Serif" target="_blank">serif-sans serif</a>, 
+normal-condensed), size and typestyle (bold, italic, 
+underlined, subscript and superscript) are maintained 
+across the recognition. (Recreating the types subscript 
+and superscript is interesting when you recapture 
+scientific literature: the chemical description 
+&ldquo;H<sub>2</sub>O&rdquo; remains exactly that, it 
+does not become &ldquo;H2O&rdquo;.)
+</p>
+
+<p>
+The justification of the paragraphs (left, centered, right 
+and justified) is detected. Bulleted and numbered lists 
+get recreated. The graphics and 
+<a href="table-recognition.html" target="_blank">tables</a> are recreated (including 
+the cell borders) but the columns are not: the paragraphs 
+just follow each other <abbr title="etcetera">etc.</abbr>
+</p>
+
+<p align="center">
+<img src="formatting/retain-word-paragraph-formatting.png" alt="Retaining the word and paragraph formatting" border="0" />
+</p>
+
+<a name="AutoFormatting"></a>
+
+<p>
+True 
+&ldquo;<strong itemprop="keywords">autoformatting</strong>&rdquo; 
+recreates a 
+<strong itemprop="keywords">facsimile copy</strong> of the 
+original document: the text, (bitonal, greyscale or color) 
+graphic and table blocks are recreated in the same place. 
+The font type, size and typestyle are maintained across the 
+recognition. As a result, you get a true copy of your source 
+document, be it a compact and editable text file, no longer 
+a scanned image of your document! (Notice the 
+&ldquo;<a href="../OCR/line-segmentation.html#DropLetters" target="_blank">drop letter</a>&rdquo; 
+in the first column...)
+</p>
+
+<p align="center">
+<img src="formatting/autoformatting.png" alt="Facsimile copy of scanned document" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img itemprop="primaryImageOfPage" src="formatting/recreate-source-document.png" alt="Recreating the source document" border="0" />
+</p>
+
+<p>
+With state-of-the-art 
+<abbr title="Optical Character Recognition">OCR</abbr>, 
+&ldquo;autoformatting&rdquo; can be done in two ways: the 
+text blocks, tables and graphics can be stored in 
+<strong>frames</strong> or in <strong>&ldquo;flowing&rdquo; 
+columns</strong> (if applicable).
+</p>
+
+<p align="center">
+<img src="formatting/recreate-columns-frames.png" alt="Recreating columns as columns or frames" border="0" />
+</p>
+
+<p>
+With frames, modifying text is not that easy: the 
+frames won&rsquo;t adjust their position when the text 
+is modified. Columnized text is definitely editable: the 
+logical flow of document text is reflected in the output 
+as the text &ldquo;flows&rdquo; naturally from one column 
+to the next. Change the dimensions of a column for 
+instance and your text adjusts itself automatically!
+</p>
+
+<p align="center">
+<img src="formatting/recreate-columns-word.png" alt="Recreating columns in the wordprocessor Word" border="0" />
+</p>
+
+<p>
+Advanced 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+solutions will even have the 
+<span itemprop="keywords">columns</span> flow naturally 
+around an &ldquo;irregular&rdquo; graphic: the text 
+flow is ensured when a (polygonal) 
+<strong>graphic</strong> &ldquo;eats into&rdquo; your 
+columns! It doesn&rsquo;t matter how much you edit the 
+recognized document: add or remove text in any column 
+and the text steers clear of the (complex) graphic in all 
+cases... (Remember the umbrella man that constituted a 
+challenge to our 
+<a href="../OCR/page-analysis.html#PageDecomp" target="_blank">page decomposition</a>? 
+You can get actual, editable columns with the graphic 
+inserted as recognition result.)
+</p>
+
+<p align="center">
+<img src="formatting/complex-graphic-columns.png" alt="Columns recreated in the wordprocessor Word around a complex graphic" border="0" />
+</p>
+
+<a name="TextColors"></a>
+
+<p>
+Sophisticated 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+offers extra options to recreate the source documents: 
+you can 
+<a href="#ColorsText">retain the colors of the text</a>, 
+<a href="#ColorsBackground">retain the colors of the background</a> 
+and you can 
+<a href="#PageBackground">add the scanned image as <span itemprop="keywords">page background</span></a> 
+to the recognized document. Does that sound heavy? 
+Let&rsquo;s take things one step at a time then&hellip;
+</p>
+
+<p align="center">
+<img src="formatting/graphic-options.png" alt="Graphic options of OCR software" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="formatting/add-image-as-page-background.png" alt="Graphic option of OCR software that adds the scanned image as page background in Word" border="0" />
+</p>
+
+<a name="ColorsText"></a>
+
+<p>
+When you retain the <strong>colors of the text</strong>, 
+you maintain the original colors of the text across the 
+recognition. A red title will be red in your Word document, 
+blue text in a frame shows up as blue in your 
+<abbr title="HyperText Markup Language">HTML</abbr> file 
+<abbr title="etcetera">etc.</abbr> Think united colors of 
+Bennetton!
+</p>
+
+<p align="center">
+<img src="formatting/colored-text.jpg" alt="Multicolored text" border="0" />
+</p>
+
+<p align="center">
+<img src="formatting/color-image.jpg" alt="Scanned image of multicolored text" border="0" />
+</p>
+
+<p align="center">
+<img src="formatting/colored-text-in-word.png" alt="OCRed colored text in Word" border="0" />
+</p>
+
+<a name="ColorsBackground"></a>
+
+<p>
+Retaining the <strong>colors of the background</strong> 
+maintains the 
+<a href="https://en.wikipedia.org/wiki/Spot_color" target="_blank" title="Wikipedia page on spot colors">spot colors</a> 
+of the page background across the recognition. Think of 
+text printed on a colored background, text printed in 
+colored frame that stands apart from the other columns 
+<abbr title="etcetera">etc.</abbr>
+</p>
+
+<p align="center">
+<img src="formatting/spot-color-image.jpg" alt="Scanned image of a document with a spot color" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="formatting/word-file-with-spot-color.png" alt="OCRed document with a spot color in Word" border="0" />
+</p>
+
+<p>
+Or think of tables with colored cells: this option 
+maintains the background color of each cell!
+</p>
+
+<p align="center">
+<img src="output/excel-table.png" alt="Excel table with colored cells" border="0" />
+</p>
+
+<a name="PageBackground"></a>
+
+<p>
+Finally, you can <strong>add the scanned image as page 
+background</strong> under the recognized text. You can 
+compare it to a <a href="PDF-output.html" target="_blank">&ldquo;text-image&rdquo; <abbr title="Portable Document Format">PDF</abbr> file</a>, 
+only this time it&rsquo;s a Word or 
+<abbr title="HyperText Markup Language">HTML</abbr> 
+document, for instance&hellip;
+</p>
+
+<p align="center">
+<img src="formatting/PDF-file-with-image-background.png" alt="PDF file with an image as page background" border="0" />
+</p>
+
+<p align="center">
+<img src="formatting/word-file-with-image-background1.jpg" alt="Word file with an image as page background" border="0" />
+</p>
+
+<p>
+This formatting option involves sophisticated routines. 
+The <abbr title="picture elements">pixels</abbr> of the 
+recognized text are erased from the scanned image to 
+create a legible document. Displaying recognized text in, 
+say, black on top of black character bitmaps would give 
+you text with a heavy shadow&hellip;
+</p>
+
+<p align="center">
+<img src="formatting/double-image.jpg" alt="Double image" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="formatting/word-file-with-image-background2.png" alt="Word file with an image as page background" border="0" />
+</p>
+
+<p>
+State-of-the-art 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+packages also support 
+<strong itemprop="keywords">Adobe Acrobat <abbr title="Portable Document Format">PDF</abbr></strong> 
+output, and when you&rsquo;re using that format, you can 
+take all this even further: you autoformat the recognized 
+text and store it alongside the scanned page. The scanned 
+image is placed above the autoformatted text in a 
+two-layered file! (It may seem a bit strange at first: 
+when you execute a text search inside such an 
+<a href="PDF-output.html" target="_blank">&ldquo;image-text&rdquo; <abbr title="Portable Document Format">PDF</abbr> file</a>, 
+you enter a word as search term and the system highlights 
+the <i>images</i> of the word matches.)
+</p>
+
+<p align="center">
+<img src="formatting/search-pdf-file.png" alt="Searching a PDF file (in Windows 8)" border="0" />
+</p>
+
+<p>
+All this leads to an interesting conclusion: 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+isn&rsquo;t just character recognition anymore, it has 
+become comprehensive <strong>page</strong> or 
+<strong itemprop="keywords">document recognition</strong>!
+</p>
+
+<p>
+And the capability to retain the page format is certainly 
+appreciated by the 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+users: in most reviews of 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software, you&rsquo;ll find information on the capability 
+of the 
+software to recreate the layout of the scanned documents. 
+In 
+<a href="../accuracy/benchmarks.html" target="_blank"><abbr title="Optical Character Recognition">OCR</abbr> benchmarks</a>, the degree of success with which the source 
+documents get recreated often features as large as the 
+recognition accuracy&hellip;!
+</p>
+
+<p><span class="small"><a href="formatting.html">Back to top</a></span></p>
+
+<p><a href="../contact.html#Form" target="_blank">Submit feedback</a></p>
+
+<p>
+<a href="https://www.pinterest.com/pin/create/button/" class="pin-it-button" data-pin-do="buttonPin" data-pin-config="beside"><img src="https://assets.pinterest.com/images/pidgets/pin_it_button.png" alt="Pin it" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="OCR software recreates the layout of a scanned document with similar typefaces, graphics and flowing columns" data-related="ivovynckier" data-lang="en">Tweet</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<script src="http://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-counter="right"></script>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<fb:like layout="standard" action="like" show_faces="false" share="true"></fb:like>
+</p>
+
+<script type="text/javascript">
+(function (w, d, load) {
+  var script, 
+  first = d.getElementsByTagName('SCRIPT')[0],  
+  n = load.length, 
+  i = 0,
+  go = function () {
+    for (i = 0; i < n; i = i + 1) {
+      script = d.createElement('SCRIPT');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = load[i];
+      first.parentNode.insertBefore(script, first);
+    }
+  }
+  if (w.attachEvent) {
+    w.attachEvent('onload', go);
+  } else {
+    w.addEventListener('load', go, false);
+  }
+}(window, document, 
+  ['//assets.pinterest.com/js/pinit.js']
+));    
+</script>
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+if(!d.getElementById(id)){js=d.createElement(s);
+js.id=id;
+js.src="https://platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+
+<div itemprop="breadcrumb">
+<div class="small">
+
+<p align="center">
+<a href="PDF-output.html">Previous page</a> 
+&mdash;
+<a href="table-recognition.html">Next page</a>
+</p>
+
+<p align="center">
+<a href="output.html">Going places with the recognized text</a> &mdash;
+<a href="PDF-output.html">More about Adobe Acrobat <abbr title="Portable Document Format">PDF</abbr> output</a> &mdash;
+<a href="formatting.html">Does <abbr title="Optical Character Recognition">OCR</abbr> software format the text?</a> &mdash;
+<a href="table-recognition.html">Does <abbr title="Optical Character Recognition">OCR</abbr> software recognize tables?</a> &mdash;
+<a href="production-OCR.html">Converting document collections</a>
+</p>
+
+<p align="center">
+<a href="../index.html">Home page</a> &mdash;
+<a href="../intro/intro.html">Intro</a> &mdash;
+<a href="../scanners/scanners.html">Scanners</a> &mdash;
+<a href="../images/images.html">Images</a> &mdash;
+<a href="../history/history.html">History</a> &mdash;
+<a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a> &mdash;
+<a href="../languages/languages.html">Languages</a> &mdash;
+<a href="../accuracy/accuracy.html">Accuracy</a> &mdash;
+<a href="output.html">Output</a> &mdash;
+<a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a> &mdash;
+<a href="../pen-scanners/pen-scanners.html">Pen scanners</a> &mdash;
+<a href="../sitemap.html">Sitemap</a> &mdash;
+<a href="../search.html">Search</a> &mdash;
+<a href="../contact.html">Feedback &ndash; Contact</a>
+</p>
+
+</div>
+</div>
+
+</body>
+
+</html>

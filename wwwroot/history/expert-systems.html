@@ -1,0 +1,253 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+
+<title>Each Expert Casts His Vote | How OCR Works</title>
+
+<link rel="prev" href="word-recognition.html" />
+<link rel="next" href="autolearning.html" />
+
+<meta name="description" content="How OCR software makes use 
+of expert systems to improve the recognition results." />
+
+<meta name="keywords" content="expert systems, weight, 
+confidence level, Optical Character Recognition, OCR" />
+
+<meta name="twitter:widgets:csp" content="on">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://how-ocr-works.com/history/expert-systems.html" />
+<meta name="twitter:title" content="Each Expert Casts His Vote | How OCR Works" />
+<meta name="twitter:description" content="How OCR software makes use of expert systems to improve the recognition results." />
+<meta name="twitter:image" content="https://how-ocr-works.com/history/expert-systems.html" />
+
+<meta property="og:site_name" content="How OCR Works | A Close Look at Optical Character Recognition" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="Each Expert Casts His Vote | How OCR Works" />
+<meta property="og:description" content="How OCR software makes use of expert systems to improve the recognition results." />
+<meta property="og:url" content="https://how-ocr-works.com/history/expert-systems.html" />
+
+<meta name="subject" content="Optical Character Recognition (OCR)" />
+
+<meta name="googlebot" content="all" />
+<meta name="bingbot" content="all" />
+<meta name="robots" content="all" />
+
+<link rev="made" href="mailto:ivo.vynckier@telenet.be" title="Ivo Vynckier" />
+<link rev="made" href="mailto:webmaster@how-ocr-works.com" title="Ivo Vynckier" />
+
+<meta name="reply-to" content="ivo.vynckier@telenet.be" />
+<meta name="reply-to" content="webmaster@how-ocr-works.com" />
+
+<meta name="author" content="Ivo Vynckier" />
+
+<meta name="generator" content="Notepad++" />
+
+<meta name="copyright" content="&copy; Ivo Vynckier. All rights reserved" />
+
+<meta name="rating" content="general" />
+<meta name="rating" content="safe for kids" />
+
+<link href="../website.css" rel="stylesheet" media="all" />
+<link href="//fonts.googleapis.com/css?family=Special Elite" rel="stylesheet" type="text/css" />
+
+<link href="../favicon.ico" rel="icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDERQSN9SP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TDERQSN9SP');
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<meta itemprop="isFamilyFriendly" content="True" />
+<meta itemprop="inLanguage" content="en" />
+
+<bgsound src="../index/typewriter2.wma" volume="0" loop="1" />
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div itemprop="breadcrumb">
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="../index.html">Home page</a></td>
+<td><a href="../intro/intro.html">Intro</a></td>
+<td><a href="../scanners/scanners.html">Scanners</a></td>
+<td><a href="../images/images.html">Images</a></td>
+<td><selected-page><a href="history.html">History</a></selected-page></td>
+<td><a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a></td>
+<td><a href="../languages/languages.html">Languages</a></td>
+</tr>
+<tr>
+<td><a href="../accuracy/accuracy.html">Accuracy</a></td>
+<td><a href="../output/output.html">Output</a></td>
+<td><a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a></td>
+<td><a href="../pen-scanners/pen-scanners.html">Pen scanners</a></td>
+<td><a href="../sitemap.html">Sitemap</a></td>
+<td><a href="../search.html">Search</a></td>
+<td><a href="../contact.html">Contact &ndash; Feedback</a></td>
+</tr>
+</table>
+</div>
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="history.html">The early years</a></td>
+<td><a href="neural-networks.html">Neural networks</a></td>
+<td><a href="word-recognition.html">Word recognition</a></td>
+<td><selected-page><a href="expert-systems.html">Expert systems</a></selected-page></td>
+</tr>
+<tr>
+<td><a href="autolearning.html">Autolearning</a></td>
+<td><a href="voting-systems.html">Voting systems</a></td>
+<td colspan="2"><a href="document-revolution.html">Document revolution</a></td>
+</tr>
+</table>
+</div>
+
+</div>
+
+<h1>Each Expert Casts His Vote</h1>
+
+<p>
+But that&rsquo;s not the end of the recognition process. 
+Far from it, several specialized units contribute to the 
+end result, and the pretrained 
+<a href="neural-networks.html" target="_blank">neural network</a> 
+or 
+<a href="word-recognition.html" target="_blank">word recognition engine</a> 
+is just one of them. The linguistic context analysis 
+plays its role (and it assigns a confidence level to 
+each character and each word) and so does the typographic 
+analysis (again assigning its own weight).
+</p>
+
+<p>
+In other words, once the pretrained neural network or 
+word recognition enginehas recognized each character, 
+several other 
+&ldquo;<strong itemprop="keywords">expert systems</strong>&rdquo; 
+cast additional votes to validate the results and 
+increase the recognition accuracy. These subsystems 
+allow to validate or correct the result; when 
+alternatives are available, they help in determining 
+which alternative should be selected.
+</p>
+
+<p>
+Each expert subsystem plays its role during the 
+recognition process, no single argument by itself takes 
+the day: each expert opinion is given a 
+<strong>weight</strong>, a 
+<strong itemprop="keywords">confidence level</strong> 
+and you move forward until a final decision gets taken. 
+(This approach looks very human, doesn&rsquo;t it 
+&mdash; comparing notes, taking all the factors into 
+consideration before a conclusion is reached? 
+That&rsquo;s where the real strength of neural 
+networks lie...)
+</p>
+
+<p>
+These subsystems are (1) the 
+<a href="autolearning.html" target="_blank">autolearning</a>, 
+(2) the use of <a href="../OCR/omnifont-OCR.html#TypoRules" target="_blank">typographic rules</a> 
+and (3) the use of <a href="../OCR/linguistics.html" target="_blank">linguistics</a>. 
+We&rsquo;ll explain the role of &ldquo;autolearning&rdquo; 
+next and discuss typography and linguistics later on.
+</p>
+
+<p><span class="small"><a href="voting-systems.html">Back to top</a></span></p>
+ 
+<p><a href="../contact.html#Form" target="_blank">Submit feedback</a></p>
+
+<p>
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="How OCR software makes use of expert systems to improve the recognition results" data-related="ivovynckier" data-lang="en">Tweet</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<script src="http://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-counter="right"></script>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<fb:like layout="standard" action="like" show_faces="false" share="true"></fb:like>
+</p>
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+if(!d.getElementById(id)){js=d.createElement(s);
+js.id=id;
+js.src="https://platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+
+<div itemprop="breadcrumb">
+<div class="small">
+
+<p align="center">
+<a href="word-recognition.html">Previous page</a> 
+&mdash;
+<a href="autolearning.html">Next page</a>
+</p>
+
+<p align="center">
+<a href="history.html">Where does this technology come from?</a> &mdash;
+<a href="neural-networks.html">Reaping the benefits of the neural revolution</a> &mdash;
+<a href="word-recognition.html">&hellip; Or do word recognition</a> &mdash;
+<a href="expert-systems.html">Each expert casts his vote</a> &mdash;
+<a href="autolearning.html">Autolearning font shapes</a> &mdash;
+<a href="voting-systems.html">Putting more feet on the street</a> &mdash;
+<a href="document-revolution.html">&hellip; With a document revolution thrown in</a>
+</p>
+
+<p align="center">
+<a href="../index.html">Home page</a> &mdash;
+<a href="../intro/intro.html">Intro</a> &mdash;
+<a href="../scanners/scanners.html">Scanners</a> &mdash;
+<a href="../images/images.html">Images</a> &mdash;
+<a href="history.html">History</a> &mdash;
+<a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a> &mdash;
+<a href="../languages/languages.html">Languages</a> &mdash;
+<a href="../accuracy/accuracy.html">Accuracy</a> &mdash;
+<a href="../output/output.html">Output</a> &mdash;
+<a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a> &mdash;
+<a href="../pen-scanners/pen-scanners.html">Pen scanners</a> &mdash;
+<a href="../sitemap.html">Sitemap</a> &mdash;
+<a href="../search.html">Search</a> &mdash;
+<a href="../contact.html">Contact &ndash; Feedback</a>
+</p>
+
+</div>
+</div>
+
+</body>
+
+</html>

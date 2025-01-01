@@ -1,0 +1,381 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+
+<title>Let&rsquo;s Take Things Step by Step, Shall We? | How OCR Works</title>
+
+<link rel="next" href="color-modes.html" />
+
+<meta name="description" content="Discover the various steps of 
+OCR: what does it take to convert scanned images into editable text?" />
+
+<meta name="keywords" content="Optical Character Recognition, OCR" />
+
+<meta name="twitter:widgets:csp" content="on">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://how-ocr-works.com/OCR/OCR.html" />
+<meta name="twitter:title" content="Let&rsquo;s Take Things Step by Step, Shall We? | How OCR Works" />
+<meta name="twitter:description" content="Discover the various steps of OCR: what does it take to convert scanned images into editable text?" />
+<meta name="twitter:image" content="https://how-ocr-works.com/OCR/OCR/letter-A-various-fonts.png" />
+
+<meta property="og:site_name" content="How OCR Works | A Close Look at Optical Character Recognition" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="Let&rsquo;s Take Things Step by Step, Shall We? | How OCR Works" />
+<meta property="og:description" content="Discover the various steps of OCR: what does it take to convert scanned images into editable text?" />
+<meta property="og:url" content="https://how-ocr-works.com/OCR/OCR.html" />
+<meta property="og:image" content="https://how-ocr-works.com/OCR/OCR/letter-A-various-fonts.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="366" />
+<meta property="og:image:height" content="71" />
+
+<meta name="subject" content="Optical Character Recognition (OCR)" />
+
+<meta name="googlebot" content="all" />
+<meta name="bingbot" content="all" />
+<meta name="robots" content="all" />
+
+<link rev="made" href="mailto:ivo.vynckier@telenet.be" title="Ivo Vynckier" />
+<link rev="made" href="mailto:webmaster@how-ocr-works.com" title="Ivo Vynckier" />
+
+<meta name="reply-to" content="ivo.vynckier@telenet.be" />
+<meta name="reply-to" content="webmaster@how-ocr-works.com" />
+
+<meta name="author" content="Ivo Vynckier" />
+
+<meta name="generator" content="Notepad++" />
+
+<meta name="copyright" content="&copy; Ivo Vynckier. All rights reserved" />
+
+<meta name="rating" content="general" />
+<meta name="rating" content="safe for kids" />
+
+<link href="../website.css" rel="stylesheet" media="all" />
+<link href="//fonts.googleapis.com/css?family=Special Elite" rel="stylesheet" type="text/css" />
+
+<link href="../favicon.ico" rel="icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDERQSN9SP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TDERQSN9SP');
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<meta itemprop="isFamilyFriendly" content="True" />
+<meta itemprop="inLanguage" content="en" />
+
+<bgsound src="../index/typewriter2.wma" volume="0" loop="1" />
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div itemprop="breadcrumb">
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="../index.html">Home page</a></td>
+<td><a href="../intro/intro.html">Intro</a></td>
+<td><a href="../scanners/scanners.html">Scanners</a></td>
+<td><a href="../images/images.html">Images</a></td>
+<td><a href="../history/history.html">History</a></td>
+<td><selected-page><a href="OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a></selected-page></td>
+<td><a href="../languages/languages.html">Languages</a></td>
+</tr>
+<tr>
+<td><a href="../accuracy/accuracy.html">Accuracy</a></td>
+<td><a href="../output/output.html">Output</a></td>
+<td><a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a></td>
+<td><a href="../pen-scanners/pen-scanners.html">Pen scanners</a></td>
+<td><a href="../sitemap.html">Sitemap</a></td>
+<td><a href="../search.html">Search</a></td>
+<td><a href="../contact.html">Contact &ndash; Feedback</a></td>
+</tr>
+</table>
+</div>
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><selected-page><a href="OCR.html">Recognition steps</a></selected-page></td>
+<td><a href="color-modes.html">Color modes</a></td>
+<td><a href="binarization.html">Binarization</a></td>
+</tr>
+<tr>
+<td><a href="page-analysis.html">Page analysis</a></td>
+<td><a href="line-segmentation.html">Line segmentation</a></td>
+<td><a href="word-character-segmentation.html">Word-character segmentation</a></td>
+</tr>
+<tr>
+<td><a href="stylized-fonts.html">Stylized fonts</a></td>
+<td><a href="omnifont-OCR.html">Omnifont <abbr title="Optical Character Recognition">OCR</abbr></a></td>
+<td><a href="linguistics.html">The role of linguistics</a></td>
+</tr>
+</table>
+</div>
+
+</div>
+
+<h1>Let&rsquo;s Take Things Step by Step, Shall We?</h1>
+
+<p>
+A
+<a itemprop="keywords" href="../scanners/scanners.html" target="_blank">scanner</a> 
+generates an 
+<a href="../images/images.html" target="_blank">image</a> 
+of the paper document and the text is intelligently 
+&ldquo;<a href="../history/history.html" target="_blank">extracted</a>&rdquo; 
+from that image. But what really happens? Can we be more 
+specific about the recognition process?
+</p>
+
+<ul>
+<li>
+The document is read by your <strong>scanner</strong>. 
+This device acts as the &ldquo;eye&rdquo; of your computer 
+and sends it the image.
+<br />
+<span class="smaller">
+ At this step, the document image 
+is only a meaningless cloud of intense points, 
+&ldquo;<abbr title="picture elements">pixels</abbr>&rdquo;, 
+on a lighter background.</span>
+</li>
+</ul>
+
+<p align="center">
+<img src="OCR/image.png" alt="Scanned image" border="0" />
+</p>
+
+<ul>
+<li>
+Intelligent 
+<a itemprop="keywords" href="binarization.html" target="_blank">binarization</a> 
+routines convert color and greyscale images into 
+black-and-white images.
+</li>
+</ul>
+
+<p align="center">
+<img src="OCR/image-before-binarization.jpg" alt="Color image before the binarization" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="OCR/image-after-binarization.png" alt="Black-and-white image after the binarization" border="0" />
+</p>
+
+<ul>
+<li>
+<a itemprop="keywords" href="page-analysis.html" target="_blank">Page analysis</a> 
+comes next: the zones of interest to be recognized are marked 
+on the scanned page.
+<br />
+<span class="smaller">
+A page may contain a big title, several text columns, two photos, 
+a table and a footer.</span>
+</li>
+</ul>
+
+<p align="center">
+<img src="OCR/page-analysis.png" alt="Text and graphic zones on a scanned image" border="0" />
+</p>
+
+<p>
+The <abbr title="Optical Character Recognition">OCR</abbr> 
+software extracts text information from the black-and-white 
+<abbr title="picture elements">pixels</abbr> of the selected 
+zones: it recognizes the shapes and assigns characters. This 
+is done in several steps.
+</p>
+
+<p align="center">
+<img src="OCR/recognized-text.png" alt="OCRed text" border="0" />
+</p>
+
+<ul>
+<li>
+<a itemprop="keywords" href="line-segmentation.html" target="_blank">Line segmentation</a> 
+consists of slicing a page of text into its different 
+lines. This step also analyzes 
+<a href="line-segmentation.html" target="_blank">interline spacing</a>, 
+<a href="line-segmentation.html#Lineskew" target="_blank">lineskew</a>, 
+<a href="line-segmentation.html#DropLetters" target="_blank">drop letters</a>, 
+and separates 
+<a href="line-segmentation.html#TouchingLines" target="_blank">touching lines</a>.
+</li>
+</ul>
+
+<p align="center">
+<img src="OCR/line-segmentation.png" alt="Scanned image with touching lines" border="0" />
+</p>
+
+<ul>
+
+<li>
+The 
+<a itemprop="keywords" href="word-character-segmentation.html" target="_blank">word segmentation</a> 
+isolates one word from another.
+</li>
+
+<li>
+The 
+<a itemprop="keywords" href="word-character-segmentation.html" target="_blank">character segmentation</a> 
+&mdash; it does not apply when 
+<a href="../history/word-recognition.html" target="_blank">word image decoding</a> 
+is used &mdash; separates the various letters of a word. 
+<br />
+<span class="smaller">This step organizes the dots of a scanned image 
+into characters. If the characters have the same width 
+(<a href="word-character-segmentation.html#FixedProp" target="_blank">&ldquo;fixed&rdquo; 
+pitch</a>), character segmentation is easy. The problem 
+gets more interesting when the width of the letters 
+depends on their shape 
+(<a href="word-character-segmentation.html#FixedProp" target="_blank">&ldquo;proportional&rdquo; pitch</a>), 
+when 
+<a href="word-character-segmentation.html#Kerning" target="_blank">kerning</a> 
+and touching characters 
+(&ldquo;<a href="word-character-segmentation.html#Ligatures" target="_blank">ligatures</a>&rdquo;) 
+occur, and when 
+<a href="word-character-segmentation.html#DotMatrix" target="_blank">
+dot matrix fonts</a> &mdash; characters composed of several 
+clouds of isolated dots &mdash; are used.</span>
+</li>
+
+<li>
+The actual 
+<span itemprop="keywords"><a href="omnifont-OCR.html" target="_blank">character recognition</a></span> 
+extracts characteristics out of each isolated shape and 
+assigns a symbol.
+</li>
+
+</ul>
+
+<p align="center">
+<img itemprop="primaryImageOfPage" src="../history/neural-networks/letter-A-various-fonts.png" alt="Uppercase letter A in various typefaces" border="0" />
+</p>
+
+<p>
+The stage is set, let&rsquo;s now discuss the 
+successive steps of the 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+process in detail!
+</p>
+
+<p><span class="small"><a href="OCR.html">Back to top</a></span></p>
+
+<p><a href="../contact.html#Form" target="_blank">Submit feedback</a></p>
+
+<p>
+<a href="https://www.pinterest.com/pin/create/button/" class="pin-it-button" data-pin-do="buttonPin" data-pin-config="beside"><img src="https://assets.pinterest.com/images/pidgets/pin_it_button.png" alt="Pin it" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="Which steps does it take to convert scanned images into editable text with OCR software?" data-related="ivovynckier" data-lang="en">Tweet</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<script src="http://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-counter="right"></script>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<fb:like layout="standard" action="like" show_faces="false" share="true"></fb:like>
+</p>
+
+<script type="text/javascript">
+(function (w, d, load) {
+  var script, 
+  first = d.getElementsByTagName('SCRIPT')[0],  
+  n = load.length, 
+  i = 0,
+  go = function () {
+    for (i = 0; i < n; i = i + 1) {
+      script = d.createElement('SCRIPT');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = load[i];
+      first.parentNode.insertBefore(script, first);
+    }
+  }
+  if (w.attachEvent) {
+    w.attachEvent('onload', go);
+  } else {
+    w.addEventListener('load', go, false);
+  }
+}(window, document, 
+  ['//assets.pinterest.com/js/pinit.js']
+));    
+</script>
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+if(!d.getElementById(id)){js=d.createElement(s);
+js.id=id;
+js.src="https://platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+
+<div itemprop="breadcrumb">
+<div class="small">
+
+<p align="center">
+<a href="../history/document-revolution.html">Previous section</a> 
+&mdash;
+<a href="color-modes.html">Next page</a>
+</p>
+
+<p align="center">
+<a href="OCR.html">Let&rsquo;s take things step by step, shall we?</a> &mdash;
+<a href="color-modes.html">Take us where the rainbow ends!</a> &mdash;
+<a href="binarization.html">B is for binarize</a> &mdash;
+<a href="page-analysis.html">What gets read and what doesn&rsquo;t</a> &mdash;
+<a href="line-segmentation.html">Lines, lineskew and drop letters</a> &mdash;
+<a href="word-character-segmentation.html">Segmenting words and characters</a> &mdash;
+<a href="stylized-fonts.html">Stylized fonts</a> &mdash;
+<a href="omnifont-OCR.html">Why is <abbr title="Optical Character Recognition">OCR</abbr> software called omnifont?</a> &mdash;
+<a href="linguistics.html">What&rsquo;s the role of linguistics in the <abbr title="Optical Character Recognition">OCR</abbr> process?</a>
+</p>
+
+<p align="center">
+<a href="../index.html">Home page</a> &mdash;
+<a href="../intro/intro.html">Intro</a> &mdash;
+<a href="../scanners/scanners.html">Scanners</a> &mdash;
+<a href="../images/images.html">Images</a> &mdash;
+<a href="../history/history.html">History</a> &mdash;
+<a href="OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a> &mdash;
+<a href="../languages/languages.html">Languages</a> &mdash;
+<a href="../accuracy/accuracy.html">Accuracy</a> &mdash;
+<a href="../output/output.html">Output</a> &mdash;
+<a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a> &mdash;
+<a href="../pen-scanners/pen-scanners.html">Pen scanners</a> &mdash;
+<a href="../sitemap.html">Sitemap</a> &mdash;
+<a href="../search.html">Search</a> &mdash;
+<a href="../contact.html">Feedback &ndash; Contact</a>
+</p>
+
+</div>
+</div>
+
+</body>
+
+</html>

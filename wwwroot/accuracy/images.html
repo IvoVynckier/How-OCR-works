@@ -1,0 +1,348 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+
+<title>Recognizing Prescanned Images and Faxes | How OCR Works</title>
+
+<link rel="prev" href="snapshots.html" />
+<link rel="next" href="PDF-files.html" />
+
+<meta name="description" content="Learn how to recognize prescanned images 
+and faxes with OCR software." />
+
+<meta name="keywords" content="prescanned images, faxes, fine faxes, 
+superfine faxes, image formats, image resolution, 
+Optical Character Recognition, OCR" />
+
+<meta name="twitter:widgets:csp" content="on">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://how-ocr-works.com/accuracy/images.html" />
+<meta name="twitter:title" content="Recognizing Prescanned Images and Faxes | How OCR Works" />
+<meta name="twitter:description" content="Learn how to recognize prescanned images and faxes with OCR software." />
+<meta name="twitter:image" content="https://how-ocr-works.com/accuracy/images/fax-sample.png" />
+
+<meta property="og:site_name" content="How OCR Works | A Close Look at Optical Character Recognition" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="Recognizing Prescanned Images and Faxes | How OCR Works" />
+<meta property="og:description" content="Learn how to recognize prescanned images and faxes with OCR software." />
+<meta property="og:url" content="https://how-ocr-works.com/accuracy/images.html" />
+<meta property="og:image" content="https://how-ocr-works.com/accuracy/images/fax-sample.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="543" />
+<meta property="og:image:height" content="155" />
+
+<meta name="subject" content="Optical Character Recognition (OCR)" />
+
+<meta name="googlebot" content="all" />
+<meta name="bingbot" content="all" />
+<meta name="robots" content="all" />
+
+<link rev="made" href="mailto:ivo.vynckier@telenet.be" title="Ivo Vynckier" />
+<link rev="made" href="mailto:webmaster@how-ocr-works.com" title="Ivo Vynckier" />
+
+<meta name="reply-to" content="ivo.vynckier@telenet.be" />
+<meta name="reply-to" content="webmaster@how-ocr-works.com" />
+
+<meta name="author" content="Ivo Vynckier" />
+
+<meta name="generator" content="Notepad++" />
+
+<meta name="copyright" content="&copy; Ivo Vynckier. All rights reserved" />
+
+<meta name="rating" content="general" />
+<meta name="rating" content="safe for kids" />
+
+<link href="../website.css" rel="stylesheet" media="all" />
+<link href="//fonts.googleapis.com/css?family=Special Elite" rel="stylesheet" type="text/css" />
+
+<link href="../favicon.ico" rel="icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDERQSN9SP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TDERQSN9SP');
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<meta itemprop="isFamilyFriendly" content="True" />
+<meta itemprop="inLanguage" content="en" />
+
+<bgsound src="../index/typewriter2.wma" volume="0" loop="1" />
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div itemprop="breadcrumb">
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="../index.html">Home page</a></td>
+<td><a href="../intro/intro.html">Intro</a></td>
+<td><a href="../scanners/scanners.html">Scanners</a></td>
+<td><a href="../images/images.html">Images</a></td>
+<td><a href="../history/history.html">History</a></td>
+<td><a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a></td>
+<td><a href="../languages/languages.html">Languages</a></td>
+</tr>
+<tr>
+<td><selected-page><a href="accuracy.html">Accuracy</a></selected-page></td>
+<td><a href="../output/output.html">Output</a></td>
+<td><a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a></td>
+<td><a href="../pen-scanners/pen-scanners.html">Pen scanners</a></td>
+<td><a href="../sitemap.html">Sitemap</a></td>
+<td><a href="../search.html">Search</a></td>
+<td><a href="../contact.html">Contact &ndash; Feedback</a></td>
+</tr>
+</table>
+</div>
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="accuracy.html">Accuracy</a></td>
+<td><a href="benchmarks.html">Benchmarks</a></td>
+<td><a href="scanning-skills.html">Scanning skills</a></td>
+<td><a href="preprocessing.html">Preprocessing</a></td>
+<td><a href="snapshots.html">Snapshots</a></td>
+<td><selected-page><a href="images.html">Images</a></selected-page></td>
+<td><a href="PDF-files.html"><abbr title="Portable Document Format">PDF</abbr> files</a></td>
+</tr>
+</table>
+</div>
+
+</div>
+ 
+<h1>Recognizing Prescanned Images and Faxes</h1>
+
+<p>
+The images from (digital) 
+<a href="snapshots.html" target="_blank">photo cameras</a> 
+are an example where no scan is needed to perform 
+<abbr title="Optical Character Recognition">OCR</abbr>. 
+You transfer the snapshots to your 
+<abbr title="Personal Computer">PC</abbr> and open them 
+directly with your 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software.
+</p>
+
+<p>
+There are other similar applications: think of images 
+you may have received via e-mail, <strong>image 
+batches</strong> that were scanned with a 
+<a href="../scanners/peripherals.html#DocumentScanner" target="_blank">high-end document scanner</a> 
+and made available to you on a network server, 
+<strong itemprop="keywords">fax</strong> files 
+generated by fax software 
+<abbr title="etcetera">etc.</abbr>
+</p>
+
+<p>
+Your <abbr title="Optical Character Recognition">OCR</abbr> 
+software will indeed open a number of 
+<strong itemprop="keywords">image files</strong> as well: 
+<abbr title="Joint Photographic Experts Group">JPEG</abbr> 
+images, <abbr title="Tagged Image File Format">TIFF</abbr> 
+images, Windows bitmaps (*.<abbr title="bitmap">bmp</abbr>), 
+Paintbrush images (*.pcx), 
+<a href="https://en.wikipedia.org/wiki/PCX" target="_blank" title="Wikipedia page on the PCX image format">DCX</a> 
+faxes <abbr title="etcetera">etc.</abbr> The list of 
+supported graphic formats varies from one 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+package to the next, but the most common graphic formats 
+are always supported.
+</p>
+
+<p>
+&ldquo;Normal&rdquo; faxes have a 100 x 200 
+<abbr title="dots per inch">dpi</abbr> 
+<a itemprop="keywords" href="../images/intelligence.html#Resolution" target="_blank">resolution</a>, 
+&ldquo;fine&rdquo; faxes have a 200 x 200 
+<abbr title="dots per inch">dpi</abbr> resolution and 
+the &ldquo;superfine&rdquo; faxes (found on Panasonic 
+machines) have a 200 x 400 
+<abbr title="dots per inch">dpi</abbr> resolution. Ask 
+your correspondents to send faxes with the 
+&ldquo;fine&rdquo; quality if you can, you&rsquo;ll 
+get a higher image quality than with 
+&ldquo;normal&rdquo; faxes. (It takes twice the 
+telephone time to transmit these faxes.)
+</p>
+
+<p>
+You may have noticed that the horizontal and vertical 
+resolution are not always equal with faxes. A small 
+recap: the horizontal resolution indicates the number 
+of samples taken by the 
+<a href="../scanners/scanners.html#Sensors" target="_blank">sensor array</a> 
+on a linear inch. The vertical resolution refers to 
+the mechanical stepping of the fax machine&rsquo;s 
+<a href="../images/resolution.html#StepperMotor" target="_blank">carriage motor</a>.
+</p>
+
+<p>
+Fax machines can stop the scanning head more as they 
+move down the page than the horizontal resolution, but 
+make no mistake. It&rsquo;s always the smallest of the 
+two resolutions that determines how fine the image 
+raster is. Sampling an image more frequently in only 
+one direction doesn&rsquo;t give you more detail, it 
+just degrades the characters. See what kind of 
+distortions are caused by these unsymmetrical 
+resolutions&hellip;
+</p>
+
+<p align="center">
+<img itemprop="primaryImageOfPage" src="images/fax-sample.png" alt="Fax document in detail" border="0" />
+</p>
+
+<p>
+Some 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+packages will optimize fax images before the recognition. 
+Preprocessing routines invisibly apply to faxes to correct 
+their low and asymmetric resolution. (Still, ask your 
+correspondents to send faxes with the &ldquo;fine&rdquo; 
+quality if you can, you&rsquo;ll get a better result than 
+with &ldquo;normal&rdquo; 
+faxes.)
+</p>
+
+<p>
+By the way, don&rsquo;t print your faxes on a laser printer 
+to scan them in at 300 <abbr title="dots per inch">dpi</abbr>. 
+When the image quality initially is low, printing and 
+scanning them at a higher resolution isn&rsquo;t going to 
+add detail!
+</p>
+
+<p>
+Other factors contribute to the bad quality of many faxes: 
+much of the 
+<a href="preprocessing.html" target="_blank">noise</a> in 
+fax files is caused by bad telephone lines. (The problem may 
+be the outlet in your wall or anything else along the way: 
+only your telephone company may tell...) Also know that faxes 
+are often thermally (read: poorly) printed by the receiving 
+fax machine.
+</p>
+
+<p><span class="small"><a href="images.html">Back to top</a></span></p>
+
+<p><a href="../contact.html#Form" target="_blank">Submit feedback</a></p>
+
+<p>
+<a href="https://www.pinterest.com/pin/create/button/" class="pin-it-button" data-pin-do="buttonPin" data-pin-config="beside"><img src="https://assets.pinterest.com/images/pidgets/pin_it_button.png" alt="Pin it" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="What you need to know to recognize prescanned images and faxes successfully with OCR software" data-related="ivovynckier" data-lang="en">Tweet</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<script src="http://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-counter="right"></script>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<fb:like layout="standard" action="like" show_faces="false" share="true"></fb:like>
+</p>
+
+<script type="text/javascript">
+(function (w, d, load) {
+  var script, 
+  first = d.getElementsByTagName('SCRIPT')[0],  
+  n = load.length, 
+  i = 0,
+  go = function () {
+    for (i = 0; i < n; i = i + 1) {
+      script = d.createElement('SCRIPT');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = load[i];
+      first.parentNode.insertBefore(script, first);
+    }
+  }
+  if (w.attachEvent) {
+    w.attachEvent('onload', go);
+  } else {
+    w.addEventListener('load', go, false);
+  }
+}(window, document, 
+  ['//assets.pinterest.com/js/pinit.js']
+));    
+</script>
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+if(!d.getElementById(id)){js=d.createElement(s);
+js.id=id;
+js.src="https://platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+
+<div itemprop="breadcrumb">
+<div class="small">
+
+<p align="center">
+<a href="snapshots.html">Previous page</a> 
+&mdash;
+<a href="PDF-files.html">Next page</a>
+</p>
+
+<p align="center">
+<a href="accuracy.html">Training the system further</a> &mdash;
+<a href="benchmarks.html">The accuracy of <abbr title="Optical Character Recognition">OCR</abbr> software</a> &mdash;
+<a href="scanning-skills.html">How good are your scanning skills?</a> &mdash;
+<a href="preprocessing.html">With a little help from the friends</a> &mdash;
+<a href="snapshots.html">Recognizing snapshots</a> &mdash;
+<a href="images.html">Recognizing prescanned images and faxes</a> &mdash;
+<a href="PDF-files.html">Repurposing <abbr title="Portable Document Format">PDF</abbr> files</a>
+</p>
+
+<p align="center">
+<a href="../index.html">Home page</a> &mdash;
+<a href="../intro/intro.html">Intro</a> &mdash;
+<a href="../scanners/scanners.html">Scanners</a> &mdash;
+<a href="../images/images.html">Images</a> &mdash;
+<a href="../history/history.html">History</a> &mdash;
+<a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a> &mdash;
+<a href="../languages/languages.html">Languages</a> &mdash;
+<a href="accuracy.html">Accuracy</a> &mdash;
+<a href="../output/output.html">Output</a> &mdash;
+<a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a> &mdash;
+<a href="../pen-scanners/pen-scanners.html">Pen scanners</a> &mdash;
+<a href="../sitemap.html">Sitemap</a> &mdash;
+<a href="../search.html">Search</a> &mdash;
+<a href="../contact.html">Contact &ndash; Feedback</a>
+</p>
+
+</div>
+</div>
+
+</body>
+
+</html>

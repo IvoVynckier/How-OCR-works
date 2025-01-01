@@ -1,0 +1,310 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+
+<title>Bitmaps Only Take You So Far | How OCR Works</title>
+
+<link rel="prev" href="intelligence.html" />
+<link rel="next" href="resolution.html" />
+
+<meta name="description" content="How image editing and 
+photo retouching software fall short in text editing." />
+
+<meta name="keywords" content="bitmaps, raster images, 
+image editors, photo retouching software, paint software, 
+disadvantages of bitmaps, Optical Character Recognition, 
+OCR" />
+
+<meta name="twitter:widgets:csp" content="on">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://how-ocr-works.com/images/bitmaps.html" />
+<meta name="twitter:title" content="Bitmaps Only Take You So Far | How OCR Works" />
+<meta name="twitter:description" content="How image editing and photo retouching software fall short in text editing." />
+<meta name="twitter:image" content="https://how-ocr-works.com/images/bitmaps/scanned-document.png" />
+
+<meta property="og:site_name" content="How OCR Works | A Close Look at Optical Character Recognition" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="Bitmaps Only Take You So Far | How OCR Works" />
+<meta property="og:description" content="How image editing and photo retouching software fall short in text editing." />
+<meta property="og:url" content="https://how-ocr-works.com/images/bitmaps.html" />
+<meta property="og:image" content="https://how-ocr-works.com/images/bitmaps/scanned-document.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="329" />
+<meta property="og:image:height" content="138" />
+
+<meta name="subject" content="Optical Character Recognition (OCR)" />
+
+<meta name="googlebot" content="all" />
+<meta name="bingbot" content="all" />
+<meta name="robots" content="all" />
+
+<link rev="made" href="mailto:ivo.vynckier@telenet.be" title="Ivo Vynckier" />
+<link rev="made" href="mailto:webmaster@how-ocr-works.com" title="Ivo Vynckier" />
+
+<meta name="reply-to" content="ivo.vynckier@telenet.be" />
+<meta name="reply-to" content="webmaster@how-ocr-works.com" />
+
+<meta name="author" content="Ivo Vynckier" />
+
+<meta name="generator" content="Notepad++" />
+
+<meta name="copyright" content="&copy; Ivo Vynckier. All rights reserved" />
+
+<meta name="rating" content="general" />
+<meta name="rating" content="safe for kids" />
+
+<link href="../website.css" rel="stylesheet" media="all" />
+<link href="//fonts.googleapis.com/css?family=Special Elite" rel="stylesheet" type="text/css" />
+
+<link href="../favicon.ico" rel="icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDERQSN9SP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TDERQSN9SP');
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<meta itemprop="isFamilyFriendly" content="True" />
+<meta itemprop="inLanguage" content="en" />
+
+<bgsound src="../index/typewriter2.wma" volume="0" loop="1" />
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div itemprop="breadcrumb">
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="../index.html">Home page</a></td>
+<td><a href="../intro/intro.html">Intro</a></td>
+<td><a href="../scanners/scanners.html">Scanners</a></td>
+<td><selected-page><a href="images.html">Images</a></selected-page></td>
+<td><a href="../history/history.html">History</a></td>
+<td><a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a></td>
+<td><a href="../languages/languages.html">Languages</a></td>
+</tr>
+<tr>
+<td><a href="../accuracy/accuracy.html">Accuracy</a></td>
+<td><a href="../output/output.html">Output</a></td>
+<td><a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a></td>
+<td><a href="../pen-scanners/pen-scanners.html">Pen scanners</a></td>
+<td><a href="../sitemap.html">Sitemap</a></td>
+<td><a href="../search.html">Search</a></td>
+<td><a href="../contact.html">Contact &ndash; Feedback</a></td>
+</tr>
+</table>
+</div>
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="images.html"><abbr title="picture elements">Pixels</abbr></a></td>
+<td><a href="intelligence.html">Bitmap <abbr title="versus">vs.</abbr> vector</a></td>
+<td><selected-page><a href="bitmaps.html">Image editing</a></selected-page></td>
+<td><a href="resolution.html">Resolution</a></td>
+<td><a href="compression.html">Compression</a></td>
+<td><a href="text.html">Searchable text</a></td>
+</tr>
+</table>
+</div>
+
+</div>
+
+<h1>Bitmaps Only Take You So Far</h1>
+
+<p>
+Summing up, <a href="intelligence.html" target="_blank">image 
+files</a> are basically long strings of 
+<abbr title="ones">1s</abbr> and 
+<abbr title="zerosones">os</abbr> that represent the colors of 
+each dot. Bitmapped images can be stored, printed and 
+displayed by computers.
+</p>
+
+<p>
+<strong itemprop="keywords">Image editors</strong> 
+&mdash; when executing photo retouching, when morphing a face 
+<abbr title="etcetera">etc.</abbr> &mdash; change 
+<span itemprop="keywords">bitmaps</span> in all sorts of ways. 
+It starts with changing a single 
+<abbr title="picture element">pixel</abbr> and ends with 
+changes in the basic nature of an image &mdash; the brightness 
+and contrast are modified, another color palette is applied, 
+the image is distorted by an image filter 
+<abbr title="etcetera">etc.</abbr> Enter the wonderful world 
+of Adobe Photoshop and similar paint software!
+</p>
+
+<p align="center">
+<img src="bitmaps/picture.jpg" alt="Original picture" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="bitmaps/changed-picture1.jpg" alt="Picture edited with Photoshop" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="bitmaps/changed-picture2.jpg" alt="Picture with Photoshop filter applied" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="bitmaps/changed-picture3.jpg" alt="Inverted picture" border="0" />
+</p>
+
+<p>
+Still, when it comes to text editing, image files are of no 
+use. Modifying the <i>text</i> of a bitmap is an impossible 
+task: the only way to change the text contained in an image 
+file would be to edit it... 
+<abbr title="picture element">pixel</abbr> by 
+<abbr title="picture element">pixel</abbr>! In the 
+illustration below, we changed the two 
+&ldquo;o&rsquo;s&rdquo; of the word &ldquo;Lotto&rdquo; 
+manually into &ldquo;a&rsquo;s&rdquo;. To apply that simple 
+change, we had to make some twenty individual white 
+<abbr title="picture elements">pixels</abbr> black &mdash; 
+and it doesn&rsquo;t even look convincing!
+</p>
+
+<p align="center">
+<img itemprop="primaryImageOfPage" src="bitmaps/scanned-document.png" alt="Bitmap of scanned image" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="bitmaps/modified-letter.png" alt="Letter modified in bitmap of scanned image" border="0" />
+</p>
+
+<p>
+Modifying just one character in a bitmap is already a tough 
+job. Checking the spelling of a text, modifying the order of 
+the words by cutting and pasting some text, making words bold 
+or italic, adding sentences, erasing paragraphs, searching 
+and replacing words and so many other things that are a cinch 
+with word processors are downright impossible with raster 
+images.
+</p>
+
+<p>
+Scans are certainly a valid way of <i>storing</i> text &mdash; 
+after all, that&rsquo;s what 
+<a href="../scanners/hardware2.html" target="_blank">electronic document management</a> 
+(&ldquo;<abbr title="Electronic document management">EDM</abbr>&rdquo;) 
+is all about. But don&rsquo;t believe for a second that such 
+documents are editable: 
+<abbr title="picture elements">pixels</abbr> are not 
+characters, and never the twain shall meet!
+</p>
+
+<p><span class="small"><a href="bitmaps.html">Back to top</a></span></p>
+
+<p><a href="../contact.html#Form" target="_blank">Submit feedback</a></p>
+
+<p>
+<a href="https://www.pinterest.com/pin/create/button/" class="pin-it-button" data-pin-do="buttonPin" data-pin-config="beside"><img src="https://assets.pinterest.com/images/pidgets/pin_it_button.png" alt="Pin it" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="How image editing and photo retouching software fall short in text editing." data-related="ivovynckier" data-lang="en">Tweet</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<script src="http://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-counter="right"></script>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<fb:like layout="standard" action="like" show_faces="false" share="true"></fb:like>
+</p>
+
+<script type="text/javascript">
+(function (w, d, load) {
+  var script, 
+  first = d.getElementsByTagName('SCRIPT')[0],  
+  n = load.length, 
+  i = 0,
+  go = function () {
+    for (i = 0; i < n; i = i + 1) {
+      script = d.createElement('SCRIPT');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = load[i];
+      first.parentNode.insertBefore(script, first);
+    }
+  }
+  if (w.attachEvent) {
+    w.attachEvent('onload', go);
+  } else {
+    w.addEventListener('load', go, false);
+  }
+}(window, document, 
+  ['//assets.pinterest.com/js/pinit.js']
+));    
+</script>
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+if(!d.getElementById(id)){js=d.createElement(s);
+js.id=id;
+js.src="https://platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+
+<div itemprop="breadcrumb">
+<div class="small">
+
+<p align="center">
+<a href="intelligence.html">Previous page</a> 
+&mdash;
+<a href="resolution.html">Next page</a>
+</p>
+
+<p align="center">
+<a href="images.html">The text is in the eye of the beholder</a> &mdash;
+<a href="intelligence.html">The intelligence of OCR</a> &mdash;
+<a href="bitmaps.html">Bitmaps only take you so far</a> &mdash;
+<a href="resolution.html">90,000 kids on the block</a> &mdash;
+<a href="compression.html">OCR is the ultimate data cruncher!</a> &mdash;
+<a href="text.html">OCR deserves recognition</a>
+</p>
+
+<p align="center">
+<a href="../index.html">Home page</a> &mdash;
+<a href="../intro/intro.html">Intro</a> &mdash;
+<a href="../scanners/scanners.html">Scanners</a> &mdash;
+<a href="images.html">Images</a> &mdash;
+<a href="../history/history.html">History</a> &mdash;
+<a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a> &mdash;
+<a href="../languages/languages.html">Languages</a> &mdash;
+<a href="../accuracy/accuracy.html">Accuracy</a> &mdash;
+<a href="../output/output.html">Output</a> &mdash;
+<a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a> &mdash;
+<a href="../pen-scanners/pen-scanners.html">Pen scanners</a> &mdash;
+<a href="../sitemap.html">Sitemap</a> &mdash;
+<a href="../search.html">Search</a> &mdash;
+<a href="../contact.html">Contact &ndash; Feedback</a>
+</p>
+
+</div>
+</div>
+
+</body>
+
+</html>

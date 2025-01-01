@@ -1,0 +1,478 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+
+<title>The Japanese Alphabet | How OCR Works</title>
+
+<link rel="prev" href="chinese-alphabet.html" />
+<link rel="next" href="korean-alphabet.html" />
+
+<meta name="description" content="Discover how the Japanese 
+alphabet-script combines Kanji, Hiragana and Katakana alphabets." />
+
+<meta name="keywords" content="Japanese alphabet, Japanese script, 
+Kanji, Hiragana, Katakana, SJIS font, diacritics, 
+Optical Character Recognition, OCR" />
+
+<meta name="twitter:widgets:csp" content="on">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://how-ocr-works.com/languages/japanese-alphabet.html" />
+<meta name="twitter:title" content="The Japanese Alphabet | How OCR Works" />
+<meta name="twitter:description" content="Discover how the Japanese alphabet-script combines Kanji, Hiragana and Katakana." />
+<meta name="twitter:image" content="https://how-ocr-works.com/languages/japanese-alphabet/kokuji-characters.png" />
+
+<meta property="og:site_name" content="How OCR Works | A Close Look at Optical Character Recognition" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="The Japanese Alphabet | How OCR Works" />
+<meta property="og:description" content="Discover how the Japanese alphabet-script combines Kanji, Hiragana and Katakana." />
+<meta property="og:url" content="https://how-ocr-works.com/languages/japanese-alphabet.html" />
+<meta property="og:image" content="https://how-ocr-works.com/languages/japanese-alphabet/kokuji-characters.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="490" />
+<meta property="og:image:height" content="53" />
+
+<meta name="subject" content="Optical Character Recognition (OCR)" />
+
+<meta name="googlebot" content="all" />
+<meta name="bingbot" content="all" />
+<meta name="robots" content="all" />
+
+<link rev="made" href="mailto:ivo.vynckier@telenet.be" title="Ivo Vynckier" />
+<link rev="made" href="mailto:webmaster@how-ocr-works.com" title="Ivo Vynckier" />
+
+<meta name="reply-to" content="ivo.vynckier@telenet.be" />
+<meta name="reply-to" content="webmaster@how-ocr-works.com" />
+
+<meta name="author" content="Ivo Vynckier" />
+
+<meta name="generator" content="Notepad++" />
+
+<meta name="copyright" content="&copy; Ivo Vynckier. All rights reserved" />
+
+<meta name="rating" content="general" />
+<meta name="rating" content="safe for kids" />
+
+<link href="../website.css" rel="stylesheet" media="all" />
+<link href="//fonts.googleapis.com/css?family=Special Elite" rel="stylesheet" type="text/css" />
+
+<link href="../favicon.ico" rel="icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDERQSN9SP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TDERQSN9SP');
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<meta itemprop="isFamilyFriendly" content="True" />
+<meta itemprop="inLanguage" content="en" />
+
+<bgsound src="../index/typewriter2.wma" volume="0" loop="1" />
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div itemprop="breadcrumb">
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="../index.html">Home page</a></td>
+<td><a href="../intro/intro.html">Intro</a></td>
+<td><a href="../scanners/scanners.html">Scanners</a></td>
+<td><a href="../images/images.html">Images</a></td>
+<td><a href="../history/history.html">History</a></td>
+<td><a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a></td>
+<td><selected-page><a href="languages.html">Languages</a></selected-page></td>
+</tr>
+<tr>
+<td><a href="../accuracy/accuracy.html">Accuracy</a></td>
+<td><a href="../output/output.html">Output</a></td>
+<td><a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a></td>
+<td><a href="../pen-scanners/pen-scanners.html">Pen scanners</a></td>
+<td><a href="../sitemap.html">Sitemap</a></td>
+<td><a href="../search.html">Search</a></td>
+<td><a href="../contact.html">Contact &ndash; Feedback</a></td>
+</tr>
+</table>
+</div>
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="languages.html">Supported languages</a></td>
+<td><a href="latin-alphabet.html">Latin alphabet</a></td>
+<td><a href="latin-punctuation.html">Latin punctuation</a></td>
+<td><a href="greek-alphabet.html">Greek alphabet</a></td>
+</tr>
+<tr>
+<td><a href="cyrillic-alphabet.html">Cyrillic alphabet</a></td>
+<td><a href="hebrew-alphabet.html">Hebrew alphabet</a></td>
+<td><a href="arabic-alphabet.html">Arabic alphabet</a></td>
+<td><a href="chinese-alphabet.html">Chinese alphabet</a></td>
+</tr>
+<tr>
+<td><selected-page><a href="japanese-alphabet.html">Japanese alphabet</a></selected-page></td>
+<td><a href="korean-alphabet.html">Korean alphabet</a></td>
+<td colspan="2"><a href="asian-punctuation.html">Asian punctuation</a></td>
+</tr>
+</table>
+</div>
+
+</div>
+
+<h1>The Japanese Alphabet</h1>
+
+<div class="small">
+<a href="#Kanji">Kanji</a> &mdash; <a href="#Hiragana">Hiragana</a> &mdash; <a href="#Katakana">Katakana</a>
+</div>
+
+<p>
+For a long time, most writing in Japan was in classical Chinese, 
+which was read either in the conventional Chinese way, or with 
+Japanese pronunciation. Over a period of about 1,000 years, 
+<a href="chinese-alphabet.html" target="_blank">Chinese characters</a> 
+were adapted in a variety of ways to write the Japanese language. 
+The text below gives you an idea of the similarities and 
+differences between the two writing systems.
+</p>
+
+<p align="center">
+<img src="japanese-alphabet/chinese-japanese-scripts.png" alt="Comparison of the Chinese and Japanese scripts" border="0" />
+</p>
+
+<p>
+The modern 
+<a itemprop="keywords" href="https://en.wikipedia.org/wiki/Japanese_script" target="_blank" title="Wikipedia page on Japanese writing system">Japanese writing system</a> 
+uses a mix of &ldquo;syllabaries&rdquo;: the phonetic character 
+sets are called <strong>Hiragana</strong> and 
+<strong>Katakana</strong>, and the 
+<span itemprop="keywords">ideograms</span>, Chinese in origin, 
+are called <strong>Kanji</strong>. In normal Japanese writing, 
+<a href="#Kanji">Kanji</a> and <a href="#Hiragana">Hiragana</a> 
+are used, while <a href="#Katakana">Katakana</a> is used for 
+words borrowed from the (non-Chinese) foreign languages.
+</p>
+
+<p><span class="small"><a href="japanese-alphabet.html">Back to top</a></span></p>
+
+<hr align="center" color="grey" noshade="noshade" size="0.25" />
+
+<a name="Kanji"></a>
+
+<h2><span itemprop="keywords">Kanji</span></h2>
+
+<p>
+Between 5,000 and 10,000 Chinese characters, or Kanji, are used 
+in written Japanese.
+</p>
+
+<p>
+An educated person can read about 10,000 Kanji 
+<strong>symbols</strong>; the government has published a list of 
+2,000 that it considers basic. The popular <strong>SJIS</strong> 
+(Shift-JIS) <strong>font</strong> has 6,355 Kanji ideographs 
+(and 83 <a href="#Hiragana">Hiragana</a> and 86 
+<a href="#Katakana">Katakana</a> symbols).
+</p>
+
+<p>
+In 1981, the Japanese government introduced the 
+&ldquo;<span itemprop="keywords">Joyo Kanjihyo</span>&rdquo; 
+or &ldquo;List of Chinese Characters for General Use&rdquo;, 
+which includes 1,945 regular characters, plus 166 special 
+characters used only for people&rsquo;s names. All government 
+documents, newspapers, textbooks and other publications for 
+non-specialists use only the Kanji symbols. Writers of other 
+material are free to use whatever Kanji they want.
+</p>
+
+<p>
+Most Kanji symbols have two readings: one is derived from Chinese 
+(&ldquo;on yumi&rdquo;) and the other is the native Japanese word 
+(&ldquo;kun yumi&rdquo;). For example, the native Japanese word 
+for &ldquo;water&rdquo; is &ldquo;mizu&rdquo;, the Chinese-derived 
+word for water is &ldquo;sui&rdquo;. This is somewhat equivalent 
+to the English usage of the word &ldquo;water&rdquo; (Anglo-Saxon), 
+&ldquo;aqua&ndash;&rdquo; (Latin) or &ldquo;hydro&ndash;&rdquo; 
+(Greek) in different contexts.
+</p>
+
+<p align="center">
+<img src="japanese-alphabet/kanji-characters.png" alt="Kanji characters" border="0" />
+</p>
+
+<p>
+Some Kanji have multiple &ldquo;on yumi&rdquo; and &ldquo;kun 
+yumi&rdquo; &mdash; the first three readings are &ldquo;on 
+yumi&rdquo;, the last are &ldquo;kun yumi&rdquo;.
+</p>
+
+<p align="center">
+<img src="japanese-alphabet/on-yumi-kun-yumi.png" alt="On yumi and kun yumi Japanese characters" border="0" />
+</p>
+
+<p>
+In Chinese, this character is pronounced &ldquo;xíng&rdquo; or 
+&ldquo;háng&rdquo;.
+</p>
+
+<p>
+Some of the Kanji have been simplified, although not always in 
+the same way as characters have been simplified in 
+<a href="chinese-alphabet.html#TradSimp" target="_blank">China</a>!
+</p>
+
+<p align="center">
+<img src="japanese-alphabet/simplified-kanji-characters.png" alt="Simplified Kanji characters" border="0" />
+</p>
+
+<p>
+There are also a number of characters (&ldquo;kokuji&rdquo;) 
+which were invented in Japan.
+</p>
+
+<p align="center">
+<img itemprop="primaryImageOfPage" src="japanese-alphabet/kokuji-characters.png" alt="Kokuji Kanji characters" border="0" />
+</p>
+
+<p><span class="small"><a href="japanese-alphabet.html">Back to top</a></span></p>
+
+<hr align="center" color="grey" noshade="noshade" size="0.25" />
+
+<a name="Hiragana"></a>
+
+<h2><span itemprop="keywords">Hiragana</span></h2>
+
+<p>
+Hiragana syllables developed from Chinese characters. Hiragana 
+was originally called &ldquo;onnade&rdquo; or 
+&ldquo;women&rsquo;s hand&rdquo; as it was used mainly by 
+women &mdash; men wrote in Chinese characters. By the 
+<abbr title="tenth">10th</abbr> century, Hiragana was used by 
+everybody.
+</p>
+
+<p>
+In early versions of Hiragana, there were often many different 
+characters to represent the same syllable. Over time, the system 
+was eventually simplified so that there was a one-to-one 
+relationship between spoken and written syllables. The present 
+orthography of Hiragana was codified by the Japanese government 
+in 1946.
+</p>
+
+<p>
+The Hiragana syllabary consists of 48 <strong>syllables</strong> 
+and is mainly used to write word endings and native Japanese 
+words for which no <a href="#Kanji">Kanji</a> symbols are 
+available, but it is also used to indicate the pronunciation 
+of obscure, archaic and unusual Kanji.
+</p>
+
+<p align="center">
+<img src="japanese-alphabet/hiragana-characters1.png" alt="Hiragana characters" border="0" />
+</p>
+
+<p>
+Japanese is written entirely in Hiragana in children&rsquo;s 
+books and in some text books for foreign learners, but elsewhere 
+Hiragana is combined with Kanji and 
+<a href="#Katakana">Katakana</a>.
+</p>
+
+<p>
+Additional sounds are represented using 
+<a href="https://en.wikipedia.org/wiki/Diacritic" target="_blank">diacritics</a> 
+or combinations of syllables.
+</p>
+
+<p align="center">
+<img src="japanese-alphabet/hiragana-characters2.png" alt="Hiragana characters" border="0" />
+</p>
+
+<p>
+Here&rsquo;s a text sample in Hiragana.
+</p>
+
+<p align="center">
+<img src="japanese-alphabet/hiragana-text.png" alt="Japanese text in Hiragana" border="0" />
+</p>
+
+<p><span class="small"><a href="japanese-alphabet.html">Back to top</a></span></p>
+
+<hr align="center" color="grey" noshade="noshade" size="0.25" />
+
+<a name="Katakana"></a>
+
+<h2><span itemprop="keywords">Katakana</span></h2>
+
+<p>
+The Katakana syllabary was derived from abbreviated 
+Chinese characters used by Buddhist monks to indicate 
+the correct pronunciations of Chinese texts in the 
+<abbr title="ninth">9th</abbr> century.
+</p>
+
+<p>
+The Katakana syllabary consists of 48 syllables and is 
+mainly used to write non-Chinese loan words, 
+<a href="https://en.wikipedia.org/wiki/Onomatopeic" target="_blank">onomatopoeic</a> 
+words, foreign names, in telegrams and for emphasis 
+&mdash; the equivalent of bold, italic or uppercase 
+text in English.
+</p>
+
+<p align="center">
+<img src="japanese-alphabet/katakana-characters1.png" alt="Katakana characters" border="0" />
+</p>
+
+<p>
+Additional sounds are represented by 
+<a itemprop="keywords" href="https://en.wikipedia.org/wiki/Diacritic" target="_blank">diacritics</a> 
+or combinations of syllables.
+</p>
+
+<p align="center">
+<img src="japanese-alphabet/katakana-characters2.png" alt="Katakana characters" border="0" />
+</p>
+
+<p>
+Here&rsquo;s the same text sample, but this time, 
+it&rsquo;s in Katakana.
+</p>
+
+<p align="center">
+<img src="japanese-alphabet/katakana-text.png" alt="Katakana characters" border="0" />
+</p>
+
+<p>
+Japanese is generally written vertically and from right 
+to left, but many texts today are written horizontally 
+to permit the inclusion of English words, 
+<a href="latin-alphabet.html#ArabicNumerals" target="_blank">Arabic numerals</a> 
+and mathematical and chemical formulae.
+</p>
+
+<p><span class="small"><a href="japanese-alphabet.html">Back to top</a></span></p>
+
+<p><a href="../contact.html#Form" target="_blank">Submit feedback</a></p>
+
+<p>
+<a href="https://www.pinterest.com/pin/create/button/" class="pin-it-button" data-pin-do="buttonPin" data-pin-config="beside"><img src="https://assets.pinterest.com/images/pidgets/pin_it_button.png" alt="Pin it" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="How the Japanese script combines the Kanji, Hiragana and Katakana alphabets" data-related="ivovynckier" data-lang="en">Tweet</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<script src="http://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-counter="right"></script>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<fb:like layout="standard" action="like" show_faces="false" share="true"></fb:like>
+</p>
+
+<script type="text/javascript">
+(function (w, d, load) {
+  var script, 
+  first = d.getElementsByTagName('SCRIPT')[0],  
+  n = load.length, 
+  i = 0,
+  go = function () {
+    for (i = 0; i < n; i = i + 1) {
+      script = d.createElement('SCRIPT');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = load[i];
+      first.parentNode.insertBefore(script, first);
+    }
+  }
+  if (w.attachEvent) {
+    w.attachEvent('onload', go);
+  } else {
+    w.addEventListener('load', go, false);
+  }
+}(window, document, 
+  ['//assets.pinterest.com/js/pinit.js']
+));    
+</script>
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+if(!d.getElementById(id)){js=d.createElement(s);
+js.id=id;
+js.src="https://platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+
+<div itemprop="breadcrumb">
+<div class="small">
+
+<p align="center">
+<a href="chinese-alphabet.html">Previous page</a> 
+&mdash;
+<a href="korean-alphabet.html">Next page</a>
+</p>
+
+<p align="center">
+<a href="languages.html">Which languages can <abbr title="Optical Character Recognition">OCR</abbr> software read?</a> &mdash;
+<a href="latin-alphabet.html">The history of the alphabets &ndash; Latin alphabet</a> &mdash;
+<a href="latin-punctuation.html">Latin punctuation</a> &mdash;
+<a href="greek-alphabet.html">Greek alphabet</a> &mdash;
+<a href="cyrillic-alphabet.html">Cyrillic (Russian) alphabet</a> &mdash;
+<a href="hebrew-alphabet.html">Hebrew alphabet</a> &mdash;
+<a href="arabic-alphabet.html">Arabic alphabet</a> &mdash;
+<a href="chinese-alphabet.html">Let&rsquo;s go East &ndash; Chinese alphabet</a> &mdash;
+<a href="japanese-alphabet.html">Japanese alphabet</a> &mdash;
+<a href="korean-alphabet.html">Korean alphabet</a> &mdash;
+<a href="asian-punctuation.html">Asian punctuation</a>
+</p>
+
+<p align="center">
+<a href="../index.html">Home page</a> &mdash;
+<a href="../intro/intro.html">Intro</a> &mdash;
+<a href="../scanners/scanners.html">Scanners</a> &mdash;
+<a href="../images/images.html">Images</a> &mdash;
+<a href="../history/history.html">History</a> &mdash;
+<a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a> &mdash;
+<a href="languages.html">Languages</a> &mdash;
+<a href="../accuracy/accuracy.html">Accuracy</a> &mdash;
+<a href="../output/output.html">Output</a> &mdash;
+<a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a> &mdash;
+<a href="../pen-scanners/pen-scanners.html">Pen scanners</a> &mdash;
+<a href="../sitemap.html">Sitemap</a> &mdash;
+<a href="../search.html">Search</a> &mdash;
+<a href="../contact.html">Contact &ndash; Feedback</a>
+</p>
+
+</div>
+</div>
+
+</body>
+
+</html>

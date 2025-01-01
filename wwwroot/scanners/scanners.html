@@ -1,0 +1,413 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+
+<title>From Paper to Pixels | How OCR Works</title>
+
+<link rel="next" href="peripherals.html" />
+
+<meta name="description" content="Discover what image scanners are 
+and how they convert paper documents into computer images." />
+
+<meta name="keywords" content="document scanners, image scanners, 
+what are scanners, what&rsquo;s a scanner, how scanners work, 
+charge-coupled devices, CCDs, Gil Amelio, contact image sensors, 
+CIS, A/D converters, Optical Character Recognition, OCR" />
+
+<meta name="twitter:widgets:csp" content="on">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://how-ocr-works.com/scanners/scanners.html" />
+<meta name="twitter:title" content="From Paper to Pixels | How OCR Works" />
+<meta name="twitter:description" content="Discover what image scanners are and how they convert paper documents into computer images." />
+<meta name="twitter:image" content="https://how-ocr-works.com/scanners/scanners/image-scanner2.jpg" />
+
+<meta property="og:site_name" content="How OCR Works | A Close Look at Optical Character Recognition" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="From Paper to Pixels | How OCR Works" />
+<meta property="og:description" content="Discover what image scanners are and how they convert paper documents into computer images." />
+<meta property="og:url" content="https://how-ocr-works.com/scanners/scanners.html" />
+<meta property="og:image" content="https://how-ocr-works.com/scanners/scanners/image-scanner2.jpg" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="486" />
+<meta property="og:image:height" content="350" />
+
+<meta name="subject" content="Optical Character Recognition (OCR)" />
+
+<meta name="googlebot" content="all" />
+<meta name="bingbot" content="all" />
+<meta name="robots" content="all" />
+
+<link rev="made" href="mailto:ivo.vynckier@telenet.be" title="Ivo Vynckier" />
+<link rev="made" href="mailto:webmaster@how-ocr-works.com" title="Ivo Vynckier" />
+
+<meta name="reply-to" content="ivo.vynckier@telenet.be" />
+<meta name="reply-to" content="webmaster@how-ocr-works.com" />
+
+<meta name="author" content="Ivo Vynckier" />
+
+<meta name="generator" content="Notepad++" />
+
+<meta name="copyright" content="&copy; Ivo Vynckier. All rights reserved" />
+
+<meta name="rating" content="general" />
+<meta name="rating" content="safe for kids" />
+
+<link href="../website.css" rel="stylesheet" media="all" />
+<link href="//fonts.googleapis.com/css?family=Special Elite" rel="stylesheet" type="text/css" />
+
+<link href="../favicon.ico" rel="icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDERQSN9SP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TDERQSN9SP');
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<meta itemprop="isFamilyFriendly" content="True" />
+<meta itemprop="inLanguage" content="en" />
+
+<bgsound src="../index/typewriter2.wma" volume="0" loop="1" />
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div itemprop="breadcrumb">
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="../index.html">Home page</a></td>
+<td><a href="../intro/intro.html">Intro</a></td>
+<td><selected-page><a href="scanners.html">Scanners</a></selected-page></td>
+<td><a href="../images/images.html">Images</a></td>
+<td><a href="../history/history.html">History</a></td>
+<td><a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a></td>
+<td><a href="../languages/languages.html">Languages</a></td>
+</tr>
+<tr>
+<td><a href="../accuracy/accuracy.html">Accuracy</a></td>
+<td><a href="../output/output.html">Output</a></td>
+<td><a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a></td>
+<td><a href="../pen-scanners/pen-scanners.html">Pen scanners</a></td>
+<td><a href="../sitemap.html">Sitemap</a></td>
+<td><a href="../search.html">Search</a></td>
+<td><a href="../contact.html">Contact &ndash; Feedback</a></td>
+</tr>
+</table>
+</div>
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><selected-page><a href="scanners.html">How scanners work</a></selected-page></td>
+<td><a href="peripherals.html">Scanner types</a></td>
+<td><a href="hardware1.html">Hardware support</a></td>
+</tr>
+<tr>
+<td><a href="hardware2.html">Scanning applications</a></td>
+<td colspan="2"><a href="mainstream.html">Scanner and <abbr title="Optical Character Recognition">OCR</abbr> market</a></td>
+</tr>
+</table>
+</div>
+
+</div>
+
+<h1>From Paper to <abbr title="picture elements">Pixels</abbr></h1>
+
+<p>
+As is the case with 
+<a href="../intro/scanning.html" target="_blank">printing</a>, 
+it takes a special piece of hardware to get the job done 
+&mdash; a <strong>scanner</strong>. An 
+<a itemprop="keywords" href="https://en.wikipedia.org/wiki/Photo_scanning" target="_blank" title="Wikipedia page on image scanners">image scanner</a> 
+is an electronic input device designed to digitize images: 
+it converts a physical document into an electronic file 
+the computer can handle.
+</p>
+
+<p align="center">
+<img src="scanners/image-scanner1.jpg" alt="Image scanner for home use (SOHO) with an open lid" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img itemprop="primaryImageOfPage" src="scanners/image-scanner2.jpg" alt="Image scanner for office use with an Automatic Document Feeder (ADF)" border="0" />
+</p>
+
+<p>
+Just as a human brain only recognizes things that are 
+visually observed, the computer can only read documents 
+when it disposes of their image. Well, the scanner is 
+the <strong>computer peripheral</strong> that generates 
+that image and sends it to the computer. The scanner is 
+the computer&rsquo;s eye!
+</p>
+
+<p>
+When human beings or animals observe something, 
+<strong>light waves</strong> 
+(&ldquo;<a href="https://en.wikipedia.org/wiki/Photon" target="_blank" title="Wikipedia page on photons">photons</a>&rdquo;) 
+fall on the retina inside their eyes. Photons are 
+gradually fluctuating waves or &ldquo;analogue&rdquo; 
+data. Computers speak a different language: the digital 
+language of <abbr title="ones">1s</abbr> and 
+<abbr title="zeros">0s</abbr>.
+</p>
+
+<p align="center">
+<img src="scanners/lightwave-prism.png" alt="Light waves (photons) passing through a prism" border="0" />
+</p>
+
+<p>
+A scanner converts physical pictures into bitmapped 
+graphics &mdash; image files &mdash; that can be processed 
+by a computer. A scanner &ldquo;sweeps&rdquo; the document 
+from left to right, from top to bottom to create a picture 
+of it. Scanners divide a document up in a grid of 
+<abbr title="picture elements">pixels</abbr> and record 
+<abbr title="picture element">pixel</abbr> by 
+<abbr title="picture element">pixel</abbr> what the 
+sensor sees.
+</p>
+
+<a name="Sensors"></a>
+
+<p>
+Two types of light-sensitive sensors, 
+<span itemprop="keywords"><abbr title="Charge-Coupled Device">CCDs</abbr></span> 
+and <abbr title="Contact Image Sensor">CIS</abbr>, are 
+used in scanners. A 
+<strong><abbr title="Charge-Coupled Device">CCD</abbr></strong> 
+or 
+&ldquo;<span itemprop="keywords">charge-coupled device</span>&rdquo; 
+is a small semiconductor chip that contains an array of 
+tiny light-sensitive photocells. (A 600 
+<abbr title="dots per inch">dpi</abbr> scanner has 
+something like 5,100 sensors in each horizontal row.) A 
+<abbr title="Charge-Coupled Device">CCD</abbr> makes you 
+think of the compound eye of an insect.
+</p>
+
+<p align="center">
+<img src="scanners/CCD.jpg" alt="Charge-Coupled Device (CCD)" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="scanners/insect-eye.jpg" alt="Insect eye" border="0" />
+</p>
+
+<div itemscope itemtype="http://schema.org/Person">
+
+<p>
+(<a href="https://en.wikipedia.org/wiki/Gil_Amelio" target="_blank" title="Wikipedia page on Gil Amelio"><span itemprop="name"><span itemprop="givenName">Gil</span> <span itemprop="familyName">Amelio</span></span></a>, 
+former 
+<abbr title="Chief Executive Officer"><span itemprop="jobTitle">CEO</span></abbr> 
+of 
+<a itemprop="worksFor" href="https://en.wikipedia.org/wiki/National_Semiconductor" target="_blank" title="Wikipedia page on National Semiconductor">National Semiconductor</a> 
+(acquired by 
+<a href="https://en.wikipedia.org/wiki/Texas_Instruments" target="_blank" title="Wikipedia page on Texas Instruments">Texas Instruments</a> 
+in 2011) and 
+<a itemprop="worksFor" href="https://en.wikipedia.org/wiki/Apple_Inc." target="_blank" title="Wikipedia page on Apple">Apple</a> 
+(before the second coming of 
+<a href="https://en.wikipedia.org/wiki/Steve_Jobs" target="_blank" title="Wikipedia page on Steve Jobs">Steve Jobs</a>), 
+was one of the co-inventors of the 
+<abbr title="Charge-Coupled Device">CCD</abbr> in the early 
+<abbr title="seventies">70s</abbr>!)
+</p>
+
+<p align="center">
+<img itemprop="image" src="scanners/gil-amelio.jpg" alt="Gil Amelio as CEO of Apple" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="scanners/gil-amelio-apple-book.jpg" alt="Cover of the Gil Amelio - William Simon book &lsquo;On the Firing Line - My 500 Days at Apple&rsquo;" border="0" />
+</p>
+
+</div>
+
+<p>
+As a lamp illuminates the document to be scanned, the 
+<abbr title="Charge-Coupled Device">CCD</abbr> is moved 
+across the page to scan it. An optical system using lamps, 
+lenses, prisms and mirrors transports the image to the 
+light-sensitive chip.
+</p>
+
+<p align="center">
+<img src="scanners/scanner-mechanism.jpg" alt="Internal mechanism of image scanners" border="0" />
+</p>
+
+<a name="CIS"></a>
+
+<p>
+A 
+<strong itemprop="keywords"><abbr title="Contact Image Sensor">CIS</abbr></strong>, 
+short for 
+&ldquo;<span itemprop="keywords">Contact Image Sensor</span>&rdquo;, 
+doesn&rsquo;t require an optical system. A full row of 
+<a href="https://en.wikipedia.org/wiki/Sensor" target="_blank" title="Wikipedia page on sensors">sensors</a> 
+is placed very close to the document (and can employ banks 
+of small 
+<a href="https://en.wikipedia.org/wiki/Light-emitting_diode" target="_blank" title="Wikipedia page on light-emitting diodes (LEDs)">LEDs</a> 
+instead of a light bulb to illuminate the scanned document). 
+<abbr title="Contact Image Sensor">CIS</abbr>-based 
+scanners are thinner and smaller &mdash; and cheaper to 
+produce. 
+<abbr title="Charge-Coupled Device">CCD</abbr>-based 
+scanners provide better image quality and more detail.
+</p>
+
+<p align="center">
+<img src="scanners/CIS.jpg" alt="Contact Image Sensor (CIS)" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="scanners/CIS-scanner.jpg" alt="Image scanner with a Contact Image Sensor (CIS)" border="0" />
+</p>
+
+<p>
+The output of the sensors is sent to the scanner&rsquo;s 
+&ldquo;<strong itemprop="keywords"><abbr title="analogue-to-digital">A/D</abbr> converter</strong>&rdquo; 
+(&ldquo;<span itemprop="keywords">analogue-to-digital converter</span>&rdquo;) 
+that &ldquo;translates&rdquo; the light waves (analogue 
+colors) into electrical impulses (digital data) &mdash; 
+<abbr title="ones">1s</abbr> and <abbr title="zeros">0s</abbr> 
+that get transmitted to the computer as the scanned image 
+file.
+</p>
+
+<p align="center">
+<img src="scanners/CCD-array.png" alt="Array of Charge-Coupled Devices (CCDs)" border="0" />
+</p>
+
+<p>
+Arguably, no two scanner models generate the exact same image. 
+Such differences are inevitable because they are caused by 
+the scanner&rsquo;s 
+<abbr title="Charge-Coupled Device">CCD</abbr> or 
+<abbr title="Contact Image Sensor">CIS</abbr>, its mirrors, 
+its scanning lamp or 
+<abbr title="light-emitting diodes">LEDs</abbr> 
+(in the case of Canon 
+<abbr title="LED inDirect Exposure">LIDE</abbr> scanners) 
+<abbr title="etcetera">etc.</abbr> Scanners differ in size, 
+quality, price, you name it. (You can think of scanner 
+benchmarks in computer magazines, where a nice color image is 
+scanned with many different scanners. Afterwards, the images 
+are printed with a single color printer to detect the 
+differences in the color tones. One scanner generates images 
+that are darker or sharper than other models, another scanner 
+has too much yellow in the images 
+<abbr title="etcetera">etc.</abbr>)
+</p>
+
+<p><span class="small"><a href="scanners.html">Back to top</a></span></p>
+
+<p><a href="../contact.html#Form" target="_blank">Submit feedback</a></p>
+
+<p>
+<a href="https://www.pinterest.com/pin/create/button/" class="pin-it-button" data-pin-do="buttonPin" data-pin-config="beside"><img src="https://assets.pinterest.com/images/pidgets/pin_it_button.png" alt="Pin it" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="What are image scanners and how can they convert paper documents into computer images?" data-related="ivovynckier" data-lang="en">Tweet</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<script src="http://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-counter="right"></script>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<fb:like layout="standard" action="like" show_faces="false" share="true"></fb:like>
+</p>
+
+<script type="text/javascript">
+(function (w, d, load) {
+  var script, 
+  first = d.getElementsByTagName('SCRIPT')[0],  
+  n = load.length, 
+  i = 0,
+  go = function () {
+    for (i = 0; i < n; i = i + 1) {
+      script = d.createElement('SCRIPT');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = load[i];
+      first.parentNode.insertBefore(script, first);
+    }
+  }
+  if (w.attachEvent) {
+    w.attachEvent('onload', go);
+  } else {
+    w.addEventListener('load', go, false);
+  }
+}(window, document, 
+  ['//assets.pinterest.com/js/pinit.js']
+));    
+</script>
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+if(!d.getElementById(id)){js=d.createElement(s);
+js.id=id;
+js.src="https://platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+
+<div itemprop="breadcrumb">
+<div class="small">
+
+<p align="center">
+<a href="../intro/scanning.html">Previous section</a> 
+&mdash;
+<a href="peripherals.html">Next page</a>
+</p>
+
+<p align="center">
+<a href="scanners.html">From paper to <abbr title="picture elements">pixels</abbr></a> &mdash;
+<a href="peripherals.html">Putting peripherals in the center</a> &mdash;
+<a href="hardware1.html">&ldquo;Running&rdquo; the hardware</a> &mdash;
+<a href="hardware2.html" rel="next">Putting the hardware to work</a> &mdash;
+<a href="mainstream.html" rel="next"><abbr title="Optical Character Recognition">OCR</abbr> has become mainstream</a>
+</p>
+
+<p align="center">
+<a href="../index.html">Home page</a> &mdash;
+<a href="../intro/intro.html">Intro</a> &mdash;
+<a href="scanners.html">Scanners</a> &mdash;
+<a href="../images/images.html">Images</a> &mdash;
+<a href="../history/history.html">History</a> &mdash;
+<a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a> &mdash;
+<a href="../languages/languages.html">Languages</a> &mdash;
+<a href="../accuracy/accuracy.html">Accuracy</a> &mdash;
+<a href="../output/output.html">Output</a> &mdash;
+<a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a> &mdash;
+<a href="../pen-scanners/pen-scanners.html">Pen scanners</a> &mdash;
+<a href="../sitemap.html">Sitemap</a> &mdash;
+<a href="../search.html">Search</a> &mdash;
+<a href="../contact.html">Feedback &ndash; Contact</a>
+</p>
+
+</div>
+</div>
+
+</body>
+
+</html>

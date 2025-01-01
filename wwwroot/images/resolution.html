@@ -1,0 +1,990 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+
+<title>90,000 Kids on the Block | How OCR Works</title>
+
+<link rel="prev" href="bitmaps.html" />
+<link rel="next" href="compression.html" />
+
+<meta name="description" content="The image resolution 
+of scanned documents, the x-height of typefaces and 
+Gutenberg&rsquo;s invention of the printing press." />
+
+<meta name="keywords" content="image resolution, dpi, 
+dots per inch, what is dpi, point sizes, x-height, 
+ascenders, descenders, base line, mean line, median, 
+overhang, double-storey letters, body, Johannes Gutenberg, 
+invention of printing press, Gutenberg Bible, linotype 
+machine, The Post, Steven Spielberg, movies, character 
+width, small caps numerals, weight, glyphs, pangrams, 
+scanners, how scanner work, stepper motors, optical 
+resolution, interpolation, resampling, Optical Character 
+Recognition, OCR" />
+
+<meta name="twitter:widgets:csp" content="on">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://how-ocr-works.com/images/resolution.html" />
+<meta name="twitter:title" content="90,000 Kids on the Block | How OCR Works" />
+<meta name="twitter:description" content="The image resolution of scanned documents, the x-height of typefaces and Gutenberg&rsquo;s invention of the printing press." />
+<meta name="twitter:image" content="https://how-ocr-works.com/images/resolution/letter-body.png" />
+
+<meta property="og:site_name" content="How OCR Works | A Close Look at Optical Character Recognition" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="90,000 Kids on the Block | How OCR Works" />
+<meta property="og:description" content="The image resolution of scanned documents, the x-height of typefaces and Gutenberg&rsquo;s invention of the printing press." />
+<meta property="og:url" content="https://how-ocr-works.com/images/resolution.html" />
+<meta property="og:image" content="https://how-ocr-works.com/images/resolution/letter-body.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="557" />
+<meta property="og:image:height" content="314" />
+
+<meta name="subject" content="Optical Character Recognition (OCR)" />
+
+<meta name="googlebot" content="all" />
+<meta name="bingbot" content="all" />
+<meta name="robots" content="all" />
+
+<link rev="made" href="mailto:ivo.vynckier@telenet.be" title="Ivo Vynckier" />
+<link rev="made" href="mailto:webmaster@how-ocr-works.com" title="Ivo Vynckier" />
+
+<meta name="reply-to" content="ivo.vynckier@telenet.be" />
+<meta name="reply-to" content="webmaster@how-ocr-works.com" />
+
+<meta name="author" content="Ivo Vynckier" />
+
+<meta name="generator" content="Notepad++" />
+
+<meta name="copyright" content="&copy; Ivo Vynckier. All rights reserved" />
+
+<meta name="rating" content="general" />
+<meta name="rating" content="safe for kids" />
+
+<link href="../website.css" rel="stylesheet" media="all" />
+<link href="//fonts.googleapis.com/css?family=Special Elite" rel="stylesheet" type="text/css" />
+<link href="//fonts.googleapis.com/css?family=Stint Ultra Condensed" rel="stylesheet" type="text/css" />
+<link href="//fonts.googleapis.com/css?family=Ubuntu Mono" rel="stylesheet" type="text/css" />
+<link href="//fonts.googleapis.com/css?family=Marvel" rel="stylesheet" type="text/css" />
+<link href="//fonts.googleapis.com/css?family=Anaheim" rel="stylesheet" type="text/css" />
+<link href="//fonts.googleapis.com/css?family=Poiret One" rel="stylesheet" type="text/css" />
+<link href="//fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css" />
+<link href="//fonts.googleapis.com/css?family=Orbitron" rel="stylesheet" type="text/css" />
+<link href="//fonts.googleapis.com/css?family=Inder" rel="stylesheet" type="text/css" />
+<link href="//fonts.googleapis.com/css?family=Sintony" rel="stylesheet" type="text/css" />
+<link href="//fonts.googleapis.com/css?family=Fresca" rel="stylesheet" type="text/css" />
+<link href="//fonts.googleapis.com/css?family=Simonetta" rel="stylesheet" type="text/css" />
+<link href="//fonts.googleapis.com/css?family=Gravitas One" rel="stylesheet" type="text/css" />
+<link href="//fonts.googleapis.com/css?family=Geo" rel="stylesheet" type="text/css" />
+<link href="//fonts.googleapis.com/css?family=Wendy One" rel="stylesheet" type="text/css" />
+<link href="//fonts.googleapis.com/css?family=Limelight" rel="stylesheet" type="text/css" />
+
+<link href="../favicon.ico" rel="icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDERQSN9SP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TDERQSN9SP');
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<meta itemprop="isFamilyFriendly" content="True" />
+<meta itemprop="inLanguage" content="en" />
+
+<bgsound src="../index/typewriter2.wma" volume="0" loop="1" />
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div itemprop="breadcrumb">
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="../index.html">Home page</a></td>
+<td><a href="../intro/intro.html">Intro</a></td>
+<td><a href="../scanners/scanners.html">Scanners</a></td>
+<td><selected-page><a href="images.html">Images</a></selected-page></td>
+<td><a href="../history/history.html">History</a></td>
+<td><a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a></td>
+<td><a href="../languages/languages.html">Languages</a></td>
+</tr>
+<tr>
+<td><a href="../accuracy/accuracy.html">Accuracy</a></td>
+<td><a href="../output/output.html">Output</a></td>
+<td><a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a></td>
+<td><a href="../pen-scanners/pen-scanners.html">Pen scanners</a></td>
+<td><a href="../sitemap.html">Sitemap</a></td>
+<td><a href="../search.html">Search</a></td>
+<td><a href="../contact.html">Contact &ndash; Feedback</a></td>
+</tr>
+</table>
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="images.html"><abbr title="picture elements">Pixels</abbr></a></td>
+<td><a href="intelligence.html">Bitmap <abbr title="versus">vs.</abbr> vector</a></td>
+<td><a href="bitmaps.html">Image editing</a></td>
+<td><selected-page><a href="resolution.html">Resolution</a></selected-page></td>
+<td><a href="compression.html">Compression</a></td>
+<td><a href="text.html">Searchable text</a></td>
+</tr>
+</table>
+</div>
+
+</div>
+
+</div>
+
+<h1>90,000 Kids on the Block</h1>
+
+<p>
+We just explained the concept of 
+<a itemprop="keywords" href="intelligence.html#Resolution" target="_blank">image resolution</a>. 
+Let&rsquo;s give you an idea of the number of 
+<abbr title="picture elements">pixels</abbr> on a single 
+page. We&rsquo;ll use a simple situation: we scan a 
+<abbr  title="United States">US</abbr> Letter or A4 page 
+at 300 
+<abbr title="dots per inch">dpi</abbr> in black-and-white. 
+It takes only a single bit to store a 
+<abbr title="picture element">pixel</abbr> which is either 
+black or white (in the computer&rsquo;s language: 1 or 0). 
+Still, given the image resolution of 300 
+<abbr title="dots per inch">dpi</abbr>, a square inch has 
+300 x 300 <abbr title="picture elements">pixels</abbr>. 
+That&rsquo;s 90,000 
+<abbr title="picture elements">pixels</abbr> for a surface 
+that small!
+</p>   
+
+<p align="center">
+<img src="resolution/square-inch.png" alt="Image 1 square inch big with normal and small text" width="92" height="101" border="0" />
+</p>
+
+<p>
+At 300 <abbr title="dots per inch">dpi</abbr>, the dots 
+are that small that we have to zoom in by more than 
+300&#37; before we start to see the individual 
+<abbr title="picture elements">pixels</abbr>! Still, it 
+does take that many 
+<abbr title="picture elements">pixels</abbr> to print 
+&mdash; and recognize &mdash;  text: had we used, say, 
+only half that many 
+<abbr title="picture elements">pixels</abbr> (150 
+<abbr title="dots per inch">dpi</abbr>) to draw the 
+characters, would we still have been able to read the 
+lowercase letters &ldquo;abc&rdquo; printed in 11 point 
+Calibri &mdash; a crystal-clear font by the way? And how 
+about the green text (&ldquo;surface: 1 square 
+inch&rdquo;) printed in 6 point Calibri &mdash; that bit 
+is barely legible as it is! And if we humans can no 
+longer read the text, how can we expect the 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software to do it?
+</p>
+
+<p>
+In other words, as small as the 
+<abbr title="picture elements">pixels</abbr> may seem, it 
+really does take an image resolution of 300 
+<abbr title="dots per inch">dpi</abbr> for 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+applications! (For text smaller than 10 point, a 400 
+<abbr title="dots per inch">dpi</abbr> resolution is 
+recommended.)
+</p>
+
+<p>
+To show you how fast the image quality degrades when the 
+scanning resolution drops, we&rsquo;ve printed a crisp, 
+clear text on a 600 <abbr title="dots per inch">dpi</abbr> 
+<a href="https://en.wikipedia.org/wiki/Laser_printer" target="_blank" title="Wikipedia page on laser printers">laser printer</a> 
+and scanned it at various resolutions. Yes, 
+I enlarged the images to push the individual 
+<abbr title="picture elements">pixels</abbr> in your face 
+&mdash; after all, those dots encoded in the image file 
+are are what the 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software has to process! My objective here is to show you 
+up close the kind of detail you get at the various 
+resolutions&hellip;
+</p>
+
+<p align="center">
+<img src="resolution/scanned-document-300dpi.png" alt="Detail of document scanned at 300 dpi" border="0" />
+<br />
+<span class="small">300 <abbr title="dots per inch">dpi</abbr> scan (enlarged)</span>
+</p>
+
+<p align="center">
+<img src="resolution/scanned-document-200dpi.png" alt="Detail of document scanned at 200 dpi" border="0" />
+<br />
+<span class="small">200 <abbr title="dots per inch">dpi</abbr> scan (enlarged)</span>
+</p>
+
+<p align="center">
+<img src="resolution/scanned-document-150dpi.png" alt="Detail of document scanned at 150 dpi" border="0" />
+<br />
+<span class="small">150 <abbr title="dots per inch">dpi</abbr> scan (enlarged)</span>
+</p>
+
+<p align="center">
+<img src="resolution/scanned-document-100dpi.png" alt="Detail of document scanned at 100 dpi" border="0" />
+<br />
+<span class="small">100 <abbr title="dots per inch">dpi</abbr> scan (enlarged)</span>
+</p>
+
+<p align="center">
+<img src="resolution/scanned-document-75dpi.png" alt="Detail of document scanned at 75 dpi" border="0" />
+<br />
+<span class="small">75 <abbr title="dots per inch">dpi</abbr> scan (enlarged)</span>
+</p>
+
+<a name="Point"></a>
+<p>
+State-of-the-art 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software recognizes 
+<strong itemprop="keywords">point sizes</strong> 
+from 6 point (0.08&rdquo; or 2 
+<abbr title="millimeter">mm.</abbr> high) to 72 point 
+(1&rdquo; or 2.54 <abbr title="centimeter">cm.</abbr> 
+high).
+</p>
+
+<p align="center">
+<s6>
+6 point
+</s6>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<s32>
+36 point
+</s32>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<s72>
+72 point
+</s72>
+</p>
+
+<a name="XHeight"></a>
+
+<p>
+<strong>Point</strong> is a typographical unit of measure 
+that describes the font size. A point equals 1/72&rdquo;. 
+Putting things the other way around: a point corresponds 
+to 0.014&rdquo; (0.35 <abbr title="millimeter">mm.</abbr>). 
+The height of the lowercase &ldquo;x&rdquo;, also called 
+the 
+&ldquo;<strong itemprop="keywords">x-height</strong>&rdquo; 
+or &ldquo;body&rdquo; of a typeface, serves as base for 
+the measurement. (An alternative unit of measure is 
+&ldquo;<a href="https://en.wikipedia.org/wiki/Pica_(typography)" target="_blank" title="Wikipedia page on pica (in typography)">pica</a>&rdquo;, 
+but we won&rsquo;t discuss it here.)
+</p>
+
+<p align="center">
+<img src="resolution/x-height1.png" alt="X-height of font" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="resolution/x-height2.png" alt="X-height of font" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="resolution/x-height3.jpg" alt="X-height of font" border="0" />
+</p>
+
+<a name="Ascender"></a>
+
+<p> 
+In other words, the upper bit above the x-height 
+(&ldquo;<span itemprop="keywords">ascender</span>&rdquo;) 
+and the lower bit below the x-height 
+(&ldquo;<span itemprop="keywords">descender</span>&rdquo;) 
+are ignored when we determine a font&rsquo;s point size.
+</p>
+
+<p align="center">
+<img src="resolution/x-height-ascender-descender.png" alt="X-height, ascender and descender of font" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="resolution/ascender.png" alt="Ascender" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="resolution/descender.png" alt="Descender" border="0" />
+</p>
+
+<a name="BaseLine"></a>
+
+<p>
+The imaginary bottom point of the lowercase characters 
+(without the descenders) is called the <strong>base 
+line</strong>, the less important imaginary highest 
+point of all lowercase characters (without the ascenders) 
+is the &ldquo;mean line&rdquo; or &ldquo;median&rdquo;.
+</p>
+
+<p align="center">
+<img src="resolution/baseline-meanline.png" alt="Base line and mean line of font" border="0" />
+</p>
+
+<p>
+Actually, some characters are slightly bigger than the 
+x-height: the 
+&ldquo;<strong itemprop="keywords">overhang</strong>&rdquo; 
+or &ldquo;overshoot&rdquo; comprises the parts of a letter 
+shape that descend below the 
+<span itemprop="keywords">base line</span> and above the 
+mean line. Overhang is used in round forms (for instance 
+&ldquo;C&rdquo;, &ldquo;G&rdquo;, &ldquo;O&rdquo; and 
+&ldquo;Q&rdquo;) and angular shapes (for instance 
+&ldquo;J&rdquo;, &ldquo;S&rdquo; and &ldquo;U&rdquo;) to 
+optically adjust the letter height. Similarly, a very 
+pointed &ldquo;v&rdquo; letter can descend somewhat below 
+the base line so as not to appear short. Thanks to the 
+overhang, these characters look the same height as the 
+other characters; without overhang, they would seem 
+smaller than the other characters&hellip; Nice fonts are 
+visually if not mathematically equal!
+</p>
+
+<p align="center">
+<img src="resolution/overhang-letter.png" alt="Overhang - overshoot exceeding the base line and mean line" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="resolution/overhang-letters.png" alt="Overhang - overshoot exceeding the base line and mean line" border="0" width="519" height="72"/>
+</p>
+
+<p>
+(And then you have the <strong>&ldquo;double-storey&rdquo; 
+letters</strong> &mdash; for instance the lowercase 
+&ldquo;g&rdquo; and a lowercase upright &ldquo;a&rdquo;. 
+Don&rsquo;t confuse the two storeys of these letters with 
+the x-height: the two storeys of the &ldquo;a&rdquo; fall 
+inside the x-height, the lower storey of the &ldquo;g&rdquo; 
+letter implies the use of a descender!)
+</p>
+
+<p align="center">
+<img src="resolution/double-storey-letters.png" alt="Double-storey letters a and g" border="0" />
+</p>
+ 
+<a name="MetalType"></a>
+ 
+<p>
+&ldquo;Body&rdquo; is the imaginary rectangle that 
+surrounds a letter form, it includes the ascenders and 
+descenders and defines the overall size of a character. 
+(The &ldquo;body size&rdquo; or &ldquo;line space&rdquo; 
+indicates the height of a font.)
+</p>
+
+<p>
+At first, the &ldquo;<strong>body</strong>&rdquo; was the 
+metal rectangle on which each individual letter was cast by 
+the punchcutter. With photographic or digital typefaces, the 
+body indicates its imaginary equivalent, the rectangular 
+space&ldquo;owned&rdquo; by a given letter. In modern 
+literature, the term &ldquo;cell&rdquo; is often used to 
+describe the space occupied by a single character.
+</p>
+
+<p align="center">
+<img src="resolution/metal-type-letter.jpg" alt="Metal-type letter" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="resolution/metal-type-on-letterpress.jpg" alt="Metal type mounted on a letterpress" border="0" />
+</p>
+
+<a name="Gutenberg"></a>
+
+<div itemscope itemtype="http://schema.org/Movie">
+
+<meta itemprop="name" content="Stephen Fry and the Gutenberg Press" />
+<meta itemprop="director" content="Stephen Fry">
+<meta itemprop="dateCreated" content="2011-03-21">
+
+<p>
+<span itemprop="keywords">Metal type</span> was an invention 
+of the goldsmith 
+<a itemprop="keywords" href="https://en.wikipedia.org/wiki/Johannes_Gutenberg" target="_blank" title="Wikpedia page on Johannes Gutenberg">Johannes Gutenberg</a> 
+from the 
+German city of Mainz. Actually, metal type had already been 
+invented in Korea around 1040, but Johannes Gutenberg really 
+did <i>re</i>invent the 
+<strong itemprop="keywords">printing press</strong>: 
+no knowledge of the printing press from the East ever reached 
+Europe!
+</p>
+
+<p align="center">
+<img src="resolution/johannes-gutenberg.jpg" alt="Johannes Gutenberg, inventor of printing press" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img itemprop="image" src="resolution/stephen-fry-gutenberg-press.jpg" alt="DVD cover of the BBC documentary &lsquo;Stephen Fry and the Gutenberg Press&rsquo;" border="0" />
+</p>
+
+<p>
+Compared to woodblock printing, movable metal type 
+was more efficient &mdash; both quicker and cheaper &mdash; 
+and more durable. The use of small metal units led to 
+uniform lettering, and typography and fonts were born. The 
+high quality and low price of the famous 42-line 
+<a itemprop="keywords" href="https://en.wikipedia.org/wiki/Gutenberg_Bible" target="_blank" title="Wikipedia page on the Gutenberg bible">Gutenberg Bible</a> 
+(1455) established the superiority of movable type. His 
+printing press spread across Europe very quickly, from a 
+single press in Mainz in 1457 to 110 presses by 1480. Fifty 
+of those presses were in Italy; Venice became the center of 
+printing activity and typography (with 
+<a href="https://en.wikipedia.org/wiki/Aldus_Manutius" target="_blank" title="Wikipedia page on Aldus Manutius">Aldus Manutius</a>, 
+<a href="https://en.wikipedia.org/wiki/Francesco_Griffo" target="_blank" title="Wikipedia page on Francesco Griffo">Francesco Griffo</a> 
+and others).
+</p>
+
+<p align="center">
+<img src="resolution/movable-type.jpg" alt="Movable type" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="resolution/gutenberg-bible.jpg" alt="Gutenberg Bible" border="0" />
+</p>
+
+</div>
+
+<div itemscope itemtype="http://schema.org/Movie">
+
+<meta itemprop="dateCreated" content="2017-12-22">
+
+<p>
+Most people don&rsquo;t realize is how long this metal 
+technology endured &mdash; into the 
+<abbr title="eighties">80s</abbr>! For instance, 
+<span itemprop="director">Steven Spielberg</span> showed off 
+the 
+<a href="https://en.wikipedia.org/wiki/Linotype_machine" target="_blank" title="Wikipedia page on the linotype machine">linotype machine</a>, 
+unmissable to print newspapers and magazines, in his movie 
+&ldquo;<span itemprop="name">The Post</span>&rdquo; (2017)!
+<br />
+<span class="small">
+<a itemprop="url" href="https://www.imdb.com/title/tt6294822/" target="_blank" title="IMDB page on the movie &lsquo;The Post&rsquo;">
+<abbr title="Internet Movie Database">IMDB</abbr> page on The Post</a>
+ &mdash; 
+<a itemprop="url" href="https://en.wikipedia.org/wiki/The_Post_(film)" target="_blank" title="Wikipedia page on the movie &lsquo;The Post&rsquo;">
+Wikipedia page on The Post</a> 
+</span>
+</p>
+
+<p align="center">
+<a href="https://www.imdb.com/title/tt6294822/" target="_blank" title="IMDB page on the Steven Spielberg movie &lsquo;The Post&rsquo;">
+<img itemprop="image" src="resolution/the-post-cover.jpg" alt="DVD cover of the Steven Spielberg movie &lsquo;The Post&rsquo;" border="0" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<img itemprop="image" src="resolution/the-post-linotype-machine.jpg" alt="Linotype machine in the Steven Spielberg movie &ldquo;The Post&rdquo;" border="0" />
+</p>
+
+</div>
+
+<p>
+The &ldquo;body&rdquo; is not equal to the dimensions of the 
+letter itself: add the space <i>around</i> the actual letters 
+to calculate the body! Nor is the &ldquo;body size&rdquo; or 
+&ldquo;<strong itemprop="keywords">line space</strong>&rdquo; 
+equal to the height of a font: add the space above and under 
+the letter to calculate the body size.
+</p>
+
+<p align="center">
+<img itemprop="primaryImageOfPage" src="resolution/letter-body.png" alt="Body of letter with linespace, x-height, ascenders and descenders" border="0" />
+</p>
+
+<p> 
+A letter&rsquo;s <strong>body</strong> includes 
+&ldquo;sidebearings&rdquo;: that&rsquo;s the distance between 
+the origin and the left edge of a character (left sidebearing) 
+and the distance between the width line and the right edge of 
+a character (right sidebearing). The horizontal space occupied 
+by the letter itself is called the 
+&ldquo;<strong itemprop="keywords">character width</strong>&rdquo;.
+</p>
+
+<p align="center">
+<img src="resolution/letter-sidebearings.png" alt="Sidebearings of letter" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="resolution/character-width.png" alt="Character width" border="0" />
+</p>  
+ 	
+<p>	
+In <strong>Hebrew</strong>, the logic of the Latin alphabet 
+is inverted: here, the text is written on the (imaginary) 
+&ldquo;mean line&rdquo;, not the &ldquo;base line&rdquo;. Or 
+rather, the text hangs down from the &ldquo;mean line&rdquo;. 
+(We should quickly add that Hebrew doesn&rsquo;t use any 
+lowercase characters, only uppercase symbols: some symbols 
+from the Hebrew alphabet have an ascender or descender which 
+uppercase symbols from the Latin alphabet never do. These 
+ascenders and descenders certainly don&rsquo;t play the role 
+that they do in (lowercase) Latin-based fonts...)
+</p>
+
+<p align="center">
+<img src="resolution/mean-line.png" alt="Mean line" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="resolution/hebrew-mean-line.png" alt="Mean line in Hebrew" border="0" />
+</p>
+
+<p align="center">
+<img src="resolution/latin-uppercases.png" alt="Base line and mean line of uppercase Latin characters" border="0" width="977" height="49" />
+</p>
+
+<p>
+And the <strong>Arabic script</strong> is different still: the 
+text is written on lines, as is the Latin alphabet, but that 
+doesn&rsquo;t learn you much. Shallow letters rest on the line 
+of writing. Tall letters do the exact same thing but are tall 
+like a European &ldquo;l&rdquo;. Deep shapes start above the 
+line of writing, swoop below it and then swoop up again.
+</p>
+
+<p align="center">
+<img src="resolution/arabic-baseline.png" alt="Base line of Arabic characters" border="0" width="507" height="48" />
+</p>
+
+<p>
+Most people instinctively think that the 
+&ldquo;<strong>extenders</strong>&rdquo; &mdash; the 
+collective name of the &ldquo;ascender&rdquo; and 
+&ldquo;descender&rdquo; &mdash; always have the same length. 
+Not so, their length can vary quite a bit at times! 
+Here&rsquo;s the font <strong>Bernhard Modern</strong> for 
+instance, known for its &ldquo;normal&rdquo; descenders and 
+its extreme ascenders!
+</p>
+
+<p align="center">
+<img src="resolution/extenders-bernhard-modern1.png" alt="Extenders (ascenders - descenders) of the font Bernhard Modern" border="0" />
+</p>
+
+<p align="center">
+<img src="resolution/extenders-bernhard-modern2.png" alt="Extenders (ascenders - descenders) of the font Bernhard Modern" border="0" />
+</p>
+
+<p>
+Furthermore, most people erroneously think that the x-height 
+only applies to letters, not numerals. Wrong again: depending 
+on the font, digits <i>can</i> be aligned with lowercase 
+characters 
+(&ldquo;<strong itemprop="keywords">small caps numerals</strong>&rdquo; 
+or &ldquo;old-style numerals&rdquo;) &mdash; even if most 
+typefaces align the numerals with the uppercase 
+symbols&hellip;! (Never mind, more about 
+<a href="../OCR/omnifont-OCR.html#SmallCaps" target="_blank">small caps</a> later.)
+</p>
+
+<p align="center">
+<img src="resolution/small-caps-numerals.png" alt="Small-caps numerals" border="0" />
+<br />
+small caps or &ldquo;old-style&rdquo; numerals
+</p>
+
+<p align="center">
+<img src="resolution/modern-numerals.png" alt="Modern numerals" border="0" />
+<br />
+&ldquo;modern&rdquo; numerals
+</p>
+
+<p>
+As the extenders aren&rsquo;t taken into account by the 
+point size &mdash; only the x-height is &mdash;, this unit 
+of measure says little about how big a typeface will 
+actually look. (Typographists say that a font with a large 
+x-height has a &ldquo;large eye&rdquo;.)
+</p>
+
+<p align="center">
+<span style="line-height:180%">
+<font face="Stint Ultra Condensed" size="6">
+Stint Ultra Condensed size 6
+</font>
+<br />
+<font face="Ubuntu Mono" size="6">
+Ubuntu Mono size 6
+</font>
+<br />
+<font face="Marvel" size="6">
+Marvel size 6
+</font>
+<br />
+<font face="Anaheim" size="6">
+Anaheim size 6
+</font>
+<br />
+<font face="Poiret One" size="6">
+Poiret One size 6
+</font>
+<br />
+<font face="Oxygen" size="6">
+Oxygen size 6
+</font>
+<br />
+<font face="Orbitron" size="6">
+Orbitron size 6
+</font>
+</span>
+</p>
+
+<a name="Weight"></a>
+
+<p>
+The 
+<strong itemprop="keywords">weight</strong> is 
+probably more crucial to the overall aspect of a typeface. 
+A font&rsquo;s weight expresses the density of the 
+<a href="https://en.wikipedia.org/wiki/Glyph" target="_blank" title="Wikipedia page on glyphs">glyphs&rsquo;</a> 
+strokes, it indicates a letter&rsquo;s relative amount of 
+blackness. Given the thickness or lightness of the shapes, 
+the &ldquo;heaviness&rdquo; of bold and expanded characters 
+is obviously bigger than the weight of normal and condensed 
+characters.
+</p>
+
+<p align="center">
+<img src="resolution/weight1.png" alt="Letter A in varying font weight" border="0" width="222" height="51" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="resolution/weight2.png" alt="Font with varying weight" border="0" />
+</p>
+
+<p>
+Despite what this illustration suggests, proper terminology 
+for weight has never been precisely determined. In body text, 
+two weights are generally used: the original design is 
+called &ldquo;regular&rdquo; or &ldquo;light&rdquo;, the 
+thicker version is the &ldquo;boldface&rdquo;. In more 
+advanced usage, fonts may have as many as eight or nine 
+different weights, differently described by each 
+manufacturer. Weight is generally seen as a continuum, going 
+from &ldquo;light&rdquo; (thinner than condensed) to 
+&ldquo;black&rdquo; (thicker than expanded).
+</p>
+
+<p align="center">
+<img src="resolution/font-condensed.png" alt="Times New Roman condensed style" border="0">
+<br />
+Times New Roman &ndash; condensed
+</p>
+
+<p align="center">
+<img src="resolution/font-normal.png" alt="Times New Roman normal style" border="0">
+<br />
+Times New Roman &ndash; normal
+</p>
+
+<p align="center">
+<img src="resolution/font-bold.png" alt="Times New Roman bold style" border="0">
+<br />
+Times New Roman &ndash; bold
+</p>
+
+<p align="center">
+<img src="resolution/font-expanded.png" alt="Times New Roman expanded style" border="0">
+<br />
+Times New Roman &ndash; expanded
+</p>
+
+<p>
+Here&rsquo;s a nice tip: 
+<strong itemprop="keywords">pangrams</strong> allow you 
+to have an accurate idea of a font&rsquo;s appearance. 
+They&rsquo;re sentences that contain every letter of the 
+alphabet. &ldquo;The quick brown fox jumps over the lazy 
+dog&rdquo; is well known to all 
+<abbr title="Personal Computer">PC</abbr> users, but 
+it&rsquo;s certainly not the only example. Here are some 
+alternatives: &ldquo;How razorback-jumping frogs can level 
+six piqued gymnasts&rdquo;, &ldquo;The risque gown makes a 
+very brazen exposure of juicy flesh&rdquo;, &ldquo;Jaded 
+zombies acted quaintly but kept driving their oxen 
+forward&rdquo;, &ldquo;The sex life of the woodchuck is a 
+provocative question for most vertebrate zoology 
+majors&rdquo; and finally &ldquo;Jelly-like above the high 
+wire, six quaking pachyderms kept the climax of the 
+extravaganza in a dazzling state of flux&rdquo;. 
+(&ldquo;Jackdaws love my big sphinx of quartz &rdquo; is 
+also used, but the &ldquo;f&rdquo; is actually missing...)
+</p>
+
+<p align="center">
+<font face="Inder" size="6">
+Jackdaws love my big sphinx of quartz
+</font>
+</p>
+
+<p align="center">
+<font face="Sintony" size="6">
+The quick brown fox jumps over the lazy dog
+</font>
+</p>
+
+<p align="center">
+<font face="Fresca" size="6">
+How razorback-jumping frogs can level six piqued gymnasts
+</font>
+</p>
+
+<p align="center">
+<font face="Simonetta" size="6">
+The risque gown makes a very brazen exposure of juicy flesh
+</font>
+</p>
+
+<p align="center">
+<span style="line-height:175%">
+<font face="Gravitas One" size="6">
+The sex life of the woodchuck
+<br />
+is a provocative question
+<br />
+for most vertebrate zoology majors
+</font>
+</span>
+</p>
+
+<p align="center">
+<font face="Geo" size="6">
+Jaded zombies acted quaintly but kept driving their oxen forward
+</font>
+</p>
+
+<p align="center">
+<font face="Wendy One" size="6">
+Grumpy wizard make toxic brew for the evil Queen and Jack
+</font>
+</p>
+
+<p align="center">
+<span style="line-height:160%">
+<font face="Limelight" size="6">
+Jelly-like above the high wire, six quaking pachyderms kept
+<br />
+the climax of the extravaganza in a dazzling state of flux
+</font>
+</span>
+</p>
+
+<p>
+Back to scanning resolutions and point sizes! For body text, 
+the supported range of point sizes has no meaning, but when 
+it comes to recognizing articles from newspapers and 
+magazines, being able to read <strong>big titles</strong> is 
+a real issue! If you are in the unlikely position where you 
+have to read text bigger than 72 point, you could reduce the 
+scanning resolution, but know that the recognition of the 
+body text will quickly suffer, as we just showed.
+</p>
+
+<p>
+(<a href="../pen-scanners/pen-scanners.html" target="_blank">Pen scanners</a> 
+only scan strokes of about 0.4&rdquo; (1 
+<abbr title="centimeter">cm.</abbr> high), and the highest 
+point size they support is about 20 point: they scan body 
+text but <i>not</i> big titles.)
+</p>
+
+<p>
+The number of light-sensitive <strong>sensors</strong> on 
+the <abbr title="Charge-Coupled Device">CCD</abbr> or 
+<abbr title="Contact Image Sensor">CIS</abbr> array 
+determines the <strong>horizontal resolution</strong>.
+</p>
+
+<a name="StepperMotor"></a>
+
+<p>
+The <strong>vertical resolution</strong> indicates the number 
+of lines scanned by the 
+<abbr title="Charge-Coupled Device">CCD</abbr> or 
+<abbr title="Contact Image Sensor">CIS</abbr> per linear inch: 
+this value depends on the number of times the carriage motor 
+stops when transporting the scanning head across the page. 
+<strong>Stepper motors</strong> are very precise instruments: 
+they don&rsquo;t rotate continuously as &ldquo;regular&rdquo; 
+motors do but use a belt to move one precise step. The scan 
+head stays locked in position by a <strong>stabilizer 
+bar</strong> until it&rsquo;s moved one more step!
+</p>
+
+<p align="center">
+<img src="resolution/scanner-stepper-motor1.jpg" alt="Stepper motor of image scanner" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="resolution/scanner-stepper-motor2.jpg" alt="Stabilizer bar of image scanner" border="0" />
+</p>
+
+<a name="Interpolation"></a>
+
+<p>
+Limit yourself to 
+<strong itemprop="keywords">optical resolutions</strong>, 
+don&rsquo;t use interpolated resolutions! Interpolated or 
+&ldquo;software-enhanced&rdquo; resolutions are created by 
+the software (or by the scanner&rsquo;s firmware) by adding 
+extra <abbr title="picture elements">pixels</abbr> in 
+between that were never scanned. (You may have seen an ad 
+for a flatbed scanner that claims to scan at 9,600 
+<abbr title="dots per inch">dpi</abbr>, but know that it 
+would take a <abbr title="Charge-Coupled Device">CCD</abbr> 
+array of 81,600 sensors to scan at that resolution!)
+</p>
+
+<p>
+With 
+<a itemprop="keywords" href="https://en.wikipedia.org/wiki/Interpolation" target="_blank" title="Wikipedia page on interpolation">interpolation</a>, 
+the bitmap&rsquo;s grid is inflated and every 
+<abbr title="picture element">pixel</abbr> on the grid gets 
+recalculated! A software routine guesses on the basis of the 
+surrounding <abbr title="picture elements">pixels</abbr> what 
+color a <abbr title="picture element">pixel</abbr> would have 
+had, had it been scanned. The system estimates new 
+intermediate values to be inserted between known, measured 
+values.
+</p>
+
+<p align="center">
+<img src="resolution/bitmap1.jpg" alt="Image scanned at optical resolution" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="resolution/bitmap2.jpg" alt="Image scanned at interpolated resolution" border="0" />
+</p>
+
+<p>
+You can perform the very same operation with Adobe Photoshop 
+when you resize &mdash; <strong>resample</strong> actually 
+&mdash; an image: you for instance change a 300 x 300 
+<abbr title="picture element">pixel</abbr> image into a 600 
+x 600 image after the scan. When you scan at an interpolated 
+resolution, the scanner handles the resampling for you, but 
+the result is very much the same.
+</p>
+
+<p align="center">
+<img src="resolution/photoshop-resample-image.png" alt="Resizing-resampling images with Adobe Photoshop" border="0" />
+</p>
+
+<p>
+Interpolation increases the image size but not its 
+resolution; it doesn&rsquo;t add any detail to the image 
+but rather repeats existing data by mixing real and fake 
+<abbr title="picture elements">pixels</abbr>. Interpolated 
+images have a vague, unsharp look to them. In other words: 
+interpolation always decreases the image quality: the 
+symbol shapes inevitably get more blurred. And you 
+don&rsquo;t want to recognize smudgy images!
+</p>
+
+<p><span class="small"><a href="resolution.html">Back to top</a></span></p>
+
+<p><a href="../contact.html#Form" target="_blank">Submit feedback</a></p>
+
+<p>
+<a href="https://www.pinterest.com/pin/create/button/" class="pin-it-button" data-pin-do="buttonPin" data-pin-config="beside"><img src="https://assets.pinterest.com/images/pidgets/pin_it_button.png" alt="Pin it" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="The image resolution of scanned documents, the x-height of typefaces and Gutenberg&rsquo;s invention of the printing press" data-related="ivovynckier" data-lang="en">Tweet</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<script src="http://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-counter="right"></script>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<fb:like layout="standard" action="like" show_faces="false" share="true"></fb:like>
+</p>
+
+<script type="text/javascript">
+(function (w, d, load) {
+  var script, 
+  first = d.getElementsByTagName('SCRIPT')[0],  
+  n = load.length, 
+  i = 0,
+  go = function () {
+    for (i = 0; i < n; i = i + 1) {
+      script = d.createElement('SCRIPT');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = load[i];
+      first.parentNode.insertBefore(script, first);
+    }
+  }
+  if (w.attachEvent) {
+    w.attachEvent('onload', go);
+  } else {
+    w.addEventListener('load', go, false);
+  }
+}(window, document, 
+  ['//assets.pinterest.com/js/pinit.js']
+));    
+</script>
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+if(!d.getElementById(id)){js=d.createElement(s);
+js.id=id;
+js.src="https://platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+
+<div itemprop="breadcrumb">
+<div class="small">
+
+<p align="center">
+<a href="bitmaps.html">Previous page</a> 
+&mdash;
+<a href="compression.html">Next page</a>
+</p>
+
+<p align="center">
+<a href="images.html">The text is in the eye of the beholder</a> &mdash;
+<a href="intelligence.html">The intelligence of OCR</a> &mdash;
+<a href="bitmaps.html">Bitmaps only take you so far</a> &mdash;
+<a href="resolution.html">90,000 kids on the block</a> &mdash;
+<a href="compression.html">OCR is the ultimate data cruncher!</a> &mdash;
+<a href="text.html">OCR deserves recognition</a>
+</p>
+
+<p align="center">
+<a href="../index.html">Home page</a> &mdash;
+<a href="../intro/intro.html">Intro</a> &mdash;
+<a href="../scanners/scanners.html">Scanners</a> &mdash;
+<a href="images.html">Images</a> &mdash;
+<a href="../history/history.html">History</a> &mdash;
+<a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a> &mdash;
+<a href="../languages/languages.html">Languages</a> &mdash;
+<a href="../accuracy/accuracy.html">Accuracy</a> &mdash;
+<a href="../output/output.html">Output</a> &mdash;
+<a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a> &mdash;
+<a href="../pen-scanners/pen-scanners.html">Pen scanners</a> &mdash;
+<a href="../sitemap.html">Sitemap</a> &mdash;
+<a href="../search.html">Search</a> &mdash;
+<a href="../contact.html">Contact &ndash; Feedback</a>
+</p>
+
+</div>
+</div>
+
+</body>
+
+</html>

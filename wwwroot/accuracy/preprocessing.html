@@ -1,0 +1,377 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+
+<title>With a Little Help from the Friends | How OCR Works</title>
+
+<link rel="prev" href="scanning-skills.html" />
+<link rel="next" href="snapshots.html" />
+
+<meta name="description" content="How image preprocessing such as 
+despeckling and deskewing optimizes scanned images for the OCR process." />
+
+<meta name="keywords" content="image preprocessing, despeckling, 
+salt and pepper noise, parasite pixels, deskewing, lineskew, 
+page orientation, Optical Character Recognition, OCR" />
+
+<meta name="twitter:widgets:csp" content="on">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://how-ocr-works.com/accuracy/preprocessing.html" />
+<meta name="twitter:title" content="With a Little Help from the Friends | How OCR Works" />
+<meta name="twitter:description" content="How image preprocessing such as despeckling and deskewing optimizes scanned images for the OCR process." />
+<meta name="twitter:image" content="https://how-ocr-works.com/accuracy/preprocessing/image-with-noise.png" />
+
+<meta property="og:site_name" content="How OCR Works | A Close Look at Optical Character Recognition" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="With a Little Help from the Friends | How OCR Works" />
+<meta property="og:description" content="How image preprocessing such as despeckling and deskewing optimizes scanned images for the OCR process." />
+<meta property="og:url" content="https://how-ocr-works.com/accuracy/preprocessing.html" />
+<meta property="og:image" content="https://how-ocr-works.com/accuracy/preprocessing/image-with-noise.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="494" />
+<meta property="og:image:height" content="279" />
+
+<meta name="subject" content="Optical Character Recognition (OCR)" />
+
+<meta name="googlebot" content="all" />
+<meta name="bingbot" content="all" />
+<meta name="robots" content="all" />
+
+<link rev="made" href="mailto:ivo.vynckier@telenet.be" title="Ivo Vynckier" />
+<link rev="made" href="mailto:webmaster@how-ocr-works.com" title="Ivo Vynckier" />
+
+<meta name="reply-to" content="ivo.vynckier@telenet.be" />
+<meta name="reply-to" content="webmaster@how-ocr-works.com" />
+
+<meta name="author" content="Ivo Vynckier" />
+
+<meta name="generator" content="Notepad++" />
+
+<meta name="copyright" content="&copy; Ivo Vynckier. All rights reserved" />
+
+<meta name="rating" content="general" />
+<meta name="rating" content="safe for kids" />
+
+<link href="../website.css" rel="stylesheet" media="all" />
+<link href="//fonts.googleapis.com/css?family=Special Elite" rel="stylesheet" type="text/css" />
+
+<link href="../favicon.ico" rel="icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDERQSN9SP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TDERQSN9SP');
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<meta itemprop="isFamilyFriendly" content="True" />
+<meta itemprop="inLanguage" content="en" />
+
+<bgsound src="../index/typewriter2.wma" volume="0" loop="1" />
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div itemprop="breadcrumb">
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="../index.html">Home page</a></td>
+<td><a href="../intro/intro.html">Intro</a></td>
+<td><a href="../scanners/scanners.html">Scanners</a></td>
+<td><a href="../images/images.html">Images</a></td>
+<td><a href="../history/history.html">History</a></td>
+<td><a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a></td>
+<td><a href="../languages/languages.html">Languages</a></td>
+</tr>
+<tr>
+<td><selected-page><a href="accuracy.html">Accuracy</a></selected-page></td>
+<td><a href="../output/output.html">Output</a></td>
+<td><a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a></td>
+<td><a href="../pen-scanners/pen-scanners.html">Pen scanners</a></td>
+<td><a href="../sitemap.html">Sitemap</a></td>
+<td><a href="../search.html">Search</a></td>
+<td><a href="../contact.html">Contact &ndash; Feedback</a></td>
+</tr>
+</table>
+</div>
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="accuracy.html">Accuracy</a></td>
+<td><a href="benchmarks.html">Benchmarks</a></td>
+<td><a href="scanning-skills.html">Scanning skills</a></td>
+<td><selected-page><a href="preprocessing.html">Preprocessing</a></selected-page></td>
+<td><a href="snapshots.html">Snapshots</a></td>
+<td><a href="images.html">Images</a></td>
+<td><a href="PDF-files.html"><abbr title="Portable Document Format">PDF</abbr> files</a></td>
+</tr>
+</table>
+</div>
+
+</div>
+
+<h1>With a Little Help from the Friends</h1>
+
+<p>
+There are a number of things state-of-the-art 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software can do to improve the scanned images for the 
+consecutive reading process. Advanced 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+systems use several &ldquo;angles&rdquo; that allow 
+to optimize and clean up the scanned image before the 
+recognition takes place. In technical terms, we speak of 
+&ldquo;<strong itemprop="keywords">image processing</strong>&rdquo; 
+or 
+&ldquo;<strong itemprop="keywords">preprocessing</strong>&rdquo; techniques.
+</p>
+
+<p>
+Here&rsquo;s one instance where the image gets improved 
+before it is submitted to the 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+engine: the user &ldquo;<strong>despeckles</strong>&rdquo; 
+the (black-and-white) images. (Despeckling color and 
+greyscale images does not make sense.) Don&rsquo;t remove 
+spots that are too big: you run the risk of erasing the 
+dots on the &ldquo;i&rdquo; symbols, the periods 
+<abbr title="etcetera">etc.</abbr>
+</p>
+
+<p align="center">
+<img src="preprocessing/despeckling.png" alt="Control panel to set despeckling - removal of paraiste pixels" border="0" />
+</p>
+
+<p>
+You then remove the 
+<strong>&ldquo;parasite&rdquo; <abbr title="picture elements">pixels</abbr></strong> 
+(also called 
+&ldquo;<strong itemprop="keywords">salt and pepper noise</strong>&rdquo;) 
+from the image: think of ink and coffee stains, spurious 
+<abbr title="picture elements">pixels</abbr> introduced 
+because of the transmission of a 
+<a href="images.html" target="_blank">fax</a> 
+<abbr title="etcetera">etc.</abbr> Spot removal obviously 
+improves the recognition as the symbols are crisper, less 
+bothered by surrounding &ldquo;noise&rdquo;.
+</p>
+
+<p align="center">
+<img itemprop="primaryImageOfPage" src="preprocessing/image-with-noise.png" alt="Image with sald-and-pepper noise (parasite pixels)" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="preprocessing/image-without-noise.png" alt="Despeckled image without sald-and-pepper noise (parasite pixels)" border="0" />
+</p>
+
+<p align="center">
+<img src="preprocessing/noise-sample1.png" alt="Image with sald-and-pepper noise (parasite pixels)" border="0" />
+</p>
+
+<p align="center">
+<img src="preprocessing/noise-sample2.png" alt="Image with sald-and-pepper noise (parasite pixels)" border="0" />
+</p>
+
+<p>
+And what happens when the documents were <i>not</i> 
+placed carefully on the 
+<a href="../scanners/peripherals.html" target="_blank">scanner&rsquo;s</a> 
+flatbed or in the document feeder? Put the 
+<strong itemprop="keywords">deskewing</strong> 
+routine of your 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software to work! With advanced 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software, image 
+<a itemprop="keywords" href="../OCR/line-segmentation.html#Lineskew" target="_blank">lineskew</a> 
+of up to 10&deg; can get corrected. That may not seem much, 
+but when you actually see an image with 10 degrees of 
+lineskew, you can hardly imagine scanning <i>that</i> 
+carelessly!
+</p>
+
+<p align="center">
+<img src="preprocessing/image-with-lineskew.png" alt="Skewed image" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="preprocessing/image-without-lineskew.png" alt="Deskewed image" border="0" />
+</p>
+	
+<p>	
+The deskewing routines of state-of-the-art 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software is optimized for 
+<abbr title="Optical Character Recognition">OCR</abbr>. 
+The character 
+<a href="../images/intelligence.html" target="_blank">bitmaps</a> 
+are left intact: the &ldquo;blocks&rdquo; of the 
+individual symbols are put on a straight line, but the 
+bitmap <i>inside</i> a character &ldquo;cell&rdquo; is 
+not altered. (Distorting the individual symbols would 
+lead to reduced 
+<a href="benchmarks.html" target="_blank">recognition accuracy</a>.)
+</p>
+
+<p align="center">
+<img src="preprocessing/line-with-lineskew.png" alt="Line of text with lineskewed" border="0" />
+<br />
+<span class="small">skewed image (2&deg; lineskew)</span>
+</p>
+
+<p align="center">
+<img src="preprocessing/line-without-lineskew-intact-characters.png" alt="Deskewed line of text with intact character shapes" border="0" />
+<br />
+<span class="small">deskewed image (with intact character shapes)</span>
+</p>
+
+<p>
+The line is straight but the individual symbols are not 
+distorted: the &ldquo;blocks&rdquo; of the discrete symbols 
+are put on a straight line, but the bitmap inside a single 
+block is not altered. (For (very) big characters and 
+(very) long ligatures, this is not all always possible.)
+</p>
+
+<p align="center">
+<img src="preprocessing/line-without-lineskew-distorted-characters.png" alt="Deskewed line of text with distorted character shapes" border="0" />
+<br />
+<span class="small">deskewed image (with distorted character shapes)</span>
+</p>
+
+<p>
+Here, the individual symbols were distorted, which leads 
+to reduced 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+accuracy.
+</p>
+
+<p>
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software can correct another scanning error as well: bad 
+<strong>page orientations</strong>. When a page was 
+scanned upside down or with a 90&deg; rotation (to the left 
+or to the right), the software can rotate it for you.
+</p>
+
+<p align="center">
+<img src="preprocessing/detect-page-orientation.png" alt="Control panel to select the detection of the page orientation" border="0" />
+</p>
+ 
+<p><span class="small"><a href="preprocessing.html">Back to top</a></span></p>
+
+<p><a href="../contact.html#Form" target="_blank">Submit feedback</a></p>
+
+<p>
+<a href="https://www.pinterest.com/pin/create/button/" class="pin-it-button" data-pin-do="buttonPin" data-pin-config="beside"><img src="https://assets.pinterest.com/images/pidgets/pin_it_button.png" alt="Pin it" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="How preprocessing (despeckling, deskewing) optimizes your scans for the OCR process" data-related="ivovynckier" data-lang="en">Tweet</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<script src="http://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-counter="right"></script>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<fb:like layout="standard" action="like" show_faces="false" share="true"></fb:like>
+</p>
+
+<script type="text/javascript">
+(function (w, d, load) {
+  var script, 
+  first = d.getElementsByTagName('SCRIPT')[0],  
+  n = load.length, 
+  i = 0,
+  go = function () {
+    for (i = 0; i < n; i = i + 1) {
+      script = d.createElement('SCRIPT');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = load[i];
+      first.parentNode.insertBefore(script, first);
+    }
+  }
+  if (w.attachEvent) {
+    w.attachEvent('onload', go);
+  } else {
+    w.addEventListener('load', go, false);
+  }
+}(window, document, 
+  ['//assets.pinterest.com/js/pinit.js']
+));    
+</script>
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+if(!d.getElementById(id)){js=d.createElement(s);
+js.id=id;
+js.src="https://platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+
+<div itemprop="breadcrumb">
+<div class="small">
+
+<p align="center">
+<a href="scanning-skills.html">Previous page</a> 
+&mdash;
+<a href="snapshots.html">Next page</a>
+</p>
+
+<p align="center">
+<a href="accuracy.html">Training the system further</a> &mdash;
+<a href="benchmarks.html">The accuracy of <abbr title="Optical Character Recognition">OCR</abbr> software</a> &mdash;
+<a href="scanning-skills.html">How good are your scanning skills?</a> &mdash;
+<a href="preprocessing.html">With a little help from the friends</a> &mdash;
+<a href="snapshots.html">Recognizing snapshots</a> &mdash;
+<a href="images.html">Recognizing prescanned images and faxes</a> &mdash;
+<a href="PDF-files.html">Repurposing <abbr title="Portable Document Format">PDF</abbr> files</a>
+</p>
+
+<p align="center">
+<a href="../index.html">Home page</a> &mdash;
+<a href="../intro/intro.html">Intro</a> &mdash;
+<a href="../scanners/scanners.html">Scanners</a> &mdash;
+<a href="../images/images.html">Images</a> &mdash;
+<a href="../history/history.html">History</a> &mdash;
+<a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a> &mdash;
+<a href="../languages/languages.html">Languages</a> &mdash;
+<a href="accuracy.html">Accuracy</a> &mdash;
+<a href="../output/output.html">Output</a> &mdash;
+<a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a> &mdash;
+<a href="../pen-scanners/pen-scanners.html">Pen scanners</a> &mdash;
+<a href="../sitemap.html">Sitemap</a> &mdash;
+<a href="../search.html">Search</a> &mdash;
+<a href="../contact.html">Contact &ndash; Feedback</a>
+</p>
+
+</div>
+</div>
+
+</body>
+
+</html>

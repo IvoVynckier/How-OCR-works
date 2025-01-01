@@ -1,0 +1,417 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+
+<title>Training the System More &mdash; I Validate Your Proofreading | How OCR Works</title>
+
+<link rel="next" href="benchmarks.html" />
+
+<meta name="description" content="The role of user training and 
+proofreading in OCR software." />
+
+<meta name="keywords" content="training, proofreading, 
+symbol sets, special characters, rejections, substitutions, 
+captchas, Optical Character Recognition, OCR" />
+
+<meta name="twitter:widgets:csp" content="on">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://how-ocr-works.com/accuracy/accuracy.html" />
+<meta name="twitter:title" content="Training the System Further &mdash; I Validate Your Proofreading | How OCR Works" />
+<meta name="twitter:description" content="The role of user training and proofreading in OCR software." />
+<meta name="twitter:image" content="https://how-ocr-works.com/accuracy/accuracy/learn-character.png" />
+
+<meta property="og:site_name" content="How OCR Works | A Close Look at Optical Character Recognition" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="Training the System Further &mdash; I Validate Your Proofreading | How OCR Works" />
+<meta property="og:description" content="The role of user training and proofreading in OCR software." />
+<meta property="og:url" content="https://how-ocr-works.com/accuracy/accuracy.html" />
+<meta property="og:image" content="https://how-ocr-works.com/accuracy/accuracy/learn-character.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="477" />
+<meta property="og:image:height" content="356" />
+
+<meta name="subject" content="Optical Character Recognition (OCR)" />
+
+<meta name="googlebot" content="all" />
+<meta name="bingbot" content="all" />
+<meta name="robots" content="all" />
+
+<link rev="made" href="mailto:ivo.vynckier@telenet.be" title="Ivo Vynckier" />
+<link rev="made" href="mailto:webmaster@how-ocr-works.com" title="Ivo Vynckier" />
+
+<meta name="reply-to" content="ivo.vynckier@telenet.be" />
+<meta name="reply-to" content="webmaster@how-ocr-works.com" />
+
+<meta name="author" content="Ivo Vynckier" />
+
+<meta name="generator" content="Notepad++" />
+
+<meta name="copyright" content="&copy; Ivo Vynckier. All rights reserved" />
+
+<meta name="rating" content="general" />
+<meta name="rating" content="safe for kids" />
+
+<link href="../website.css" rel="stylesheet" media="all" />
+<link href="//fonts.googleapis.com/css?family=Special Elite" rel="stylesheet" type="text/css" />
+<link href="//fonts.googleapis.com/css?family=Share Tech Mono" rel="stylesheet" type="text/css" />
+
+<link href="../favicon.ico" rel="icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDERQSN9SP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TDERQSN9SP');
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<meta itemprop="isFamilyFriendly" content="True" />
+<meta itemprop="inLanguage" content="en" />
+
+<bgsound src="../index/typewriter2.wma" volume="0" loop="1" />
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div itemprop="breadcrumb">
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="../index.html">Home page</a></td>
+<td><a href="../intro/intro.html">Intro</a></td>
+<td><a href="../scanners/scanners.html">Scanners</a></td>
+<td><a href="../images/images.html">Images</a></td>
+<td><a href="../history/history.html">History</a></td>
+<td><a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a></td>
+<td><a href="../languages/languages.html">Languages</a></td>
+</tr>
+<tr>
+<td><selected-page><a href="accuracy.html">Accuracy</a></selected-page></td>
+<td><a href="../output/output.html">Output</a></td>
+<td><a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a></td>
+<td><a href="../pen-scanners/pen-scanners.html">Pen scanners</a></td>
+<td><a href="../sitemap.html">Sitemap</a></td>
+<td><a href="../search.html">Search</a></td>
+<td><a href="../contact.html">Contact &ndash; Feedback</a></td>
+</tr>
+</table>
+</div>
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><selected-page><a href="accuracy.html">Accuracy</a></selected-page></td>
+<td><a href="benchmarks.html">Benchmarks</a></td>
+<td><a href="scanning-skills.html">Scanning skills</a></td>
+<td><a href="preprocessing.html">Preprocessing</a></td>
+<td><a href="snapshots.html">Snapshots</a></td>
+<td><a href="images.html">Images</a></td>
+<td><a href="PDF-files.html"><abbr title="Portable Document Format">PDF</abbr> files</a></td>
+</tr>
+</table>
+</div>
+
+</div>
+
+<h1><span itemprop="keywords">Training</span> the System Further</h1>
+
+<p>
+Whatever the power and sophistication of the 
+<a href="../history/neural-networks.html" target="_blank">artificial</a> 
+and 
+<a href="../OCR/linguistics.html" target="_blank">linguistic intelligence</a>, 
+some 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+systems are equipped with an extra weapon to boost the 
+recognition accuracy: they allow the user to 
+<strong>train</strong> the system on specific fonts.
+</p>
+
+<p>
+Actually, 
+<strong><abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">captchas</abbr></strong> 
+have sometimes been used for this very purpose. Unknowingly, 
+you have trained 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+systems ocassionally when you filled out a web form and 
+entered the words of the 
+<a href="https://en.wikipedia.org/wiki/CAPTCHA" target="_blank">captcha</a> 
+to prove you&rsquo;re a human being, not a machine!
+</p>
+
+<p align="center">
+<img src="accuracy/captcha.png" alt="Captcha" border="0" />
+</p>
+
+<p>
+<abbr title="Optical Character Recognition">OCR</abbr> 
+<strong>learning tools</strong> may offer an efficient 
+and worthwhile way of improving the recognition on 
+difficult documents that aren&rsquo;t recognized optimally 
+at first: user verification in pop-up style not only flags 
+doubtful characters but also increases the system&rsquo;s 
+precision.
+</p>
+
+<p>
+Here&rsquo;s how it works: the 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software presents the 
+questionable characters in pop-up style at the end of the 
+recognition, before the final results are saved, and you, 
+the user, go over them to confirm or correct the temporary 
+solution of the system.
+</p>
+
+<p align="center">
+<img itemprop="primaryImageOfPage" src="accuracy/learn-character.png" alt="Training the OCR system on a broken character" border="0" />
+</p>
+
+<p>
+The solutions confirmed by the user are memorized, increasing 
+speed and confidence as you go along. The results of such 
+training sessions are stored in &ldquo;font 
+dictionaries&rdquo; for future use. Using such 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software means you can render it more intelligent each time!
+</p>
+
+<p>
+But training is about more than just confirming doubtful 
+characters &mdash; think of distorted font shapes as you 
+will find in real documents.
+</p>
+
+<p>
+And you can train the 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software on new symbols: 
+<strong itemprop="keywords">special characters</strong> 
+such as mathematical symbols or 
+<a href="https://en.wikipedia.org/wiki/Dingbat" target="_blank" title="Wikipedia page on dingbats">dingbats</a> 
+that the software 
+doesn&rsquo;t pretend to recognize. For example: you might 
+train the 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+system so that it recognizes the bitmap &#9990;  as 
+&ldquo;Tel&rdquo;.
+</p>
+
+<p>
+Training the system on new symbols is but a very minor 
+aspect of text recognition. Generally speaking, the 
+<strong itemprop="keywords">symbol sets</strong> of the 
+various 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+packages are almost identical &mdash; in so far as they 
+cover the same languages. One 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+package may recognize the American cent (&cent;) symbol 
+and another may not; one 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+package may recognize the &ldquo;&copy;&rdquo; (copyright) 
+and &ldquo;&reg;&rdquo; (registered trademark) symbols, 
+another may not.
+</p>
+
+<p align="center">
+<font face="Share Tech Mono" size="7">
+<span style="line-height:150%">
+! &iexcl; ? &iquest; _ &mdash; . &#8226; &#42; &lsquo; &rsquo; &ldquo; &rdquo; &bdquo; &#36; &pound; &yen; &euro;
+<br />
+&#35; &#64; &lt; &gt; &#91; &#37; + &#93; ( ) / &#92; &amp; &sect; = &deg; &laquo; &raquo;
+</span>
+</font>
+</p>
+
+<p>
+Check whether the 
+<a href="../languages/languages.html" target="_blank">languages</a> 
+you want to read are supported, but don&rsquo;t bother 
+checking if an occasional special symbol is recognized. 
+</p>
+
+<p>
+Training does not apply to the <strong>Asian 
+languages</strong> such as 
+<a href="../languages/japanese-alphabet.html" target="_blank">Japanese</a> 
+and 
+<a href="../languages/chinese-alphabet.html" target="_blank">Chinese</a>. 
+Learning hardly makes sense for these languages which have 
+thousands of different symbols (so-called 
+&ldquo;ideograms&rdquo;). (In a large Chinese dictionary 
+there are 40,000 to 50,000 characters, while the 
+telegraphic code book contains nearly 10,000 symbols. 
+Some 3,000 symbols are used on a daily basis.) And 
+you&rsquo;d have to be able to enter the ideograms by 
+hand, not an easy task when using a Western 
+keyboard&hellip;
+</p>
+ 
+<p><span class="small"><a href="accuracy.html">Back to top</a></span></p>
+
+<hr align="center" color="grey" noshade="noshade" size="0.25" />
+
+<h1>I Validate Your <span itemprop="keywords">Proofreading</span></h1>
+
+<p>
+Whether you&rsquo;re going to validate, proofread the 
+recognition results in this way depends on the type of 
+application. Some 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+systems are high on 
+<a href="benchmarks.html#ErrorTypes" target="_blank">substitutions</a>, 
+others are high on 
+<a href="benchmarks.html#ErrorTypes" target="_blank">rejection</a>. 
+When the system is unsure, do you accept the 
+temporary &ldquo;guess&rdquo; of the system or do you 
+want the software to reject the unsure solutions?
+</p>
+
+<p>
+Mainstream 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+systems &mdash; the software packages you find in computer 
+shops &mdash; prefer <strong>substitution</strong> over 
+<strong>rejection</strong>. The first objective of such 
+software is to recognize any document you might scan. The 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software always tries hard to come up with a solution, 
+even if that means making an occasional error.
+</p>
+
+<p>
+In applications where data, not documents, gets read, the 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+system is designed to reject any character below a certain 
+confidence threshold. We&rsquo;re now talking about large 
+accounts where forms are read automatically, financial 
+institutions where 
+<a href="http://www.spielberg-ocr.com/MICR.html#ERMA" target="_blank">checks</a> 
+are 
+<a href="http://www.spielberg-ocr.com/MICR.html#ERMA" target="_blank">encoded by a machine</a> 
+instead of an operator <abbr title="etcetera">etc.</abbr> 
+Misreading data in such a context is too big a risk to be 
+taken, and the 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+system is fine-tuned to exclude that situation.
+</p>
+ 
+<p><span class="small"><a href="accuracy.html">Back to top</a></span></p>
+
+<p><a href="../contact.html#Form" target="_blank">Submit feedback</a></p>
+
+<p>
+<a href="https://www.pinterest.com/pin/create/button/" class="pin-it-button" data-pin-do="buttonPin" data-pin-config="beside"><img src="https://assets.pinterest.com/images/pidgets/pin_it_button.png" alt="Pin it" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="The role of training and proofreading in Optical Character Recognition (OCR)" data-related="ivovynckier" data-lang="en">Tweet</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<script src="http://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-counter="right"></script>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<fb:like layout="standard" action="like" show_faces="false" share="true"></fb:like>
+</p>
+
+<script type="text/javascript">
+(function (w, d, load) {
+  var script, 
+  first = d.getElementsByTagName('SCRIPT')[0],  
+  n = load.length, 
+  i = 0,
+  go = function () {
+    for (i = 0; i < n; i = i + 1) {
+      script = d.createElement('SCRIPT');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = load[i];
+      first.parentNode.insertBefore(script, first);
+    }
+  }
+  if (w.attachEvent) {
+    w.attachEvent('onload', go);
+  } else {
+    w.addEventListener('load', go, false);
+  }
+}(window, document, 
+  ['//assets.pinterest.com/js/pinit.js']
+));    
+</script>
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+if(!d.getElementById(id)){js=d.createElement(s);
+js.id=id;
+js.src="https://platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+
+<div itemprop="breadcrumb">
+<div class="small">
+
+<p align="center">
+<a href="../languages/asian-punctuation.html">Previous section</a> 
+&mdash;
+<a href="benchmarks.html">Next page</a>
+</p>
+
+<p align="center">
+<a href="accuracy.html">Training the system further</a> &mdash;
+<a href="benchmarks.html">The accuracy of <abbr title="Optical Character Recognition">OCR</abbr> software</a> &mdash;
+<a href="scanning-skills.html">How good are your scanning skills?</a> &mdash;
+<a href="preprocessing.html">With a little help from the friends</a> &mdash;
+<a href="snapshots.html">Recognizing snapshots</a> &mdash;
+<a href="images.html">Recognizing prescanned images and faxes</a> &mdash;
+<a href="PDF-files.html">Repurposing <abbr title="Portable Document Format">PDF</abbr> files</a>
+</p>
+
+<p align="center">
+<a href="../index.html">Home page</a> &mdash;
+<a href="../intro/intro.html">Intro</a> &mdash;
+<a href="../scanners/scanners.html">Scanners</a> &mdash;
+<a href="../images/images.html">Images</a> &mdash;
+<a href="../history/history.html">History</a> &mdash;
+<a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a> &mdash;
+<a href="../languages/languages.html">Languages</a> &mdash;
+<a href="accuracy.html">Accuracy</a> &mdash;
+<a href="../output/output.html">Output</a> &mdash;
+<a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a> &mdash;
+<a href="../pen-scanners/pen-scanners.html">Pen scanners</a> &mdash;
+<a href="../sitemap.html">Sitemap</a> &mdash;
+<a href="../search.html">Search</a> &mdash;
+<a href="../contact.html">Contact &ndash; Feedback</a>
+</p>
+
+</div>
+</div>
+
+</body>
+
+</html>

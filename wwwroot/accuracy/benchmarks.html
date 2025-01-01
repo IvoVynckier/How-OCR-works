@@ -1,0 +1,596 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+
+<title>The Accuracy of OCR Software &ndash; Even the Asian Languages? | How OCR Works</title>
+
+<link rel="prev" href="accuracy.html" />
+<link rel="next" href="scanning-skills.html" />
+
+<meta name="description" content="How benchmarks categorize and 
+measure the accuracy and speed of OCR software." />
+
+<meta name="keywords" content="benchmarks, accuracy, speed, 
+rejections, substitutions, case errors, space errors, 
+unknown characters, Optical Character Recognition, OCR"
+
+<meta name="twitter:widgets:csp" content="on">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://how-ocr-works.com/accuracy/benchmarks.html" />
+<meta name="twitter:title" content="The Accuracy of OCR Software &ndash; And Does That Cover the Asian Languages? | How OCR Works" />
+<meta name="twitter:description" content="How benchmarks categorize and measure the accuracy and speed of OCR software." />
+<meta name="twitter:image" content="https://how-ocr-works.com/accuracy/benchmarks/mac-format.png" />
+
+<meta property="og:site_name" content="How OCR Works | A Close Look at Optical Character Recognition" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="The Accuracy of OCR Software &ndash; And Does That Cover the Asian Languages? | How OCR Works" />
+<meta property="og:description" content="How benchmarks categorize and measure the accuracy and speed of OCR software." />
+<meta property="og:url" content="https://how-ocr-works.com/accuracy/benchmarks.html" />
+<meta property="og:image" content="https://how-ocr-works.com/accuracy/benchmarks/mac-format.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="327" />
+<meta property="og:image:height" content="327" />
+
+<meta name="subject" content="Optical Character Recognition (OCR)" />
+
+<meta name="googlebot" content="all" />
+<meta name="bingbot" content="all" />
+<meta name="robots" content="all" />
+
+<link rev="made" href="mailto:ivo.vynckier@telenet.be" title="Ivo Vynckier" />
+<link rev="made" href="mailto:webmaster@how-ocr-works.com" title="Ivo Vynckier" />
+
+<meta name="reply-to" content="ivo.vynckier@telenet.be" />
+<meta name="reply-to" content="webmaster@how-ocr-works.com" />
+
+<meta name="author" content="Ivo Vynckier" />
+
+<meta name="generator" content="Notepad++" />
+
+<meta name="copyright" content="&copy; Ivo Vynckier. All rights reserved" />
+
+<meta name="rating" content="general" />
+<meta name="rating" content="safe for kids" />
+
+<link href="../website.css" rel="stylesheet" media="all" />
+<link href="//fonts.googleapis.com/css?family=Special Elite" rel="stylesheet" type="text/css" />
+
+<link href="../favicon.ico" rel="icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDERQSN9SP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TDERQSN9SP');
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<meta itemprop="isFamilyFriendly" content="True" />
+<meta itemprop="inLanguage" content="en" />
+
+<bgsound src="../index/typewriter2.wma" volume="0" loop="1" />
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div itemprop="breadcrumb">
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="../index.html">Home page</a></td>
+<td><a href="../intro/intro.html">Intro</a></td>
+<td><a href="../scanners/scanners.html">Scanners</a></td>
+<td><a href="../images/images.html">Images</a></td>
+<td><a href="../history/history.html">History</a></td>
+<td><a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a></td>
+<td><a href="../languages/languages.html">Languages</a></td>
+</tr>
+<tr>
+<td><selected-page><a href="accuracy.html">Accuracy</a></selected-page></td>
+<td><a href="../output/output.html">Output</a></td>
+<td><a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a></td>
+<td><a href="../pen-scanners/pen-scanners.html">Pen scanners</a></td>
+<td><a href="../sitemap.html">Sitemap</a></td>
+<td><a href="../search.html">Search</a></td>
+<td><a href="../contact.html">Contact &ndash; Feedback</a></td>
+</tr>
+</table>
+</div>
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="accuracy.html">Accuracy</a></td>
+<td><selected-page><a href="benchmarks.html">Benchmarks</a></selected-page></td>
+<td><a href="scanning-skills.html">Scanning skills</a></td>
+<td><a href="preprocessing.html">Preprocessing</a></td>
+<td><a href="snapshots.html">Snapshots</a></td>
+<td><a href="images.html">Images</a></td>
+<td><a href="PDF-files.html"><abbr title="Portable Document Format">PDF</abbr> files</a></td>
+</tr>
+</table>
+</div>
+
+</div>
+
+<h1>The Accuracy of <abbr title="Optical Character Recognition">OCR</abbr> Software</h1>
+
+<p>
+We now understand that character recognition is a very 
+complex 
+<a href="../history/history.html" target="_blank">technology</a>. 
+How good is the text recognition state-of-the-art 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software offers? What kind of accuracy can we expect 
+when we read our texts?
+</p>
+
+<p>
+On &ldquo;good quality&rdquo; documents, you&rsquo;ll get 
+a recognition rate of 99.99&#37;, on documents of worse 
+quality, the recognition rate can drop.
+</p>
+
+<p>
+You may occasionally come across an 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+<strong itemprop="keywords">benchmark</strong> 
+on the Internet or in a computer magazine. Such benchmarks 
+usually measure three factors: (1) the speed, (2) the 
+accuracy of the 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software and (3) the capability to 
+<a href="../output/formatting.html" target="_blank">retain the document&rsquo;s format</a>.
+</p>
+
+<p align="center">
+<img src="benchmarks/windows-news.png" alt="Logo of the computer magazine Windows News" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="benchmarks/pc-magazine.png" alt="Logo of computer magazine PC Magazine" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img itemprop="primaryImageOfPage" src="benchmarks/mac-format.png" alt="Logo of the computer magazine Mac Format" border="0" />
+</p>
+
+<p>
+The 
+<strong itemprop="keywords">formatting</strong> 
+power of an 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+package is not really something you can mathematically 
+measure. To recreate the source document, the 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software will employ columns or frames, insert the graphics 
+in the right places, apply alignment, font types, sizes and 
+typestyles to the recognized text. We&rsquo;re dealing 
+with many different aspects of word processing here, so how 
+could you sum up in a simple figure the capability of 
+an <abbr title="Optical Character Recognition">OCR</abbr> 
+software package to be an invisible and automatic 
+word processor? It takes a specific description of how you 
+appreciate the job your 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software does when reformatting a document with a complex 
+layout.
+</p>
+
+<p>
+Still, state-of-the-art 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software should be capable of retaining the layout of the 
+scanned documents with a high faithfulness. And a major 
+aspect of this is indoubtedly the possibility to 
+<a href="../output/table-recognition.html" target="_blank">recreate tables</a>.
+</p>
+
+<p>
+The <strong itemprop="keywords">speed</strong> can of 
+course be measured in a straightforward way: how 
+many seconds does it take to convert an image into a text 
+file? For the home user, the speed matters less, but when 
+a company processes 
+<a href="../output/production-OCR.html" target="_blank">large volumes</a> 
+of documents, shaving extra seconds off the recognition of 
+a document influences the productivity directly!
+</p>
+
+<p>
+A small 
+<a href="../intro/intro.html" target="_blank">recap</a>: 
+document recognition is easily 40 times 
+<strong>faster</strong> 
+than manual retyping. A (very) fast secretary types some 
+200 characters per minute, the fastest 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software recognizes some 1,600 characters per second on a 
+slow <abbr title="Personal Computer">PC</abbr>, say, a 1 
+<abbr title="Gigahertz">GHz</abbr> Pentium machine. (Add 
+sufficient time for the scanning process and the handling 
+of the software.)
+</p>
+
+<p>
+That&rsquo;s the kind of speed you get in a 
+&ldquo;<abbr title="Small Office Home Office">SOHO</abbr>&rdquo; 
+environment. When you&rsquo;re performing 
+<strong itemprop="keywords">batch <abbr title="Optical Character Recognition">OCR</abbr></strong> 
+on large volumes of documents, your 
+&ldquo;<strong itemprop="keywords">throughput</strong>&rdquo; 
+depends on the speed of the scanner, the number of scanners 
+that run simultaneously, how fast the images travel on your 
+network <abbr title="etcetera">etc.</abbr> It takes detailed 
+information about the various factors and some actual 
+on-site experience to forecast accurately what kind of 
+&ldquo;mileage&rdquo; you&rsquo;ll get out of a day&rsquo;s 
+work.
+</p>
+
+<p>
+With the fastest 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+engine on the market, recognizing a document (scanning 
+<i>not</i> included) takes one to seconds per 
+<abbr title="United States">US</abbr> Letter or A4 page, 
+and unless you own a very fast scanner, the recognition 
+is faster than the scanning!
+</p>
+
+<p>
+The <strong>recognition</strong> may be 
+<strong>deferred</strong>: you can have scanning operators 
+doing their job during the day and an 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+server processing the scanned images by night.
+</p>
+
+<p>
+The 
+<strong itemprop="keywords"><abbr title="Optical Character Recognition">OCR</abbr> accuracy</strong> 
+can be measured as well. Count how many reading errors 
+the 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+package makes on an image collection.
+</p>
+
+<p>
+Some 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+benchmarks (of the scientific kind, not the ones you find 
+in computer magazines) discriminate various kinds of 
+<strong>errors</strong>.
+</p>
+
+<a name="ErrorTypes"></a>
+
+<table border="1" cellspacing="0" cellpadding="8" align="center"
+summary="OCR benchmarks: error types">
+<tr>
+<td colspan="4" bgcolor="DeepSkyBlue">
+<strong><abbr title="Optical Character Recognition">OCR</abbr> Benchmarks: Error Types</strong>
+</td>
+</tr>
+<tr>
+<td bgcolor="PowderBlue">
+<b>Expected result</b>
+</td>
+<td bgcolor="PowderBlue">
+<b>Result</b>
+</td>
+<td bgcolor="PowderBlue">
+<b>Type</b>
+</td>
+<td bgcolor="PowderBlue">
+<b>Explanation</b>
+</td>
+</tr>
+<tr>
+<td rowspan="3" bgcolor="SpringGreen">
+apple
+</td>
+<td bgcolor="red">
+a<b>&#126;&#126;</b>le
+</td>
+<td>
+<strong>rejections</strong>
+</td>
+<td>
+characters didn&rsquo;t get recognized
+<br />
+rejected characters are usually represented by the tilde character (&#126;)
+</td>
+</tr>
+<tr>
+<td bgcolor="Red">
+applc
+</td>
+<td>
+<strong>substitutions</strong>
+</td>
+<td>
+characters got badly recognized
+</td>
+</tr>
+<tr>
+<td bgcolor="Red">
+appLe
+</td>
+<td>
+<strong>case errors</strong>
+</td>
+<td>
+erroneous uppercase-lowercase decisions
+</td>
+</tr>
+<tr>
+<td bgcolor="SpringGreen">
+eat an
+</td>
+<td bgcolor="Red">
+eatan
+</td>
+<td rowspan="2">
+<strong>space errors</strong>
+</td>
+<td rowspan="2">
+missing spaces (&ldquo;joins&rdquo;) or superfluous spaces (&ldquo;splits&rdquo;)
+</td>
+</tr>
+<tr>
+<td bgcolor="SpringGreen">
+apple
+</td>
+<td bgcolor="Red">
+app le
+</td>
+</tr>
+</table>
+
+<p>
+Mind you, don&rsquo;t compare the <strong>reject</strong> 
+and <strong>substitution ratios</strong> directly: some 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+packages tend to generate more rejects and less 
+substitutions than their competitors, other 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+packages take the opposite standpoint. This depends on 
+the &ldquo;certainty thresholds&rdquo; internally used by 
+the <abbr title="Optical Character Recognition">OCR</abbr> 
+engines: while one engine tries to offer relative certainty 
+for its results, another package tries harder to generate 
+output, even if this may result in more questionable 
+results.
+</p>
+
+<p>
+Some benchmarks assign different weights to certain types 
+of errors: rejected characters and substitutions are then 
+seen as &ldquo;real&rdquo; recognition errors while 
+punctuation errors are given less weight. For one, 
+<a href="https://en.wikipedia.org/wiki/Spell_checker" target="_blank" title="Wikipedia page on spell checkers">spell checkers</a> 
+won&rsquo;t detect these errors!
+</p>
+
+<p>
+Furthermore, there are two fundamentally different methods 
+of measuring the 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+accuracy: <strong>character-based</strong> statistics and 
+<strong>word-based statistics</strong>. Character-based 
+counts imply that you compute how many <i>characters</i> 
+in the recognized text are wrong, the word-based method 
+calculates how many <i>words</i> in a text are wrong.
+</p>
+
+<p>
+These methods can lead to significantly different 
+<strong>results</strong>: in character-based counts, the 
+systematic substitution of a symbol gets punished very 
+severely, while multiple errors inside a word &mdash; 
+think of words with difficult 
+<a href="../OCR/word-character-segmentation.html#Ligatures" target="_blank">ligatures</a> 
+and glued characters &mdash; get away lightly. The 
+inspiration for the word-based method again comes from 
+spell checking: if the 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+user wants to proofread his text after the recognition 
+phase, he can make good use of his spell checker to 
+find all unknown words.
+</p>
+
+<p>
+Scientifically speaking, word-based statistics have a major 
+flaw: you just learn that a certain word wasn&rsquo;t 
+recognized well. But why was that? Does the 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+kernel have problems with specific characters, say the 
+German&ldquo;&szlig;&rdquo; symbol? If a specific symbol 
+was systematically substituted 
+or rejected, wouldn&rsquo;t you like to know about it? And 
+if an <abbr title="Optical Character Recognition">OCR</abbr> 
+engine has problems with the ligatures &ldquo;fl&rdquo; 
+and &ldquo;fi&rdquo;, then that&rsquo;s what you need to 
+know, not that the words &ldquo;floor&rdquo; and 
+&ldquo;figure&rdquo; were badly recognized.
+</p>
+
+<p><span class="small"><a href="benchmarks.html">Back to top</a></span></p>
+
+<hr align="center" color="grey" noshade="noshade" size="0.25" />
+
+<h1>And Does That Cover the Asian Languages?</h1>
+
+<p>
+Earlier, we discussed the Asian languages 
+<a href="../languages/japanese-alphabet.html" target="_blank">Japanese</a>, 
+Simplified and Traditional 
+<a href="../languages/chinese-alphabet.html" target="_blank">Chinese</a> 
+and 
+<a href="../languages/korean-alphabet.html" target="_blank">Korean</a>. 
+We explained how difficult these languages are with 
+thousand of different symbols. Do the recognition rates 
+we announce for Western languages also apply to the Asian 
+languages? Does the specialized 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software for these languages actually recognize all of 
+these pictograms?
+</p>
+
+<p>
+Not really, some symbols are so complex &mdash; they can 
+contain up to 48 strokes &mdash; that it&rsquo;s not feasible 
+to recognize them. Luckily, such ideograms are so archaic and 
+obscure that they&rsquo;re hardly ever used, and the number 
+of people that know and recognize them can be very 
+limited&hellip;
+</p>
+
+<p>
+Chinese has tens of thousands of characters. A large dictionary 
+contains 40,000 to 50,000 characters. The telegraphic code 
+book comprises nearly 10,000 symbols, and knowledge of about 
+5,000 characters is sufficient to read modern standard written 
+Chinese competently, which takes at least 5 years of full-time 
+study to acquire. The 
+<a href="https://en.wikipedia.org/wiki/Big5" target="_blank" title="Wikipedia page on the Big 5 typeface">Big 5 font</a> 
+of Traditional Chinese has 13,053 ideograms and the 
+<a href="https://en.wikipedia.org/wiki/GBK" target="_blank" title="Wikipedia page on the Big 5 typeface">
+<abbr title="Guojia Biaozhun (Kuozhan), national standard (extension)">GB(K)</abbr> 
+font</a> font of Simplified Chinese has 6,763 ideograms. Only 
+some 3,000 symbols are used on daily basis.
+</p>
+
+<p>
+In practice, a state-of-the-art 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+engine for Chinese will &ldquo;only&rdquo; recognize about 
+4,000 ideograms. Still, when a benchmark is created using a 
+large body of text, you come to the conclusion that 99.80&#37; 
+of all used symbols is covered! (The statistical data for 
+Japanese and Korean are entirely in the same range.)
+</p>
+
+<p>
+In other words, when you get down to the normal language 
+that actually gets printed in books, magazines, newspapers, 
+letters and so forth, you get a recognition rate above 
+99.5&#37;, which is directly comparable to what you get on 
+Latin-based languages.
+</p>
+
+<p><span class="small"><a href="benchmarks.html">Back to top</a></span></p>
+
+<p><a href="../contact.html#Form" target="_blank">Submit feedback</a></p>
+
+<p>
+<a href="https://www.pinterest.com/pin/create/button/" class="pin-it-button" data-pin-do="buttonPin" data-pin-config="beside"><img src="https://assets.pinterest.com/images/pidgets/pin_it_button.png" alt="Pin it" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="Benchmarks: they&rsquo;re how you measure the accuracy of OCR software" data-related="ivovynckier" data-lang="en">Tweet</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<script src="http://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-counter="right"></script>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<fb:like layout="standard" action="like" show_faces="false" share="true"></fb:like>
+</p>
+
+<script type="text/javascript">
+(function (w, d, load) {
+  var script, 
+  first = d.getElementsByTagName('SCRIPT')[0],  
+  n = load.length, 
+  i = 0,
+  go = function () {
+    for (i = 0; i < n; i = i + 1) {
+      script = d.createElement('SCRIPT');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = load[i];
+      first.parentNode.insertBefore(script, first);
+    }
+  }
+  if (w.attachEvent) {
+    w.attachEvent('onload', go);
+  } else {
+    w.addEventListener('load', go, false);
+  }
+}(window, document, 
+  ['//assets.pinterest.com/js/pinit.js']
+));    
+</script>
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+if(!d.getElementById(id)){js=d.createElement(s);
+js.id=id;
+js.src="https://platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+
+<div itemprop="breadcrumb">
+<div class="small">
+
+<p align="center">
+<a href="accuracy.html">Previous page</a> 
+&mdash;
+<a href="scanning-skills.html">Next page</a>
+</p>
+
+<p align="center">
+<a href="accuracy.html">Training the system further</a> &mdash;
+<a href="benchmarks.html">The accuracy of <abbr title="Optical Character Recognition">OCR</abbr> software</a> &mdash;
+<a href="scanning-skills.html">How good are your scanning skills?</a> &mdash;
+<a href="preprocessing.html">With a little help from the friends</a> &mdash;
+<a href="snapshots.html">Recognizing snapshots</a> &mdash;
+<a href="images.html">Recognizing prescanned images and faxes</a> &mdash;
+<a href="PDF-files.html">Repurposing <abbr title="Portable Document Format">PDF</abbr> files</a>
+</p>
+
+<p align="center">
+<a href="../index.html">Home page</a> &mdash;
+<a href="../intro/intro.html">Intro</a> &mdash;
+<a href="../scanners/scanners.html">Scanners</a> &mdash;
+<a href="../images/images.html">Images</a> &mdash;
+<a href="../history/history.html">History</a> &mdash;
+<a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a> &mdash;
+<a href="../languages/languages.html">Languages</a> &mdash;
+<a href="accuracy.html">Accuracy</a> &mdash;
+<a href="../output/output.html">Output</a> &mdash;
+<a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a> &mdash;
+<a href="../pen-scanners/pen-scanners.html">Pen scanners</a> &mdash;
+<a href="../sitemap.html">Sitemap</a> &mdash;
+<a href="../search.html">Search</a> &mdash;
+<a href="../contact.html">Contact &ndash; Feedback</a>
+</p>
+
+</div>
+</div>
+
+</body>
+
+</html>

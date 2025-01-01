@@ -1,0 +1,35 @@
+﻿/* SITE */
+	Site Name: How OCR Works
+	Site URL: https://how-ocr-works.com
+	Last update: 2021/10/15
+	Language: English
+	Software: Notepad++, FileZilla, Photoshop
+
+/* AUTHOR */
+	Copywriter: Ivo Vynckier
+	Contact: ivo.vynckier@telenet.be
+	Twitter: @ivovynckier
+	From: Wevelgem, Belgium
+
+	Web designer: Ivo Vynckier
+	Contact: ivo.vynckier@telenet.be
+	Twitter: @ivovynckier
+	From: Wevelgem, Belgium
+
+	Webmaster: Ivo Vynckier
+	Contact: ivo.vynckier@telenet.be
+	Twitter: @ivovynckier
+	From: Wevelgem, Belgium
+
+	SEO: Ivo Vynckier
+	Contact: ivo.vynckier@telenet.be
+	Twitter: @ivovynckier
+	From: Wevelgem, Belgium
+
+/* SOCIAL */
+
+	LinkedIn: https://www.linkedin.com/in/ivovynckier
+	Twitter: https://twitter.com/ivovynckier
+	Facebook: https://www.facebook.com/ivo.vynckier
+	Instagram: https://www.instagram.com/ivo.vynckier
+	Tumblr: https://www.tumblr.com/blog/ivovynckier

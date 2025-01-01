@@ -1,0 +1,464 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+
+<title>More about Adobe Acrobat PDF Output | How OCR Works</title>
+
+<link rel="prev" href="output.html" />
+<link rel="next" href="formatting.html" />
+
+<meta name="description" content="Discover the finer points of 
+text- and image-based Adobe Acrobat PDF output." />
+
+<meta name="keywords" content="Adobe Acrobat PDF, text PDF files, 
+image PDF files, text-image PDF files, image-text PDF files, 
+font embedding, digital signature, bookmarks, page thumbnails, 
+optimized PDF files, web-optimized PDF files, linearized PDF files, 
+PDF/A, long-time archiving,  Optical Character Recognition, OCR" />
+
+<meta name="twitter:widgets:csp" content="on">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://how-ocr-works.com/output/PDF-output.html" />
+<meta name="twitter:title" content="More about Adobe Acrobat PDF Output | How OCR Works" />
+<meta name="twitter:description" content="Discover the finer points of text- and image-based Adobe Acrobat PDF output." />
+<meta name="twitter:image" content="https://how-ocr-works.com/output/PDF-output/autoformatting.png" />
+
+<meta property="og:site_name" content="How OCR Works | A Close Look at Optical Character Recognition" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="More about Adobe Acrobat PDF Output | How OCR Works" />
+<meta property="og:description" content="Discover the finer points of text- and image-based Adobe Acrobat PDF output." />
+<meta property="og:url" content="https://how-ocr-works.com/output/PDF-output.html" />
+<meta property="og:image" content="https://how-ocr-works.com/output/PDF-output/autoformatting.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="667" />
+<meta property="og:image:height" content="365" />
+
+<meta name="subject" content="Optical Character Recognition (OCR)" />
+
+<meta name="googlebot" content="all" />
+<meta name="bingbot" content="all" />
+<meta name="robots" content="all" />
+
+<link rev="made" href="mailto:ivo.vynckier@telenet.be" title="Ivo Vynckier" />
+<link rev="made" href="mailto:webmaster@how-ocr-works.com" title="Ivo Vynckier" />
+
+<meta name="reply-to" content="ivo.vynckier@telenet.be" />
+<meta name="reply-to" content="webmaster@how-ocr-works.com" />
+
+<meta name="author" content="Ivo Vynckier" />
+
+<meta name="generator" content="Notepad++" />
+
+<meta name="copyright" content="&copy; Ivo Vynckier. All rights reserved" />
+
+<meta name="rating" content="general" />
+<meta name="rating" content="safe for kids" />
+
+<link href="../website.css" rel="stylesheet" media="all" />
+<link href="//fonts.googleapis.com/css?family=Special Elite" rel="stylesheet" type="text/css" />
+
+<link href="../favicon.ico" rel="icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDERQSN9SP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TDERQSN9SP');
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<meta itemprop="isFamilyFriendly" content="True" />
+<meta itemprop="inLanguage" content="en" />
+
+<bgsound src="../index/typewriter2.wma" volume="0" loop="1" />
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div itemprop="breadcrumb">
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="../index.html">Home page</a></td>
+<td><a href="../intro/intro.html">Intro</a></td>
+<td><a href="../scanners/scanners.html">Scanners</a></td>
+<td><a href="../images/images.html">Images</a></td>
+<td><a href="../history/history.html">History</a></td>
+<td><a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a></td>
+<td><a href="../languages/languages.html">Languages</a></td>
+</tr>
+<tr>
+<td><a href="../accuracy/accuracy.html">Accuracy</a></td>
+<td><selected-page><a href="output.html">Output</a></selected-page></td>
+<td><a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a></td>
+<td><a href="../pen-scanners/pen-scanners.html">Pen scanners</a></td>
+<td><a href="../sitemap.html">Sitemap</a></td>
+<td><a href="../search.html">Search</a></td>
+<td><a href="../contact.html">Contact &ndash; Feedback</a></td>
+</tr>
+</table>
+</div>
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="output.html">Output</a></td>
+<td><selected-page><a href="PDF-output.html"><abbr title="Portable Document Format">PDF</abbr> output</a></selected-page></td>
+<td><a href="formatting.html">Formatting</a></td>
+<td><a href="table-recognition.html">Tables</a></td>
+<td><a href="production-OCR.html">Production <abbr title="Optical Character Recognition">OCR</abbr></a></td>
+</tr>
+</table>
+</div>
+
+</div>
+
+<h1>More about <span itemprop="keywords">Adobe Acrobat <abbr title="Portable Document Format">PDF</abbr></span> Output</h1>
+
+<p>
+Actually, the advanced 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+solutions support various types of 
+<abbr title="Portable Document Format">PDF</abbr> files: 
+&ldquo;<abbr title="Portable Document Format">PDF</abbr> 
+Text&rdquo;, 
+&ldquo;<abbr title="Portable Document Format">PDF</abbr> 
+Image-Text&rdquo; and 
+&ldquo;<abbr title="Portable Document Format">PDF</abbr> 
+Text-Image&rdquo;. (The 
+&ldquo;<abbr title="Portable Document Format">PDF</abbr> 
+Image&rdquo; format is usually supported too, but 
+it&rsquo;s just an image format. No text recognition is 
+executed to generate it, so you don&rsquo;t get a 
+&ldquo;searchable&rdquo;, text-based document.) (This 
+also holds for Microsoft&rsquo;s 
+<a href="output.html#XPS" target="_blank"><abbr title="XML Paper Specification">XPS</abbr> format</a>!) 
+What are the differences?
+</p>
+
+<p align="center">
+<img src="output/PDF-formats.png" alt="Control panel for PDF text formats" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="PDF-output/PDF-logo.png" alt="Logo of the Adobe Acrobat PDF format" border="0" />
+</p>
+
+<p>
+The format 
+<strong><abbr title="Portable Document Format">PDF</abbr> 
+Text</strong> creates a searchable 
+<abbr title="Portable Document Format">PDF</abbr> file that 
+contains the <strong>text</strong> (and possibly 
+<a href="../OCR/page-analysis.html" target="_blank">graphic zones</a> 
+for photographs, artwork 
+<abbr title="etcetera">etc.</abbr>). The page image is 
+<i>not</i> contained in the single-layered 
+<abbr title="Portable Document Format">PDF</abbr> file.
+</p>
+
+<p align="center">
+<img itemprop="primaryImageOfPage" src="PDF-output/autoformatting.png" alt="Autoformatted text in wordprocessor Word" border="0" />
+</p>
+
+<p>
+The format 
+<strong><abbr title="Portable Document Format">PDF</abbr> 
+Image-Text</strong> on the other hand creates a searchable 
+<abbr title="Portable Document Format">PDF</abbr> file that 
+contains the <strong>page image</strong> <i>and</i> the 
+recognized <strong>text</strong>. The page image is 
+contained in the two-layered 
+<abbr title="Portable Document Format">PDF</abbr> file 
+above the autoformatted text. (Execute a text search and 
+you&rsquo;ll see that the text is definitely contained in 
+the <abbr title="Portable Document Format">PDF</abbr> 
+file&hellip;)
+</p>
+
+<p align="center">
+<img src="PDF-output/search-PDF-file.png" alt="Searching in a PDF file with Windows 8" border="0" />
+</p>
+
+<p>
+You get the same functionality with the format 
+<strong><abbr title="Portable Document Format">PDF</abbr> 
+Text-Image</strong>, but this time the text is placed 
+<i>above</i> the image, not under it.
+</p>
+
+<p>
+&ldquo;State-of-the-art&rdquo; 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software supports 
+<strong itemprop="keywords">font embedding</strong> 
+for its 
+<abbr title="Portable Document Format">PDF</abbr> output. 
+Embedding fonts prevents font substitution when readers 
+view and print the recognized document. It ensures that 
+readers &mdash; whatever their computer configuration and 
+the installed fonts may be &mdash; see the text in its 
+original typefaces.
+</p>
+
+<p align="center">
+<img src="PDF-output/PDF-file-font-embedding.png" alt="Font embedding of Adobe Acrobat PDF files" border="0" />
+</p>
+
+<p>
+You can for instance generate a 
+<abbr title="Portable Document Format">PDF</abbr> file 
+with your 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software (under Windows) and send it to a colleague of 
+yours that displays and prints the file on his Unix 
+computer. Whatever typefaces occur in the 
+<abbr title="Portable Document Format">PDF</abbr> file, 
+you are sure 
+to display the recognized document in the exact same way. 
+Or you generate a Chinese or Japanese document with your 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software and open it on a 
+<abbr title="Personal Computer">PC</abbr> that has, say, 
+an English version of Adobe Reader (without the Asian 
+font packs installed). None of this matters: the 
+<abbr title="Portable Document Format">PDF</abbr> file 
+again uses the internally embedded fonts to display the 
+document&hellip;
+</p>
+
+<p>
+In other words: font embedding is what makes your 
+<abbr title="Portable Document Format">PDF</abbr> files 
+truly portable &mdash; on <i>any</i> computer platform and 
+under <i>all</i> circumstances! There&rsquo;s a minor 
+drawback: embedding the fonts increases the file size of 
+the recognized documents (somewhat)!
+</p>
+
+<p>
+Up-to-date 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software also generates <strong>digitally signed</strong> 
+<abbr title="Portable Document Format">PDF</abbr> output. 
+<span itemprop="keywords">Digital signatures</span> identify 
+the person (or agency) that created the 
+<abbr title="Portable Document Format">PDF</abbr> documents; 
+they authenticate the identity of the author, certify a 
+document and help prevent unwanted changes to 
+<abbr title="Portable Document Format">PDF</abbr> documents. 
+(<abbr title="Optical Character Recognition">OCR</abbr> 
+software adds a first signature or &ldquo;author 
+signature&rdquo; to the 
+<abbr title="Portable Document Format">PDF</abbr> output. 
+Signatures added later on by other people to indicate 
+approval of a document are called &ldquo;ordinary 
+signatures&rdquo;.)
+</p>
+
+<p align="center">
+<img src="PDF-output/PDF-file-signature.png" alt="Digitally signed PDF file" border="0" />
+</p>
+
+<p>
+It is up to the user to create a 
+&ldquo;self-signed&rdquo; digital ID on his 
+<abbr title="Personal Computer">PC</abbr> or to obtain 
+a certificate from a &ldquo;third-party&rdquo; signature 
+handler!
+</p>
+
+<p>
+The author signature applied by your 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software may be &ldquo;invisible&rdquo;: it appears in 
+the &ldquo;Signatures&rdquo; tab of Adobe Acrobat and 
+Adobe Reader. To ensure legibility of all scanned 
+information, the 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software does <i>not</i> place a signature on the pages 
+of the recognized documents!
+</p>
+
+<p>
+Some 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software can even create the 
+<strong itemprop="keywords">bookmarks</strong> 
+of the <abbr title="Portable Document Format">PDF</abbr> 
+files for you! The 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software then applies an intelligent algorithm to come up 
+with a title, a &ldquo;summary&rdquo; for each text zone. 
+(The graphics and tables are just numbered.) It&rsquo;s 
+as if a table of contents was created for your document&hellip;
+</p>
+
+<p align="center">
+<img src="PDF-output/PDF-file-bookmarks.png" alt="PDF file with bookmarks" border="0" />
+</p>
+
+<p>
+Another navigational element of 
+<abbr title="Portable Document Format">PDF</abbr> documents, 
+<strong itemprop="keywords">page thumbnails</strong>, 
+can be created dynamically by your Adobe Reader (or Adobe 
+Acrobat) software!
+</p>
+
+<p align="center">
+<img src="PDF-output/PDF-file-thumbnails.png" alt="PDF file with thumbnails" border="0" />
+</p>
+
+<p>
+Advanced 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software creates 
+<strong itemprop="keywords">web-optimized <abbr title="Portable Document Format">PDF</abbr> files</strong> 
+(also called 
+&ldquo;linearized&rdquo; <abbr title="Portable Document Format">PDF</abbr> 
+documents). You can start reading such 
+documents as soon as their first page is downloaded. 
+The other pages get downloaded in the background, 
+while you&rsquo;re reading the first one! (If 
+necessary, this process is repeated: go immediately 
+to another page and <i>that</i> page is promptly 
+downloaded from the web server. Once more, the rest 
+of the document becomes available later&hellip;)
+</p>
+
+<p align="center">
+<img src="PDF-output/PDF-file-optimization.png" alt="Optimization of Adobe Acrobat PDF files" border="0" />
+</p>
+
+<p>
+<strong itemprop="keywords"><abbr title="Portable Document Format">PDF</abbr>/<abbr title="Archivable">A</abbr></strong>, 
+finally, is a stripped-down subformat of 
+<abbr title="Portable Document Format">PDF</abbr> for 
+<strong itemprop="keywords">long-time archiving</strong>. 
+(The &ldquo;A&rdquo; stands for &ldquo;archivable&rdquo;.) 
+The specific guarantee here is that you&rsquo;ll be 
+able to open these documents with identical results, 
+say, 50 years from now!
+</p>
+
+<p align="center">
+<img src="PDF-output/PDF-A-format1.png" alt="Adobe Acrobat PDF-A format for long-time archiving" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="PDF-output/PDF-A-format2.png" alt="Adobe Acrobat PDF-A format for long-time archiving" border="0" />
+</p>
+
+<p><span class="small"><a href="PDF-output.html">Back to top</a></span></p>
+
+<p><a href="../contact.html#Form" target="_blank">Submit feedback</a></p>
+
+<p>
+<a href="https://www.pinterest.com/pin/create/button/" class="pin-it-button" data-pin-do="buttonPin" data-pin-config="beside"><img src="https://assets.pinterest.com/images/pidgets/pin_it_button.png" alt="Pin it" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="The finer points of PDF output generated by OCR software: what are PDF/A and &ldquo;linearized&rdquo; PDF files?" data-related="ivovynckier" data-lang="en">Tweet</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<script src="http://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-counter="right"></script>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<fb:like layout="standard" action="like" show_faces="false" share="true"></fb:like>
+</p>
+
+<script type="text/javascript">
+(function (w, d, load) {
+  var script, 
+  first = d.getElementsByTagName('SCRIPT')[0],  
+  n = load.length, 
+  i = 0,
+  go = function () {
+    for (i = 0; i < n; i = i + 1) {
+      script = d.createElement('SCRIPT');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = load[i];
+      first.parentNode.insertBefore(script, first);
+    }
+  }
+  if (w.attachEvent) {
+    w.attachEvent('onload', go);
+  } else {
+    w.addEventListener('load', go, false);
+  }
+}(window, document, 
+  ['//assets.pinterest.com/js/pinit.js']
+));    
+</script>
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+if(!d.getElementById(id)){js=d.createElement(s);
+js.id=id;
+js.src="https://platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+
+<div itemprop="breadcrumb">
+<div class="small">
+
+<p align="center">
+<a href="output.html">Previous page</a> 
+&mdash;
+<a href="formatting.html">Next page</a>
+</p>
+
+<p align="center">
+<a href="output.html">Going places with the recognized text</a> &mdash;
+<a href="PDF-output.html">More about Adobe Acrobat <abbr title="Portable Document Format">PDF</abbr> output</a> &mdash;
+<a href="formatting.html">Does <abbr title="Optical Character Recognition">OCR</abbr> software format the text?</a> &mdash;
+<a href="table-recognition.html">Does <abbr title="Optical Character Recognition">OCR</abbr> software recognize tables?</a> &mdash;
+<a href="production-OCR.html">Converting document collections</a>
+</p>
+
+<p align="center">
+<a href="../index.html">Home page</a> &mdash;
+<a href="../intro/intro.html">Intro</a> &mdash;
+<a href="../scanners/scanners.html">Scanners</a> &mdash;
+<a href="../images/images.html">Images</a> &mdash;
+<a href="../history/history.html">History</a> &mdash;
+<a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a> &mdash;
+<a href="../languages/languages.html">Languages</a> &mdash;
+<a href="../accuracy/accuracy.html">Accuracy</a> &mdash;
+<a href="output.html">Output</a> &mdash;
+<a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a> &mdash;
+<a href="../pen-scanners/pen-scanners.html">Pen scanners</a> &mdash;
+<a href="../sitemap.html">Sitemap</a> &mdash;
+<a href="../search.html">Search</a> &mdash;
+<a href="../contact.html">Feedback &ndash; Contact</a>
+</p>
+
+</div>
+</div>
+
+</body>
+
+</html>

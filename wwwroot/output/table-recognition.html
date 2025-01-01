@@ -1,0 +1,369 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+
+<title>Does OCR Software Recognize Tables? | How OCR Works</title>
+
+<link rel="prev" href="formatting.html" />
+<link rel="next" href="production-OCR.html" />
+
+<meta name="description" content="Discover how OCR software 
+recreates scanned tables of figures." />
+
+<meta name="keywords" content="tables of figures, 
+Optical Character Recognition, OCR" />
+
+<meta name="twitter:widgets:csp" content="on">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://how-ocr-works.com/output/table-recognition.html" />
+<meta name="twitter:title" content="Does OCR Software Recognize Tables? | How OCR Works" />
+<meta name="twitter:description" content="Discover how OCR software recreates scanned tables of figures." />
+<meta name="twitter:image" content="https://how-ocr-works.com/output/table-recognition/excel-table.png" />
+
+<meta property="og:site_name" content="How OCR Works | A Close Look at Optical Character Recognition" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="Does OCR Software Recognize Tables? | How OCR Works" />
+<meta property="og:description" content="Discover how OCR software recreates scanned tables of figures." />
+<meta property="og:url" content="https://how-ocr-works.com/output/table-recognition.html" />
+<meta property="og:image" content="https://how-ocr-works.com/output/table-recognition/excel-table.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="657" />
+<meta property="og:image:height" content="263" />
+
+<meta name="subject" content="Optical Character Recognition (OCR)" />
+
+<meta name="googlebot" content="all" />
+<meta name="bingbot" content="all" />
+<meta name="robots" content="all" />
+
+<link rev="made" href="mailto:ivo.vynckier@telenet.be" title="Ivo Vynckier" />
+<link rev="made" href="mailto:webmaster@how-ocr-works.com" title="Ivo Vynckier" />
+
+<meta name="reply-to" content="ivo.vynckier@telenet.be" />
+<meta name="reply-to" content="webmaster@how-ocr-works.com" />
+
+<meta name="author" content="Ivo Vynckier" />
+
+<meta name="generator" content="Notepad++" />
+
+<meta name="copyright" content="&copy; Ivo Vynckier. All rights reserved" />
+
+<meta name="rating" content="general" />
+<meta name="rating" content="safe for kids" />
+
+<link href="../website.css" rel="stylesheet" media="all" />
+<link href="//fonts.googleapis.com/css?family=Special Elite" rel="stylesheet" type="text/css" />
+
+<link href="../favicon.ico" rel="icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDERQSN9SP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TDERQSN9SP');
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<meta itemprop="isFamilyFriendly" content="True" />
+<meta itemprop="inLanguage" content="en" />
+
+<bgsound src="../index/typewriter2.wma" volume="0" loop="1" />
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div itemprop="breadcrumb">
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="../index.html">Home page</a></td>
+<td><a href="../intro/intro.html">Intro</a></td>
+<td><a href="../scanners/scanners.html">Scanners</a></td>
+<td><a href="../images/images.html">Images</a></td>
+<td><a href="../history/history.html">History</a></td>
+<td><a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a></td>
+<td><a href="../languages/languages.html">Languages</a></td>
+</tr>
+<tr>
+<td><a href="../accuracy/accuracy.html">Accuracy</a></td>
+<td><selected-page><a href="output.html">Output</a></selected-page></td>
+<td><a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a></td>
+<td><a href="../pen-scanners/pen-scanners.html">Pen scanners</a></td>
+<td><a href="../sitemap.html">Sitemap</a></td>
+<td><a href="../search.html">Search</a></td>
+<td><a href="../contact.html">Contact &ndash; Feedback</a></td>
+</tr>
+</table>
+</div>
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="output.html">Output</a></td>
+<td><a href="PDF-output.html"><abbr title="Portable Document Format">PDF</abbr> output</a></td>
+<td><a href="formatting.html">Formatting</a></td>
+<td><selected-page><a href="table-recognition.html">Tables</a></selected-page></td>
+<td><a href="production-OCR.html">Production <abbr title="Optical Character Recognition">OCR</abbr></a></td>
+</tr>
+</table>
+</div>
+
+</div>
+
+<h1>Does <abbr title="Optical Character Recognition">OCR</abbr> Software Recognize Tables?</h1>
+
+<p>
+But your 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software doesn&rsquo;t just 
+<a href="formatting.html" target="_blank">recreate text documents</a>. 
+Tables can be recreated with a high fidelity as well!
+</p>
+
+<p>
+Reading tables is as good an application as capturing 
+texts. You could easily take the point of view that 
+reading tables makes even more sense than 
+<abbr title="Optical Character Recognition">OCR</abbr>ing 
+a text: retyping tables is about the most cumbersome 
+typing job you can do. And when boredom kicks in, typos 
+are right around the corner&hellip;
+</p>
+
+<p>
+Advanced 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software doesn&rsquo;t make those mistakes because you 
+can limit recognition to a <strong>numeric mode</strong>. 
+Thus, you exclude possible confusion between &ldquo;O&rdquo; 
+and &lsquo;0&rsquo;, between &ldquo;B&rdquo; and 
+&lsquo;8&rsquo; <abbr title="etcetera">etc.</abbr> (The 
+numeric mode includes currency symbols such as dollar, 
+pound, yen and the Euro symbol.)
+</p>
+
+<p align="center">
+<img src="table-recognition/numeric-mode.png" alt="Control panel to select the numeric recognition mode in OCR software" border="0" />
+</p>
+
+<p>
+The 
+<strong>page analysis</strong> of advanced 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software detects both &ldquo;gridded&rdquo; and 
+&ldquo;ungridded&rdquo; tables. &ldquo;Gridded&rdquo; 
+or &ldquo;framed&rdquo; tables have borders around the 
+cells, &ldquo;ungridded&rdquo; tables don&rsquo;t have 
+any borders around the cells &mdash; they&rsquo;re 
+simply composed of text organized in columns.
+</p>
+
+<p align="center">
+<img src="table-recognition/scanned-table.jpg" alt="Scanned image of a table with colored columns" border="0" />
+</p>
+
+<p>
+Your 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software analyzes the tables intelligently: they are 
+<strong>recreated</strong> cell by cell inside your 
+<strong itemprop="keywords">spreadsheet</strong> 
+and encoded as table objects in your word processor 
+files. Your state-of-the-art 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software will even recreate the cell borders as found in 
+your source document.
+</p>
+
+<p align="center">
+<img src="table-recognition/table-word.png" alt="OCRed table in a Word file" border="0" />
+</p>
+
+<p>
+In all cases, the end result is the same: your numeric 
+data are immediately ready for further processing 
+with your spreadsheet.
+</p>
+
+<p align="center">
+<img itemprop="primaryImageOfPage" src="output/excel-table.png" alt="Excel table with colored cells" border="0" />
+</p>
+
+<p>
+<strong>User comfort</strong> shouldn&rsquo;t be a problem 
+either. With advanced 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software, you can edit recognized tables with 
+<span itemprop="keywords">Microsoft Excel</span> and save 
+the recognition result in some table formats that typically 
+include 
+<abbr title="HyperText Markup Language">HTML</abbr> tables 
+and the &ldquo;generic&rdquo; 
+<abbr title="Comma-Separated Values">CSV</abbr> format 
+(comma-delimited data). But you can also output tabular data 
+to word processors and web browsers: tables gets 
+reconstructed cell by cell and inserted as table objects in 
+word processor files!
+</p>
+
+<p align="center">
+<img src="table-recognition/table-excel.png" alt="OCRed table in Excel" border="0" />
+</p>
+
+<p>
+You can even save the scanned tables and ignore all other 
+recognition results. All data inside the tables is 
+recaptured; any data outside the table(s) &mdash; text blocks, 
+graphics, bar codes <abbr title="etcetera">etc.</abbr> &mdash; 
+is ignored. In this way, you can rid yourself of the text 
+around the tables instantly, without any manual operations.
+</p>
+
+<p align="center">
+<img src="table-recognition/spreadsheet-formatting-options.png" alt="OCRed table in Excel" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="table-recognition/table-thumbnail1.png" alt="Thumbnail of scanned page with text and table" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="table-recognition/table-thumbnail2.png" alt="Thumbnail of scanned page with table" border="0" />
+</p>
+
+<p>
+The new, 
+<abbr title="Extended Markup Language">XML</abbr>-based
+worksheet of Microsoft Excel (*.xlsx) and the intermediary 
+SpreadsheetML format offer sophisticated features. You 
+can create one worksheet per page or one worksheet per 
+table. Sounds complicated? It&rsquo;s pretty simple, 
+actually!
+</p>
+
+<p>
+When one worksheet is created per scanned page and a page 
+contains tables and text, all get placed on the same 
+worksheet. When one worksheet is created per table, each 
+table is placed in a separate worksheet and the recognized 
+text (outside the tables) gets stored in yet another 
+worksheet. Hyperlinks allow you to jump from the text to 
+the tables and vice versa instantly.
+</p>
+
+<p align="center">
+<img src="table-recognition/table-several-worksheets.png" alt="OCRed table with tables spread across several worksheets" border="0" />
+</p>
+
+<p><span class="small"><a href="table-recognition.html">Back to top</a></span></p>
+
+<p><a href="../contact.html#Form" target="_blank">Submit feedback</a></p>
+
+<p>
+<a href="https://www.pinterest.com/pin/create/button/" class="pin-it-button" data-pin-do="buttonPin" data-pin-config="beside"><img src="https://assets.pinterest.com/images/pidgets/pin_it_button.png" alt="Pin it" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="Can Optical Character Recognition (OCR) software recreate scanned tables of figures?" data-related="ivovynckier" data-lang="en">Tweet</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<script src="http://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-counter="right"></script>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<fb:like layout="standard" action="like" show_faces="false" share="true"></fb:like>
+</p>
+
+<script type="text/javascript">
+(function (w, d, load) {
+  var script, 
+  first = d.getElementsByTagName('SCRIPT')[0],  
+  n = load.length, 
+  i = 0,
+  go = function () {
+    for (i = 0; i < n; i = i + 1) {
+      script = d.createElement('SCRIPT');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = load[i];
+      first.parentNode.insertBefore(script, first);
+    }
+  }
+  if (w.attachEvent) {
+    w.attachEvent('onload', go);
+  } else {
+    w.addEventListener('load', go, false);
+  }
+}(window, document, 
+  ['//assets.pinterest.com/js/pinit.js']
+));    
+</script>
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+if(!d.getElementById(id)){js=d.createElement(s);
+js.id=id;
+js.src="https://platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+
+<div itemprop="breadcrumb">
+<div class="small">
+
+<p align="center">
+<a href="formatting.html">Previous page</a> 
+&mdash;
+<a href="production-OCR.html">Next page</a>
+</p>
+
+<p align="center">
+<a href="output.html">Going places with the recognized text</a> &mdash;
+<a href="PDF-output.html">More about Adobe Acrobat <abbr title="Portable Document Format">PDF</abbr> output</a> &mdash;
+<a href="formatting.html">Does <abbr title="Optical Character Recognition">OCR</abbr> software format the text?</a> &mdash;
+<a href="table-recognition.html">Does <abbr title="Optical Character Recognition">OCR</abbr> software recognize tables?</a> &mdash;
+<a href="production-OCR.html">Converting document collections</a>
+</p>
+
+<p align="center">
+<a href="../index.html">Home page</a> &mdash;
+<a href="../intro/intro.html">Intro</a> &mdash;
+<a href="../scanners/scanners.html">Scanners</a> &mdash;
+<a href="../images/images.html">Images</a> &mdash;
+<a href="../history/history.html">History</a> &mdash;
+<a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a> &mdash;
+<a href="../languages/languages.html">Languages</a> &mdash;
+<a href="../accuracy/accuracy.html">Accuracy</a> &mdash;
+<a href="output.html">Output</a> &mdash;
+<a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a> &mdash;
+<a href="../pen-scanners/pen-scanners.html">Pen scanners</a> &mdash;
+<a href="../sitemap.html">Sitemap</a> &mdash;
+<a href="../search.html">Search</a> &mdash;
+<a href="../contact.html">Feedback &ndash; Contact</a>
+</p>
+
+</div>
+</div>
+
+</body>
+
+</html>

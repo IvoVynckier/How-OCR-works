@@ -1,0 +1,366 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+
+<title>What Does OCR Mean And What Does It Do? | How OCR Works</title>
+
+<link rel="next" href="scanning.html" />
+
+<meta name="description" content="How Optical Character Recognition 
+(OCR) avoids the manual retyping of documents and tables of figures.">
+
+<meta name="keywords" content="Optical Character Recognition, OCR, 
+text recognition, what is OCR, what does OCR do, what does OCR mean, 
+manual retyping, table recognition, recapturing data, CPU clock speed" />
+
+<meta name="subject" content="Optical Character Recognition (OCR)" />
+
+<meta name="twitter:widgets:csp" content="on">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://how-ocr-works.com/intro/intro.html" />
+<meta name="twitter:title" content="What Does OCR Mean And What Does It Do?" />
+<meta name="twitter:description" content="How Optical Character Recognition (OCR) avoids the manual retyping of documents and tables of figures." />
+<meta name="twitter:image" content="https://how-ocr-works.com/intro/intro/OCRed-document.png" />
+
+<meta property="og:site_name" content="How OCR Works | A Close Look at Optical Character Recognition" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="What Does OCR Mean And What Does It Do?" />
+<meta property="og:description" content="How Optical Character Recognition (OCR) avoids the manual retyping of documents and tables of figures." />
+<meta property="og:url" content="https://how-ocr-works.com/intro/intro.html" />
+<meta property="og:image" content="https://how-ocr-works.com/intro/intro/OCRed-document.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="723" />
+<meta property="og:image:height" content="481" />
+
+<meta name="googlebot" content="all" />
+<meta name="bingbot" content="all" />
+<meta name="robots" content="all" />
+
+<link rev="made" href="mailto:ivo.vynckier@telenet.be" title="Ivo Vynckier" />
+<link rev="made" href="mailto:webmaster@how-ocr-works.com" title="Ivo Vynckier" />
+
+<meta name="reply-to" content="ivo.vynckier@telenet.be" />
+<meta name="reply-to" content="webmaster@how-ocr-works.com" />
+
+<meta name="author" content="Ivo Vynckier" />
+
+<meta name="generator" content="Notepad++" />
+
+<meta name="copyright" content="&copy; Ivo Vynckier. All rights reserved" />
+
+<meta name="rating" content="general" />
+<meta name="rating" content="safe for kids" />
+
+<meta name="twitter:widgets:csp" content="on">
+<meta name="twitter:title" content="What does &ldquo;OCR&rdsquo; mean and wwwwhat does it do?" />
+
+<link href="../website.css" rel="stylesheet" media="all" />
+<link href="//fonts.googleapis.com/css?family=Special Elite" rel="stylesheet" type="text/css" />
+
+<link href="../favicon.ico" rel="icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDERQSN9SP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TDERQSN9SP');
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<meta itemprop="isFamilyFriendly" content="True" />
+<meta itemprop="inLanguage" content="en" />
+
+<bgsound src="../index/typewriter2.wma" volume="0" loop="1" />
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div itemprop="breadcrumb">
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="../index.html">Home page</a></td>
+<td><selected-page><a href="intro.html">Intro</a></selected-page></td>
+<td><a href="../scanners/scanners.html">Scanners</a></td>
+<td><a href="../images/images.html">Images</a></td>
+<td><a href="../history/history.html">History</a></td>
+<td><a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a></td>
+<td><a href="../languages/languages.html">Languages</a></td>
+</tr>
+<tr>
+<td><a href="../accuracy/accuracy.html">Accuracy</a></td>
+<td><a href="../output/output.html">Output</a></td>
+<td><a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a></td>
+<td><a href="../pen-scanners/pen-scanners.html">Pen scanners</a></td>
+<td><a href="../sitemap.html">Sitemap</a></td>
+<td><a href="../search.html">Search</a></td>
+<td><a href="../contact.html">Contact &ndash; Feedback</a></td>
+</tr>
+</table>
+</div>
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><selected-page><a href="intro.html">What is <abbr title="Optical Character Recognition">OCR</abbr>?</a></selected-page></td>
+<td><a href="scanning.html">The missing link</a></td>
+</tr>
+</table>
+</div>
+
+</div>
+
+<h1>What Does &ldquo;<abbr title="Optical Character Recognition">OCR</abbr>&rdquo; Mean And What Does It Do?</h1>
+
+<p>
+What does 
+<span itemprop="keywords"><abbr title="Optical Character Recognition">OCR</abbr></span> 
+mean? 
+&ldquo;<abbr title="Optical Character Recognition">OCR</abbr>&rdquo; 
+is the abbreviation of 
+&ldquo;<strong itemprop="keywords">Optical Character Recognition</strong>&rdquo;, 
+it describes the process whereby an image is captured of 
+a paper document &mdash; we speak of &ldquo;scanning&rdquo; 
+&mdash; after which the text is &ldquo;extracted&rdquo; 
+from that image.
+</p>
+
+<p>
+Hence, paper documents are converted into editable computer 
+files. And that&rsquo;s precisely what text recognition is 
+all about: entering texts into your computer without 
+<strong>retyping</strong> them. After all, as efficient as 
+computers are, you have to key in your information first!
+</p>
+
+<p>
+Document recognition is easily 40 times faster than 
+<span itemprop="keywords">manual retyping</span>. To quote 
+just one hard figure: a (very) fast secretary types some 
+200 characters per minute, the fastest 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software recognizes some 1,600 characters per second on a 
+half-decent <abbr title="Personal Computer">PC</abbr>, say, 
+a 1 
+<a href="https://en.wikipedia.org/wiki/Gigahertz#Computing" target="_blank" title="Wikipedia page on Hertz">GHz</a> 
+Pentium computer.
+</p>
+
+<p align="center">
+<img src="./intro/keyboard1.jpg" alt="Computer keyboard" border="0" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="./intro/keyboard2.jpg" alt="Computer keyboard" border="0" />
+</p>
+
+<p>
+Of course, a 
+<abbr title="Personal Computer">PC</abbr> dealer would 
+quickly point out that all desktop 
+<abbr title="Personal Computers">PCs</abbr> sold today 
+are&hellip; 3 <abbr title="Gigahertz">GHz</abbr> 
+machines, which triples the recognition speed once more. 
+Even laptops have a 
+<a href="https://en.wikipedia.org/wiki/Clock_speed" target="_blank" title="Wikipedia page on clock rate">clock speed</a> 
+of up to 3 <abbr title="Gigahertz">GHz</abbr> these 
+days. And as standard processors contain four cores, 
+state-of-the-art 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software distributes its 
+<a href="https://en.wikipedia.org/wiki/Central_processing_unit" target="_blank" title="Wikipedia page on Central Processing Units">CPU</a> 
+heavy tasks among separate threads handled 
+simultaneously by specific cores. (Add sufficient 
+time for the 
+<a href="scanning.html" target="_blank">scanning</a> 
+process and the handling of the software!)
+</p>
+
+<p align="center">
+<img src="./intro/clock-speed.png" alt="Clock speed of CPU (visible in Windows System)" border="0" />
+</p>
+
+<p>
+And to top if off, you should interpret the word 
+&ldquo;document&rdquo; in the broadest sense of the word. 
+The 
+<a href="../output/formatting.html" target="_blank">layout</a> 
+of your source document can be recreated so that you 
+don&rsquo;t have to <strong>format</strong> your text again!
+</p>
+
+<p align="center">
+<img src="./intro/scanned-document.png" alt="Scanned document" border="0" />
+</p>
+
+<p align="center">
+<img itemprop="primaryImageOfPage" src="./intro/OCRed-document.png" alt="OCRed document in Word" border="0" />
+</p>
+
+<p>
+When you have 
+<strong itemprop="keywords">tables of figures</strong> to 
+recapture, you can use 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+too. 
+<a href="../output/table-recognition.html" target="_blank">Reading tables</a> 
+is as good an application as capturing texts! Furthermore, 
+you could easily take the point of view that reading tables 
+makes even more sense than recognizing a text: retyping tables 
+is about the most cumbersome typing job you can do. And when 
+boredom kicks in, typos are right around the corner&hellip;
+</p>
+
+<p align="center">
+<img src="./intro/scanned-table.jpg" alt="Scanned table" border="0" />
+</p>
+
+<p align="center">
+<img src="./intro/excel-table.png" alt="Recognized table in Excel" border="0" />
+</p>
+
+<p>
+The 
+<a href="../scanners/hardware2.html" target="_blank">applications</a> 
+must be clear by now: capturing documents without retyping 
+them, giving your paper documents a new lease on life. If 
+you have ever retyped a 15-page report or a large table of 
+figures, you know how tedious and time-consuming it can be!
+</p>
+
+<p>
+The need for 
+<strong itemprop="keywords">recapturing data</strong> 
+is actually much bigger than you&rsquo;d think at first: 
+an American study by the research organization 
+<a href="https://en.wikipedia.org/wiki/International_Data_Corporation" target="_blank" title="Wikipedia page on International Data Corporation (IDC)">IDC</a> 
+indicated that 55&#37; of all typing done on 
+<abbr title="Personal Computers">PCs</abbr> is actually 
+<i>re</i>typing of data already available on paper. Other 
+studies indicate that 90&#37; of all information is still 
+held on paper, a shocking fact for our computer age!
+</p>
+
+<p align="center">
+<a href="https://www.idc.com" target="_blank" title="Web site of International Data Corporation (IDC)">
+<img src="./intro/IDC-logo.png" alt="Logo of International Data Corporation (IDC)" border="0" /></a>
+</p>
+
+<p>
+Concluding, 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+may be the most effective tool to have in your office, 
+so there is no reason why you shouldn&rsquo;t unburden 
+yourself with the fastidious task of retyping text and 
+data!
+</p>
+
+<p><span class="small"><a href="intro.html">Back to top</a></span></p>
+
+<p><a href="../contact.html#Form" target="_blank">Submit feedback</a></p>
+
+<p>
+<a href="https://www.pinterest.com/pin/create/button/" class="pin-it-button" data-pin-do="buttonPin" data-pin-config="beside"><img src="https://assets.pinterest.com/images/pidgets/pin_it_button.png" alt="Pin it" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="What does OCR mean and what does it do? Avoid the manual retyping of documents and tables of figures!" data-related="ivovynckier" data-lang="en">Tweet</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<script src="http://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-counter="right"></script>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<fb:like layout="standard" action="like" show_faces="false" share="true"></fb:like>
+</p>
+
+<script type="text/javascript">
+(function (w, d, load) {
+  var script, 
+  first = d.getElementsByTagName('SCRIPT')[0],  
+  n = load.length, 
+  i = 0,
+  go = function () {
+    for (i = 0; i < n; i = i + 1) {
+      script = d.createElement('SCRIPT');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = load[i];
+      first.parentNode.insertBefore(script, first);
+    }
+  }
+  if (w.attachEvent) {
+    w.attachEvent('onload', go);
+  } else {
+    w.addEventListener('load', go, false);
+  }
+}(window, document, 
+  ['//assets.pinterest.com/js/pinit.js']
+));    
+</script>
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+if(!d.getElementById(id)){js=d.createElement(s);
+js.id=id;
+js.src="https://platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+
+<div itemprop="breadcrumb">
+<div class="small">
+
+<p align="center">
+<a href="scanning.html">Next page</a>
+</p>
+
+<p align="center">
+<a href="intro.html">What does &ldquo;<abbr title="Optical Character Recognition">OCR</abbr>&rdquo; mean and what does it do?</a> &mdash;
+<a href="scanning.html" rel="next">Printing and scanning &mdash; the yin and yang of computers</a>
+</p>
+
+<p align="center">
+<a href="../index.html">Home page</a> &mdash;
+<a href="intro.html">Intro</a> &mdash;
+<a href="../scanners/scanners.html">Scanners</a> &mdash;
+<a href="../images/images.html">Images</a> &mdash;
+<a href="../history/history.html">History</a> &mdash;
+<a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a> &mdash;
+<a href="../languages/languages.html">Languages</a> &mdash;
+<a href="../accuracy/accuracy.html">Accuracy</a> &mdash;
+<a href="../output/output.html">Output</a> &mdash;
+<a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a> &mdash;
+<a href="../pen-scanners/pen-scanners.html">Pen scanners</a> &mdash;
+<a href="../sitemap.html">Sitemap</a> &mdash;
+<a href="../search.html">Search</a> &mdash;
+<a href="../contact.html">Contact &ndash; Feedback</a>
+</p>
+
+</div>
+</div>
+
+</body>
+
+</html>

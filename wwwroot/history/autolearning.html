@@ -1,0 +1,287 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+
+<title>Autolearning Font Shapes | How OCR Works</title>
+
+<link rel="next" href="expert-systems.html" />
+<link rel="next" href="voting-systems.html" />
+
+<meta name="description" content="How neural networks autolearn 
+font shapes by adapting to the scanned typeface." />
+
+<meta name="keywords" content="autolearning, neural networks, 
+Optical Character Recognition, OCR" />
+
+<meta name="twitter:widgets:csp" content="on">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://how-ocr-works.com/history/autolearning.html" />
+<meta name="twitter:title" content="Autolearning Font Shapes | How OCR Works" />
+<meta name="twitter:description" content="How neural networks autolearn font shapes by adapting to the scanned typeface." />
+<meta name="twitter:image" content="https://how-ocr-works.com/history/autolearning/autolearning.png" />
+
+<meta property="og:site_name" content="How OCR Works | A Close Look at Optical Character Recognition" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="Autolearning Font Shapes | How OCR Works" />
+<meta property="og:description" content="How neural networks autolearn font shapes by adapting to the scanned typeface." />
+<meta property="og:url" content="https://how-ocr-works.com/history/autolearning.html" />
+<meta property="og:image" content="https://how-ocr-works.com/history/autolearning/autolearning.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1045" />
+<meta property="og:image:height" content="173" />
+
+<meta name="subject" content="Optical Character Recognition (OCR)" />
+
+<meta name="googlebot" content="all" />
+<meta name="bingbot" content="all" />
+<meta name="robots" content="all" />
+
+<link rev="made" href="mailto:ivo.vynckier@telenet.be" title="Ivo Vynckier" />
+<link rev="made" href="mailto:webmaster@how-ocr-works.com" title="Ivo Vynckier" />
+
+<meta name="reply-to" content="ivo.vynckier@telenet.be" />
+<meta name="reply-to" content="webmaster@how-ocr-works.com" />
+
+<meta name="author" content="Ivo Vynckier" />
+
+<meta name="generator" content="Notepad++" />
+
+<meta name="copyright" content="&copy; Ivo Vynckier. All rights reserved" />
+
+<meta name="rating" content="general" />
+<meta name="rating" content="safe for kids" />
+
+<link href="../website.css" rel="stylesheet" media="all" />
+<link href="//fonts.googleapis.com/css?family=Special Elite" rel="stylesheet" type="text/css" />
+
+<link href="../favicon.ico" rel="icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="../favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDERQSN9SP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TDERQSN9SP');
+</script>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+<meta itemprop="isFamilyFriendly" content="True" />
+<meta itemprop="inLanguage" content="en" />
+
+<bgsound src="../index/typewriter2.wma" volume="0" loop="1" />
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div itemprop="breadcrumb">
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="../index.html">Home page</a></td>
+<td><a href="../intro/intro.html">Intro</a></td>
+<td><a href="../scanners/scanners.html">Scanners</a></td>
+<td><a href="../images/images.html">Images</a></td>
+<td><selected-page><a href="history.html">History</a></selected-page></td>
+<td><a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a></td>
+<td><a href="../languages/languages.html">Languages</a></td>
+</tr>
+<tr>
+<td><a href="../accuracy/accuracy.html">Accuracy</a></td>
+<td><a href="../output/output.html">Output</a></td>
+<td><a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a></td>
+<td><a href="../pen-scanners/pen-scanners.html">Pen scanners</a></td>
+<td><a href="../sitemap.html">Sitemap</a></td>
+<td><a href="../search.html">Search</a></td>
+<td><a href="../contact.html">Contact &ndash; Feedback</a></td>
+</tr>
+</table>
+</div>
+
+<div class="navigation">
+<table align="center" valign="center" border="1px" border-style="solid" color="#eee" 
+border-spacing="1px" cellspacing="0px" cellpadding="8px" summary="Navigational panel">
+<tr>
+<td><a href="history.html">The early years</a></td>
+<td><a href="neural-networks.html">Neural networks</a></td>
+<td><a href="word-recognition.html">Word recognition</a></td>
+<td><a href="expert-systems.html">Expert systems</a></td>
+</tr>
+<tr>
+<td><selected-page><a href="autolearning.html">Autolearning</a></selected-page></td>
+<td><a href="voting-systems.html">Voting systems</a></td>
+<td colspan="2"><a href="document-revolution.html">Document revolution</a></td>
+</tr>
+</table>
+</div>
+
+</div>
+
+<h1>Autolearning Font Shapes</h1>
+
+<p>
+<span itemprop="keywords">Autolearning</span> is a first 
+element that validates the &ldquo;raw&rdquo; results of 
+the pretrained 
+<a href="neural-networks.html" target="_blank">neural network</a>. 
+&ldquo;Autolearning&rdquo; means that the neural system 
+learns font shapes automatically, that without feedback 
+from the user. (Autolearning is <i>not</i> the same as 
+<a href="../accuracy/accuracy.html" target="_blank">interactive learning</a> 
+or &ldquo;font training&rdquo;!)
+</p>
+
+<p>
+How can the neural network in use mode &mdash; specialists 
+speak of &ldquo;on-line 
+<span itemprop="keywords">training</span>&rdquo; &mdash; 
+learn things by itself? By studying all occurrences of a 
+specific font shape! Let&rsquo;s give a small example. A 
+degraded character shape could be a &ldquo;c&rdquo; or an 
+&ldquo;e&rdquo;. The system has, say, a 75&#37; certainty 
+that the first shape is a &ldquo;c&rdquo; and a 60&#37; 
+certainty that the shape is an &ldquo;e&rdquo;. The second 
+shape is an &ldquo;e&rdquo; with a confidence of 80&#37;. 
+But these characters occur in the word &ldquo;heaven&rdquo;. 
+It makes sense to see the degraded shape as an 
+&ldquo;e&rdquo;, not as the theoretically more probable 
+&ldquo;c&rdquo;. However, if we were talking about a proper 
+name, that argument would be void: we could be dealing with 
+&ldquo;Bracken&rdquo; and &ldquo;Braeken&rdquo;&hellip;
+</p>
+
+<p>
+And we have to look at the other instances on the page 
+where the same bitmaps &mdash; or sufficiently similar 
+ones &mdash; occur: do they indicate an &ldquo;e&rdquo; 
+or a &ldquo;c&rdquo; <i>there</i>? If a font shape in one 
+place means one thing, what does it mean elsewhere on the 
+page? This philosophy explains how the 
+<abbr title="Optical Character Recognition">OCR</abbr> 
+software adapts itself to the typeface(s) used in your 
+document. It&rsquo;s as if the software gets accustomed 
+to your document, &ldquo;<strong>autolearns</strong>&rdquo; 
+to read the particular fonts submitted to 
+the <abbr title="Optical Character Recognition">OCR</abbr> 
+engine.
+</p>
+
+<p align="center">
+<img itemprop="primaryImageOfPage" src="autolearning/autolearning.png" alt="How neural networks autolearn characters" border="0" />
+</p>
+ 
+<p><span class="small"><a href="autolearning.html">Back to top</a></span></p>
+
+<p><a href="../contact.html#Form" target="_blank">Submit feedback</a></p>
+
+<p>
+<a href="https://www.pinterest.com/pin/create/button/" class="pin-it-button" data-pin-do="buttonPin" data-pin-config="beside"><img src="https://assets.pinterest.com/images/pidgets/pin_it_button.png" alt="Pin it" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="The role of autolearning in the OCR process: how neural networks adapt to specific typefaces" data-related="ivovynckier" data-lang="en">Tweet</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<script src="http://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-counter="right"></script>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<fb:like layout="standard" action="like" show_faces="false" share="true"></fb:like>
+</p>
+
+<script type="text/javascript">
+(function (w, d, load) {
+  var script, 
+  first = d.getElementsByTagName('SCRIPT')[0],  
+  n = load.length, 
+  i = 0,
+  go = function () {
+    for (i = 0; i < n; i = i + 1) {
+      script = d.createElement('SCRIPT');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = load[i];
+      first.parentNode.insertBefore(script, first);
+    }
+  }
+  if (w.attachEvent) {
+    w.attachEvent('onload', go);
+  } else {
+    w.addEventListener('load', go, false);
+  }
+}(window, document, 
+  ['//assets.pinterest.com/js/pinit.js']
+));    
+</script>
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+if(!d.getElementById(id)){js=d.createElement(s);
+js.id=id;
+js.src="https://platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+
+<div itemprop="breadcrumb">
+<div class="small">
+
+<p align="center">
+<a href="expert-systems.html">Previous page</a> 
+&mdash;
+<a href="voting-systems.html">Next page</a>
+</p>
+
+<p align="center">
+<a href="history.html">Where does this technology come from?</a> &mdash;
+<a href="neural-networks.html">Reaping the benefits of the neural revolution</a> &mdash;
+<a href="word-recognition.html">&hellip; Or do word recognition</a> &mdash;
+<a href="expert-systems.html">Each expert casts his vote</a> &mdash;
+<a href="autolearning.html">Autolearning font shapes</a> &mdash;
+<a href="voting-systems.html">Putting more feet on the street</a> &mdash;
+<a href="document-revolution.html">&hellip; With a document revolution thrown in</a>
+</p>
+
+<p align="center">
+<a href="../index.html">Home page</a> &mdash;
+<a href="../intro/intro.html">Intro</a> &mdash;
+<a href="../scanners/scanners.html">Scanners</a> &mdash;
+<a href="../images/images.html">Images</a> &mdash;
+<a href="history.html">History</a> &mdash;
+<a href="../OCR/OCR.html"><abbr title="Optical Character Recognition">OCR</abbr></a> &mdash;
+<a href="../languages/languages.html">Languages</a> &mdash;
+<a href="../accuracy/accuracy.html">Accuracy</a> &mdash;
+<a href="../output/output.html">Output</a> &mdash;
+<a href="../BCR/BCR.html"><abbr title="Business Card Reading">BCR</abbr></a> &mdash;
+<a href="../pen-scanners/pen-scanners.html">Pen scanners</a> &mdash;
+<a href="../sitemap.html">Sitemap</a> &mdash;
+<a href="../search.html">Search</a> &mdash;
+<a href="../contact.html">Contact &ndash; Feedback</a>
+</p>
+
+</div>
+</div>
+
+</body>
+
+</html>
