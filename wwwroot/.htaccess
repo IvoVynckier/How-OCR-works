@@ -1265,6 +1265,7 @@ Deny from 103.175.37.68
 Deny from 103.175.8.57
 Deny from 103.175.88.22
 Deny from 103.175.88.70
+Deny from 103.175.89.166
 Deny from 103.175.89.205
 Deny from 103.176.11.80
 Deny from 103.176.128.34
@@ -1391,6 +1392,7 @@ Deny from 103.194.185.26
 Deny from 103.194.185.58
 Deny from 103.194.186.10
 Deny from 103.194.187.146
+Deny from 103.194.187.170
 Deny from 103.194.187.186
 Deny from 103.194.187.202
 Deny from 103.194.187.226
@@ -2155,6 +2157,7 @@ Deny from 104.168.113.81
 Deny from 104.168.132.110
 Deny from 104.168.132.165
 Deny from 104.168.132.17
+Deny from 104.168.132.178
 Deny from 104.168.132.213
 Deny from 104.168.132.211
 Deny from 104.168.132.215
@@ -4381,6 +4384,7 @@ Deny from 115.97.101.115
 Deny from 115.97.137.148
 Deny from 115.97.150.57
 Deny from 115.97.161.97
+Deny from 115.97.242.98
 Deny from 115.97.247.216
 Deny from 115.97.49.42
 Deny from 115.97.78.219
@@ -6010,6 +6014,7 @@ Deny from 128.199.110.100
 Deny from 128.199.111.125
 Deny from 128.199.119.178
 Deny from 128.199.121.8
+Deny from 128.199.122.144
 Deny from 128.199.122.170
 Deny from 128.199.123.193
 Deny from 128.199.125.232
@@ -7302,6 +7307,7 @@ Deny from 139.5.242.188
 Deny from 139.5.249.180
 Deny from 139.5.249.21
 Deny from 139.5.251.52
+Deny from 139.5.27.174
 Deny from 139.5.27.178
 Deny from 139.5.30.36
 Deny from 139.5.31.153
@@ -7824,6 +7830,7 @@ Deny from 143.198.213.119
 Deny from 143.198.214.185
 Deny from 143.198.214.229
 Deny from 143.198.215.175
+Deny from 143.198.215.224
 Deny from 143.198.217.246
 Deny from 143.198.217.248
 Deny from 143.198.219.24
@@ -8460,6 +8467,7 @@ Deny from 149.102.232.90
 Deny from 149.102.233.225
 Deny from 149.102.242.162
 Deny from 149.102.244.42
+Deny from 149.102.247.243
 Deny from 149.108.146.233
 Deny from 149.115.239.140
 Deny from 149.115.239.246
@@ -8693,6 +8701,7 @@ Deny from 150.107.106.8
 Deny from 150.107.107.34
 Deny from 150.107.182.8
 Deny from 150.107.189.249
+Deny from 150.107.189.250
 Deny from 150.107.243.130
 Deny from 150.107.243.132
 Deny from 150.107.243.141
@@ -12217,6 +12226,7 @@ Deny from 175.39.166.31
 Deny from 175.39.174.65
 Deny from 175.41.163.76
 Deny from 176.100.43.252
+Deny from 176.102.130.16
 Deny from 176.103.88.57
 Deny from 176.106.121.125
 Deny from 176.106.227.174
@@ -14583,6 +14593,7 @@ Deny from 185.217.1.135
 Deny from 185.217.137.199
 Deny from 185.217.198.159
 Deny from 185.217.198.183
+Deny from 185.218.125.245
 Deny from 185.218.164.172
 Deny from 185.219.142.73
 Deny from 185.219.143.188
@@ -21861,6 +21872,7 @@ Deny from 23.81.234.44
 Deny from 23.81.49.187
 Deny from 23.81.50.239
 Deny from 23.81.60.15
+Deny from 23.81.60.245
 Deny from 23.81.61.181
 Deny from 23.81.61.26
 Deny from 23.81.67.207
@@ -24654,6 +24666,7 @@ Deny from 41.215.85.118
 Deny from 41.215.88.93
 Deny from 41.215.95.113
 Deny from 41.216.100.110
+Deny from 41.216.100.22
 Deny from 41.216.106.191
 Deny from 41.216.114.122
 Deny from 41.216.122.210
@@ -25272,6 +25285,7 @@ Deny from 43.157.5.116
 Deny from 43.159.130.145
 Deny from 43.159.51.87
 Deny from 43.163.226.138
+Deny from 43.204.235.45
 Deny from 43.207.169.24
 Deny from 43.224.109.202
 Deny from 43.224.116.18
@@ -27794,6 +27808,7 @@ Deny from 51.75.142.24
 Deny from 51.75.194.213
 Deny from 51.75.233.120
 Deny from 51.75.53.141
+Deny from 51.75.54.122
 Deny from 51.75.55.79
 Deny from 51.75.90.39
 Deny from 51.75.92.133
@@ -28421,6 +28436,7 @@ Deny from 54.163.43.179
 Deny from 54.164.148.190
 Deny from 54.165.180.233
 Deny from 54.169.39.220
+Deny from 54.169.96.139
 Deny from 54.172.37.183
 Deny from 54.174.185.86
 Deny from 54.174.58.250
@@ -31991,6 +32007,7 @@ Deny from 85.117.56.106
 Deny from 85.117.56.72
 Deny from 85.117.56.78
 Deny from 85.117.60.156
+Deny from 85.117.60.157
 Deny from 85.117.63.194
 Deny from 85.117.63.195
 Deny from 85.117.63.197
