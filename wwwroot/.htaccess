@@ -10228,6 +10228,7 @@ Deny from 159.223.62.23
 Deny from 159.223.62.82
 Deny from 159.223.63.152
 Deny from 159.223.65.66
+Deny from 159.223.65.70
 Deny from 159.223.68.191
 Deny from 159.223.68.56
 Deny from 159.223.71.202
@@ -10512,6 +10513,7 @@ Deny from 161.97.148.54
 Deny from 161.97.148.58
 Deny from 161.97.150.136
 Deny from 161.97.150.255
+Deny from 161.97.175.239
 Deny from 161.97.176.203
 Deny from 161.97.86.172
 Deny from 161.97.88.147
@@ -12843,6 +12845,7 @@ Deny from 178.128.119.222
 Deny from 178.128.120.126
 Deny from 178.128.122.157
 Deny from 178.128.125.179
+Deny from 178.128.125.8
 Deny from 178.128.126.83
 Deny from 178.128.14.157
 Deny from 178.128.157.132
@@ -14155,6 +14158,7 @@ Deny from 182.232.210.92
 Deny from 182.232.211.43
 Deny from 18.223.23.40
 Deny from 18.223.43.243
+Deny from 182.23.63.10
 Deny from 182.239.139.246
 Deny from 182.239.184.152
 Deny from 18.224.202.180
@@ -15746,6 +15750,7 @@ Deny from 188.166.115.25
 Deny from 188.166.127.20
 Deny from 188.166.147.46
 Deny from 188.166.172.89
+Deny from 188.166.174.91
 Deny from 188.166.177.234
 Deny from 188.166.178.164
 Deny from 188.166.178.218
@@ -16725,6 +16730,7 @@ Deny from 192.185.4.36
 Deny from 192.185.4.43
 Deny from 192.185.4.55
 Deny from 192.185.4.64
+Deny from 192.185.4.75
 Deny from 192.185.4.96
 Deny from 192.185.81.101
 Deny from 192.185.81.124
@@ -23322,6 +23328,7 @@ Deny from 34.87.87.86
 Deny from 34.89.227.88
 Deny from 34.90.104.176
 Deny from 34.90.184.143
+Deny from 34.91.85.149
 Deny from 34.92.71.173
 Deny from 34.93.38.4
 Deny from 34.93.61.237
@@ -23493,6 +23500,7 @@ Deny from 35.202.80.212
 Deny from 35.203.255.177
 Deny from 35.203.255.183
 Deny from 35.203.39.73
+Deny from 35.204.208.35
 Deny from 35.206.177.232
 Deny from 35.206.196.117
 Deny from 35.210.215.110
@@ -25576,6 +25584,7 @@ Deny from 43.224.130.159
 Deny from 43.224.182.14
 Deny from 43.225.1.113
 Deny from 43.225.142.236
+Deny from 43.225.189.101
 Deny from 43.225.189.111
 Deny from 43.225.189.115
 Deny from 43.225.20.182
@@ -25681,6 +25690,7 @@ Deny from 44.195.85.172
 Deny from 44.196.58.7
 Deny from 44.200.167.138
 Deny from 44.201.175.121
+Deny from 44.201.72.202
 Deny from 44.202.136.36
 Deny from 44.203.187.210
 Deny from 44.203.51.239
